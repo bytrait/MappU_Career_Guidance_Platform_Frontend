@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+/* ==============================
+   PRINTABLE CAREER CARDS
+============================== */
+
+@media print {
+  .print-page {
+    width: 210mm;
+    height: 297mm;
+    /* padding: 20mm 20mm 18mm 20mm; */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    page-break-after: always;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+}
+
+
+.career-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  page-break-inside: avoid;
+}
+
+/* Alternate backgrounds (print-safe) */
+.career-card:nth-child(odd) {
+  background: #f0f7ff;
+}
+
+/* --------------------------
+   HEADINGS
+--------------------------- */
+
+.career-card h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.career-card h3 i {
+  font-size: 18px;
+  color: #2563eb;
+}
+
+/* --------------------------
+   TEXT CONTENT
+--------------------------- */
+
+.career-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+/* --------------------------
+   LISTS
+--------------------------- */
+
+.career-card ul {
+  padding-left: 18px;
+  margin: 8px 0 12px;
+}
+
+.career-card li {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.career-card li i {
+  font-size: 12px;
+  color: #3b82f6;
+  margin-right: 6px;
+}
+
+/* --------------------------
+   TABLES (PRINT SAFE)
+--------------------------- */
+
+.career-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.career-card th {
+  background: #f1f5f9;
+  padding: 8px 10px;
+  font-weight: 600;
+  text-align: left;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.career-card td {
+  padding: 8px 10px;
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+  vertical-align: top;
+}
+
+.career-card tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+/* --------------------------
+   BLOCKQUOTES / CALLOUTS
+--------------------------- */
+
+.career-card blockquote {
+  border-left: 4px solid #3b82f6;
+  background: #f9fafb;
+  padding: 10px 14px;
+  font-style: italic;
+  color: #374151;
+  margin: 14px 0;
+}
+
+/* --------------------------
+   PRINT OPTIMIZATION
+--------------------------- */
+
+.career-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.career-step {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563eb;
+  background: #e0ecff;
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.career-card-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* .career-detail-page {
+  min-height: 297mm;
+
+
+  background-image: url("/src/assets/careerbg.png");
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 210mm 297mm;
+  
+
+
+  padding-left: 50mm;
+
+  padding-right: 10mm;
+  padding-top: 20mm;
+  padding-bottom: 20mm;
+} */
+
+
+@media print {
+  .career-card {
+    box-shadow: none;
+    border-radius: 12px;
+  }
+}
+
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+  /* Brand */
+  --color-primary: rgb(18 51 154);    /* Blue */
+  --color-primary-dark: rgb(12 32 99); /* Darker Blue */
+  --color-accent: rgb(21 208 90);     /* Green */
+  --color-accent-light: rgb(220 252 231);
+  --color-primary-light: rgb(219 234 254); /* very light blue */
+  --color-accent-dark: rgb(4 120 87);
+  
+  /* Backgrounds */
+  --color-background: rgb(255 255 255);
+  --color-surface: rgb(249 250 251);
+
+  /* Text */
+  --color-text-primary: rgb(17 24 39);
+  --color-text-secondary: rgb(107 114 128);
+
+  /* Borders */
+  --color-border: rgb(229 231 235);
+
+  /* States */
+  --color-success: rgb(0, 119, 44);
+  --color-error: rgb(239 68 68);
+  --color-warning: rgb(245 158 11);
+
+  /* Disabled */
+  --color-disabled: rgb(156 163 175);
+}
+
+/* =========================
+   UTILITIES (CORE)
+========================= */
+@layer utilities {
+
+  /* ===== Backgrounds ===== */
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-accent { background-color: var(--color-accent); }
+  .bg-surface { background-color: var(--color-surface); }
+  .bg-background { background-color: var(--color-background); }
+  .bg-accent-light { background-color: var(--color-accent-light); }
+  .bg-primary-light { background-color: var(--color-primary-light); }
+
+
+  /* ===== Text ===== */
+  .text-primary { color: var(--color-primary); }
+  .text-accent { color: var(--color-accent); }
+  .text-default { color: var(--color-text-primary); }
+  .text-muted { color: var(--color-text-secondary); }
+
+  /* ===== Borders ===== */
+  .border-default { border-color: var(--color-border); }
+  .border-primary { border-color: var(--color-primary); }
+  .border-primary-light { border-color: var(--color-primary-light); }
+  .focus\:border-primary:focus { border-color: var(--color-primary); }
+
+  /* =========================
+     HOVER STATES
+  ========================= */
+
+  /* Background hover */
+  .hover\:bg-primary:hover {
+    background-color: var(--color-primary);
+    filter: brightness(0.9);
+  }
+
+  .hover\:bg-accent:hover {
+    background-color: var(--color-accent);
+    filter: brightness(0.9);
+  }
+  .hover\:bg-success:hover {
+    background-color: var(--color-success);
+    filter: brightness(0.9);
+  }
+  .hover\:bg-primary-dark:hover {
+    background-color: var(--color-primary-dark);
+    filter: brightness(0.9);
+  }
+
+  /* Text hover */
+  .hover\:text-primary:hover { color: var(--color-primary); }
+  .hover\:text-accent:hover { color: var(--color-accent); }
+
+  /* Border hover */
+  .hover\:border-primary:hover { border-color: var(--color-primary); }
+  .hover\:border-accent:hover { border-color: var(--color-accent); }
+
+  /* =========================
+     ACTIVE STATES
+  ========================= */
+  .active\:bg-primary:active {
+    background-color: var(--color-primary);
+    filter: brightness(0.8);
+  }
+
+  .active\:bg-accent:active {
+    background-color: var(--color-accent);
+    filter: brightness(0.8);
+  }
+
+  /* =========================
+     DISABLED STATES
+  ========================= */
+  .disabled\:bg-disabled:disabled {
+    background-color: var(--color-disabled);
+  }
+
+  .disabled\:text-muted:disabled {
+    color: var(--color-text-secondary);
+  }
+
+  .disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+  }
+}

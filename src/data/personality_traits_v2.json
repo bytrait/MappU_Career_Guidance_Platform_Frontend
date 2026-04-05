@@ -1,0 +1,1044 @@
+{
+  "traits": {
+    "Openness": {
+      "categories": [
+        {
+          "range": "High",
+          "level_score": { "min": 27, "max": 40 },
+          "archetype": {
+            "en": "Explorer",
+            "mr": "शोधक"
+          },
+          "content": {
+            "meaning": {
+              "en": "You tend to be curious and interested in exploring ideas and possibilities. You may enjoy thinking about how different concepts connect and often feel energized when learning something new.",
+              "mr": "तुम्ही जिज्ञासू आहात आणि नवीन कल्पना व शक्यता शोधण्याची तुम्हाला आवड आहे. वेगवेगळ्या संकल्पना एकमेकांशी कशा जोडल्या जातात याचा तुम्ही विचार करता आणि नवीन काही शिकताना तुम्हाला उत्साह वाटतो."
+            },
+            "how_it_shows": {
+              "en": [
+                "You may ask deeper questions",
+                "Explore topics beyond the syllabus",
+                "Enjoy creative activities",
+                "Connect ideas from different subjects"
+              ],
+              "mr": [
+                "तुम्ही सखोल प्रश्न विचारता",
+                "अभ्यासक्रमाच्या बाहेर जाऊन विषय समजून घेण्याचा प्रयत्न करता",
+                "सर्जनशील उपक्रमांचा आनंद घेता",
+                "वेगवेगळ्या विषयांमधील कल्पना जोडता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Exploratory learning through discovery",
+                "Discussions",
+                "Research projects"
+              ],
+              "mr": [
+                "शोधात्मक पद्धतीने शिकणे",
+                "चर्चेद्वारे समजून घेणे",
+                "संशोधनाधारित प्रकल्पांद्वारे शिकणे"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Creativity",
+                "Curiosity",
+                "Adaptability",
+                "Innovation"
+              ],
+              "mr": [
+                "सर्जनशीलता",
+                "जिज्ञासा",
+                "जुळवून घेण्याची क्षमता",
+                "नवीन कल्पना निर्माण करण्याची क्षमता"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Focus on completing ideas you start",
+                "Balance imagination with practical execution"
+              ],
+              "mr": [
+                "सुरू केलेल्या कल्पना पूर्ण करण्यावर लक्ष केंद्रित करा",
+                "कल्पनाशक्ती आणि प्रत्यक्ष कृती यामध्ये समतोल ठेवा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you enjoy exploring ideas beyond what is taught in class?",
+                "When learning something new, do you look for additional information out of curiosity?"
+              ],
+              "mr": [
+                "तुम्ही वर्गात शिकवलेल्या गोष्टींपेक्षा अधिक शोध घेण्याचा आनंद घेतात का?",
+                "नवीन काही शिकताना तुम्ही जिज्ञासेमुळे अतिरिक्त माहिती शोधता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Medium",
+          "level_score": { "min": 14, "max": 26 },
+          "archetype": {
+            "en": "Balanced Thinker",
+            "mr": "संतुलित विचार करणारा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You combine curiosity with practicality. You are open to new ideas but also evaluate whether they are useful or realistic.",
+              "mr": "तुम्ही जिज्ञासा आणि व्यावहारिक विचार यांचा समतोल साधता. नवीन कल्पनांसाठी तुम्ही खुले असता, पण त्या किती उपयोगी किंवा वास्तववादी आहेत याचाही विचार करता."
+            },
+            "how_it_shows": {
+              "en": [
+                "You may enjoy learning new concepts",
+                "Focus on practical applications"
+              ],
+              "mr": [
+                "तुम्हाला नवीन संकल्पना शिकायला आवडते",
+                "तुम्ही त्यांचा प्रत्यक्ष उपयोग कसा करता येईल यावर लक्ष देता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced learning with structure and exploration"
+              ],
+              "mr": [
+                "संरचित आणि शोधात्मक दोन्ही प्रकारच्या शिकण्याचा समतोल"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Flexible thinking",
+                "Practical creativity",
+                "Balanced judgement"
+              ],
+              "mr": [
+                "लवचिक विचारशैली",
+                "व्यावहारिक सर्जनशीलता",
+                "संतुलित निर्णयक्षमता"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Explore unfamiliar topics occasionally",
+                "Try creative approaches"
+              ],
+              "mr": [
+                "कधी कधी नवीन विषयांचा अभ्यास करा",
+                "नवीन पद्धती वापरून पाहा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you often balance curiosity with practical thinking when evaluating ideas?"
+              ],
+              "mr": [
+                "कल्पनांचा विचार करताना तुम्ही जिज्ञासा आणि व्यावहारिक विचार यांचा समतोल राखता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Low",
+          "level_score": { "min": 0, "max": 13 },
+          "archetype": {
+            "en": "Practical Builder",
+            "mr": "व्यावहारिक निर्माते"
+          },
+          "content": {
+            "meaning": {
+              "en": "You prefer clear information, structured approaches, and practical solutions.",
+              "mr": "तुम्हाला स्पष्ट माहिती, ठराविक पद्धती आणि व्यावहारिक उपाय आवडतात."
+            },
+            "how_it_shows": {
+              "en": [
+                "Focus on reliable solutions",
+                "Follow clear instructions",
+                "Value efficiency"
+              ],
+              "mr": [
+                "विश्वासार्ह उपायांवर लक्ष केंद्रित करता",
+                "स्पष्ट सूचनांचे पालन करता",
+                "कार्यक्षमतेला महत्त्व देता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Structured step-by-step learning"
+              ],
+              "mr": [
+                "टप्प्याटप्प्याने संरचित पद्धतीने शिकणे"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Practical thinking",
+                "Reliability",
+                "Consistency",
+                "Attention to detail"
+              ],
+              "mr": [
+                "व्यावहारिक विचार",
+                "विश्वासार्हता",
+                "सातत्य",
+                "बारकाईने लक्ष देणे"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Try exploring new perspectives occasionally"
+              ],
+              "mr": [
+                "कधी कधी नवीन दृष्टीकोन स्वीकारण्याचा प्रयत्न करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel more comfortable when tasks have clear instructions and practical outcomes?"
+              ],
+              "mr": [
+                "स्पष्ट सूचना आणि ठोस परिणाम असलेले काम तुम्हाला अधिक सोयीचे वाटते का?"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Conscientiousness": {
+      "categories": [
+        {
+          "range": "High",
+          "level_score": { "min": 27, "max": 40 },
+          "archetype": {
+            "en": "Organizer",
+            "mr": "संघटित नियोजक"
+          },
+          "content": {
+            "meaning": {
+              "en": "You naturally approach work with discipline and organization. You often prefer having clear goals and structured plans.",
+              "mr": "तुम्ही कामाकडे शिस्तबद्ध आणि संघटित पद्धतीने पाहता. स्पष्ट उद्दिष्टे आणि ठराविक योजना तुम्हाला अधिक सोयीस्कर वाटतात."
+            },
+            "how_it_shows": {
+              "en": [
+                "Plan work carefully",
+                "Track deadlines",
+                "Organize study materials",
+                "Stay focused until tasks are completed"
+              ],
+              "mr": [
+                "कामाचे नीट नियोजन करता",
+                "वेळापत्रक आणि अंतिम मुदती पाळता",
+                "अभ्यासाचे साहित्य व्यवस्थित ठेवता",
+                "काम पूर्ण होईपर्यंत लक्ष केंद्रित ठेवता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Structured learning environments",
+                "Clear goals and schedules",
+                "Progress tracking"
+              ],
+              "mr": [
+                "संरचित शिकण्याचे वातावरण",
+                "स्पष्ट उद्दिष्टे आणि वेळापत्रक",
+                "प्रगतीचा मागोवा घेणे"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Discipline",
+                "Persistence",
+                "Reliability",
+                "Responsibility"
+              ],
+              "mr": [
+                "शिस्त",
+                "चिकाटी",
+                "विश्वासार्हता",
+                "जबाबदारीची भावना"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Allow flexibility when plans change",
+                "Avoid unnecessary perfectionism"
+              ],
+              "mr": [
+                "योजना बदलल्यास लवचिकता ठेवा",
+                "अनावश्यक परिपूर्णतेचा आग्रह टाळा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do schedules, checklists, or study plans help you stay productive?"
+              ],
+              "mr": [
+                "वेळापत्रक किंवा यादीमुळे तुमची कार्यक्षमता वाढते का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Medium",
+          "level_score": { "min": 14, "max": 26 },
+          "archetype": {
+            "en": "Flexible Planner",
+            "mr": "लवचिक नियोजक"
+          },
+          "content": {
+            "meaning": {
+              "en": "You balance planning with adaptability. You can organize tasks when needed but also adjust your approach when circumstances change.",
+              "mr": "तुम्ही नियोजन आणि लवचिकता यांचा समतोल साधता. गरज पडल्यास कामाचे नियोजन करता आणि परिस्थितीनुसार बदलही करता."
+            },
+            "how_it_shows": {
+              "en": [
+                "Plan important work",
+                "Adjust schedules when priorities shift"
+              ],
+              "mr": [
+                "महत्त्वाच्या कामाचे नियोजन करता",
+                "प्राधान्य बदलल्यास वेळापत्रक बदलता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Semi-structured learning",
+                "Project-based work",
+                "Flexible schedules"
+              ],
+              "mr": [
+                "अर्ध-संरचित शिकण्याची पद्धत",
+                "प्रकल्पाधारित काम",
+                "लवचिक वेळापत्रक"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Adaptability",
+                "Balanced work habits",
+                "Time management"
+              ],
+              "mr": [
+                "लवचिकता",
+                "संतुलित काम करण्याची सवय",
+                "वेळेचे व्यवस्थापन"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Strengthen long-term planning habits",
+                "Improve consistency in large projects"
+              ],
+              "mr": [
+                "दीर्घकालीन नियोजन सुधारण्याचा प्रयत्न करा",
+                "मोठ्या कामांमध्ये सातत्य ठेवा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you plan your work but also adjust when situations change?"
+              ],
+              "mr": [
+                "तुम्ही कामाचे नियोजन करता आणि परिस्थितीनुसार बदलही करता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Low",
+          "level_score": { "min": 0, "max": 13 },
+          "archetype": {
+            "en": "Free Spirit",
+            "mr": "मोकळ्या स्वभावाचा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You prefer flexibility and spontaneity rather than strict routines. You may enjoy exploring ideas without rigid schedules.",
+              "mr": "तुम्हाला कडक नियमांपेक्षा मोकळेपणा आणि स्वाभाविकपणा आवडतो. ठराविक वेळापत्रकाशिवाय गोष्टी शोधायला तुम्हाला आवडते."
+            },
+            "how_it_shows": {
+              "en": [
+                "Work in bursts of inspiration",
+                "Prefer flexible study methods"
+              ],
+              "mr": [
+                "प्रेरणा मिळाल्यावर काम करता",
+                "लवचिक पद्धतीने अभ्यास करायला आवडते"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Flexible learning environments",
+                "Hands-on projects",
+                "Creative assignments"
+              ],
+              "mr": [
+                "लवचिक शिकण्याचे वातावरण",
+                "प्रत्यक्ष कामातून शिकणे",
+                "सर्जनशील उपक्रम"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Adaptability",
+                "Creativity",
+                "Openness to change"
+              ],
+              "mr": [
+                "लवचिकता",
+                "सर्जनशीलता",
+                "बदल स्वीकारण्याची तयारी"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Develop simple planning habits",
+                "Use small goals or task lists"
+              ],
+              "mr": [
+                "सोपे नियोजन करण्याची सवय लावा",
+                "लहान उद्दिष्टे किंवा यादी तयार करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel more motivated when learning allows flexibility?"
+              ],
+              "mr": [
+                "लवचिकतेमुळे तुमची शिकण्याची प्रेरणा वाढते का?"
+              ]
+            }
+          }
+        }
+      ]
+    },   
+    "Extraversion": {
+      "categories": [
+        {
+          "range": "High",
+          "level_score": { "min": 27, "max": 40 },
+          "archetype": {
+            "en": "Connector",
+            "mr": "जोडणी करणारा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You tend to gain energy from interacting with people and sharing ideas. Social environments may feel motivating.",
+              "mr": "तुम्हाला लोकांशी संवाद साधून आणि विचारांची देवाणघेवाण करून ऊर्जा मिळते. सामाजिक वातावरण तुम्हाला प्रेरणादायी वाटते."
+            },
+            "how_it_shows": {
+              "en": [
+                "Enjoy conversations",
+                "Participate in group discussions",
+                "Work well in teams",
+                "Present ideas confidently"
+              ],
+              "mr": [
+                "संवाद साधायला आवडते",
+                "गटचर्चांमध्ये सक्रिय सहभाग घेता",
+                "संघात चांगले काम करता",
+                "विचार आत्मविश्वासाने मांडता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Group learning",
+                "Collaborative projects",
+                "Interactive discussions"
+              ],
+              "mr": [
+                "गटामध्ये शिकणे",
+                "संघटित प्रकल्प",
+                "संवादी चर्चा"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Communication skills",
+                "Social confidence",
+                "Leadership potential"
+              ],
+              "mr": [
+                "संवाद कौशल्य",
+                "सामाजिक आत्मविश्वास",
+                "नेतृत्वाची क्षमता"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Develop independent study habits",
+                "Practice focusing on individual tasks"
+              ],
+              "mr": [
+                "स्वतः अभ्यास करण्याची सवय विकसित करा",
+                "एकट्याने कामावर लक्ष केंद्रित करण्याचा सराव करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel energized after discussions or teamwork activities?"
+              ],
+              "mr": [
+                "चर्चा किंवा संघकार्य केल्यानंतर तुम्हाला ऊर्जा मिळते का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Medium",
+          "level_score": { "min": 14, "max": 26 },
+          "archetype": {
+            "en": "Social Balancer",
+            "mr": "सामाजिक संतुलन राखणारा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You enjoy interacting with others but also value time for independent thinking.",
+              "mr": "तुम्हाला इतरांशी संवाद साधायला आवडते, पण स्वतः विचार करण्यासाठी वेळ देणेसुद्धा महत्त्वाचे वाटते."
+            },
+            "how_it_shows": {
+              "en": [
+                "Participate in group activities",
+                "Enjoy quiet time for reflection",
+                "Balance social and independent work"
+              ],
+              "mr": [
+                "गटातील उपक्रमांमध्ये सहभागी होता",
+                "शांतपणे विचार करण्यासाठी वेळ देता",
+                "सामाजिक आणि वैयक्तिक कामाचा समतोल राखता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Hybrid learning",
+                "Group collaboration",
+                "Independent study"
+              ],
+              "mr": [
+                "मिश्र पद्धतीने शिकणे",
+                "गटामध्ये सहकार्य",
+                "स्वतः अभ्यास करणे"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Adaptable communication",
+                "Balanced energy",
+                "Social awareness"
+              ],
+              "mr": [
+                "परिस्थितीनुसार संवाद साधण्याची क्षमता",
+                "ऊर्जेचा संतुलित वापर",
+                "सामाजिक जाणीव"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Use social or independent methods based on the task",
+                "Improve focus during solo work"
+              ],
+              "mr": [
+                "कामानुसार गट किंवा वैयक्तिक पद्धत निवडा",
+                "एकट्याने काम करताना लक्ष केंद्रित करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you enjoy both teamwork and quiet study depending on the situation?"
+              ],
+              "mr": [
+                "परिस्थितीनुसार तुम्हाला गटकार्य आणि शांत अभ्यास दोन्ही आवडतात का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Low",
+          "level_score": { "min": 0, "max": 13 },
+          "archetype": {
+            "en": "Reflective Thinker",
+            "mr": "मनन करणारा विचारवंत"
+          },
+          "content": {
+            "meaning": {
+              "en": "You tend to gain energy from quiet environments and thoughtful reflection. Independent work may feel comfortable.",
+              "mr": "तुम्हाला शांत वातावरणात आणि विचारपूर्वक मनन करताना ऊर्जा मिळते. एकट्याने काम करणे तुम्हाला सोयीचे वाटते."
+            },
+            "how_it_shows": {
+              "en": [
+                "Prefer small groups",
+                "Enjoy thoughtful conversations",
+                "Focus on independent study"
+              ],
+              "mr": [
+                "लहान गटात काम करणे पसंत करता",
+                "गंभीर चर्चांचा आनंद घेता",
+                "स्वतः अभ्यासावर लक्ष केंद्रित करता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Independent learning",
+                "Reading",
+                "Reflection-based study"
+              ],
+              "mr": [
+                "स्वतः शिकणे",
+                "वाचन",
+                "मनन करून अभ्यास करणे"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Concentration",
+                "Deep thinking",
+                "Careful decision making"
+              ],
+              "mr": [
+                "एकाग्रता",
+                "सखोल विचार",
+                "विचारपूर्वक निर्णय घेणे"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Practice sharing ideas in group settings",
+                "Build confidence in communication"
+              ],
+              "mr": [
+                "गटामध्ये विचार मांडण्याचा सराव करा",
+                "संवादात आत्मविश्वास वाढवा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you prefer thinking quietly before sharing your ideas?"
+              ],
+              "mr": [
+                "विचार मांडण्यापूर्वी शांतपणे विचार करणे तुम्हाला अधिक सोयीचे वाटते का?"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Agreeableness": {
+      "categories": [
+        {
+          "range": "High",
+          "level_score": { "min": 27, "max": 40 },
+          "archetype": {
+            "en": "Supporter",
+            "mr": "सहकार्य करणारा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You value cooperation and positive relationships. Helping others and maintaining harmony may be important to you.",
+              "mr": "तुम्ही सहकार्य आणि सकारात्मक नातेसंबंधांना महत्त्व देता. इतरांना मदत करणे आणि सौहार्द टिकवणे तुम्हाला महत्त्वाचे वाटते."
+            },
+            "how_it_shows": {
+              "en": [
+                "Enjoy teamwork",
+                "Listen to others",
+                "Offer help and support"
+              ],
+              "mr": [
+                "संघात काम करण्याचा आनंद घेतात",
+                "इतरांचे ऐकून घेतात",
+                "मदत आणि सहकार्य करण्यास तयार असतात"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Collaborative learning",
+                "Group activities",
+                "Supportive environments"
+              ],
+              "mr": [
+                "सहकार्याने शिकणे",
+                "गटातील उपक्रम",
+                "सहकार्यपूर्ण वातावरण"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Empathy",
+                "Teamwork",
+                "Cooperation"
+              ],
+              "mr": [
+                "सहानुभूती",
+                "संघकार्य",
+                "सहकार्याची भावना"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Express your own opinions",
+                "Balance helping others with your own needs"
+              ],
+              "mr": [
+                "स्वतःचे मत मांडण्याचा सराव करा",
+                "इतरांना मदत करताना स्वतःच्या गरजांचाही विचार करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you often try to help others succeed when working in teams?"
+              ],
+              "mr": [
+                "संघात काम करताना तुम्ही इतरांना मदत करण्याचा प्रयत्न करता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Medium",
+          "level_score": { "min": 14, "max": 26 },
+          "archetype": {
+            "en": "Fair Mediator",
+            "mr": "न्याय्य समन्वयक"
+          },
+          "content": {
+            "meaning": {
+              "en": "You balance cooperation with independent thinking. You can work well with others while maintaining your own viewpoints.",
+              "mr": "तुम्ही सहकार्य आणि स्वतंत्र विचार यांचा समतोल राखता. इतरांसोबत काम करताना स्वतःचे मतही जपता."
+            },
+            "how_it_shows": {
+              "en": [
+                "Listen to different perspectives",
+                "Try to find fair solutions",
+                "Balance group and personal views"
+              ],
+              "mr": [
+                "वेगवेगळ्या मतांना ऐकून घेतात",
+                "न्याय्य उपाय शोधण्याचा प्रयत्न करतात",
+                "गट आणि वैयक्तिक विचारांचा समतोल राखतात"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced learning",
+                "Group and individual tasks"
+              ],
+              "mr": [
+                "संतुलित शिकण्याची पद्धत",
+                "गट आणि वैयक्तिक काम दोन्ही"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Diplomacy",
+                "Balanced judgement",
+                "Problem solving"
+              ],
+              "mr": [
+                "समन्वय साधण्याची क्षमता",
+                "संतुलित निर्णयक्षमता",
+                "समस्या सोडवण्याची क्षमता"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Use your perspective to resolve conflicts",
+                "Strengthen decision-making in complex situations"
+              ],
+              "mr": [
+                "तुमच्या संतुलित दृष्टिकोनाचा वापर करून मतभेद सोडवा",
+                "अवघड परिस्थितीत निर्णय घेण्याची क्षमता वाढवा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you try to understand both sides before forming a conclusion?"
+              ],
+              "mr": [
+                "निष्कर्ष काढण्यापूर्वी तुम्ही दोन्ही बाजू समजून घेण्याचा प्रयत्न करता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Low",
+          "level_score": { "min": 0, "max": 13 },
+          "archetype": {
+            "en": "Challenger",
+            "mr": "प्रश्न विचारणारा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You tend to question ideas and challenge assumptions. You may value independent thinking and debate.",
+              "mr": "तुम्ही कल्पनांवर प्रश्न विचारता आणि गृहितकांना आव्हान देता. स्वतंत्र विचार आणि चर्चेला तुम्ही महत्त्व देता."
+            },
+            "how_it_shows": {
+              "en": [
+                "Express strong opinions",
+                "Evaluate ideas critically",
+                "Engage in debates"
+              ],
+              "mr": [
+                "ठामपणे आपले मत मांडता",
+                "कल्पनांचे चिकित्सक मूल्यांकन करता",
+                "चर्चा आणि वादविवादात सहभागी होता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Debate-based learning",
+                "Analytical discussions"
+              ],
+              "mr": [
+                "वादविवादावर आधारित शिकणे",
+                "विश्लेषणात्मक चर्चा"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Critical thinking",
+                "Independence",
+                "Analytical reasoning"
+              ],
+              "mr": [
+                "चिकित्सक विचार",
+                "स्वतंत्रता",
+                "विश्लेषणात्मक विचारशक्ती"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Practice active listening",
+                "Show empathy during disagreements"
+              ],
+              "mr": [
+                "इतरांचे लक्षपूर्वक ऐकण्याचा सराव करा",
+                "मतभेद असताना सहानुभूती दाखवा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you enjoy questioning ideas to understand them better?"
+              ],
+              "mr": [
+                "कल्पना अधिक चांगल्या प्रकारे समजून घेण्यासाठी तुम्ही प्रश्न विचारता का?"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Neuroticism": {
+      "categories": [
+        {
+          "range": "Low",
+          "level_score": { "min": 0, "max": 13 },
+          "archetype": {
+            "en": "Calm Navigator",
+            "mr": "शांत मार्गदर्शक"
+          },
+          "content": {
+            "meaning": {
+              "en": "You tend to remain calm and emotionally steady during challenges. Stress may be easier for you to manage.",
+              "mr": "आव्हानांच्या वेळी तुम्ही शांत आणि भावनिकदृष्ट्या स्थिर राहता. ताणतणाव हाताळणे तुम्हाला तुलनेने सोपे जाते."
+            },
+            "how_it_shows": {
+              "en": [
+                "Stay calm under pressure",
+                "Approach problems with stability",
+                "Maintain emotional balance"
+              ],
+              "mr": [
+                "दबावाच्या परिस्थितीत शांत राहता",
+                "समस्यांकडे स्थिरपणे पाहता",
+                "भावनिक संतुलन राखता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Stable learning environments",
+                "Focused and consistent study"
+              ],
+              "mr": [
+                "स्थिर शिकण्याचे वातावरण",
+                "एकाग्र आणि सातत्यपूर्ण अभ्यास"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional resilience",
+                "Stress tolerance",
+                "Composure"
+              ],
+              "mr": [
+                "भावनिक स्थैर्य",
+                "ताण सहन करण्याची क्षमता",
+                "शांतपणा"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Stay aware of emotional signals",
+                "Support others who feel stressed"
+              ],
+              "mr": [
+                "स्वतःच्या भावनांची जाणीव ठेवा",
+                "ताणात असलेल्या इतरांना मदत करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "When facing pressure, do you usually stay calm and think through the situation?"
+              ],
+              "mr": [
+                "दबावाच्या वेळी तुम्ही शांत राहून परिस्थितीचा विचार करता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "Medium",
+          "level_score": { "min": 14, "max": 26 },
+          "archetype": {
+            "en": "Sensitive Observer",
+            "mr": "संवेदनशील निरीक्षक"
+          },
+          "content": {
+            "meaning": {
+              "en": "You are emotionally aware and responsive to situations around you.",
+              "mr": "तुम्ही भावनिकदृष्ट्या जागरूक आहात आणि परिस्थितीनुसार प्रतिसाद देता."
+            },
+            "how_it_shows": {
+              "en": [
+                "Notice emotional changes",
+                "Respond thoughtfully",
+                "Be aware of others' feelings"
+              ],
+              "mr": [
+                "भावनांमधील बदल लक्षात घेता",
+                "विचारपूर्वक प्रतिसाद देता",
+                "इतरांच्या भावनांची जाणीव ठेवता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Supportive learning environments",
+                "Balanced challenge and encouragement"
+              ],
+              "mr": [
+                "सहाय्यक शिकण्याचे वातावरण",
+                "आव्हान आणि प्रोत्साहन यांचा समतोल"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional awareness",
+                "Empathy",
+                "Insight"
+              ],
+              "mr": [
+                "भावनिक जाणीव",
+                "सहानुभूती",
+                "अंतर्दृष्टी"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Develop stress management techniques",
+                "Maintain emotional balance"
+              ],
+              "mr": [
+                "ताण व्यवस्थापनाच्या पद्धती विकसित करा",
+                "भावनिक संतुलन राखा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you notice how emotions affect your learning or motivation?"
+              ],
+              "mr": [
+                "भावना तुमच्या शिकण्यावर किंवा प्रेरणेवर परिणाम करतात हे तुम्ही लक्षात घेता का?"
+              ]
+            }
+          }
+        },
+
+        {
+          "range": "High",
+          "level_score": { "min": 27, "max": 40 },
+          "archetype": {
+            "en": "Intense Feeler",
+            "mr": "तीव्र भावनांचा अनुभव घेणारा"
+          },
+          "content": {
+            "meaning": {
+              "en": "You may experience emotions strongly and respond deeply to stressful situations.",
+              "mr": "तुम्ही भावना तीव्रपणे अनुभवता आणि तणावपूर्ण परिस्थितींना खोलवर प्रतिसाद देता."
+            },
+            "how_it_shows": {
+              "en": [
+                "Feel pressure strongly",
+                "Reflect deeply on experiences",
+                "React emotionally to situations"
+              ],
+              "mr": [
+                "दबाव तीव्रपणे जाणवतो",
+                "अनुभवांवर सखोल विचार करता",
+                "परिस्थितींना भावनिक प्रतिसाद देता"
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Supportive environments",
+                "Clear guidance",
+                "Structured learning"
+              ],
+              "mr": [
+                "सहाय्यक वातावरण",
+                "स्पष्ट मार्गदर्शन",
+                "संरचित शिकण्याची पद्धत"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Deep empathy",
+                "Emotional insight",
+                "Sensitivity"
+              ],
+              "mr": [
+                "गहिरी सहानुभूती",
+                "भावनिक अंतर्दृष्टी",
+                "संवेदनशीलता"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Practice stress management",
+                "Build resilience habits"
+              ],
+              "mr": [
+                "ताण व्यवस्थापनाचा सराव करा",
+                "तग धरण्याची सवय विकसित करा"
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do strong emotions influence how you approach challenges?"
+              ],
+              "mr": [
+                "तीव्र भावना तुमच्या निर्णयांवर किंवा कृतींवर परिणाम करतात का?"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.contentContainer {
+  line-height: 1.75;
+  color: #1f2937; /* slate-800 */
+  font-family: "Inter", sans-serif;
+}
+
+/* Headings */
+.contentContainer h1,
+.contentContainer h2,
+.contentContainer h3 {
+  font-weight: 600;
+  color: #1e3a8a; /* blue-800 */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.contentContainer h1 {
+  font-size: 1.8rem;
+}
+.contentContainer h2 {
+  font-size: 1.4rem;
+}
+.contentContainer h3 {
+  font-size: 1.2rem;
+}
+
+/* Paragraphs */
+.contentContainer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #374151; /* gray-700 */
+}
+
+/* Lists */
+.contentContainer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.contentContainer ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Style for icons used in bullet points or headings */
+.contentContainer i.bi {
+  font-size: 1.1rem;
+  color: #2563eb; /* Tailwind blue-600 */
+  min-width: 20px;
+  line-height: 1.4;
+}
+
+/* Differentiate icon colors for semantic cues */
+.contentContainer h1 i.bi,
+.contentContainer h2 i.bi {
+  color: #1d4ed8; /* stronger blue for headings */
+}
+
+.contentContainer ul li i.bi {
+  color: #16a34a; /* green for list icons */
+}
+
+/* Tables */
+.contentContainer table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.contentContainer th,
+.contentContainer td {
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.contentContainer th {
+  background-color: #eff6ff; /* blue-50 */
+  font-weight: 600;
+}
+
+/* Blockquotes */
+.contentContainer blockquote {
+  border-left: 4px solid #3b82f6;
+  background-color: #f9fafb;
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  color: #374151;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+/* Links */
+.contentContainer a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.contentContainer a:hover {
+  color: #1d4ed8;
+}

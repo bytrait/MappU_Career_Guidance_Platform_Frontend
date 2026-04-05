@@ -1,0 +1,193 @@
+{
+  "aptitudes": {
+    "Numerical Ability": {
+      "categories": [
+        {
+          "range": "0-3",
+          "label": {
+            "en": "Weak",
+            "mr": "कमकुवत"
+          },
+          "summary": {
+            "en": "You may find numerical calculations and number-based problem solving challenging. Strengthening basic arithmetic and practicing sample tests can help improve your comfort with numbers.",
+            "mr": "संख्यात्मक गणिते आणि संख्या आधारित समस्या सोडवणे तुम्हाला अवघड वाटू शकते. मूलभूत गणिताचा सराव आणि नमुना चाचण्या यामुळे कौशल्य वाढू शकते."
+          }
+        },
+        {
+          "range": "4-6",
+          "label": {
+            "en": "Moderate",
+            "mr": "मध्यम"
+          },
+          "summary": {
+            "en": "You have an average understanding of numerical concepts. With regular practice, you can significantly improve your speed and accuracy in solving numerical problems.",
+            "mr": "तुम्हाला संख्यात्मक संकल्पनांचे सरासरी ज्ञान आहे. नियमित सरावाने गती आणि अचूकता सुधारू शकते."
+          }
+        },
+        {
+          "range": "7-10",
+          "label": {
+            "en": "Strong",
+            "mr": "उत्कृष्ट"
+          },
+          "summary": {
+            "en": "You demonstrate strong skills in numerical reasoning and mathematical understanding. You can quickly analyze numbers and solve quantitative problems with ease.",
+            "mr": "तुमची संख्यात्मक समज आणि गणितातील कौशल्ये उत्कृष्ट आहेत. तुम्ही समस्यांचे जलद आणि अचूक विश्लेषण करू शकता."
+          }
+        }
+      ]
+    },
+
+    "Mechanical Reasoning": {
+      "categories": [
+        {
+          "range": "0-3",
+          "label": {
+            "en": "Weak",
+            "mr": "कमकुवत"
+          },
+          "summary": {
+            "en": "You may struggle with understanding mechanical concepts such as force, motion, and basic machinery. Exposure to real-life examples and diagrams may help improve comprehension.",
+            "mr": "बल, गती आणि यंत्रणांचे मूलभूत संकल्पना समजून घेण्यात अडचण येऊ शकते. प्रत्यक्ष उदाहरणे आणि आकृत्या यामुळे समज सुधारू शकते."
+          }
+        },
+        {
+          "range": "4-6",
+          "label": {
+            "en": "Moderate",
+            "mr": "मध्यम"
+          },
+          "summary": {
+            "en": "You have a fair understanding of mechanical systems. With more practice and conceptual clarity, you can enhance your reasoning in technical and engineering contexts.",
+            "mr": "तुम्हाला यांत्रिक प्रणालींचे सरासरी ज्ञान आहे. अधिक सरावाने आणि संकल्पनांची स्पष्टता वाढवून कौशल्य सुधारू शकते."
+          }
+        },
+        {
+          "range": "7-10",
+          "label": {
+            "en": "Strong",
+            "mr": "उत्कृष्ट"
+          },
+          "summary": {
+            "en": "You show strong mechanical reasoning skills. You can understand and visualize how machines, tools, and physical forces work through diagrams or real-world scenarios.",
+            "mr": "तुमची यांत्रिक तर्कशक्ती उत्कृष्ट आहे. तुम्ही यंत्रणा, साधने आणि भौतिक बल कसे काम करतात हे सहजपणे समजू आणि कल्पना करू शकता."
+          }
+        }
+      ]
+    },
+
+    "Language Ability": {
+      "categories": [
+        {
+          "range": "0-3",
+          "label": {
+            "en": "Weak",
+            "mr": "कमकुवत"
+          },
+          "summary": {
+            "en": "You may struggle with vocabulary, grammar, or comprehension. Reading regularly and practicing short exercises can gradually improve your language skills.",
+            "mr": "शब्दसंग्रह, व्याकरण किंवा समजून घेण्यात अडचण येऊ शकते. नियमित वाचन आणि सरावाने भाषा कौशल्य सुधारू शकते."
+          }
+        },
+        {
+          "range": "4-6",
+          "label": {
+            "en": "Moderate",
+            "mr": "मध्यम"
+          },
+          "summary": {
+            "en": "You have a fair grasp of language and comprehension skills. With consistent reading and writing practice, you can strengthen fluency and accuracy.",
+            "mr": "तुमची भाषा आणि समजण्याची क्षमता सरासरी आहे. वाचन आणि लेखनाचा सराव वाढवल्यास प्रवाहीपणा सुधारतो."
+          }
+        },
+        {
+          "range": "7-10",
+          "label": {
+            "en": "Strong",
+            "mr": "उत्कृष्ट"
+          },
+          "summary": {
+            "en": "You have strong command over language skills. You can quickly understand written content, analyze grammar, and express ideas clearly.",
+            "mr": "तुमचे भाषा कौशल्य उत्कृष्ट आहे. मजकूर समजणे, विश्लेषण करणे आणि विचार स्पष्टपणे मांडणे तुमच्यासाठी सोपे आहे."
+          }
+        }
+      ]
+    },
+
+    "Logical Reasoning": {
+      "categories": [
+        {
+          "range": "0-3",
+          "label": {
+            "en": "Weak",
+            "mr": "कमकुवत"
+          },
+          "summary": {
+            "en": "You may find it difficult to identify patterns, sequences, and analytical relationships. Practicing puzzles and reasoning exercises can help improve performance.",
+            "mr": "पॅटर्न, क्रम किंवा विश्लेषणात्मक संबंध ओळखण्यात अडचण येऊ शकते. तर्कशक्तीच्या सरावाने कामगिरी सुधारू शकते."
+          }
+        },
+        {
+          "range": "4-6",
+          "label": {
+            "en": "Moderate",
+            "mr": "मध्यम"
+          },
+          "summary": {
+            "en": "You have a decent logical reasoning ability. With regular practice, you can significantly boost your analytical speed and accuracy.",
+            "mr": "तुमची तर्कशक्ती सरासरी आहे. सरावाने तुम्ही विश्लेषण कौशल्ये अधिक विकसित करू शकता."
+          }
+        },
+        {
+          "range": "7-10",
+          "label": {
+            "en": "Strong",
+            "mr": "उत्कृष्ट"
+          },
+          "summary": {
+            "en": "You show excellent pattern recognition and analytical reasoning. You can solve logical problems quickly and accurately.",
+            "mr": "तुमची पॅटर्न ओळख आणि विश्लेषण क्षमता उत्कृष्ट आहे. तर्कशक्तीच्या समस्यांचे जलद आणि अचूक निराकरण करू शकता."
+          }
+        }
+      ]
+    },
+
+    "Spatial Ability": {
+      "categories": [
+        {
+          "range": "0-3",
+          "label": {
+            "en": "Weak",
+            "mr": "कमकुवत"
+          },
+          "summary": {
+            "en": "You may struggle with visualizing shapes, rotations, or spatial relationships. Practicing 3D puzzles and spatial exercises can help improve visualization.",
+            "mr": "आकृती, रोटेशन आणि अवकाशीय संबंध समजण्यात अडचण येऊ शकते. 3D पझल्सचा सराव उपयोगी ठरू शकतो."
+          }
+        },
+        {
+          "range": "4-6",
+          "label": {
+            "en": "Moderate",
+            "mr": "मध्यम"
+          },
+          "summary": {
+            "en": "You have a moderate ability to understand shapes and orientations. With practice in visual tasks, your spatial reasoning can improve significantly.",
+            "mr": "तुमची अवकाशीय क्षमता सरासरी आहे. दृश्यात्मक सरावाने हे कौशल्य आणखी विकसित होऊ शकते."
+          }
+        },
+        {
+          "range": "7-10",
+          "label": {
+            "en": "Strong",
+            "mr": "उत्कृष्ट"
+          },
+          "summary": {
+            "en": "You demonstrate strong visualization and spatial reasoning skills. You can quickly interpret shapes, maps, and 3D structures.",
+            "mr": "तुमची आरेखन, नकाशे आणि 3D संरचना समजण्याची क्षमता उत्कृष्ट आहे."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,891 @@
+{
+    "aptitudes": {
+        "Numerical Ability": {
+            "categories": [
+                {
+                    "range": "0-3",
+                    "label": {
+                        "en": "Weak",
+                        "mr": "कमकुवत"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You may find working with numbers and calculations challenging. Basic arithmetic and number-based reasoning may require more effort.",
+                            "mr": "संख्यांसोबत काम करणे आणि गणिते सोडवणे तुम्हाला कठीण वाटू शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Difficulty solving numerical problems",
+                                "Slow calculation speed",
+                                "Avoidance of math-heavy tasks"
+                            ],
+                            "mr": [
+                                "संख्यात्मक प्रश्न सोडवताना अडचण येते",
+                                "गणना करण्याची गती कमी असते",
+                                "गणिताशी संबंधित काम टाळण्याची प्रवृत्ती"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Willingness to learn",
+                                "Basic understanding of numbers"
+                            ],
+                            "mr": [
+                                "शिकण्याची तयारी",
+                                "संख्यांची मूलभूत समज"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Practice basic arithmetic daily",
+                                "Solve simple numerical problems regularly",
+                                "Use visual methods like charts"
+                            ],
+                            "mr": [
+                                "दररोज मूलभूत गणिताचा सराव करा",
+                                "सोपे प्रश्न सोडवण्याचा सराव करा",
+                                "चार्ट आणि दृश्य पद्धती वापरा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you feel uncomfortable working with numbers?",
+                                "Do you avoid numerical tasks?"
+                            ],
+                            "mr": [
+                                "संख्यांसोबत काम करताना तुम्हाला अवघड वाटतं का?",
+                                "तुम्ही गणिताशी संबंधित काम टाळता का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "4-6",
+                    "label": {
+                        "en": "Moderate",
+                        "mr": "मध्यम"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have a fair understanding of numerical concepts and can solve problems with some effort.",
+                            "mr": "तुम्हाला संख्यात्मक संकल्पनांची चांगली समज आहे पण सुधारण्याची संधी आहे."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Can solve basic problems correctly",
+                                "Needs time for complex calculations",
+                                "Comfortable with structured questions"
+                            ],
+                            "mr": [
+                                "मूलभूत प्रश्न सोडवू शकता",
+                                "कठीण गणनांसाठी वेळ लागतो",
+                                "ठराविक पद्धतीचे प्रश्न सोपे वाटतात"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Good foundational understanding",
+                                "Consistency",
+                                "Ability to improve quickly"
+                            ],
+                            "mr": [
+                                "मूलभूत समज चांगली आहे",
+                                "सातत्य",
+                                "लवकर सुधारण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Practice speed and accuracy",
+                                "Solve diverse problem types",
+                                "Work on mental math"
+                            ],
+                            "mr": [
+                                "गती आणि अचूकता वाढवा",
+                                "विविध प्रकारचे प्रश्न सोडवा",
+                                "मनाने गणित करण्याचा सराव करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you take time to solve numerical problems?",
+                                "Do you want to improve speed in calculations?"
+                            ],
+                            "mr": [
+                                "प्रश्न सोडवण्यासाठी तुम्हाला वेळ लागतो का?",
+                                "तुम्हाला गती सुधारायची आहे का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "7-10",
+                    "label": {
+                        "en": "Strong",
+                        "mr": "उत्कृष्ट"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You are highly comfortable with numbers and can quickly analyze and solve numerical problems.",
+                            "mr": "तुम्ही संख्यांमध्ये खूप चांगले आहात आणि प्रश्न जलद सोडवू शकता."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Quick calculations",
+                                "Strong problem-solving ability",
+                                "Confidence in math tasks"
+                            ],
+                            "mr": [
+                                "जलद गणना करता",
+                                "समस्या सोडवण्याची चांगली क्षमता",
+                                "गणितात आत्मविश्वास"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Analytical thinking",
+                                "Speed and accuracy",
+                                "Confidence with numbers"
+                            ],
+                            "mr": [
+                                "विश्लेषणात्मक विचार",
+                                "गती आणि अचूकता",
+                                "संख्यांमध्ये आत्मविश्वास"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Apply skills in real-world problems",
+                                "Explore advanced concepts",
+                                "Help others learn"
+                            ],
+                            "mr": [
+                                "प्रत्यक्ष जीवनात वापर करा",
+                                "अधिक प्रगत संकल्पना शिका",
+                                "इतरांना मदत करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you enjoy solving complex numerical problems?",
+                                "Do you feel confident in math-heavy tasks?"
+                            ],
+                            "mr": [
+                                "कठीण प्रश्न सोडवायला आवडतं का?",
+                                "गणितात तुम्हाला आत्मविश्वास वाटतो का?"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "Mechanical Reasoning": {
+            "categories": [
+                {
+                    "range": "0-3",
+                    "label": {
+                        "en": "Weak",
+                        "mr": "कमकुवत"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You may find it difficult to understand how machines, tools, or physical systems work.",
+                            "mr": "यंत्रे आणि साधने कशी काम करतात हे समजण्यात तुम्हाला अडचण येऊ शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Difficulty understanding diagrams",
+                                "Confusion in mechanical concepts",
+                                "Less interest in technical systems"
+                            ],
+                            "mr": [
+                                "आकृत्या समजण्यात अडचण",
+                                "यांत्रिक संकल्पनांमध्ये गोंधळ",
+                                "तांत्रिक गोष्टींमध्ये कमी रुची"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Basic awareness",
+                                "Learning potential"
+                            ],
+                            "mr": [
+                                "मूलभूत समज",
+                                "शिकण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Use real-life examples to learn",
+                                "Practice visual diagrams",
+                                "Explore simple machines"
+                            ],
+                            "mr": [
+                                "प्रत्यक्ष उदाहरणांद्वारे शिका",
+                                "आकृत्यांचा सराव करा",
+                                "सोप्या यंत्रांचा अभ्यास करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you find it hard to understand how machines work?",
+                                "Do diagrams confuse you?"
+                            ],
+                            "mr": [
+                                "यंत्रे कशी काम करतात हे समजायला अवघड वाटतं का?",
+                                "आकृत्या समजण्यात अडचण येते का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "4-6",
+                    "label": {
+                        "en": "Moderate",
+                        "mr": "मध्यम"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have a basic understanding of mechanical systems but can improve with practice.",
+                            "mr": "तुम्हाला यांत्रिक गोष्टींची काही प्रमाणात समज आहे."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Can understand simple systems",
+                                "Needs effort for complex ideas",
+                                "Improves with examples"
+                            ],
+                            "mr": [
+                                "सोप्या प्रणाली समजू शकता",
+                                "कठीण गोष्टींसाठी प्रयत्न लागतो",
+                                "उदाहरणांनी समज वाढते"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Practical understanding",
+                                "Learning adaptability"
+                            ],
+                            "mr": [
+                                "व्यावहारिक समज",
+                                "शिकण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Practice with models and diagrams",
+                                "Explore real-world applications",
+                                "Strengthen conceptual clarity"
+                            ],
+                            "mr": [
+                                "मॉडेल्स आणि आकृत्यांद्वारे सराव करा",
+                                "प्रत्यक्ष उपयोग समजून घ्या",
+                                "संकल्पना स्पष्ट करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you understand basic machines?",
+                                "Do you want to improve technical understanding?"
+                            ],
+                            "mr": [
+                                "सोप्या यंत्रांची समज आहे का?",
+                                "तुम्हाला तांत्रिक समज वाढवायची आहे का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "7-10",
+                    "label": {
+                        "en": "Strong",
+                        "mr": "उत्कृष्ट"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have strong understanding of mechanical systems and can visualize how things work.",
+                            "mr": "तुमची यांत्रिक समज खूप चांगली आहे."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Understands complex systems",
+                                "Visualizes mechanisms easily",
+                                "Enjoys technical problems"
+                            ],
+                            "mr": [
+                                "कठीण प्रणाली समजतात",
+                                "यंत्रणा सहज समजतात",
+                                "तांत्रिक समस्या आवडतात"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Technical reasoning",
+                                "Visualization skills",
+                                "Problem solving"
+                            ],
+                            "mr": [
+                                "तांत्रिक तर्कशक्ती",
+                                "कल्पनाशक्ती",
+                                "समस्या सोडवण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Apply knowledge in projects",
+                                "Explore engineering concepts",
+                                "Build practical models"
+                            ],
+                            "mr": [
+                                "प्रकल्पांमध्ये वापरा",
+                                "इंजिनिअरिंग संकल्पना शिका",
+                                "मॉडेल तयार करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you enjoy understanding machines?",
+                                "Do you like solving technical problems?"
+                            ],
+                            "mr": [
+                                "यंत्रे समजून घ्यायला आवडतं का?",
+                                "तांत्रिक प्रश्न सोडवायला आवडतं का?"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "Language Ability": {
+            "categories": [
+                {
+                    "range": "0-3",
+                    "label": {
+                        "en": "Weak",
+                        "mr": "कमकुवत"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You may find reading, writing, or understanding language challenging.",
+                            "mr": "वाचन आणि लेखनात अडचण येऊ शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Difficulty understanding texts",
+                                "Limited vocabulary",
+                                "Errors in writing"
+                            ],
+                            "mr": [
+                                "मजकूर समजण्यात अडचण",
+                                "शब्दसंग्रह कमी",
+                                "लेखनात चुका"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Basic communication"
+                            ],
+                            "mr": [
+                                "मूलभूत संवाद क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Read daily",
+                                "Practice writing",
+                                "Improve vocabulary"
+                            ],
+                            "mr": [
+                                "दररोज वाचा",
+                                "लेखनाचा सराव करा",
+                                "शब्दसंग्रह वाढवा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you find reading difficult?",
+                                "Do you want to improve communication?"
+                            ],
+                            "mr": [
+                                "वाचन कठीण वाटतं का?",
+                                "संवाद सुधारायचा आहे का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "4-6",
+                    "label": {
+                        "en": "Moderate",
+                        "mr": "मध्यम"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have a fair understanding of language and can improve with practice.",
+                            "mr": "तुमची भाषा समज चांगली आहे पण सुधारणा शक्य आहे."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Understands basic texts",
+                                "Communicates clearly",
+                                "Needs improvement in fluency"
+                            ],
+                            "mr": [
+                                "सोपे मजकूर समजतात",
+                                "स्पष्ट संवाद करतात",
+                                "प्रवाहीपणात सुधारणा हवी"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Comprehension",
+                                "Communication"
+                            ],
+                            "mr": [
+                                "समज",
+                                "संवाद"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Read diverse content",
+                                "Practice writing regularly",
+                                "Improve grammar"
+                            ],
+                            "mr": [
+                                "विविध वाचन करा",
+                                "लेखनाचा सराव करा",
+                                "व्याकरण सुधार करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you understand most texts easily?",
+                                "Do you want better fluency?"
+                            ],
+                            "mr": [
+                                "मजकूर सहज समजतो का?",
+                                "प्रवाहीपणा वाढवायचा आहे का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "7-10",
+                    "label": {
+                        "en": "Strong",
+                        "mr": "उत्कृष्ट"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have strong language skills and can express ideas clearly.",
+                            "mr": "तुमची भाषा कौशल्य उत्कृष्ट आहे."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Strong comprehension",
+                                "Clear communication",
+                                "Good vocabulary"
+                            ],
+                            "mr": [
+                                "चांगली समज",
+                                "स्पष्ट संवाद",
+                                "चांगला शब्दसंग्रह"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Fluency",
+                                "Expression",
+                                "Clarity"
+                            ],
+                            "mr": [
+                                "प्रवाहीपणा",
+                                "अभिव्यक्ती",
+                                "स्पष्टता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Explore advanced writing",
+                                "Develop public speaking",
+                                "Learn new languages"
+                            ],
+                            "mr": [
+                                "उच्च लेखन शिका",
+                                "सार्वजनिक बोलणे विकसित करा",
+                                "नवीन भाषा शिका"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you enjoy expressing ideas?",
+                                "Do you feel confident communicating?"
+                            ],
+                            "mr": [
+                                "विचार व्यक्त करायला आवडतं का?",
+                                "संवादात आत्मविश्वास वाटतो का?"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "Logical Reasoning": {
+            "categories": [
+                {
+                    "range": "0-3",
+                    "label": {
+                        "en": "Weak",
+                        "mr": "कमकुवत"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You may find it difficult to identify patterns, relationships, and logical sequences.",
+                            "mr": "पॅटर्न आणि तर्कशुद्ध संबंध ओळखण्यात तुम्हाला अडचण येऊ शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Difficulty solving puzzles",
+                                "Confusion in patterns",
+                                "Slow analytical thinking"
+                            ],
+                            "mr": [
+                                "पझल सोडवताना अडचण",
+                                "पॅटर्न समजण्यात गोंधळ",
+                                "विचार करण्याची गती कमी"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Basic reasoning ability",
+                                "Scope to improve"
+                            ],
+                            "mr": [
+                                "मूलभूत तर्कशक्ती",
+                                "सुधारणेची संधी"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Practice reasoning puzzles",
+                                "Solve pattern-based questions",
+                                "Break problems step-by-step"
+                            ],
+                            "mr": [
+                                "तर्कशक्तीचे पझल सोडवा",
+                                "पॅटर्न प्रश्नांचा सराव करा",
+                                "समस्या टप्प्याटप्प्याने सोडवा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you find logical problems confusing?",
+                                "Do patterns take time to understand?"
+                            ],
+                            "mr": [
+                                "तर्कशक्तीचे प्रश्न कठीण वाटतात का?",
+                                "पॅटर्न समजायला वेळ लागतो का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "4-6",
+                    "label": {
+                        "en": "Moderate",
+                        "mr": "मध्यम"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have a fair ability to analyze patterns and relationships with some effort.",
+                            "mr": "तुमची तर्कशक्ती चांगली आहे पण अजून सुधारता येऊ शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Can solve basic reasoning problems",
+                                "Needs time for complex logic",
+                                "Improves with practice"
+                            ],
+                            "mr": [
+                                "सोपे प्रश्न सोडवू शकता",
+                                "कठीण प्रश्नांसाठी वेळ लागतो",
+                                "सरावाने सुधारणा होते"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Analytical thinking",
+                                "Consistency",
+                                "Learning ability"
+                            ],
+                            "mr": [
+                                "विश्लेषणात्मक विचार",
+                                "सातत्य",
+                                "शिकण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Increase speed and accuracy",
+                                "Practice advanced puzzles",
+                                "Work on problem-solving strategies"
+                            ],
+                            "mr": [
+                                "गती आणि अचूकता वाढवा",
+                                "कठीण पझल सोडवा",
+                                "समस्या सोडवण्याच्या पद्धती विकसित करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you enjoy solving logic problems?",
+                                "Do you want to improve speed in reasoning?"
+                            ],
+                            "mr": [
+                                "तर्कशक्तीचे प्रश्न सोडवायला आवडतं का?",
+                                "गती वाढवायची आहे का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "7-10",
+                    "label": {
+                        "en": "Strong",
+                        "mr": "उत्कृष्ट"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have strong logical reasoning skills and can quickly identify patterns and solve complex problems.",
+                            "mr": "तुमची तर्कशक्ती उत्कृष्ट आहे आणि तुम्ही प्रश्न जलद सोडवू शकता."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Quick pattern recognition",
+                                "Strong analytical thinking",
+                                "Confidence in reasoning tasks"
+                            ],
+                            "mr": [
+                                "पॅटर्न पटकन ओळखता",
+                                "विश्लेषणात्मक विचार मजबूत",
+                                "तर्कशक्तीत आत्मविश्वास"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Problem solving",
+                                "Analytical speed",
+                                "Accuracy"
+                            ],
+                            "mr": [
+                                "समस्या सोडवणे",
+                                "गती",
+                                "अचूकता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Apply logic in real-world situations",
+                                "Explore advanced reasoning topics",
+                                "Mentor others"
+                            ],
+                            "mr": [
+                                "प्रत्यक्ष जीवनात वापरा",
+                                "उच्च स्तराचे विषय शिका",
+                                "इतरांना मदत करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you enjoy solving complex problems?",
+                                "Do you feel confident in analytical tasks?"
+                            ],
+                            "mr": [
+                                "कठीण प्रश्न सोडवायला आवडतं का?",
+                                "तर्कशक्तीत आत्मविश्वास आहे का?"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "Spatial Ability": {
+            "categories": [
+                {
+                    "range": "0-3",
+                    "label": {
+                        "en": "Weak",
+                        "mr": "कमकुवत"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You may find it difficult to visualize shapes, rotations, and spatial relationships.",
+                            "mr": "आकृती आणि अवकाशीय संबंध समजण्यात अडचण येऊ शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Difficulty imagining shapes",
+                                "Confusion in rotations",
+                                "Struggles with diagrams"
+                            ],
+                            "mr": [
+                                "आकृती समजण्यात अडचण",
+                                "रोटेशनमध्ये गोंधळ",
+                                "आकृत्यांमध्ये अडचण"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Basic visualization ability",
+                                "Learning potential"
+                            ],
+                            "mr": [
+                                "मूलभूत समज",
+                                "शिकण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Practice 3D puzzles",
+                                "Use visual tools",
+                                "Draw diagrams"
+                            ],
+                            "mr": [
+                                "3D पझल सोडवा",
+                                "दृश्य साधने वापरा",
+                                "आकृत्या काढा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you find it hard to imagine shapes?",
+                                "Do diagrams confuse you?"
+                            ],
+                            "mr": [
+                                "आकृती कल्पना करणे कठीण वाटतं का?",
+                                "आकृत्या समजण्यात अडचण येते का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "4-6",
+                    "label": {
+                        "en": "Moderate",
+                        "mr": "मध्यम"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have a moderate ability to understand spatial relationships and shapes.",
+                            "mr": "तुमची अवकाशीय समज चांगली आहे पण सुधारता येऊ शकते."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Can understand basic diagrams",
+                                "Needs effort for complex visuals",
+                                "Improves with practice"
+                            ],
+                            "mr": [
+                                "सोप्या आकृत्या समजतात",
+                                "कठीण आकृत्यांसाठी प्रयत्न लागतो",
+                                "सरावाने सुधारणा होते"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Visualization ability",
+                                "Adaptability"
+                            ],
+                            "mr": [
+                                "कल्पनाशक्ती",
+                                "जुळवून घेण्याची क्षमता"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Practice visual exercises",
+                                "Work with maps and models",
+                                "Improve 3D thinking"
+                            ],
+                            "mr": [
+                                "दृश्य सराव करा",
+                                "नकाशे आणि मॉडेल वापरा",
+                                "3D विचार वाढवा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you understand basic visual patterns?",
+                                "Do you want to improve spatial skills?"
+                            ],
+                            "mr": [
+                                "सोपे पॅटर्न समजतात का?",
+                                "अवकाशीय कौशल्य वाढवायचे आहे का?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "range": "7-10",
+                    "label": {
+                        "en": "Strong",
+                        "mr": "उत्कृष्ट"
+                    },
+                    "content": {
+                        "meaning": {
+                            "en": "You have strong visualization skills and can easily interpret shapes, maps, and 3D structures.",
+                            "mr": "तुमची अवकाशीय क्षमता उत्कृष्ट आहे."
+                        },
+                        "how_it_shows": {
+                            "en": [
+                                "Strong 3D visualization",
+                                "Understands complex diagrams",
+                                "Enjoys spatial tasks"
+                            ],
+                            "mr": [
+                                "3D समज मजबूत",
+                                "कठीण आकृत्या समजतात",
+                                "दृश्य काम आवडते"
+                            ]
+                        },
+                        "strengths": {
+                            "en": [
+                                "Visualization",
+                                "Spatial reasoning",
+                                "Interpretation skills"
+                            ],
+                            "mr": [
+                                "कल्पनाशक्ती",
+                                "तर्कशक्ती",
+                                "समज"
+                            ]
+                        },
+                        "growth_suggestions": {
+                            "en": [
+                                "Apply in design/engineering",
+                                "Explore advanced visualization",
+                                "Work on real-world models"
+                            ],
+                            "mr": [
+                                "डिझाइन/इंजिनिअरिंगमध्ये वापरा",
+                                "उच्च स्तराचे कौशल्य शिका",
+                                "मॉडेल तयार करा"
+                            ]
+                        },
+                        "reflection_prompts": {
+                            "en": [
+                                "Do you enjoy working with shapes?",
+                                "Do you feel confident in visual tasks?"
+                            ],
+                            "mr": [
+                                "आकृत्यांमध्ये काम करायला आवडतं का?",
+                                "दृश्य कामात आत्मविश्वास आहे का?"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

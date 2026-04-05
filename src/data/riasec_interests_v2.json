@@ -1,0 +1,483 @@
+{
+    "riasec": [
+        {
+            "code": "R",
+            "name": {
+                "en": "Realistic",
+                "mr": "वास्तववादी"
+            },
+            "summary": {
+                "en": "You enjoy hands-on work, solving real-world problems, and using technical skills to build or fix things.",
+                "mr": "तुम्हाला प्रत्यक्ष काम करायला आणि समस्या सोडवायला आवडतं. तुम्ही हाताने काम करत काहीतरी तयार करणं किंवा दुरुस्त करणं यात आनंद मानता."
+            },
+            "content": {
+                "meaning": {
+                    "en": "You prefer practical, hands-on tasks where you can directly interact with tools, machines, or the physical world. You enjoy building, repairing, or working on real-life problems.",
+                    "mr": "तुम्हाला प्रत्यक्ष काम करायला आवडतं जिथे तुम्ही साधनं, यंत्र किंवा वस्तूंसोबत काम करता. तुम्हाला काहीतरी तयार करणे, दुरुस्ती करणे आणि प्रत्यक्ष समस्या सोडवणे आवडते."
+                },
+                "how_it_shows": {
+                    "en": [
+                        "You enjoy working with tools or machines",
+                        "Prefer practical tasks over theory",
+                        "Like building, fixing, or assembling things",
+                        "Feel comfortable in hands-on environments"
+                    ],
+                    "mr": [
+                        "तुम्हाला साधनं किंवा यंत्रांसोबत काम करायला आवडतं",
+                        "तुम्ही सैद्धांतिक गोष्टींपेक्षा प्रत्यक्ष काम पसंत करता",
+                        "तुम्हाला वस्तू बनवणं किंवा दुरुस्त करणं आवडतं",
+                        "तुम्ही प्रत्यक्ष कामाच्या वातावरणात आरामदायक वाटता"
+                    ]
+                },
+                "learning_preference": {
+                    "en": [
+                        "Hands-on learning",
+                        "Practical demonstrations",
+                        "Workshops and lab-based learning"
+                    ],
+                    "mr": [
+                        "प्रत्यक्ष करून शिकणे",
+                        "डेमो आणि प्रात्यक्षिकांद्वारे शिकणे",
+                        "वर्कशॉप आणि लॅबमध्ये शिकणे"
+                    ]
+                },
+                "strengths": {
+                    "en": [
+                        "Practical thinking",
+                        "Technical skills",
+                        "Problem-solving ability",
+                        "Reliability"
+                    ],
+                    "mr": [
+                        "व्यावहारिक विचार",
+                        "तांत्रिक कौशल्य",
+                        "समस्या सोडवण्याची क्षमता",
+                        "विश्वासार्हता"
+                    ]
+                },
+                "growth_suggestions": {
+                    "en": [
+                        "Improve communication skills",
+                        "Be open to theoretical concepts when needed",
+                        "Try combining practical skills with planning"
+                    ],
+                    "mr": [
+                        "संवाद कौशल्य सुधारण्याचा प्रयत्न करा",
+                        "गरज पडल्यास सैद्धांतिक गोष्टी समजून घ्या",
+                        "प्रत्यक्ष कामासोबत नियोजन करण्याचा प्रयत्न करा"
+                    ]
+                },
+                "reflection_prompts": {
+                    "en": [
+                        "Do you enjoy working with tools or machines?",
+                        "Do you prefer doing tasks rather than just learning about them?"
+                    ],
+                    "mr": [
+                        "तुम्हाला साधनांसोबत काम करायला आवडतं का?",
+                        "तुम्हाला फक्त शिकण्यापेक्षा प्रत्यक्ष काम करायला जास्त आवडतं का?"
+                    ]
+                }
+            }
+        },
+        {
+            "code": "I",
+            "name": {
+                "en": "Investigative",
+                "mr": "शोधक"
+            },
+            "summary": {
+                "en": "You’re curious and analytical, enjoying exploration, research, and solving complex problems.",
+                "mr": "तुम्ही जिज्ञासू आणि विचार करणारे आहात. तुम्हाला नवीन गोष्टी समजून घ्यायला आणि प्रश्न सोडवायला आवडतं."
+            },
+            "content": {
+                "meaning": {
+                    "en": "You enjoy thinking deeply, analyzing problems, and finding logical solutions. You are naturally curious and like exploring how things work.",
+                    "mr": "तुम्हाला सखोल विचार करायला आणि गोष्टींचा अभ्यास करायला आवडतं. तुम्ही जिज्ञासू आहात आणि गोष्टी कशा काम करतात हे समजून घेण्याची इच्छा असते."
+                },
+                "how_it_shows": {
+                    "en": [
+                        "You ask questions to understand concepts deeply",
+                        "Enjoy solving complex problems",
+                        "Like research and analysis",
+                        "Prefer logical thinking over guesswork"
+                    ],
+                    "mr": [
+                        "तुम्ही गोष्टी समजून घेण्यासाठी प्रश्न विचारता",
+                        "तुम्हाला कठीण समस्या सोडवायला आवडतं",
+                        "तुम्हाला संशोधन आणि विश्लेषण आवडतं",
+                        "तुम्ही अंदाजापेक्षा तर्कशुद्ध विचार करता"
+                    ]
+                },
+                "learning_preference": {
+                    "en": [
+                        "Concept-based learning",
+                        "Research and exploration",
+                        "Problem-solving exercises"
+                    ],
+                    "mr": [
+                        "संकल्पनांवर आधारित शिकणे",
+                        "संशोधन आणि शोध घेऊन शिकणे",
+                        "प्रश्न सोडवून शिकणे"
+                    ]
+                },
+                "strengths": {
+                    "en": [
+                        "Analytical thinking",
+                        "Curiosity",
+                        "Problem-solving skills",
+                        "Logical reasoning"
+                    ],
+                    "mr": [
+                        "विश्लेषणात्मक विचार",
+                        "जिज्ञासा",
+                        "समस्या सोडवण्याची क्षमता",
+                        "तर्कशुद्ध विचार"
+                    ]
+                },
+                "growth_suggestions": {
+                    "en": [
+                        "Work on communicating ideas clearly",
+                        "Apply knowledge practically",
+                        "Collaborate more with others"
+                    ],
+                    "mr": [
+                        "तुमचे विचार स्पष्टपणे मांडण्याचा सराव करा",
+                        "ज्ञानाचा प्रत्यक्ष वापर करण्याचा प्रयत्न करा",
+                        "इतरांसोबत काम करण्याचा अनुभव वाढवा"
+                    ]
+                },
+                "reflection_prompts": {
+                    "en": [
+                        "Do you enjoy understanding how things work deeply?",
+                        "Do you feel excited when solving challenging problems?"
+                    ],
+                    "mr": [
+                        "तुम्हाला गोष्टी सखोल समजून घ्यायला आवडतं का?",
+                        "कठीण प्रश्न सोडवताना तुम्हाला उत्साह वाटतो का?"
+                    ]
+                }
+            }
+        },
+        {
+            "code": "A",
+            "name": {
+                "en": "Artistic",
+                "mr": "कलात्मक"
+            },
+            "summary": {
+                "en": "You’re imaginative and expressive, enjoying creativity through art, design, writing, or performance.",
+                "mr": "तुम्ही कल्पनाशील आणि अभिव्यक्तीशील आहात. तुम्हाला सर्जनशील काम करायला आवडतं."
+            },
+            "content": {
+                "meaning": {
+                    "en": "You enjoy expressing ideas and emotions creatively. You prefer open-ended tasks where you can explore imagination rather than follow strict rules.",
+                    "mr": "तुम्हाला तुमच्या कल्पना आणि भावना सर्जनशील पद्धतीने व्यक्त करायला आवडतं. तुम्हाला मोकळ्या पद्धतीने काम करायला जास्त आवडतं."
+                },
+                "how_it_shows": {
+                    "en": [
+                        "You enjoy drawing, writing, or creative activities",
+                        "Prefer freedom over strict rules",
+                        "Think differently from others",
+                        "Like expressing emotions through work"
+                    ],
+                    "mr": [
+                        "तुम्हाला चित्र काढणं, लिहिणं किंवा सर्जनशील काम आवडतं",
+                        "तुम्ही कडक नियमांपेक्षा मोकळेपणा पसंत करता",
+                        "तुम्ही वेगळ्या पद्धतीने विचार करता",
+                        "तुम्ही कामातून भावना व्यक्त करता"
+                    ]
+                },
+                "learning_preference": {
+                    "en": [
+                        "Creative projects",
+                        "Open-ended assignments",
+                        "Visual and expressive learning"
+                    ],
+                    "mr": [
+                        "सर्जनशील प्रकल्पांद्वारे शिकणे",
+                        "मोकळ्या पद्धतीने दिलेल्या कामांद्वारे शिकणे",
+                        "दृश्य आणि अभिव्यक्तीद्वारे शिकणे"
+                    ]
+                },
+                "strengths": {
+                    "en": [
+                        "Creativity",
+                        "Imagination",
+                        "Expression",
+                        "Original thinking"
+                    ],
+                    "mr": [
+                        "सर्जनशीलता",
+                        "कल्पनाशक्ती",
+                        "अभिव्यक्ती",
+                        "नवीन विचार"
+                    ]
+                },
+                "growth_suggestions": {
+                    "en": [
+                        "Improve structure and discipline in work",
+                        "Complete projects you start",
+                        "Balance creativity with practical outcomes"
+                    ],
+                    "mr": [
+                        "कामात थोडी शिस्त आणण्याचा प्रयत्न करा",
+                        "सुरू केलेलं काम पूर्ण करण्यावर लक्ष द्या",
+                        "सर्जनशीलतेसोबत परिणामांवरही लक्ष द्या"
+                    ]
+                },
+                "reflection_prompts": {
+                    "en": [
+                        "Do you enjoy expressing yourself creatively?",
+                        "Do you prefer freedom in tasks rather than strict instructions?"
+                    ],
+                    "mr": [
+                        "तुम्हाला सर्जनशील पद्धतीने स्वतःला व्यक्त करायला आवडतं का?",
+                        "तुम्हाला कडक नियमांपेक्षा मोकळं काम जास्त आवडतं का?"
+                    ]
+                }
+            }
+        },
+        {
+            "code": "S",
+            "name": {
+                "en": "Social",
+                "mr": "सामाजिक"
+            },
+            "summary": {
+                "en": "You enjoy helping and connecting with people, using empathy and teamwork to make a positive difference.",
+                "mr": "तुम्हाला लोकांशी जोडायला आणि त्यांना मदत करायला आवडतं. तुम्ही सहकार्य आणि समजुतीने काम करता."
+            },
+            "content": {
+                "meaning": {
+                    "en": "You are people-oriented and enjoy supporting, teaching, or helping others. You feel motivated when you can make a positive impact on someone's life.",
+                    "mr": "तुम्ही लोकांशी जोडलेले आहात आणि इतरांना मदत करायला, शिकवायला किंवा साथ द्यायला आवडतं. इतरांच्या आयुष्यात बदल घडवणं तुम्हाला प्रेरणा देतं."
+                },
+                "how_it_shows": {
+                    "en": [
+                        "You enjoy helping others",
+                        "Prefer teamwork over working alone",
+                        "Good at understanding emotions",
+                        "Like interacting with people"
+                    ],
+                    "mr": [
+                        "तुम्हाला इतरांना मदत करायला आवडतं",
+                        "तुम्ही एकट्याने काम करण्यापेक्षा टीममध्ये काम करणं पसंत करता",
+                        "तुम्ही इतरांच्या भावना समजून घेता",
+                        "तुम्हाला लोकांशी संवाद साधायला आवडतं"
+                    ]
+                },
+                "learning_preference": {
+                    "en": [
+                        "Group learning",
+                        "Discussions and collaboration",
+                        "Interactive and people-based learning"
+                    ],
+                    "mr": [
+                        "गटामध्ये शिकणे",
+                        "चर्चा आणि सहकार्याने शिकणे",
+                        "लोकांशी संवादातून शिकणे"
+                    ]
+                },
+                "strengths": {
+                    "en": [
+                        "Empathy",
+                        "Communication skills",
+                        "Teamwork",
+                        "Supportive nature"
+                    ],
+                    "mr": [
+                        "सहानुभूती",
+                        "संवाद कौशल्य",
+                        "टीमवर्क",
+                        "सहकार्यशील स्वभाव"
+                    ]
+                },
+                "growth_suggestions": {
+                    "en": [
+                        "Set personal boundaries",
+                        "Focus on your own goals along with helping others",
+                        "Improve decision-making in tough situations"
+                    ],
+                    "mr": [
+                        "स्वतःसाठी मर्यादा ठरवा",
+                        "इतरांना मदत करताना स्वतःच्या उद्दिष्टांवरही लक्ष ठेवा",
+                        "कठीण परिस्थितीत निर्णय घेण्याचा सराव करा"
+                    ]
+                },
+                "reflection_prompts": {
+                    "en": [
+                        "Do you feel satisfied when helping others?",
+                        "Do you enjoy working in teams more than alone?"
+                    ],
+                    "mr": [
+                        "इतरांना मदत केल्यावर तुम्हाला समाधान मिळतं का?",
+                        "तुम्हाला एकट्यापेक्षा टीममध्ये काम करणं जास्त आवडतं का?"
+                    ]
+                }
+            }
+        },
+        {
+            "code": "E",
+            "name": {
+                "en": "Enterprising",
+                "mr": "उद्योजक"
+            },
+            "summary": {
+                "en": "You’re a confident and goal-driven leader who likes taking initiative and influencing others.",
+                "mr": "तुम्ही आत्मविश्वासू आणि उद्दिष्ट ठेवून काम करणारे आहात. तुम्हाला पुढाकार घ्यायला आणि नेतृत्व करायला आवडतं."
+            },
+            "content": {
+                "meaning": {
+                    "en": "You enjoy leading, persuading, and organizing people or ideas. You like taking initiative and turning ideas into action.",
+                    "mr": "तुम्हाला नेतृत्व करायला, लोकांना प्रेरित करायला आणि कल्पना प्रत्यक्षात आणायला आवडतं. तुम्ही पुढाकार घेणारे आहात."
+                },
+                "how_it_shows": {
+                    "en": [
+                        "You like taking leadership roles",
+                        "Comfortable speaking in front of others",
+                        "Enjoy convincing or influencing people",
+                        "Take initiative in tasks"
+                    ],
+                    "mr": [
+                        "तुम्हाला नेतृत्व करायला आवडतं",
+                        "तुम्ही इतरांसमोर बोलताना आत्मविश्वासाने बोलता",
+                        "तुम्हाला लोकांना पटवून द्यायला आवडतं",
+                        "तुम्ही कामात पुढाकार घेता"
+                    ]
+                },
+                "learning_preference": {
+                    "en": [
+                        "Leadership activities",
+                        "Presentations and debates",
+                        "Real-world projects and challenges"
+                    ],
+                    "mr": [
+                        "नेतृत्वाशी संबंधित उपक्रम",
+                        "प्रेझेंटेशन आणि चर्चेद्वारे शिकणे",
+                        "प्रत्यक्ष प्रकल्पांद्वारे शिकणे"
+                    ]
+                },
+                "strengths": {
+                    "en": [
+                        "Leadership",
+                        "Confidence",
+                        "Decision-making",
+                        "Goal orientation"
+                    ],
+                    "mr": [
+                        "नेतृत्व क्षमता",
+                        "आत्मविश्वास",
+                        "निर्णय घेण्याची क्षमता",
+                        "उद्दिष्टावर लक्ष ठेवणे"
+                    ]
+                },
+                "growth_suggestions": {
+                    "en": [
+                        "Listen to others’ opinions",
+                        "Be patient in decision-making",
+                        "Balance confidence with empathy"
+                    ],
+                    "mr": [
+                        "इतरांच्या मतांना ऐकण्याचा प्रयत्न करा",
+                        "निर्णय घेताना संयम ठेवा",
+                        "आत्मविश्वासासोबत सहानुभूती ठेवा"
+                    ]
+                },
+                "reflection_prompts": {
+                    "en": [
+                        "Do you enjoy leading others?",
+                        "Do you take initiative in group situations?"
+                    ],
+                    "mr": [
+                        "तुम्हाला इतरांचे नेतृत्व करायला आवडतं का?",
+                        "गटामध्ये तुम्ही पुढाकार घेता का?"
+                    ]
+                }
+            }
+        },
+        {
+            "code": "C",
+            "name": {
+                "en": "Conventional",
+                "mr": "परंपरागत"
+            },
+            "summary": {
+                "en": "You’re organized and detail-oriented, preferring structured environments with clear rules.",
+                "mr": "तुम्ही नीटनेटके आणि बारकाईने लक्ष देणारे आहात. तुम्हाला नियम आणि रचना असलेलं वातावरण आवडतं."
+            },
+            "content": {
+                "meaning": {
+                    "en": "You prefer structured tasks, clear instructions, and organized systems. You feel comfortable working with routines and details.",
+                    "mr": "तुम्हाला स्पष्ट सूचना आणि नीटनेटकी पद्धत आवडते. तुम्ही नियोजनबद्ध कामात आणि तपशीलांमध्ये चांगले असता."
+                },
+                "how_it_shows": {
+                    "en": [
+                        "You like organizing things",
+                        "Prefer clear instructions",
+                        "Pay attention to details",
+                        "Follow rules and systems"
+                    ],
+                    "mr": [
+                        "तुम्हाला गोष्टी व्यवस्थित ठेवायला आवडतं",
+                        "तुम्ही स्पष्ट सूचना पसंत करता",
+                        "तुम्ही बारकाईने लक्ष देता",
+                        "तुम्ही नियम पाळता"
+                    ]
+                },
+                "learning_preference": {
+                    "en": [
+                        "Structured learning",
+                        "Step-by-step guidance",
+                        "Organized study materials"
+                    ],
+                    "mr": [
+                        "रचनेनुसार शिकणे",
+                        "स्टेप-बाय-स्टेप मार्गदर्शन",
+                        "नीटनेटके अभ्यास साहित्य"
+                    ]
+                },
+                "strengths": {
+                    "en": [
+                        "Organization",
+                        "Attention to detail",
+                        "Consistency",
+                        "Reliability"
+                    ],
+                    "mr": [
+                        "नीटनेटकेपणा",
+                        "तपशीलांकडे लक्ष",
+                        "सातत्य",
+                        "विश्वासार्हता"
+                    ]
+                },
+                "growth_suggestions": {
+                    "en": [
+                        "Be open to flexibility and change",
+                        "Try new approaches occasionally",
+                        "Develop creative thinking"
+                    ],
+                    "mr": [
+                        "नवीन गोष्टी स्वीकारण्याचा प्रयत्न करा",
+                        "कधी कधी वेगळ्या पद्धती वापरून पाहा",
+                        "सर्जनशील विचार विकसित करा"
+                    ]
+                },
+                "reflection_prompts": {
+                    "en": [
+                        "Do you prefer structured tasks with clear instructions?",
+                        "Do you feel comfortable working with routines?"
+                    ],
+                    "mr": [
+                        "तुम्हाला स्पष्ट सूचना असलेलं काम आवडतं का?",
+                        "तुम्हाला ठरलेल्या पद्धतीने काम करताना आराम वाटतो का?"
+                    ]
+                }
+            }
+        }
+    ],
+    "selectTop": {
+        "method": "by_score_desc",
+        "count": 3,
+        "notes": "Sort the user's RIASEC scores descending and pick the top `count` codes. If ties occur, preserve original order or apply a tie-breaker."
+    }
+}

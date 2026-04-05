@@ -1,0 +1,139 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* h1 {
+  text-align: center;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+} */
+
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #60a5fa, #93c5fd);
+  margin: 16px 0 24px;
+}
+
+/* ===== STAGE ===== */
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stage h3 {
+  font-size: 20px;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+/* ===== CARD GROUP ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #f8fbff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.2);
+}
+
+.card b {
+  color: #1e3a8a;
+  font-size: 16px;
+}
+
+.card p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.card ul {
+  list-style-type: disc;       /* force bullet dots */
+  list-style-position: outside;
+  padding-left: 20px;          /* space for bullets */
+  margin: 10px 0 0;
+}
+
+.card li {
+  display: list-item;          /* ensures marker renders */
+}
+
+.card i {
+  color: #2563eb;
+  margin-right: 6px;
+}
+
+/* ===== TABLE (INSIDE CARD) ===== */
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.card th {
+  background: #e0ecff;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid #c7ddff;
+}
+
+.card td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.card tr:nth-child(even) td {
+  background: #f8fbff;
+}
+
+.card tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== MOBILE FRIENDLY ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .stage h3 {
+    font-size: 18px;
+  }
+
+  .card table {
+    font-size: 13px;
+  }
+
+  .card th,
+  .card td {
+    padding: 8px;
+  }
+}

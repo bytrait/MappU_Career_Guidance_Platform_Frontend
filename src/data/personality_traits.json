@@ -1,0 +1,196 @@
+{
+  "traits": {
+    "Openness": {
+      "categories": [
+        {
+          "range": "27-40",
+          "icon": "bi-lightbulb",
+          "label": {
+            "en": "Ideator/Innovator",
+            "mr": "कल्पक / नवोन्मेषक"
+          },
+          "summary": {
+            "en": "You’re a creative and curious thinker who loves exploring new ideas and expressing yourself in original, imaginative ways.",
+            "mr": "तुम्ही सर्जनशील (क्रिएटिव) आहात आणि नव्या गोष्टी जाणून घेण्यात तुमची रुची आहे. तुमच्या मनात वेगवेगळ्या कल्पना येतात आणि त्या तुम्ही कल्पकतेने व्यक्त करता."
+          }
+        },
+        {
+          "range": "14-26",
+          "icon": "bi-tools",
+          "label": {
+            "en": "Realistic Innovator",
+            "mr": "वास्तववादी नवोन्मेषक"
+          },
+          "summary": {
+            "en": "You’re a practical problem-solver who blends creativity with real-world thinking to turn ideas into impactful solutions.",
+            "mr": "तुम्ही समस्या सोडवायला हुशार आहात. तुम्ही कल्पना आणि वास्तव एकत्र करता, म्हणून तुमच्या कल्पना उपयोगी उपायांमध्ये बदलतात."
+          }
+        },
+        {
+          "range": "0-13",
+          "icon": "bi-check-circle",
+          "label": {
+            "en": "Pragmatist",
+            "mr": "व्यावहारिक विचारक"
+          },
+          "summary": {
+            "en": "You’re a practical and adaptable thinker who focuses on real-world results, using logic and clear goals to solve problems efficiently.",
+            "mr": "तुम्ही विचारपूर्वक आणि परिस्थितीनुसार विचार करणारे आहात. तुमचं लक्ष नेहमी प्रत्यक्ष परिणामांवर असतं. तुम्ही विचार करून, स्पष्ट उद्दिष्ट ठेऊन समस्यांचा चांगला उपाय करता."
+          }
+        }
+      ]
+    },
+
+    "Conscientiousness": {
+      "categories": [
+        {
+          "range": "27-40",
+          "icon": "bi-list-check",
+          "label": {
+            "en": "Organized",
+            "mr": "संघटित"
+          },
+          "summary": {
+            "en": "You’re a focused and dependable achiever who stays organized, manages time well, and works hard to reach your goals with discipline and responsibility.",
+            "mr": "तुम्ही लक्ष केंद्रित करणारे आणि विश्वासू व्यक्ती आहात. तुम्ही वेळेचं योग्य नियोजन करता. तुम्ही शिस्तीने आणि जबाबदारीने मेहनत करता, जेणेकरून तुमचं उद्दिष्ट पूर्ण होईल."
+          }
+        },
+        {
+          "range": "14-26",
+          "icon": "bi-sliders",
+          "label": {
+            "en": "Balanced",
+            "mr": "संतुलित"
+          },
+          "summary": {
+            "en": "You have a flexible and balanced approach to work that is responsible when needed, adaptable across situations, and able to adjust your habits based on the task.",
+            "mr": "तुमच्याकडे काम करण्यासाठी एक अनुकूलनशील आणि संतुलित दृष्टिकोन आहे जो गरज पडल्यास जबाबदार असतो, परिस्थितीनुसार जुळवून घेण्यास सक्षम असतो आणि कामानुसार तुमच्या सवयी समायोजित करण्यास सक्षम असतो."
+          }
+        },
+        {
+          "range": "0-13",
+          "icon": "bi-wind",
+          "label": {
+            "en": "Free-spirited",
+            "mr": "मोकळ्या स्वभावाचा"
+          },
+          "summary": {
+            "en": "You have a laid-back and flexible style, often preferring spontaneity over strict routines and working best when you’re not confined by rigid structure.",
+            "mr": "तुमचं वागणं शांत आणि अनुकूलनशील आहे. तुम्हाला ठरलेली कडक नियमांची शिस्त फारशी आवडत नाही. तुम्ही सहजपणे आणि मोकळ्या पद्धतीने चांगलं काम करता."
+          }
+        }
+      ]
+    },
+
+    "Extroversion": {
+      "categories": [
+        {
+          "range": "27-40",
+          "icon": "bi-people",
+          "label": {
+            "en": "Extrovert",
+            "mr": "बहिर्मुख"
+          },
+          "summary": {
+            "en": "You’re an energetic and outgoing person who loves connecting with others, thrives in social settings, and enjoys trying new experiences.",
+            "mr": "तुम्ही उत्साही आणि मनमिळावू व्यक्ती आहात. तुम्हाला लोकांशी बोलायला आवडतं. तुम्ही नवनवीन अनुभव घेण्यात आनंद मानता."
+          }
+        },
+        {
+          "range": "14-26",
+          "icon": "bi-person-arms-up",
+          "label": {
+            "en": "Ambivert",
+            "mr": "मिश्र प्रवृत्तीचा"
+          },
+          "summary": {
+            "en": "You’re socially adaptable and balanced who is comfortable in groups yet equally at ease on your own, with the flexibility to adjust your energy and communication to the situation.",
+            "mr": "तुम्ही सामाजिकदृष्ट्या जुळवून घेणारे आणि संतुलित आहात, गटात असताना तुम्हाला छान वाटतं आणि एकटे असतानाही तुम्ही आरामात असता. परिस्थितीनुसार तुम्ही तुमचं बोलणं आणि वागणं बदलू शकता."
+          }
+        },
+        {
+          "range": "0-13",
+          "icon": "bi-person",
+          "label": {
+            "en": "Introvert",
+            "mr": "अंतर्मुख"
+          },
+          "summary": {
+            "en": "You’re a thoughtful and independent person who enjoys quiet settings, prefers meaningful one-on-one interactions, and feels most comfortable reflecting and working on your own.",
+            "mr": "तुम्ही एक विचारशील आणि स्वतंत्र व्यक्ती आहात ज्याला शांत वातावरण आवडते, अर्थपूर्ण वैयक्तिक संवाद पसंत करतात आणि स्वतः विचार करण्यात आणि स्वतः काम करण्यात सर्वात आरामदायक वाटते."
+          }
+        }
+      ]
+    },
+
+    "Agreeableness": {
+      "categories": [
+        {
+          "range": "27-40",
+          "icon": "bi-heart",
+          "label": {
+            "en": "Compassionate",
+            "mr": "दयाळू"
+          },
+          "summary": {
+            "en": "You’re a kind and cooperative person who cares deeply about others, values harmony, and works well in teams with empathy and patience.",
+            "mr": "तुम्ही एक दयाळू आणि सहकार्यशील व्यक्ती आहात जी इतरांची खूप काळजी घेते, सुसंवादाला महत्त्व देते आणि सहानुभूती आणि संयमाने संघात चांगले काम करते."
+          }
+        },
+        {
+          "range": "14-26",
+          "icon": "bi-chat-dots",
+          "label": {
+            "en": "Balanced Communicator",
+            "mr": "संतुलित संवादक"
+          },
+          "summary": {
+            "en": "You’re a thoughtful and adaptable person who balances cooperation with independence, respects others’ views, and makes fair decisions in social situations.",
+            "mr": "तुम्ही एक विचारशील आणि जुळवून घेणारी व्यक्ती आहात जी सहकार्य आणि स्वातंत्र्य यांचा समतोल साधते, इतरांच्या विचारांचा आदर करते आणि सामाजिक परिस्थितीत योग्य निर्णय घेते."
+          }
+        },
+        {
+          "range": "0-13",
+          "icon": "bi-megaphone",
+          "label": {
+            "en": "Assertive Individualist",
+            "mr": "ठाम स्वावलंबी"
+          },
+          "summary": {
+            "en": "You’re an independent and straightforward thinker who values honesty, stands by your views, and isn’t afraid to question norms or speak your mind.",
+            "mr": "तुम्ही स्वतंत्र आणि स्पष्टपणे विचार करणारे आहात. तुम्हाला प्रामाणिकपणा आवडतो आणि तुम्ही तुमचं मत ठामपणे मांडता. गरज पडली तर तुम्ही नियमांवर प्रश्न विचारायला घाबरत नाही."
+          }
+        }
+      ]
+    },
+
+    "Neuroticism": {
+      "categories": [
+        {
+          "range": "27-40",
+          "icon": "bi-heart-pulse",
+          "label": {
+            "en": "Emotionally Insightful",
+            "mr": "भावनिकदृष्ट्या जाणकार"
+          },
+          "summary": {
+            "en": "You’re emotionally aware and expressive, often turning challenges into motivation for growth, creativity, and personal strength.",
+            "mr": "तुम्ही तुमच्या भावना ओळखता आणि मोकळेपणाने व्यक्त करता. आलेल्या अडचणींमधून तुम्ही शिकता आणि स्वतःला सुधारता. या गोष्टी तुम्हाला नवीन कल्पना आणि ताकद देतात."
+          }
+        },
+        {
+          "range": "14-26",
+          "icon": "bi-emoji-smile",
+          "label": {
+            "en": "Emotionally Balanced",
+            "mr": "भावनिक संतुलित"
+          },
+          "summary": {
+            "en": "You’re emotionally balanced and thoughtful, with the sensitivity to connect with others and the self-awareness to grow through life’s challenges.",
+            "mr": "तुमचं भावनिक संतुलन चांगलं आहे आणि तुम्ही विचारपूर्वक वागता. तुम्ही इतरांशी जोडले जाणे आणि अडचणींतून शिकण्याची तुमच्यात समज आहे."
+          }
+        }
+      ]
+    }
+  }
+}

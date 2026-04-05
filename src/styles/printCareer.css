@@ -1,0 +1,226 @@
+/* ===== Career Printable Content Styling ===== */
+
+.careerContentContainer {
+  line-height: 1.75;
+  color: #1f2937;
+  font-family: "Inter", sans-serif;
+}
+
+/* Headings */
+.careerContentContainer h1,
+.careerContentContainer h2,
+.careerContentContainer h3 {
+  font-weight: 600;
+  color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.careerContentContainer h1 {
+  font-size: 1.8rem;
+}
+.careerContentContainer h2 {
+  font-size: 1.4rem;
+}
+.careerContentContainer h3 {
+  font-size: 1.2rem;
+}
+
+/* Paragraphs */
+.careerContentContainer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Lists */
+.careerContentContainer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.careerContentContainer ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Icons */
+.careerContentContainer i.bi {
+  font-size: 1.1rem;
+  color: #2563eb;
+  min-width: 20px;
+  line-height: 1.4;
+}
+
+.careerContentContainer h1 i.bi,
+.careerContentContainer h2 i.bi {
+  color: #1d4ed8;
+}
+
+.careerContentContainer ul li i.bi {
+  color: #16a34a;
+}
+
+/* Tables */
+.careerContentContainer table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.careerContentContainer th,
+.careerContentContainer td {
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.careerContentContainer th {
+  background-color: #eff6ff;
+  font-weight: 600;
+}
+
+/* Blockquotes */
+.careerContentContainer blockquote {
+  border-left: 4px solid #3b82f6;
+  background-color: #f9fafb;
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  color: #374151;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}
+
+/* Links */
+.careerContentContainer a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.careerContentContainer a:hover {
+  color: #1d4ed8;
+}
+
+/* src/components/printables/PrintableSegmented.module.css */
+
+.section {
+  margin-bottom: 20px;
+  page-break-inside: avoid;
+}
+
+/* Section heading */
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Section content */
+.content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Lists */
+.content ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.content li {
+  margin-bottom: 4px;
+}
+
+/* Tables — print friendly */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.content th,
+.content td {
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.content th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+/* Headings inside content */
+.content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+/* Prevent ugly breaks */
+.section:last-child {
+  margin-bottom: 0;
+}
+/* PRINT SEGMENTED CONTENT */
+
+.print-section {
+  margin-bottom: 20px;
+  page-break-inside: avoid;
+}
+
+.print-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.print-section-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.print-section-content ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.print-section-content li {
+  margin-bottom: 4px;
+}
+
+.print-section-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.print-section-content th,
+.print-section-content td {
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.print-section-content th {
+  background: #f8fafc;
+  font-weight: 600;
+}
