@@ -233,7 +233,7 @@ export default function AptitudeStrengths({ scores = [], language = "en" }) {
             <span className="text-primary">
               {language === "mr"
                 ? "तुमच्या क्षमता तुमची ताकद आहेत"
-                : "Your abilities are your strength"}
+                : "Your abilities are your strengths"}
             </span>
 
             <br />

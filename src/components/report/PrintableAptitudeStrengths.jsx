@@ -233,7 +233,7 @@ export default function PrintableAptitudeStrengthsA4({
         <div className="bg-white border border-gray-50 rounded-2xl p-5 flex items-center justify-center text-center">
           <p className="text-5xl font-bold">
             <span className="text-primary">
-              Your abilities are your strength
+              Your abilities are your strengths
             </span>
             <br />
             <span className="text-accent bg-clip-text">

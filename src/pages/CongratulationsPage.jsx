@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import { savePreference } from "../services/preferenceService";
 import { useNavigate } from "react-router-dom";
 
-import congrasIms from "../assets/congrats.png"
+import congrasIms from "../assets/congrats.png";
 import { fetchUserDetailsById } from "../services/userAssessmentProgressService";
 
 export default function CongratulationsPage() {
-  const [preferredLanguage, setPreferredLanguage] = useState("en");
-  const [economicStatus, setEconomicStatus] = useState("stable");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
@@ -27,7 +25,8 @@ export default function CongratulationsPage() {
     setLoading(true);
     setSuccess(false);
     try {
-      await savePreference({ preferredLanguage, economicStatus });
+      // Default values for preferredLanguage and economicStatus
+      await savePreference({ preferredLanguage: "en", economicStatus: "stable" });
       setSuccess(true);
       navigate("/report");
     } catch (err) {
@@ -38,10 +37,10 @@ export default function CongratulationsPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+    <div className="bg-white min-h-screen max-w-5xl flex flex-col items-center justify-center px-6 py-12 mx-auto h-[10vh]  border border-gray-50 mt-6">
       {/* 🎉 Image */}
       <img
-        src={congrasIms} // your screenshot image path
+        src={congrasIms} 
         alt="Congratulations"
         className="w-32 h-32 mb-6"
       />
@@ -56,12 +55,12 @@ export default function CongratulationsPage() {
         Let’s take a look what your Career Report says.
       </p>
 
-      {/* Paragraphs from screenshot */}
+      {/* Paragraphs */}
       <p className="text-center max-w-2xl mb-4">
         Congratulations {userDetails?.fullName} for taking the first step towards a successful,
         satisfying and meaningful career.
       </p>
-      <p className="text-center  max-w-2xl mb-8">
+      <p className="text-center max-w-2xl mb-8">
         This confidential report is based on your responses to the personality
         and career interest tests. The analysis of your responses is then used
         to find out potential career options that best suit your personality
@@ -69,41 +68,11 @@ export default function CongratulationsPage() {
         options and career paths.
       </p>
 
-      {/* Your Form (unchanged) */}
+      {/* Generate Button */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-xl shadow-md p-8 w-full max-w-md space-y-6"
+        className="p-8 w-full max-w-md space-y-6"
       >
-        {/* Preferred Language */}
-        <div>
-          <label className="block text-sm font-medium mb-2">
-            Preferred Language
-          </label>
-          <select
-            value={preferredLanguage}
-            onChange={(e) => setPreferredLanguage(e.target.value)}
-            className="w-full border rounded-lg p-2"
-          >
-            <option value="en">English</option>
-            <option value="mr">Marathi</option>
-          </select>
-        </div>
-
-        {/* Economic Status */}
-        <div>
-          <label className="block text-sm font-medium mb-2">
-            Economic Status
-          </label>
-          <select
-            value={economicStatus}
-            onChange={(e) => setEconomicStatus(e.target.value)}
-            className="w-full border rounded-lg p-2"
-          >
-            <option value="stable">Stable</option>
-            <option value="weak">Weak</option>
-          </select>
-        </div>
-
         <button
           type="submit"
           disabled={loading}
@@ -141,7 +110,6 @@ export default function CongratulationsPage() {
             "Generate Career Report"
           )}
         </button>
-
       </form>
     </div>
   );

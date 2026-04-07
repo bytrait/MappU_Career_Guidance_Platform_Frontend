@@ -43,11 +43,11 @@ export default function AptitudeQuestion({ data, value, onChange }) {
       {enQuestion && (
         <h3 className="text-xl font-semibold text-gray-700">{enQuestion}</h3>
       )}
-      {mrQuestion && (
+      {/* {mrQuestion && (
         <h4 className="text-lg font-semibold text-gray-600 mb-2">
           {mrQuestion}
         </h4>
-      )}
+      )} */}
 
       {/* Image with loading spinner */}
       {questionImage && (
@@ -86,9 +86,9 @@ export default function AptitudeQuestion({ data, value, onChange }) {
                 className="hidden"
               />
               {opt.text?.en && <span className="block">{opt.text.en}</span>}
-              {opt.text?.mr && (
+              {/* {opt.text?.mr && (
                 <span className="block">{opt.text.mr}</span>
-              )}
+              )} */}
             </label>
           ))
         ) : (

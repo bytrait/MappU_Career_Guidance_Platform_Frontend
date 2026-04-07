@@ -37,7 +37,7 @@ export default function AssessmentQuestion({ data, value, onChange, nextQuestion
       `}</style>
       <div className={`mt-6 bg-white rounded-xl p-6 ${blinking ? "blink" : ""}`}>
         <h3 className="text-xl font-semibold text-gray-700">{data.text.en}</h3>
-        <h4 className="text-lg font-semibold text-gray-600 mb-2">{data.text.mr}</h4>
+        {/* <h4 className="text-lg font-semibold text-gray-600 mb-2">{data.text.mr}</h4> */}
         <p className="mb-6 text-gray-500">Select one of the below options:</p>
 
         <OptionRadioGroup
