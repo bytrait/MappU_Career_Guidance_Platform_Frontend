@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 
 // import { demoRecommendedCareers } from "../../data/demoCareerOptions";
 // import { getDemoStepsForCareer } from "../../data/demoCareerSteps";
-import { demoCareerBaseInfo } from "../../data/demoCareerBaseInfo";
-import { demoCareerSteps } from "../../data/demoCareerSteps";
+import careerData from "../../data/demo_career_options_with_details.json";
 
 import DemoCareerHero from "./DemoCareerHero";
 import StageNavigationTabs from "../../components/career/StageNavigationTabs";
@@ -22,14 +21,14 @@ export default function DemoCareerPage() {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
 
-        // Convert object -> array
-        const careersArray = Object.values(demoCareerBaseInfo);
+        const careers = careerData?.recommendations?.professional || [];
 
-        const found = careersArray.find((c) => c.id === careerId);
+        const found = careers.find(
+            (c) => String(c.id) === String(careerId)
+        );
+
         setCareer(found || null);
-
-        let stepList = demoCareerSteps[careerId];
-        setSteps(stepList);
+        setSteps(found?.steps || []);
 
         setLoading(false);
     }, [careerId]);
@@ -58,9 +57,9 @@ export default function DemoCareerPage() {
     // STEP MAPPING (FIXED)
     const mappedSteps = steps.map((s) => ({
         order: s.order,
-        title: s.title[language],
-        title_mr: s.title.mr,
-        content: s.content[language], // FIXED
+        title: s.title?.value,
+        title_mr: s.title?.value, // no mr in JSON yet
+        content: s.note?.value,   // ✅ IMPORTANT FIX
     }));
 
     const selectedStep = mappedSteps[selectedIndex];
@@ -88,14 +87,14 @@ export default function DemoCareerPage() {
 
             {/* HERO SECTION */}
             <DemoCareerHero
-                title={career.title[language]}
-                subtitle={career.description[language]}
-                matchScore={career.similarity}
+                title={career.title?.value}
+                subtitle={career.description?.value}
+                matchScore={Math.round(career.similarity)}
                 strengths={career.strengths}
                 riasec={career.riasec}
-                minCost={career.cost.min}
-                maxCost={career.cost.max}
-                avgSalary={career.avgSalary}
+                minCost={career.cost?.min}
+                maxCost={career.cost?.max}
+                avgSalary={career.avg_salary}
                 aptitude={career.aptitude}
                 language={language}
             />

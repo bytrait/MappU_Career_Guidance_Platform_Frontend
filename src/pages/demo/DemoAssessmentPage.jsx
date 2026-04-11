@@ -322,7 +322,7 @@ export default function DemoAssessmentPage() {
           <button
             onClick={prevQuestion}
             disabled={current === 0}
-            className="mr-2 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-40 flex items-center"
+            className="mr-2 px-6 py-2 bg-primary text-white rounded hover:bg-primary-dark disabled:opacity-40 flex items-center"
           >
             <FaArrowLeft className="mr-2" /> Prev
           </button>
@@ -331,7 +331,7 @@ export default function DemoAssessmentPage() {
             <button
               onClick={nextQuestion}
               disabled={!answers[currentQuestion?.id]}
-              className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-40 flex items-center"
+              className="px-6 py-2 bg-accent text-white rounded hover:bg-success disabled:opacity-40 flex items-center"
             >
               Next <FaArrowRight className="ml-2" />
             </button>
@@ -339,7 +339,7 @@ export default function DemoAssessmentPage() {
             <button
               onClick={finishAssessment}
               disabled={!answers[currentQuestion?.id]}
-              className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-40 flex items-center"
+              className="px-6 py-2 bg-accent text-white rounded hover:bg-success disabled:opacity-40 flex items-center"
             >
               Finish 👍
             </button>

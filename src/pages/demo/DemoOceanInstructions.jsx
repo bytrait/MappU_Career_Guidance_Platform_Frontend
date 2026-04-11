@@ -8,7 +8,7 @@ export default function DemoOceanInstructions({ onStart }) {
         {/* Heading */}
         <h2 className="text-5xl font-bold ">
           <span className="text-gray-700">Dear</span>{" "}
-          <span className="text-blue-700">Student</span>
+          <span className="text-primary">Student</span>
         </h2>
 
         <h3 className="text-3xl text-gray-700 font-semibold mt-4 mb-6">
@@ -33,7 +33,7 @@ export default function DemoOceanInstructions({ onStart }) {
         {/* Start Button */}
         <div className="flex justify-end">
           <button
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+            className="bg-accent hover:bg-success text-white px-6 py-2 rounded-lg"
             onClick={onStart}
           >
             Start Test

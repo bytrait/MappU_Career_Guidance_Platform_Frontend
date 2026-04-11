@@ -12,6 +12,7 @@ import {
 } from "../../data/demoReportData";
 import AptitudeStrengths from "../../components/report/AptitudeChart";
 import DemoCareerOptions from "./DemoCareerOptions";
+import democareerdata from "../../data/demo_career_options_with_details.json";
 
 export default function DemoReportPage() {
     const [language, setLanguage] = useState("en");
@@ -25,10 +26,10 @@ export default function DemoReportPage() {
     ];
 
     return (
-        <div className="w-full min-h-screen pb-20">
+        <div className="w-full min-h-screen mt-7">
 
             {/* LANGUAGE SWITCH */}
-            <div className="flex justify-end px-6 py-4">
+            {/* <div className="flex justify-end px-6 py-4">
                 <div className="flex gap-2 bg-gray-100 p-1 rounded-full">
                     <button
                         onClick={() => setLanguage("en")}
@@ -43,10 +44,10 @@ export default function DemoReportPage() {
                         मराठी
                     </button>
                 </div>
-            </div>
+            </div> */}
 
             <div className="max-w-7xl mx-auto px-2">
-                <h1 className="text-5xl font-semibold mb-8 text-gray-800">Demo User</h1>
+                <h1 className="text-5xl font-semibold mb-8 text-primary">Demo User</h1>
 
                 {/* 🔹 Personality Section */}
                 <section className="mb-16">
@@ -70,7 +71,7 @@ export default function DemoReportPage() {
                 </section>
 
                 <section className="mb-16">
-                    <DemoCareerOptions language={language} />
+                    <DemoCareerOptions careersData={democareerdata} />
                 </section>
 
             </div>

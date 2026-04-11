@@ -24,7 +24,7 @@ export default function Navbar({ onLogout }) {
         onClick={handleLogout}
         className="px-4 py-2 text-white bg-primary rounded-full hover:bg-primary-dark transition"
       >
-        Logout
+        Log out
       </button>
     </nav>
   );

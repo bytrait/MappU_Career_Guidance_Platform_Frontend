@@ -6,7 +6,7 @@ export default function InterestInstructions({ onStart }) {
     <div className="fixed inset-0 flex justify-center items-center">
       <div className="w-full max-w-6xl p-6 rounded-sm flex flex-col justify-center bg-white shadow z-50">
         <h2 className="text-5xl font-bold ">
-          <span className="text-gray-700">Dear</span> <span className="text-blue-700">Student</span>
+          <span className="text-gray-700">Dear</span> <span className="text-primary">Student</span>
         </h2>
         <h3 className="text-3xl text-gray-700 font-semibold mt-4 mb-6">
           We will now move to the career interest test. Please note these points before you start
@@ -29,7 +29,7 @@ export default function InterestInstructions({ onStart }) {
         </ul>
         <div className="flex justify-end">
           <button
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+            className="bg-accent hover:bg-success text-white px-6 py-2 rounded-lg"
             onClick={onStart}
           >
             Start Test
