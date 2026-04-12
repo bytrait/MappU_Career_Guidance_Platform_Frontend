@@ -34,7 +34,7 @@ import BuyCredits from "../pages/counsellor/billing/BuyCredits";
 import PaymentHistory from "../pages/counsellor/billing/PaymentHistory";
 import CreditLedger from "../pages/counsellor/billing/CreditLedger";
 import CounsellorLayout from "../components/counsellor/layout/CounsellorLayout";
-
+import DemoCongratulationsPage from "../pages/demo/DemoCongratulationpage";
 
 export const router = createBrowserRouter([
 
@@ -96,6 +96,7 @@ export const router = createBrowserRouter([
       { path: "assessment", element: <DemoAssessmentPage /> },
       { path: "report", element: <DemoReportPage /> },
       { path: "career/:careerId", element: <DemoCareerPage /> },
+      { path: "congratulations", element: <DemoCongratulationsPage /> },
     ],
   },
 

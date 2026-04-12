@@ -209,7 +209,7 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
 
       <div className="w-full max-w-7xl mx-auto px-4">
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-2 items-center">
 
           {/* Image */}
           <div className="w-full flex justify-center">
@@ -225,7 +225,7 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={chartData}
-                margin={{ top: 0, right: 40, left: -40, bottom: 10 }}
+                margin={{ top: 0, right: 40, left: -25, bottom: 10 }}
               >
                 <CartesianGrid stroke="#e5e7eb" />
                 <XAxis

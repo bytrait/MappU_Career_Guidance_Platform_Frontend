@@ -215,7 +215,7 @@ export default function DemoAssessmentPage() {
     }
     else {
       setSubmitting(false);
-      navigate("/demo/report");
+      navigate("/demo/congratulations");
     }
   };
 

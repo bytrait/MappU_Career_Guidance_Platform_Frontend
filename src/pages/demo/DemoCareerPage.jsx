@@ -67,7 +67,7 @@ export default function DemoCareerPage() {
     return (
         <>
             {/* LANGUAGE SWITCH */}
-            <div className="flex justify-end px-6 py-4">
+            {/* <div className="flex justify-end px-6 py-4">
                 <div className="flex gap-2 bg-gray-100 p-1 rounded-full">
                     <button
                         onClick={() => setLanguage("en")}
@@ -83,7 +83,7 @@ export default function DemoCareerPage() {
                         मराठी
                     </button>
                 </div>
-            </div>
+            </div> */}
 
             {/* HERO SECTION */}
             <DemoCareerHero
