@@ -12,7 +12,7 @@ export default function DemoWelcomePage() {
 
 
   return (
-    <div className="min-h-screen flex justify-center items-start p-2 sm:p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen flex justify-center items-start p-2 sm:p-4 md:p-6 lg:p-8 bg-[#012A9E]">
       <div className="bg-white rounded-2xl shadow-lg w-full max-w-2xl p-4 sm:p-6 md:p-8">
 
         {/* Greeting */}
