@@ -30,6 +30,11 @@ export default function DemoOceanInstructions({ onStart }) {
           <li>Select the option that best describes you.</li>
         </ul>
 
+        {/* Note about the main test */}
+        <p className="text-sm text-gray-500 italic mb-6">
+          Note: The actual main test contains <strong>50 questions</strong> for a more comprehensive analysis.
+        </p>
+
         {/* Start Button */}
         <div className="flex justify-end">
           <button
