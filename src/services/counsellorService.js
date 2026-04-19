@@ -121,3 +121,76 @@ export const getBulkAssessmentStatus = async (userIds) => {
   );
   return res.data.data;
 };
+
+/* -----------------------------
+   Pricing Config
+----------------------------- */
+export const getPricingConfig = async () => {
+  const res = await API.get('/billing/pricing');
+  return res.data.data;
+};
+
+export const savePricingConfig = async (payload) => {
+  const res = await API.post('/billing/pricing', payload);
+  return res.data.data;
+};
+
+export const togglePaymentEnabled = async (
+  paymentEnabled
+) => {
+  const res = await API.patch(
+    '/billing/pricing/payment-toggle',
+    { paymentEnabled }
+  );
+
+  return res.data.data;
+};
+
+export const updateIndividualPrice = async (
+  individualPrice
+) => {
+  const res = await API.patch(
+    '/billing/pricing/individual-price',
+    { individualPrice }
+  );
+
+  return res.data.data;
+};
+
+/* -----------------------------
+   School Pricing
+----------------------------- */
+export const getSchoolPricingList = async () => {
+  const res = await API.get('/billing/school-pricing');
+
+  return res.data.data;
+};
+
+export const createSchoolPricing = async (payload) => {
+  const res = await API.post(
+    '/billing/school-pricing',
+    payload
+  );
+
+  return res.data.data;
+};
+
+export const updateSchoolPricing = async (
+  schoolPricingId,
+  payload
+) => {
+  const res = await API.put(
+    `/billing/school-pricing/${schoolPricingId}`,
+    payload
+  );
+
+  return res.data.data;
+};
+
+export const deleteSchoolPricing = async (schoolPricingId) => {
+  const res = await API.delete(
+    `/billing/school-pricing/${schoolPricingId}`
+  );
+
+  return res.data.data;
+};
