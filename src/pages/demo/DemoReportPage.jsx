@@ -47,7 +47,7 @@ export default function DemoReportPage() {
             </div> */}
 
             <div className="max-w-7xl mx-auto px-2">
-                <h1 className="text-5xl font-semibold mb-8 text-primary">Demo User</h1>
+                <h1 className="text-5xl font-semibold mb-8 text-primary">Sample Report</h1>
 
                 {/* 🔹 Personality Section */}
                 <section className="mb-16">
