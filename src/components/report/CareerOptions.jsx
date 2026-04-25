@@ -16,46 +16,54 @@ export default function CareerOptions({
 
   /* ------------------ PREPARE CHART DATA ------------------ */
   const prepareChartData = () => {
-    if (!scores.length || careers.length === 0) return [];
+    if (!scores?.length || !careers?.length || !careerFields?.length) {
+      return [];
+    }
 
-    // Convert scores array → object { R: 18, I: 22, ... }
-    const userScoresObj = scores.reduce((acc, item) => {
-      if (item.assessmentType === "RIASEC") {
-        acc[item.traitOrCategoryCode] = item.score;
+    /**
+     * Step 1: Build user RIASEC vector
+     */
+    const userScoresObj = {
+      R: 0,
+      I: 0,
+      A: 0,
+      S: 0,
+      E: 0,
+      C: 0,
+    };
+
+    for (const item of scores) {
+      if (
+        item.assessmentType === "RIASEC" &&
+        ["R", "I", "A", "S", "E", "C"].includes(item.traitOrCategoryCode)
+      ) {
+        userScoresObj[item.traitOrCategoryCode] = Number(item.score) || 0;
       }
-      return acc;
-    }, {});
+    }
 
-    // ✅ Use category_id instead of category name
-    const categoryIds = [
-      ...new Set(
+    /**
+     * Step 2: Extract unique category IDs
+     */
+    const categoryIds = Array.from(
+      new Set(
         careers
-          .map(c => c.category_id)
-          .filter(id => id !== null && id !== undefined)
-      ),
-    ];
+          .map((c) => c.category_id)
+          .filter((id) => id !== null && id !== undefined)
+      )
+    );
 
-    return categoryIds
-      .map(id => {
-        const field = careerFields.find(
-          f => f.category_id === id
-        );
-
+    /**
+     * Step 3: Compute similarity per category
+     */
+    const results = categoryIds
+      .map((id) => {
+        const field = careerFields.find((f) => f.category_id === id);
         if (!field || !field.scores) return null;
 
-        let weighted = 0;
-
-        ["R", "I", "A", "S", "E", "C"].forEach(key => {
-          const userTrait = userScoresObj[key];
-          const idealWeight = field.scores[key];
-
-          if (
-            typeof userTrait === "number" &&
-            typeof idealWeight === "number"
-          ) {
-            weighted += (userTrait / 30) * idealWeight;
-          }
-        });
+        const similarity = cosineSimilarity(
+          userScoresObj,
+          field.scores
+        );
 
         return {
           category_id: id,
@@ -63,13 +71,36 @@ export default function CareerOptions({
             language === "mr"
               ? field.careerField?.mr
               : field.careerField?.en,
-          value: Math.round(weighted * 100),
+          value: Math.round(similarity * 100), // percentage
         };
       })
-      .filter(Boolean)
+      .filter((item) => Boolean(item))
       .sort((a, b) => b.value - a.value);
+
+    return results;
   };
 
+  /**
+   * Cosine similarity between user vector and ideal vector
+   */
+  function cosineSimilarity(user, ideal) {
+    let dot = 0;
+    let userMag = 0;
+    let idealMag = 0;
+
+    for (const key of ["R", "I", "A", "S", "E", "C"]) {
+      const u = user[key] ?? 0;
+      const i = ideal[key] ?? 0;
+
+      dot += u * i;
+      userMag += u * u;
+      idealMag += i * i;
+    }
+
+    if (userMag === 0 || idealMag === 0) return 0;
+
+    return dot / (Math.sqrt(userMag) * Math.sqrt(idealMag));
+  }
 
   const chartData = prepareChartData();
   const categoryPriority = new Map();

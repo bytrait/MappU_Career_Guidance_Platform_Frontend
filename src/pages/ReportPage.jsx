@@ -124,6 +124,7 @@ export default function ReportPage() {
     load();
   }, []);
 
+  console.log("Scores:", scores);
   /* ------------------ LOAD CAREERS ------------------ */
   useEffect(() => {
     async function loadCareers() {
@@ -231,7 +232,7 @@ export default function ReportPage() {
     doc.write(finalHTML);
     doc.close();
 
-    // ✅ SAME setTimeout, just waiting correctly
+    // SAME setTimeout, just waiting correctly
     setTimeout(async () => {
       await waitForIframeAssets(doc);
       iframe.contentWindow.print();

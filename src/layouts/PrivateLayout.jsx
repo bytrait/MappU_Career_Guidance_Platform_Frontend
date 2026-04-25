@@ -9,8 +9,8 @@ function PrivateLayout() {
     window.location.href = redirectUrl;
   };
 
-  // Hide navbar only on welcome page "/"
-  const hideNavbarRoutes = ["/"];
+  // Hide navbar"/"
+  const hideNavbarRoutes = ["/","/payment"];
 
   const isNavbarHidden = hideNavbarRoutes.includes(location.pathname);
 

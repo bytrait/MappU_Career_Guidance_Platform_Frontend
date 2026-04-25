@@ -16,10 +16,10 @@ export default function DemoOceanInstructions({ onStart }) {
         </h3>
 
         {/* Description */}
-        <p className="text-gray-700 my-4 leading-relaxed">
+        {/* <p className="text-gray-700 my-4 leading-relaxed">
           The OCEAN test helps you understand your personality across five important traits:
           Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.
-        </p>
+        </p> */}
 
         {/* Bullet Points */}
         <ul className="list-disc pl-6 text-gray-700 mb-6 leading-relaxed space-y-2 marker:text-blue-600 marker:text-2xl">
