@@ -25,7 +25,10 @@ import Spinner from "../components/common/Spinner";
 import PrintDocument from "../components/report/PrintDocument";
 import PrintCoverPage from "../components/report/PrintCoverPage";
 import ReportOverviewPage from "../components/report/ReportOverviewPage";
+import { downloadReportPDF } from "../services/reportService";
 import ReportIndexPage from "../components/report/ReportIndexPage";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 /* ------------------ PRINT STYLES ------------------ */
 function collectStylesForIframe() {
@@ -101,7 +104,7 @@ export default function ReportPage() {
   const [userDetails, setUserDetails] = useState(null);
   const [showPrintModal, setShowPrintModal] = useState(false);
   const [selectedCareerIds, setSelectedCareerIds] = useState([]);
-
+  const [isDownloading, setIsDownloading] = useState(false);
   const { scores, language, economicStatus, recommendedCareers } = useSelector(
     s => s.report
   );
@@ -137,9 +140,9 @@ export default function ReportPage() {
         recs =
           economicStatus === "weak"
             ? [
-                ...(res.data.recommendations.vocational || []),
-                ...(res.data.recommendations.professional || []),
-              ]
+              ...(res.data.recommendations.vocational || []),
+              ...(res.data.recommendations.professional || []),
+            ]
             : res.data.recommendations.professional || [];
       }
 
@@ -174,10 +177,24 @@ export default function ReportPage() {
     const div = document.createElement("div");
     div.style.position = "fixed";
     div.style.left = "-9999px";
+
+    // ✅ Inject safe CSS override here
+    const style = document.createElement("style");
+    style.innerHTML = `
+    * {
+      color: #111827 !important;
+      background-color: transparent !important;
+      border-color: #e5e7eb !important;
+    }
+  `;
+
+    div.appendChild(style);
+
     document.body.appendChild(div);
     offscreenRootRef.current = div;
     return div;
   }
+
 
   function ensureIframe() {
     if (iframeRef.current) return iframeRef.current;
@@ -190,16 +207,18 @@ export default function ReportPage() {
   }
 
   /* ------------------ PRINT ------------------ */
-  async function handlePrint() {
+  async function handleDownloadPDF() {
+    setIsDownloading(true);
+
     const container = ensureOffscreenRoot();
     container.innerHTML = "";
 
     const root = ReactDOM.createRoot(container);
+
     root.render(
       <>
         <PrintCoverPage userDetails={userDetails} language={language} />
         <ReportOverviewPage />
-        {/* <ReportIndexPage /> */}
         <PrintDocument
           scores={scores}
           language={language}
@@ -209,35 +228,55 @@ export default function ReportPage() {
       </>
     );
 
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 500));
 
-    const html = container.innerHTML;
     const styles = collectStylesForIframe();
 
     const finalHTML = `
-      <!doctype html>
-      <html>
-        <head>
-          <meta charset="utf-8" />
-          <title>${userDetails?.fullName || "Report"}</title>
-          ${styles}
-        </head>
-        <body>${html}</body>
-      </html>
-    `;
+    <!doctype html>
+    <html>
+      <head>
+        <base href="${window.location.origin}" />
+        <meta charset="utf-8" />
+        <title>${userDetails?.fullName || "Report"}</title>
+        ${styles}
+      </head>
+      <body>
+        ${container.innerHTML}
+      </body>
+    </html>
+  `;
 
-    const iframe = ensureIframe();
-    const doc = iframe.contentDocument;
-    doc.open();
-    doc.write(finalHTML);
-    doc.close();
+    try {
+      const response = await downloadReportPDF({
+        html: finalHTML,
+        studentName: userDetails?.fullName,
+      });
 
-    // SAME setTimeout, just waiting correctly
-    setTimeout(async () => {
-      await waitForIframeAssets(doc);
-      iframe.contentWindow.print();
-    }, 300);
+      const blob = new Blob([response.data], {
+        type: "application/pdf",
+      });
 
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+
+      const fileName = `${userDetails?.fullName || "Student"}_MappU_Report_${new Date()
+        .toISOString()
+        .slice(0, 10)}.pdf`;
+
+      link.href = url;
+      link.setAttribute("download", fileName);
+
+      document.body.appendChild(link);
+      link.click();
+
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("PDF download failed:", error);
+    }
+    setIsDownloading(false);
     root.unmount();
     container.remove();
     offscreenRootRef.current = null;
@@ -272,7 +311,7 @@ export default function ReportPage() {
             onClick={openPrintModal}
             className="px-4 py-2 bg-primary text-white rounded shadow cursor-pointer"
           >
-            {language === "mr" ? "प्रिंट अहवाल" : "Print Report"}
+            {language === "mr" ? "डाऊनलोड अहवाल" : "Download Report"}
           </button>
         </div>
       </div>
@@ -332,18 +371,45 @@ export default function ReportPage() {
             <div className="flex justify-end gap-2 mt-4">
               <button
                 onClick={() => setShowPrintModal(false)}
-                className="px-4 py-2 bg-gray-200 rounded"
+                disabled={isDownloading}
+                className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
-                onClick={handlePrint}
-                className="px-4 py-2 bg-primary text-white rounded"
+                onClick={handleDownloadPDF}
+                disabled={isDownloading}
+                className={`px-4 py-2 rounded text-white font-medium transition
+                    ${isDownloading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-primary hover:bg-primary/90"}
+                  `}
               >
-                Print
+                {language === "mr" ? "अहवाल डाउनलोड करा" : "Download PDF"}
               </button>
             </div>
           </div>
+          {isDownloading && (
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg z-50">
+
+              {/* Spinner */}
+              <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+
+              {/* Text */}
+              <p className="mt-4 text-sm font-medium text-gray-700">
+                {language === "mr"
+                  ? "अहवाल तयार होत आहे..."
+                  : "Generating your report..."}
+              </p>
+
+              {/* Subtext */}
+              <p className="text-xs text-gray-500 mt-1">
+                {language === "mr"
+                  ? "कृपया थांबा"
+                  : "This may take a few seconds"}
+              </p>
+            </div>
+          )}
         </div>
       )}
 
