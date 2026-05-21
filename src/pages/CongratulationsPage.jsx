@@ -56,10 +56,10 @@ export default function CongratulationsPage() {
       </p>
 
       {/* Paragraphs */}
-      <p className="text-center max-w-2xl mb-4">
+      {/* <p className="text-center max-w-2xl mb-4">
         Congratulations {userDetails?.fullName} for taking the first step towards a successful,
         satisfying and meaningful career.
-      </p>
+      </p> */}
       <p className="text-center max-w-2xl mb-8">
         This confidential report is based on your responses to the personality
         and career interest tests. The analysis of your responses is then used

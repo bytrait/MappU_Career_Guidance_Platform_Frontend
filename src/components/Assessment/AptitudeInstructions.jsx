@@ -29,8 +29,8 @@ export default function AptitudeInstructions({ onStart }) {
           <li>
             Questions are from categories like Quantitative, Logical Reasoning, and Verbal Ability.
           </li>
-          <li>          Each correct answer gives you <strong>1 point</strong>.
-          </li>
+          {/* <li>          Each correct answer gives you <strong>1 point</strong>.
+          </li> */}
           <li>          Please answer all questions carefully. You cannot change your answers after submission.
           </li>
         </ul>

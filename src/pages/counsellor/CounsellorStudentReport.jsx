@@ -12,6 +12,7 @@ import PrintDocument from "../../components/report/PrintDocument";
 import PrintCoverPage from "../../components/report/PrintCoverPage";
 
 import { getStudentById, isAuthenticated } from "../../services/auth";
+import { downloadReportPDF } from "../../services/reportService";
 
 import {
   getStudentScoresForCounsellor,
@@ -100,6 +101,7 @@ export default function CounsellorStudentReport() {
 
   const [studentProfile, setStudentProfile] = useState(null);
   const [counsellor, setCounsellor] = useState(null);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   /* ------------------ LOAD STUDENT DATA ------------------ */
   useEffect(() => {
@@ -151,9 +153,9 @@ export default function CounsellorStudentReport() {
         recs =
           economicStatus === "weak"
             ? [
-                ...(res.data.recommendations.vocational || []),
-                ...(res.data.recommendations.professional || []),
-              ]
+              ...(res.data.recommendations.vocational || []),
+              ...(res.data.recommendations.professional || []),
+            ]
             : res.data.recommendations.professional || [];
       }
 
@@ -196,11 +198,14 @@ export default function CounsellorStudentReport() {
     );
   }
 
-  async function handlePrint() {
+  async function handleDownloadPDF() {
+    setIsDownloading(true);
+
     const container = ensureOffscreenRoot();
     container.innerHTML = "";
 
     const root = ReactDOM.createRoot(container);
+
     root.render(
       <>
         <PrintCoverPage
@@ -217,41 +222,60 @@ export default function CounsellorStudentReport() {
       </>
     );
 
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 500));
 
-    const html = container.innerHTML;
     const styles = collectStylesForIframe();
 
     const finalHTML = `
-      <!doctype html>
-      <html>
-        <head>
-          <meta charset="utf-8" />
-          <title>${studentProfile?.fullName || "Student Report"}</title>
-          ${styles}
-        </head>
-        <body>${html}</body>
-      </html>
-    `;
+    <!doctype html>
+    <html>
+      <head>
+        <base href="${window.location.origin}" />
+        <meta charset="utf-8" />
+        <title>${studentProfile?.fullName || "Student Report"}</title>
+        ${styles}
+      </head>
+      <body>${container.innerHTML}</body>
+    </html>
+  `;
 
-    const iframe = ensureIframe();
-    const doc = iframe.contentDocument;
-    doc.open();
-    doc.write(finalHTML);
-    doc.close();
+    try {
+      const response = await downloadReportPDF({
+        html: finalHTML,
+        studentName: studentProfile?.fullName,
+      });
 
-    // ✅ SAME timeout, just waits correctly
-    setTimeout(async () => {
-      await waitForIframeAssets(doc);
-      iframe.contentWindow.print();
-    }, 300);
+      const blob = new Blob([response.data], {
+        type: "application/pdf",
+      });
 
-    root.unmount();
-    container.remove();
-    offscreenRootRef.current = null;
-    setShowPrintModal(false);
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+
+      const fileName = `${studentProfile?.fullName || "Student"}_Report_${new Date()
+        .toISOString()
+        .slice(0, 10)}.pdf`;
+
+      link.href = url;
+      link.download = fileName;
+
+      document.body.appendChild(link);
+      link.click();
+
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("PDF download failed:", error);
+    } finally {
+      setIsDownloading(false);
+
+      root.unmount();
+      container.remove();
+      offscreenRootRef.current = null;
+      setShowPrintModal(false);
+    }
   }
-
   /* ------------------ RENDER ------------------ */
   if (loading) {
     return (
@@ -272,7 +296,7 @@ export default function CounsellorStudentReport() {
           onClick={() => setShowPrintModal(true)}
           className="px-4 py-2 bg-blue-600 text-white rounded"
         >
-          Print Report
+          Download Report
         </button>
       </div>
 
@@ -326,18 +350,36 @@ export default function CounsellorStudentReport() {
             <div className="flex justify-end gap-2 mt-4">
               <button
                 onClick={() => setShowPrintModal(false)}
-                className="px-4 py-2 bg-gray-200 rounded"
+                disabled={isDownloading}
+                className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
-                onClick={handlePrint}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                onClick={handleDownloadPDF}
+                disabled={isDownloading}
+                className={`px-4 py-2 rounded text-white
+                ${isDownloading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600"}
+                `}
               >
-                Print
+                Download PDF
               </button>
             </div>
           </div>
+
+          {isDownloading && (
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg z-50">
+              <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
+
+              <p className="mt-4 text-sm font-medium text-gray-700">
+                Generating student report...
+              </p>
+
+              <p className="text-xs text-gray-500 mt-1">
+                Please wait a few seconds
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -21,11 +21,11 @@ export default function OceanInstructions({ onStart }) {
           Let's start with the personality test. Please note a few points before you start.
         </h3>
 
-        <p className="text-gray-700 my-4 leading-relaxed">
+        {/* <p className="text-gray-700 my-4 leading-relaxed">
           The OCEAN test helps you understand your personality based on five
           dimensions: Openness, Conscientiousness, Extraversion, Agreeableness,
           and Neuroticism.
-        </p>
+        </p> */}
 
         <ul className="list-disc pl-6 text-gray-700 mb-6 leading-relaxed space-y-2 marker:text-blue-600 marker:text-2xl">
           <li>Make sure you are relaxed without any disturbance, and free of any stress while taking this test</li>

@@ -6,8 +6,8 @@ export default function CounsellorSidebar({ sidebarOpen, setSidebarOpen }) {
   const menuItems = [
     { name: "Overview", path: "/counsellor/dashboard" },
     { name: "Students", path: "/counsellor/students" },
-    { name: "Schools", path: "/counsellor/schools" },
-    { name: "Billing", path: "/counsellor/billing" },
+    { name: "Schools & Pricing", path: "/counsellor/schools" },
+    // { name: "Billing", path: "/counsellor/billing" },
   ];
 
   return (
