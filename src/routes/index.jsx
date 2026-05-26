@@ -37,6 +37,8 @@ import CounsellorLayout from "../components/counsellor/layout/CounsellorLayout";
 import DemoCongratulationsPage from "../pages/demo/DemoCongratulationpage";
 import StudentPaymentPage from "../pages/StudentPaymentPage";
 
+import DynamicRoute from './DynamicRoute'
+import { resolvePage } from '../pages/resolver'
 export const router = createBrowserRouter([
 
   // ---------------------------------------
@@ -50,7 +52,8 @@ export const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      { path: "", element: <WelcomePage /> },
+      { path: "", element:     <DynamicRoute resolve={resolvePage} pageKey="welcome" />
+ },
       { path: "assessment", element: <AssessmentPage /> },
       { path: "report", element: <ReportPage /> },
       { path: "congratulations", element: <CongratulationsPage /> },
