@@ -1,5 +1,6 @@
 import AuthAPI from './authAxiosInstance';
 import API from "./axiosInstance";
+import { normalizeApiError } from './apiError';
 
 
 export const getCounsellorStudents = async ({
@@ -53,6 +54,127 @@ export const rotateDirectReferenceCode = async () => {
   return res.data.data;
 };
 
+/* -----------------------------
+   Reference Tokens (multi-token)
+   Backed by ${AUTH_API_BASE}/api/v2/counsellor/...
+----------------------------- */
+
+/**
+ * @typedef {'COUNSELLOR' | 'SCHOOL' | 'INSTITUTION'} ReferenceTokenType
+ *
+ * @typedef {Object} ReferenceToken
+ * @property {string} id
+ * @property {string} code
+ * @property {ReferenceTokenType} type
+ * @property {string} targetId
+ * @property {string|null} label
+ * @property {string} startDate   ISO timestamp
+ * @property {string|null} expiryDate
+ * @property {boolean} isActive
+ * @property {string} createdAt
+ * @property {string} updatedAt
+ *
+ * @typedef {Object} CreateTokenInput
+ * @property {string} [label]
+ * @property {string} [startDate]
+ * @property {string} [expiryDate]
+ * @property {number} [price]
+ * @property {string} [currency]
+ *
+ * @typedef {Object} ExtendTokenInput
+ * @property {string} expiryDate
+ * @property {number} [price]
+ * @property {string} [currency]
+ */
+
+const cleanTokenPayload = (payload = {}) => {
+  const out = {};
+  Object.entries(payload).forEach(([key, value]) => {
+    if (value === undefined || value === null) return;
+    if (typeof value === "string" && value.trim() === "") return;
+    out[key] = value;
+  });
+  return out;
+};
+
+/**
+ * Run a token-related axios call and re-throw any failure as an ApiError so
+ * callers can branch on `err.status` / `err.code` without re-inspecting the
+ * raw axios shape.
+ */
+const tokenCall = async (fn) => {
+  try {
+    return await fn();
+  } catch (err) {
+    if (err?.api) throw err.api;
+    throw normalizeApiError(err);
+  }
+};
+
+export const createCounsellorToken = (payload) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.post(
+      "/counsellor/reference-tokens",
+      cleanTokenPayload(payload)
+    );
+    return res.data.data;
+  });
+
+export const listCounsellorTokens = ({ includeInactive = false } = {}) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.get("/counsellor/reference-tokens", {
+      params: { includeInactive },
+    });
+    return res.data.data;
+  });
+
+export const createSchoolToken = (schoolId, payload) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.post(
+      `/counsellor/schools/${schoolId}/reference-tokens`,
+      cleanTokenPayload(payload)
+    );
+    return res.data.data;
+  });
+
+export const listSchoolTokens = (
+  schoolId,
+  { includeInactive = false } = {}
+) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.get(
+      `/counsellor/schools/${schoolId}/reference-tokens`,
+      { params: { includeInactive } }
+    );
+    return res.data.data;
+  });
+
+export const extendToken = (tokenId, payload) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.patch(
+      `/counsellor/reference-tokens/${tokenId}/extend`,
+      cleanTokenPayload(payload)
+    );
+    return res.data.data;
+  });
+
+export const updateTokenPrice = (tokenId, payload) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.patch(
+      `/counsellor/reference-tokens/${tokenId}/price`,
+      cleanTokenPayload(payload)
+    );
+    return res.data.data;
+  });
+
+export const deactivateToken = (tokenId) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.patch(
+      `/counsellor/reference-tokens/${tokenId}/deactivate`
+    );
+    return res.data.data;
+  });
+
 
 /* -----------------------------
    Schools
@@ -62,10 +184,11 @@ export const getCounsellorSchools = async () => {
   return res.data.data;
 };
 
-export const createSchool = async (payload) => {
-  const res = await AuthAPI.post('/counsellor/schools', payload);
-  return res.data.data;
-};
+export const createSchool = (payload) =>
+  tokenCall(async () => {
+    const res = await AuthAPI.post('/counsellor/schools', payload);
+    return res.data.data;
+  });
 
 export const updateSchool = async (schoolId, payload) => {
   const res = await AuthAPI.patch(`/counsellor/schools/${schoolId}`, payload);

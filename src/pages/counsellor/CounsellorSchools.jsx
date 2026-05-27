@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import {
   getCounsellorSchools,
   createSchool,
@@ -9,8 +10,20 @@ import {
   togglePaymentEnabled,
   createSchoolPricing,
   updateSchoolPricing,
+  listSchoolTokens,
 } from "../../services/counsellorService";
 import Spinner from "../../components/common/Spinner";
+import {
+  bucketTokenApiError,
+  CODE_REGEX,
+  countActiveTokens,
+  dateInputToIso,
+  dateInputToIsoEndOfDay,
+  sanitizeCodeInput,
+  suggestCode,
+  todayInputValue,
+  validateCode,
+} from "../../utils/referenceTokens";
 
 const CounsellorSchools = () => {
   const navigate = useNavigate();
@@ -20,6 +33,24 @@ const CounsellorSchools = () => {
 
   const [name, setName] = useState("");
   const [creating, setCreating] = useState(false);
+  const [createError, setCreateError] = useState("");
+
+  // Required custom token code for the first school token
+  const [tokenCode, setTokenCode] = useState("");
+  const [tokenCodeError, setTokenCodeError] = useState("");
+
+  // Initial-token (optional) settings on the create-school form
+  const [tokenOpen, setTokenOpen] = useState(false);
+  const [tokenLabel, setTokenLabel] = useState("");
+  const [tokenStartDate, setTokenStartDate] = useState(todayInputValue());
+  const [tokenExpiryDate, setTokenExpiryDate] = useState("");
+  const [tokenExpiryError, setTokenExpiryError] = useState("");
+  const [tokenPrice, setTokenPrice] = useState("");
+  const [tokenPriceError, setTokenPriceError] = useState("");
+  const [tokenCurrency, setTokenCurrency] = useState("INR");
+
+  // Per-school active token counts
+  const [activeTokenCounts, setActiveTokenCounts] = useState({});
 
   const [editingId, setEditingId] = useState(null);
   const [editName, setEditName] = useState("");
@@ -36,20 +67,6 @@ const CounsellorSchools = () => {
 
   const [successMessage, setSuccessMessage] = useState("");
 
-  const activeSchoolsCount = useMemo(
-    () => schools.filter((school) => school.isActive).length,
-    [schools]
-  );
-
-  const totalStudents = useMemo(
-    () =>
-      schools.reduce(
-        (total, school) => total + (school.studentsCount || 0),
-        0
-      ),
-    [schools]
-  );
-
   const showSuccess = (message) => {
     setSuccessMessage(message);
 
@@ -58,11 +75,30 @@ const CounsellorSchools = () => {
     }, 3000);
   };
 
+  const fetchActiveTokenCounts = async (list) => {
+    // Lazy parallel fetch — failures collapse to 0 rather than break the page.
+    const entries = await Promise.all(
+      list.map(async (school) => {
+        try {
+          const tokens = await listSchoolTokens(school.id, {
+            includeInactive: false,
+          });
+          return [school.id, countActiveTokens(tokens)];
+        } catch {
+          return [school.id, 0];
+        }
+      })
+    );
+
+    setActiveTokenCounts(Object.fromEntries(entries));
+  };
+
   const fetchSchools = async () => {
     try {
       setLoading(true);
       const data = await getCounsellorSchools();
       setSchools(data);
+      fetchActiveTokenCounts(data);
     } finally {
       setLoading(false);
     }
@@ -101,17 +137,115 @@ const CounsellorSchools = () => {
     fetchPricingConfig();
   }, []);
 
+  const resetCreateSchoolForm = () => {
+    setName("");
+    setTokenCode("");
+    setTokenCodeError("");
+    setTokenOpen(false);
+    setTokenLabel("");
+    setTokenStartDate(todayInputValue());
+    setTokenExpiryDate("");
+    setTokenExpiryError("");
+    setTokenPrice("");
+    setTokenPriceError("");
+    setTokenCurrency("INR");
+    setCreateError("");
+  };
+
+  const clearCreateSchoolErrors = () => {
+    setTokenCodeError("");
+    setTokenExpiryError("");
+    setTokenPriceError("");
+    setCreateError("");
+  };
+
   const handleCreate = async () => {
-    if (!name.trim()) return;
+    clearCreateSchoolErrors();
+
+    if (!name.trim()) {
+      setCreateError("School name is required.");
+      return;
+    }
+
+    const codeIssue = validateCode(tokenCode);
+    if (codeIssue) {
+      setTokenCodeError(codeIssue);
+      return;
+    }
+
+    if (
+      tokenOpen &&
+      tokenExpiryDate &&
+      tokenStartDate &&
+      tokenExpiryDate <= tokenStartDate
+    ) {
+      setTokenExpiryError("Expiry date must be after the start date.");
+      return;
+    }
+
+    const priceTrimmed = tokenPrice.trim();
+    const priceNumber = priceTrimmed === "" ? null : Number(priceTrimmed);
+    if (
+      tokenOpen &&
+      priceTrimmed !== "" &&
+      (!Number.isFinite(priceNumber) || priceNumber < 0)
+    ) {
+      setTokenPriceError("Price must be a non-negative number.");
+      return;
+    }
+
+    const payload = {
+      name: name.trim(),
+      tokenCode: tokenCode.trim(),
+    };
+
+    if (tokenOpen) {
+      if (tokenLabel.trim()) payload.tokenLabel = tokenLabel.trim();
+      const startIso = dateInputToIso(tokenStartDate);
+      if (startIso) payload.tokenStartDate = startIso;
+      const expiryIso = dateInputToIsoEndOfDay(tokenExpiryDate);
+      if (expiryIso) payload.tokenExpiryDate = expiryIso;
+      if (priceTrimmed !== "") {
+        payload.price = priceNumber;
+        payload.currency = tokenCurrency;
+      }
+    }
 
     try {
       setCreating(true);
-      await createSchool({ name });
-      setName("");
+      const created = await createSchool(payload);
+
+      resetCreateSchoolForm();
       fetchSchools();
-      showSuccess("School created successfully");
+
+      if (created?.referenceToken?.code) {
+        showSuccess(
+          `School created — first token ${created.referenceToken.code} is ready`
+        );
+      } else {
+        showSuccess("School created successfully");
+      }
     } catch (error) {
-      console.error("Failed to create school", error);
+      // School is rolled back on billing failure — keep the form open & filled.
+      const bucket = bucketTokenApiError(error);
+      // 401/403/5xx already toasted by the interceptor — still leave the form
+      // open so the counsellor doesn't lose what they typed.
+      if (bucket.silent) {
+        setCreateError("Couldn't create the school. Try again in a moment.");
+        return;
+      }
+      if (bucket.field === "code") setTokenCodeError(bucket.message);
+      else if (bucket.field === "expiry") setTokenExpiryError(bucket.message);
+      else if (bucket.field === "price") setTokenPriceError(bucket.message);
+      else if (bucket.toast) {
+        toast.error(bucket.toast);
+        setCreateError(bucket.toast);
+      } else if (bucket.form) {
+        setCreateError(bucket.form);
+        toast.error(bucket.form);
+      } else {
+        setCreateError(bucket.message || "Failed to create school.");
+      }
     } finally {
       setCreating(false);
     }
@@ -410,17 +544,212 @@ const CounsellorSchools = () => {
           </h2>
 
           <p className="text-sm text-slate-500 mt-2">
-            Create a school and configure its registration pricing.
+            Create a school and optionally issue its first reference token.
           </p>
 
           <div className="mt-5 space-y-4">
-            <input
-              type="text"
-              placeholder="Enter school name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border border-slate-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
+            <div>
+              <label className="block text-xs font-medium text-slate-600 mb-1">
+                School name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. Delhi Public School"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full border border-slate-200 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-xs font-medium text-slate-600">
+                  First reference code{" "}
+                  <span className="text-red-500">*</span>
+                </label>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTokenCode(suggestCode(name));
+                    if (tokenCodeError) setTokenCodeError("");
+                  }}
+                  className="text-xs text-indigo-600 hover:text-indigo-700 font-medium"
+                >
+                  Suggest
+                </button>
+              </div>
+              <input
+                type="text"
+                value={tokenCode}
+                onChange={(e) => {
+                  setTokenCode(sanitizeCodeInput(e.target.value));
+                  if (tokenCodeError) setTokenCodeError("");
+                }}
+                placeholder="e.g. DPS2026"
+                maxLength={20}
+                autoComplete="off"
+                style={{ textTransform: "uppercase", letterSpacing: "0.1em" }}
+                className={`w-full font-mono border rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 ${
+                  tokenCodeError
+                    ? "border-red-300 focus:ring-red-300"
+                    : "border-slate-200 focus:ring-indigo-500"
+                }`}
+              />
+              <p
+                className={`text-xs mt-1 ${
+                  tokenCodeError
+                    ? "text-red-600"
+                    : tokenCode === "" || CODE_REGEX.test(tokenCode)
+                    ? "text-slate-400"
+                    : "text-amber-600"
+                }`}
+              >
+                {tokenCodeError ||
+                  "4–20 characters, letters and numbers only."}
+              </p>
+            </div>
+
+            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setTokenOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+              >
+                <span>
+                  Initial token settings{" "}
+                  <span className="text-slate-400 font-normal">
+                    (optional)
+                  </span>
+                </span>
+                <span className="text-slate-400">
+                  {tokenOpen ? "−" : "+"}
+                </span>
+              </button>
+
+              {tokenOpen && (
+                <div className="px-4 pb-4 space-y-3 border-t border-slate-100">
+                  <div>
+                    <label className="block text-xs font-medium text-slate-600 mb-1 mt-3">
+                      Label
+                    </label>
+                    <input
+                      type="text"
+                      value={tokenLabel}
+                      onChange={(e) =>
+                        setTokenLabel(e.target.value.slice(0, 60))
+                      }
+                      placeholder="e.g. Default 2026"
+                      maxLength={60}
+                      className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-600 mb-1">
+                        Start date
+                      </label>
+                      <input
+                        type="date"
+                        value={tokenStartDate}
+                        min={todayInputValue()}
+                        onChange={(e) => setTokenStartDate(e.target.value)}
+                        className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-medium text-slate-600 mb-1">
+                        Expiry date
+                      </label>
+                      <input
+                        type="date"
+                        value={tokenExpiryDate}
+                        min={tokenStartDate || todayInputValue()}
+                        onChange={(e) => {
+                          setTokenExpiryDate(e.target.value);
+                          if (tokenExpiryError) setTokenExpiryError("");
+                        }}
+                        className={`w-full border rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 ${
+                          tokenExpiryError
+                            ? "border-red-300 focus:ring-red-300"
+                            : "border-slate-200 focus:ring-indigo-500"
+                        }`}
+                      />
+                      {tokenExpiryError && (
+                        <p className="text-xs text-red-600 mt-1">
+                          {tokenExpiryError}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-600 mb-1">
+                        Price
+                      </label>
+                      <div className="relative">
+                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
+                          {tokenCurrency === "INR" ? "₹" : tokenCurrency}
+                        </span>
+                        <input
+                          type="number"
+                          min="0"
+                          step="1"
+                          value={tokenPrice}
+                          onChange={(e) => {
+                            setTokenPrice(e.target.value);
+                            if (tokenPriceError) setTokenPriceError("");
+                          }}
+                          placeholder="Free"
+                          className={`w-full pl-8 pr-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 ${
+                            tokenPriceError
+                              ? "border-red-300 focus:ring-red-300"
+                              : "border-slate-200 focus:ring-indigo-500"
+                          }`}
+                        />
+                      </div>
+                      {tokenPriceError && (
+                        <p className="text-xs text-red-600 mt-1">
+                          {tokenPriceError}
+                        </p>
+                      )}
+                    </div>
+
+                    {tokenPrice.trim() !== "" && (
+                      <div>
+                        <label className="block text-xs font-medium text-slate-600 mb-1">
+                          Currency
+                        </label>
+                        <select
+                          value={tokenCurrency}
+                          onChange={(e) => setTokenCurrency(e.target.value)}
+                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        >
+                          {["INR", "USD", "EUR", "GBP", "AED"].map((c) => (
+                            <option key={c} value={c}>
+                              {c}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-xs text-slate-400">
+                    Price is stored in the billing service. Leave blank for
+                    free.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {createError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+                {createError}
+              </div>
+            )}
 
             <button
               onClick={handleCreate}
@@ -498,6 +827,16 @@ const CounsellorSchools = () => {
                           {school.isActive
                             ? "Active"
                             : "Inactive"}
+                        </span>
+
+                        <span
+                          className="px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 ring-1 ring-indigo-100"
+                          title="Active reference tokens"
+                        >
+                          {activeTokenCounts[school.id] ?? 0} active{" "}
+                          {(activeTokenCounts[school.id] ?? 0) === 1
+                            ? "token"
+                            : "tokens"}
                         </span>
                       </div>
 

@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import {
   getCounsellorStudents,
   getCounsellorSchools,
   getBulkAssessmentStatus,
-  rotateDirectReferenceCode
+  rotateDirectReferenceCode,
 } from "../../services/counsellorService";
 
 import { getReferenceCode } from "../../services/auth";
 
 import Pagination from "../../components/Pagination";
 import Spinner from "../../components/common/Spinner";
+import TokensTable from "../../components/counsellor/TokensTable";
 
 const CounsellorStudents = () => {
   const navigate = useNavigate();
@@ -28,35 +30,27 @@ const CounsellorStudents = () => {
 
   const [page, setPage] = useState(1);
 
-  const [referenceCode, setReferenceCode] = useState("");
-  const [copied, setCopied] = useState(false);
-
+  // Legacy single reference code — demoted to the "default / primary" slot
+  const [legacyCode, setLegacyCode] = useState("");
+  const [legacyCopied, setLegacyCopied] = useState(false);
   const [showRotateModal, setShowRotateModal] = useState(false);
   const [rotating, setRotating] = useState(false);
 
-
   const limit = 10;
 
-  // Fetch schools
   useEffect(() => {
-    getCounsellorSchools().then(setSchools).catch(() => { });
+    getCounsellorSchools().then(setSchools).catch(() => {});
   }, []);
 
-  // Fetch reference code
   useEffect(() => {
-    getReferenceCode().then(setReferenceCode).catch(() => { });
+    getReferenceCode().then(setLegacyCode).catch(() => {});
   }, []);
 
-  // Fetch students + merge assessment status + apply filters
   const fetchStudents = async () => {
     setLoading(true);
 
     try {
-      const params = {
-        page,
-        limit,
-        search,
-      };
+      const params = { page, limit, search };
 
       const res = await getCounsellorStudents(params);
       const baseStudents = res.data || [];
@@ -79,20 +73,16 @@ const CounsellorStudents = () => {
         }));
       }
 
-      // ✅ Apply School + Status filters here
       const filteredStudents = enrichedStudents.filter((student) => {
-
         if (schoolFilter && student.schoolId !== schoolFilter) {
           return false;
         }
-
         if (
           statusFilter !== "ALL" &&
           student.assessmentStatus !== statusFilter
         ) {
           return false;
         }
-
         return true;
       });
 
@@ -109,20 +99,31 @@ const CounsellorStudents = () => {
     fetchStudents();
   }, [page, search, schoolFilter, statusFilter]);
 
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(referenceCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+  const handleCopyLegacy = async () => {
+    if (!legacyCode) return;
+    try {
+      await navigator.clipboard.writeText(legacyCode);
+      setLegacyCopied(true);
+      toast.success("Copied");
+      setTimeout(() => setLegacyCopied(false), 1500);
+    } catch {
+      toast.error("Couldn't copy to clipboard");
+    }
   };
 
   const handleRotate = async () => {
     try {
       setRotating(true);
       const newCode = await rotateDirectReferenceCode();
-      setReferenceCode(newCode.code);
+      setLegacyCode(newCode.code);
+      toast.success("Legacy reference code rotated");
       setShowRotateModal(false);
     } catch (error) {
-      console.error("Rotate failed:", error);
+      const message =
+        error?.response?.data?.message ||
+        error?.message ||
+        "Failed to rotate code.";
+      toast.error(message);
     } finally {
       setRotating(false);
     }
@@ -130,10 +131,25 @@ const CounsellorStudents = () => {
 
   if (loading && !students.length) return <Spinner />;
 
+  const legacyMenu = (
+    <>
+      <button
+        type="button"
+        onMouseDown={(e) => e.preventDefault()}
+        onClick={() => setShowRotateModal(true)}
+        className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50"
+      >
+        Quick-replace single code (legacy)
+      </button>
+      <p className="px-4 pb-2 pt-1 text-xs text-slate-400">
+        Auto-generates a fresh code on the legacy single-code endpoint used
+        by older signup flows.
+      </p>
+    </>
+  );
+
   return (
     <div className="space-y-8">
-
-      {/* Summary Strip */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
           <p className="text-sm text-slate-500">Total Students</p>
@@ -152,54 +168,54 @@ const CounsellorStudents = () => {
         <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
           <p className="text-sm text-slate-500">Completed</p>
           <h3 className="text-2xl font-semibold text-green-600">
-            {students.filter(s => s.assessmentStatus === "COMPLETED").length}
+            {students.filter((s) => s.assessmentStatus === "COMPLETED").length}
           </h3>
         </div>
       </div>
 
-      {/* Reference Code */}
-      {referenceCode && (
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 flex justify-between items-center shadow-sm">
+      <TokensTable
+        scope="counsellor"
+        title="My Reference Tokens"
+        description="Generate as many tokens as you need — each one onboards students independently."
+        legacyMenu={legacyMenu}
+      />
+
+      {legacyCode && (
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <p className="text-sm text-slate-500">
-              Direct Student Reference Code
+            <p className="text-xs uppercase tracking-wide text-slate-400">
+              Default / legacy reference code
             </p>
-            <p className="text-3xl font-bold tracking-widest text-indigo-600">
-              {referenceCode}
+            <p className="text-lg font-bold tracking-widest text-slate-700 font-mono mt-1">
+              {legacyCode}
+            </p>
+            <p className="text-xs text-slate-400 mt-1">
+              Still works for older signup links — prefer the new tokens above.
             </p>
           </div>
 
-          <div className="flex gap-3">
-            <button
-              onClick={handleCopy}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition"
-            >
-              {copied ? "Copied" : "Copy Code"}
-            </button>
-
-            {/* ✅ Rotate Button */}
-            <button
-              onClick={() => setShowRotateModal(true)}
-              className="px-4 py-2 border border-red-300 text-red-600 rounded-xl hover:bg-red-50 transition"
-            >
-              Rotate
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={handleCopyLegacy}
+            className="px-4 py-2 border border-slate-200 rounded-xl text-slate-700 hover:bg-white text-sm"
+          >
+            {legacyCopied ? "Copied" : "Copy legacy code"}
+          </button>
         </div>
       )}
 
-      {/* ✅ Rotate Confirmation Modal */}
       {showRotateModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-lg">
-
             <h2 className="text-lg font-semibold text-slate-800 mb-4">
-              Rotate Reference Code?
+              Quick-replace single code (legacy)?
             </h2>
 
             <p className="text-sm text-slate-600 mb-6">
-              This will immediately invalidate the current reference code.
-              Students using the old code will no longer be able to register.
+              This rotates the legacy single reference code to a new
+              auto-generated value. Students using the old code will no longer
+              be able to register through it. New multi-token codes are
+              unaffected.
             </p>
 
             <div className="flex justify-end gap-3">
@@ -209,7 +225,6 @@ const CounsellorStudents = () => {
               >
                 Cancel
               </button>
-
               <button
                 onClick={handleRotate}
                 disabled={rotating}
@@ -224,8 +239,6 @@ const CounsellorStudents = () => {
 
       {/* Filters */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4">
-
-        {/* Search */}
         <input
           type="text"
           placeholder="Search by name or email"
@@ -237,7 +250,6 @@ const CounsellorStudents = () => {
           }}
         />
 
-        {/* School Filter */}
         <select
           className="border border-slate-200 rounded-xl px-4 py-2"
           value={schoolFilter}
@@ -254,7 +266,6 @@ const CounsellorStudents = () => {
           ))}
         </select>
 
-        {/* Status Filter */}
         <select
           className="border border-slate-200 rounded-xl px-4 py-2"
           value={statusFilter}
@@ -295,10 +306,11 @@ const CounsellorStudents = () => {
                       navigate(`/counsellor/students/${s.id}/report`);
                     }
                   }}
-                  className={`border-b border-slate-100 transition ${s.assessmentStatus === "COMPLETED"
-                    ? "hover:bg-slate-50 cursor-pointer"
-                    : "opacity-70 cursor-not-allowed"
-                    }`}
+                  className={`border-b border-slate-100 transition ${
+                    s.assessmentStatus === "COMPLETED"
+                      ? "hover:bg-slate-50 cursor-pointer"
+                      : "opacity-70 cursor-not-allowed"
+                  }`}
                 >
                   <td className="py-4 px-6 font-medium text-slate-800">
                     {s.fullName}
@@ -308,18 +320,19 @@ const CounsellorStudents = () => {
                   </td>
                   <td className="py-4 px-6">
                     <span
-                      className={`px-3 py-1 text-xs rounded-full font-medium ${s.assessmentStatus === "COMPLETED"
-                        ? "bg-green-100 text-green-600"
-                        : s.assessmentStatus === "IN_PROGRESS"
+                      className={`px-3 py-1 text-xs rounded-full font-medium ${
+                        s.assessmentStatus === "COMPLETED"
+                          ? "bg-green-100 text-green-600"
+                          : s.assessmentStatus === "IN_PROGRESS"
                           ? "bg-yellow-100 text-yellow-600"
                           : "bg-slate-100 text-slate-500"
-                        }`}
+                      }`}
                     >
                       {s.assessmentStatus === "COMPLETED"
                         ? "Completed"
                         : s.assessmentStatus === "IN_PROGRESS"
-                          ? "In Progress"
-                          : "Not Started"}
+                        ? "In Progress"
+                        : "Not Started"}
                     </span>
                   </td>
                   <td className="py-4 px-6 text-slate-500">
