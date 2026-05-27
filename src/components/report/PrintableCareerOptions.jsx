@@ -116,7 +116,7 @@ function paginateCareersTwoPerPage(careers) {
 
 /* ------------------ MAIN COMPONENT ------------------ */
 
-export default function   PrintableCareerOptions({
+export default function PrintableCareerOptions({
   scores = [],
   careers = [],
   language = "en",
@@ -126,46 +126,92 @@ export default function   PrintableCareerOptions({
     .filter((s) => s.assessmentType === "APTITUDE")
     .reduce((a, s) => ({ ...a, [s.traitOrCategoryCode]: s.score }), {});
 
-  /* -------- MATCH CHART DATA -------- */
-  const chartData = useMemo(() => {
-    const riasecScores = scores
-      .filter((s) => s.assessmentType === "RIASEC")
-      .reduce((acc, s) => {
-        acc[s.traitOrCategoryCode] = s.score;
-        return acc;
-      }, {});
 
-    const categoryIds = [
-      ...new Set(
+  function cosineSimilarity(user, ideal) {
+    let dot = 0;
+    let userMag = 0;
+    let idealMag = 0;
+
+    for (const key of ["R", "I", "A", "S", "E", "C"]) {
+      const u = Number(user[key]) || 0;
+      const i = Number(ideal[key]) || 0;
+
+      dot += u * i;
+      userMag += u * u;
+      idealMag += i * i;
+    }
+
+    if (userMag === 0 || idealMag === 0) {
+      return 0;
+    }
+
+    return dot / (Math.sqrt(userMag) * Math.sqrt(idealMag));
+  }
+  /* -------- MATCH CHART DATA (same logic as CareerOptions.jsx) -------- */
+  const chartData = useMemo(() => {
+    if (!scores?.length || !careers?.length || !careerFields?.length) {
+      return [];
+    }
+
+    /**
+     * Step 1: Build user RIASEC vector
+     */
+    const userScoresObj = {
+      R: 0,
+      I: 0,
+      A: 0,
+      S: 0,
+      E: 0,
+      C: 0,
+    };
+
+    for (const item of scores) {
+      if (
+        item.assessmentType === "RIASEC" &&
+        ["R", "I", "A", "S", "E", "C"].includes(item.traitOrCategoryCode)
+      ) {
+        userScoresObj[item.traitOrCategoryCode] =
+          Number(item.score) || 0;
+      }
+    }
+
+    /**
+     * Step 2: Extract unique category IDs
+     */
+    const categoryIds = Array.from(
+      new Set(
         careers
           .map((c) => c.category_id)
           .filter((id) => id !== null && id !== undefined)
-      ),
-    ];
+      )
+    );
 
+    /**
+     * Step 3: Compute similarity per category
+     * SAME LOGIC AS CareerOptions.jsx
+     */
     return categoryIds
       .map((id) => {
         const field = careerFields.find(
           (f) => f.category_id === id
         );
 
-        if (!field || !field.scores) return null;
+        if (!field || !field.scores) {
+          return null;
+        }
 
-        let weighted = 0;
-
-        ["R", "I", "A", "S", "E", "C"].forEach((key) => {
-          if (riasecScores[key] != null && field.scores[key] != null) {
-            weighted += (riasecScores[key] / 30) * field.scores[key];
-          }
-        });
+        const similarity = cosineSimilarity(
+          userScoresObj,
+          field.scores
+        );
 
         return {
-          category_id: id, // ✅ IMPORTANT
+          category_id: id,
           name:
             language === "mr"
               ? field.careerField?.mr
               : field.careerField?.en,
-          value: Math.round(weighted * 100),
+          value: Math.round(similarity * 100),
           icon: field.icon,
         };
       })
