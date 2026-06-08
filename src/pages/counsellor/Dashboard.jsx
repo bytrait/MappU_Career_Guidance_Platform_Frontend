@@ -89,7 +89,7 @@ export default function Dashboard() {
       </div>
 
       {/* Quick Actions (UNCHANGED) */}
-      <QuickActions />
+      {/* <QuickActions /> */}
 
       {/* NEW: Welcome Popup */}
       {/* {showWelcome && (

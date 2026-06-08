@@ -1,3 +1,5 @@
+import { ERROR_CODES } from "../services/apiError";
+
 /**
  * @typedef {import('../services/counsellorService').ReferenceToken} ReferenceToken
  */
@@ -76,6 +78,45 @@ export const formatValidWindow = (token) => {
   const start = formatDate(token.startDate) ?? "—";
   const end = token.expiryDate ? formatDate(token.expiryDate) : "no expiry";
   return `${start} → ${end}`;
+};
+
+/**
+ * Display price from auth-enriched list or billing batch merge.
+ * @param {number|null|undefined} price
+ * @param {string|null|undefined} currency
+ */
+export const formatTokenPrice = (price, currency = "INR") => {
+  if (price == null || price === "") return "—";
+  const amount = Number(price);
+  if (!Number.isFinite(amount)) return "—";
+  const c = (currency || "INR").toUpperCase();
+  if (c === "INR") {
+    return `₹${amount.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
+  }
+  return `${c} ${amount.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+};
+
+/**
+ * Merge billing price rows onto auth token rows. Auth fields win when already set.
+ * @param {ReferenceToken[]} tokens
+ * @param {Array<{ tokenId?: string, id?: string, price?: number|null, currency?: string|null }>} priceRows
+ */
+export const mergeTokensWithPrices = (tokens = [], priceRows = []) => {
+  const byId = new Map();
+  for (const row of priceRows) {
+    const id = row.tokenId ?? row.id;
+    if (id) byId.set(id, row);
+  }
+
+  return tokens.map((t) => {
+    const billing = byId.get(t.id);
+    const hasAuthPrice = t.price != null && t.price !== "";
+    return {
+      ...t,
+      price: hasAuthPrice ? t.price : billing?.price ?? t.price ?? null,
+      currency: t.currency ?? billing?.currency ?? null,
+    };
+  });
 };
 
 /**
@@ -176,6 +217,25 @@ export const suggestCode = (prefix) => {
    API error bucketing
 ----------------------------- */
 
+/** Friendly copy for well-known machine codes (spec UX table). */
+export const TOKEN_FIELD_MESSAGES = {
+  [ERROR_CODES.CODE_IN_USE]: "This code is already taken",
+  [ERROR_CODES.CODE_REQUIRED]: "Reference code is required",
+  [ERROR_CODES.CODE_FORMAT_INVALID]:
+    "Reference code must be 4-20 characters and contain only letters and numbers",
+};
+
+/**
+ * User-facing message for an inline field error from the API envelope.
+ * Prefers friendly copy for known `code` values; otherwise returns server text.
+ */
+export const getTokenFieldMessage = (machineCode, serverMessage = "") => {
+  if (machineCode && TOKEN_FIELD_MESSAGES[machineCode]) {
+    return TOKEN_FIELD_MESSAGES[machineCode];
+  }
+  return serverMessage || "Something went wrong. Please try again.";
+};
+
 /**
  * Buckets a token API error into one of:
  *   - { field: 'code',     message }
@@ -209,36 +269,66 @@ export const bucketTokenApiError = (error) => {
     error?.message ||
     "Something went wrong, please try again.";
 
-  // 401 / 403 / 5xx were already toasted globally by the axios interceptor —
-  // tell the caller not to render anything extra.
-  if (status === 401 || status === 403 || status >= 500) {
+  const lower = message.toLowerCase();
+
+  // 401 / 403 — interceptor handles redirect / toast; no duplicate inline UI.
+  if (status === 401 || status === 403) {
     return { silent: true };
   }
 
-  // Code-related errors (validation + duplicates) → highlight the code field.
+  // 502 / billing failures — interceptor toasts server `message`; stay silent here.
   if (
-    code === "CODE_REQUIRED" ||
-    code === "CODE_FORMAT_INVALID" ||
-    code === "CODE_IN_USE" ||
-    code === "UNIQUE_VIOLATION"
+    status === 502 ||
+    (status >= 500 && lower.includes("billing"))
   ) {
-    return { field: "code", message };
+    return { silent: true };
+  }
+
+  // Other 5xx — generic toast from interceptor only.
+  if (status >= 500) {
+    return { silent: true };
+  }
+
+  // 409 duplicate code — inline on code field, no toast (acceptance criteria).
+  if (status === 409 || code === ERROR_CODES.CODE_IN_USE) {
+    return {
+      field: "code",
+      message: getTokenFieldMessage(
+        code || ERROR_CODES.CODE_IN_USE,
+        message
+      ),
+    };
+  }
+
+  // Code-related validation → highlight the code field.
+  if (
+    code === ERROR_CODES.CODE_REQUIRED ||
+    code === ERROR_CODES.CODE_FORMAT_INVALID ||
+    code === ERROR_CODES.UNIQUE_VIOLATION
+  ) {
+    return {
+      field: "code",
+      message: getTokenFieldMessage(code, message),
+    };
   }
 
   // For 404, attribute to the form so the user knows the resource is gone.
-  if (status === 404 || code === "NOT_FOUND") {
-    return { form: message };
+  if (status === 404 || code === ERROR_CODES.NOT_FOUND) {
+    return { form: message || "Not found." };
   }
 
-  // 400 / 409 with no machine code — fall back to message heuristics. We use
-  // word-boundary checks so we don't accidentally match unrelated words.
-  const lower = message.toLowerCase();
-
+  // 400 / 409 with no machine code — fall back to message heuristics.
   if (
     lower.includes("reference code") ||
     lower.includes("already in use")
   ) {
-    return { field: "code", message };
+    return {
+      field: "code",
+      message: getTokenFieldMessage(
+        lower.includes("already in use") ? ERROR_CODES.CODE_IN_USE : code,
+        message
+      ),
+    };
   }
   if (lower.includes("expirydate") || lower.includes("expiry date")) {
     return { field: "expiry", message };

@@ -17,7 +17,7 @@ import {
 } from "../../utils/referenceTokens";
 
 const LABEL_MAX = 60;
-const CURRENCY_OPTIONS = ["INR", "USD", "EUR", "GBP", "AED"];
+const TOKEN_CURRENCY = "INR";
 
 /**
  * Shared modal for creating a counsellor OR school token.
@@ -41,13 +41,11 @@ const CreateTokenModal = ({
   const [startDate, setStartDate] = useState(todayInputValue());
   const [expiryDate, setExpiryDate] = useState("");
   const [price, setPrice] = useState("");
-  const [currency, setCurrency] = useState("INR");
 
   const [submitting, setSubmitting] = useState(false);
   const [codeError, setCodeError] = useState("");
   const [expiryError, setExpiryError] = useState("");
   const [priceError, setPriceError] = useState("");
-  const [currencyError, setCurrencyError] = useState("");
   const [formError, setFormError] = useState("");
 
   const today = useMemo(() => todayInputValue(), []);
@@ -59,11 +57,9 @@ const CreateTokenModal = ({
       setStartDate(today);
       setExpiryDate("");
       setPrice("");
-      setCurrency("INR");
       setCodeError("");
       setExpiryError("");
       setPriceError("");
-      setCurrencyError("");
       setFormError("");
       setSubmitting(false);
     }
@@ -79,7 +75,6 @@ const CreateTokenModal = ({
     setCodeError("");
     setExpiryError("");
     setPriceError("");
-    setCurrencyError("");
     setFormError("");
   };
 
@@ -135,7 +130,7 @@ const CreateTokenModal = ({
       startDate: dateInputToIso(startDate),
       expiryDate: dateInputToIsoEndOfDay(expiryDate),
       price: priceProvided ? priceNumber : undefined,
-      currency: priceProvided ? currency : undefined,
+      currency: priceProvided ? TOKEN_CURRENCY : undefined,
     };
 
     try {
@@ -153,10 +148,14 @@ const CreateTokenModal = ({
       const bucket = bucketTokenApiError(err);
       // 401/403/5xx are already toasted globally by the axios interceptor.
       if (bucket.silent) return;
-      if (bucket.field === "code") setCodeError(bucket.message);
+      if (bucket.field === "code") {
+        setCodeError(bucket.message);
+        return;
+      }
       else if (bucket.field === "expiry") setExpiryError(bucket.message);
-      else if (bucket.field === "price") setPriceError(bucket.message);
-      else if (bucket.field === "currency") setCurrencyError(bucket.message);
+      else if (bucket.field === "price" || bucket.field === "currency") {
+        setPriceError(bucket.message);
+      }
       else if (bucket.toast) {
         toast.error(bucket.toast);
         setFormError(bucket.toast);
@@ -293,72 +292,41 @@ const CreateTokenModal = ({
             </div>
           </div>
 
-          {/* Price + currency */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                Price{" "}
-                <span className="text-slate-400 font-normal">(optional)</span>
-              </label>
-              <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-                  {currency === "INR" ? "₹" : currency}
-                </span>
-                <input
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={price}
-                  onChange={(e) => {
-                    setPrice(e.target.value);
-                    if (priceError) setPriceError("");
-                  }}
-                  placeholder="Leave blank for free"
-                  className={`w-full pl-9 pr-3 py-2.5 border rounded-xl focus:outline-none focus:ring-2 ${
-                    priceError
-                      ? "border-red-300 focus:ring-red-300"
-                      : "border-slate-200 focus:ring-indigo-500"
-                  }`}
-                />
-              </div>
-              <p
-                className={`text-xs mt-1 ${
-                  priceError ? "text-red-600" : "text-slate-400"
+          {/* Price (INR) */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Price{" "}
+              <span className="text-slate-400 font-normal">(optional, INR)</span>
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                ₹
+              </span>
+              <input
+                type="number"
+                min="0"
+                step="1"
+                value={price}
+                onChange={(e) => {
+                  setPrice(e.target.value);
+                  if (priceError) setPriceError("");
+                }}
+                placeholder="Leave blank for free"
+                className={`w-full pl-9 pr-3 py-2.5 border rounded-xl focus:outline-none focus:ring-2 ${
+                  priceError
+                    ? "border-red-300 focus:ring-red-300"
+                    : "border-slate-200 focus:ring-indigo-500"
                 }`}
-              >
-                {priceError ||
-                  "Price is stored in the billing service. Leave blank for free."}
-              </p>
+              />
             </div>
-
-            {priceProvided && (
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
-                  Currency
-                </label>
-                <select
-                  value={currency}
-                  onChange={(e) => {
-                    setCurrency(e.target.value);
-                    if (currencyError) setCurrencyError("");
-                  }}
-                  className={`w-full border rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 ${
-                    currencyError
-                      ? "border-red-300 focus:ring-red-300"
-                      : "border-slate-200 focus:ring-indigo-500"
-                  }`}
-                >
-                  {CURRENCY_OPTIONS.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-                {currencyError && (
-                  <p className="text-xs text-red-600 mt-1">{currencyError}</p>
-                )}
-              </div>
-            )}
+            <p
+              className={`text-xs mt-1 ${
+                priceError ? "text-red-600" : "text-slate-400"
+              }`}
+            >
+              {priceError ||
+                "Price is stored in the billing service. Leave blank for free."}
+            </p>
           </div>
 
           {formError && (

@@ -71,10 +71,13 @@ export const rotateDirectReferenceCode = async () => {
  * @property {string} startDate   ISO timestamp
  * @property {string|null} expiryDate
  * @property {boolean} isActive
+ * @property {number|null} [price]      from billing (auth BFF or client merge)
+ * @property {string|null} [currency]
  * @property {string} createdAt
  * @property {string} updatedAt
  *
  * @typedef {Object} CreateTokenInput
+ * @property {string} code               REQUIRED, 4-20 chars [A-Z0-9]
  * @property {string} [label]
  * @property {string} [startDate]
  * @property {string} [expiryDate]
@@ -146,6 +149,7 @@ export const listSchoolTokens = (
       `/counsellor/schools/${schoolId}/reference-tokens`,
       { params: { includeInactive } }
     );
+    console.log(res.data.data);
     return res.data.data;
   });
 

@@ -65,7 +65,14 @@ const handleGlobalErrorSideEffects = (apiError, requestUrl = "") => {
     const now = Date.now();
     if (now - lastServerErrorToastAt > TOAST_DEDUP_MS) {
       lastServerErrorToastAt = now;
-      toast.error("Something went wrong, please try again.");
+      const isBillingFailure =
+        apiError.status === 502 ||
+        /billing/i.test(apiError.message || "");
+      toast.error(
+        isBillingFailure
+          ? apiError.message || "Billing service unavailable."
+          : "Something went wrong, please try again."
+      );
     }
     if (import.meta.env.DEV) {
       console.error("[AuthAPI 5xx]", apiError.message, apiError);

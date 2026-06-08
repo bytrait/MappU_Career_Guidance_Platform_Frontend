@@ -1,6 +1,16 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { createPortal } from "react-dom";
+import { Copy } from "lucide-react";
 import { toast } from "sonner";
 
+import { getReferenceTokenPricesBatch } from "../../services/billingService";
 import {
   listCounsellorTokens,
   listSchoolTokens,
@@ -9,15 +19,18 @@ import {
 import {
   bucketTokenApiError,
   formatDate,
+  formatTokenPrice,
   formatValidWindow,
   getStatusPresentation,
   getTokenStatus,
+  mergeTokensWithPrices,
 } from "../../utils/referenceTokens";
 import CreateTokenModal from "./CreateTokenModal";
 import ExtendTokenModal from "./ExtendTokenModal";
 import EditPriceModal from "./EditPriceModal";
 
 const SKELETON_ROWS = 3;
+const TABLE_COLS = 7;
 const DEV_MODE = import.meta?.env?.DEV;
 
 const StatusPill = ({ status }) => {
@@ -39,7 +52,7 @@ const CodePill = ({ code }) => (
 
 const SkeletonRow = () => (
   <tr className="border-b border-slate-100 animate-pulse">
-    {Array.from({ length: 6 }).map((_, i) => (
+    {Array.from({ length: TABLE_COLS }).map((_, i) => (
       <td key={i} className="py-4 px-4">
         <div className="h-3 bg-slate-100 rounded w-24" />
       </td>
@@ -87,20 +100,76 @@ const ErrorBanner = ({ message, onRetry }) => (
   </div>
 );
 
+const MENU_WIDTH = 192;
+const VIEWPORT_PAD = 8;
+
 /**
- * Per-row overflow (kebab) action menu. Closes on outside click + Esc.
+ * Kebab menu rendered in a portal so it is not clipped by table overflow.
  */
-const RowActionsMenu = ({ items }) => {
-  const [open, setOpen] = useState(false);
-  const wrapperRef = useRef(null);
+const PortalActionMenu = ({
+  open,
+  onOpenChange,
+  triggerRef,
+  menuRef,
+  align = "right",
+  menuWidth = MENU_WIDTH,
+  children,
+  triggerLabel,
+  triggerClassName,
+}) => {
+  const [coords, setCoords] = useState({ top: 0, left: 0 });
+
+  const updatePosition = useCallback(() => {
+    const el = triggerRef.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const menuHeight = menuRef.current?.offsetHeight ?? 0;
+    const gap = 4;
+
+    let top = rect.bottom + gap;
+    if (menuHeight && top + menuHeight > window.innerHeight - VIEWPORT_PAD) {
+      top = Math.max(VIEWPORT_PAD, rect.top - gap - menuHeight);
+    }
+
+    let left =
+      align === "right" ? rect.right - menuWidth : rect.left;
+    left = Math.max(
+      VIEWPORT_PAD,
+      Math.min(left, window.innerWidth - menuWidth - VIEWPORT_PAD)
+    );
+
+    setCoords({ top, left });
+  }, [align, menuRef, menuWidth, triggerRef]);
+
+  useLayoutEffect(() => {
+    if (!open) return undefined;
+    updatePosition();
+    const raf = requestAnimationFrame(() => updatePosition());
+    const onScrollOrResize = () => updatePosition();
+    window.addEventListener("resize", onScrollOrResize);
+    window.addEventListener("scroll", onScrollOrResize, true);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onScrollOrResize);
+      window.removeEventListener("scroll", onScrollOrResize, true);
+    };
+  }, [open, updatePosition]);
 
   useEffect(() => {
     if (!open) return undefined;
     const onDocClick = (e) => {
-      if (!wrapperRef.current?.contains(e.target)) setOpen(false);
+      const target = e.target;
+      if (
+        triggerRef.current?.contains(target) ||
+        menuRef.current?.contains(target)
+      ) {
+        return;
+      }
+      onOpenChange(false);
     };
     const onKey = (e) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") onOpenChange(false);
     };
     document.addEventListener("mousedown", onDocClick);
     document.addEventListener("keydown", onKey);
@@ -108,48 +177,80 @@ const RowActionsMenu = ({ items }) => {
       document.removeEventListener("mousedown", onDocClick);
       document.removeEventListener("keydown", onKey);
     };
-  }, [open]);
+  }, [open, menuRef, onOpenChange, triggerRef]);
 
   return (
-    <div className="relative inline-block" ref={wrapperRef}>
+    <>
       <button
+        ref={triggerRef}
         type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="h-8 w-8 inline-flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50"
+        onClick={() => onOpenChange(!open)}
+        className={triggerClassName}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label="Token actions"
+        aria-label={triggerLabel}
       >
         <span aria-hidden>⋯</span>
       </button>
-      {open && (
-        <div
-          role="menu"
-          className="absolute right-0 top-10 z-20 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-1"
-        >
-          {items.map((item, i) =>
-            item.divider ? (
-              <div key={`div-${i}`} className="border-t border-slate-100 my-1" />
-            ) : (
-              <button
-                key={item.label}
-                type="button"
-                role="menuitem"
-                disabled={item.disabled}
-                onClick={() => {
-                  setOpen(false);
-                  item.onClick?.();
-                }}
-                className={`w-full text-left px-4 py-2 text-sm hover:bg-slate-50 disabled:text-slate-400 disabled:hover:bg-transparent ${
-                  item.destructive ? "text-red-600" : "text-slate-700"
-                }`}
-              >
-                {item.label}
-              </button>
-            )
-          )}
-        </div>
-      )}
+      {open &&
+        createPortal(
+          <div
+            ref={menuRef}
+            role="menu"
+            style={{
+              position: "fixed",
+              top: coords.top,
+              left: coords.left,
+              width: menuWidth,
+              zIndex: 9999,
+            }}
+            className="bg-white rounded-xl shadow-lg border border-slate-200 py-1"
+          >
+            {children}
+          </div>,
+          document.body
+        )}
+    </>
+  );
+};
+
+const RowActionsMenu = ({ items }) => {
+  const [open, setOpen] = useState(false);
+  const triggerRef = useRef(null);
+  const menuRef = useRef(null);
+
+  return (
+    <div className="inline-block">
+      <PortalActionMenu
+        open={open}
+        onOpenChange={setOpen}
+        triggerRef={triggerRef}
+        menuRef={menuRef}
+        triggerLabel="Token actions"
+        triggerClassName="h-8 w-8 inline-flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50"
+      >
+        {items.map((item, i) =>
+          item.divider ? (
+            <div key={`div-${i}`} className="border-t border-slate-100 my-1" />
+          ) : (
+            <button
+              key={item.label}
+              type="button"
+              role="menuitem"
+              disabled={item.disabled}
+              onClick={() => {
+                setOpen(false);
+                item.onClick?.();
+              }}
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-slate-50 disabled:text-slate-400 disabled:hover:bg-transparent ${
+                item.destructive ? "text-red-600" : "text-slate-700"
+              }`}
+            >
+              {item.label}
+            </button>
+          )
+        )}
+      </PortalActionMenu>
     </div>
   );
 };
@@ -184,6 +285,7 @@ const TokensTable = ({
   const [deactivateTarget, setDeactivateTarget] = useState(null);
   const [deactivating, setDeactivating] = useState(false);
   const [kebabOpen, setKebabOpen] = useState(false);
+  const legacyTriggerRef = useRef(null);
   const legacyMenuRef = useRef(null);
 
   const fetchTokens = useCallback(async () => {
@@ -194,7 +296,20 @@ const TokensTable = ({
         scope === "school"
           ? await listSchoolTokens(schoolId, { includeInactive: true })
           : await listCounsellorTokens({ includeInactive: true });
-      setTokens(Array.isArray(data) ? data : []);
+      const rows = Array.isArray(data) ? data : [];
+
+      if (rows.length > 0) {
+        try {
+          const priceRows = await getReferenceTokenPricesBatch(
+            rows.map((t) => t.id)
+          );
+          setTokens(mergeTokensWithPrices(rows, priceRows));
+        } catch {
+          setTokens(rows);
+        }
+      } else {
+        setTokens([]);
+      }
     } catch (err) {
       const bucket = bucketTokenApiError(err);
       if (bucket.silent) return; // global toast already shown
@@ -237,16 +352,6 @@ const TokensTable = ({
     onActiveCountChange?.(activeCount);
   }, [activeCount, onActiveCountChange]);
 
-  // Outside-click close for the table-level legacy kebab.
-  useEffect(() => {
-    if (!kebabOpen) return undefined;
-    const onDocClick = (e) => {
-      if (!legacyMenuRef.current?.contains(e.target)) setKebabOpen(false);
-    };
-    document.addEventListener("mousedown", onDocClick);
-    return () => document.removeEventListener("mousedown", onDocClick);
-  }, [kebabOpen]);
-
   const handleCopy = async (token) => {
     try {
       await navigator.clipboard.writeText(token.code);
@@ -273,18 +378,16 @@ const TokensTable = ({
     );
   };
 
-  /**
-   * Edit-price response only carries { tokenId, code, price, currency } —
-   * stamp the currency onto the token so the next Edit Price modal opens
-   * with the user's last choice as default. Auth-service doesn't return
-   * price on its token shape, so we don't store it on the row.
-   */
   const handlePriceUpdated = (response) => {
     if (!response?.tokenId) return;
     setTokens((prev) =>
       prev.map((t) =>
         t.id === response.tokenId
-          ? { ...t, currency: response.currency || t.currency }
+          ? {
+              ...t,
+              price: response.price ?? t.price,
+              currency: response.currency || t.currency,
+            }
           : t
       )
     );
@@ -344,21 +447,17 @@ const TokensTable = ({
           </button>
 
           {legacyMenu && (
-            <div className="relative" ref={legacyMenuRef}>
-              <button
-                type="button"
-                onClick={() => setKebabOpen((v) => !v)}
-                className="h-9 w-9 inline-flex items-center justify-center rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50"
-                aria-label="More actions"
-              >
-                <span aria-hidden>⋯</span>
-              </button>
-              {kebabOpen && (
-                <div className="absolute right-0 top-11 z-10 w-64 bg-white rounded-xl shadow-lg border border-slate-200 py-1">
-                  {legacyMenu}
-                </div>
-              )}
-            </div>
+            <PortalActionMenu
+              open={kebabOpen}
+              onOpenChange={setKebabOpen}
+              triggerRef={legacyTriggerRef}
+              menuRef={legacyMenuRef}
+              menuWidth={256}
+              triggerLabel="More actions"
+              triggerClassName="h-9 w-9 inline-flex items-center justify-center rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50"
+            >
+              {legacyMenu}
+            </PortalActionMenu>
           )}
         </div>
       </div>
@@ -383,6 +482,9 @@ const TokensTable = ({
                 Status
               </th>
               <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Price
+              </th>
+              <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
                 Valid window
               </th>
               <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -400,7 +502,7 @@ const TokensTable = ({
               ))
             ) : visibleTokens.length === 0 ? (
               <tr>
-                <td colSpan={6}>
+                <td colSpan={TABLE_COLS}>
                   <EmptyState onGenerate={() => setCreateOpen(true)} />
                 </td>
               </tr>
@@ -416,7 +518,18 @@ const TokensTable = ({
                     }`}
                   >
                     <td className="py-3 px-4 align-top">
-                      <CodePill code={token.code} />
+                      <div className="flex items-start gap-2">
+                        <CodePill code={token.code} />
+                        <button
+                          type="button"
+                          onClick={() => handleCopy(token)}
+                          className="h-8 w-8 shrink-0 inline-flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-indigo-600"
+                          aria-label={`Copy code ${token.code}`}
+                          title="Copy code"
+                        >
+                          <Copy className="h-4 w-4" aria-hidden />
+                        </button>
+                      </div>
                       {DEV_MODE && (
                         <div className="text-[10px] font-mono text-slate-400 mt-1">
                           {token.id}
@@ -431,6 +544,9 @@ const TokensTable = ({
                     <td className="py-3 px-4 align-top">
                       <StatusPill status={status} />
                     </td>
+                    <td className="py-3 px-4 align-top text-slate-700 text-sm">
+                      {formatTokenPrice(token.price, token.currency)}
+                    </td>
                     <td className="py-3 px-4 align-top text-slate-700">
                       {formatValidWindow(token)}
                     </td>
@@ -440,10 +556,6 @@ const TokensTable = ({
                     <td className="py-3 px-4 align-top text-right">
                       <RowActionsMenu
                         items={[
-                          {
-                            label: "Copy code",
-                            onClick: () => handleCopy(token),
-                          },
                           {
                             label: "Edit price",
                             onClick: () => setPriceTarget(token),

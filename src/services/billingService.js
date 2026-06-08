@@ -39,3 +39,26 @@ export const getPaymentStatus = async (orderId) => {
   );
   return res.data.data;
 };
+
+const PRICE_BATCH_SIZE = 100;
+
+/**
+ * Batch-read reference token prices from billing (system of record).
+ * @param {string[]} tokenIds
+ * @returns {Promise<Array<{ tokenId: string, price: number|null, currency: string|null }>>}
+ */
+export const getReferenceTokenPricesBatch = async (tokenIds = []) => {
+  const ids = [...new Set(tokenIds.filter(Boolean))];
+  if (!ids.length) return [];
+
+  const all = [];
+  for (let i = 0; i < ids.length; i += PRICE_BATCH_SIZE) {
+    const chunk = ids.slice(i, i + PRICE_BATCH_SIZE);
+    const res = await API.post("/billing/reference-tokens/prices/batch", {
+      tokenIds: chunk,
+    });
+    const data = res.data?.data ?? res.data;
+    if (Array.isArray(data)) all.push(...data);
+  }
+  return all;
+};

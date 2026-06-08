@@ -28,17 +28,18 @@ const EditPriceModal = ({ open, token, onClose, onUpdated }) => {
 
   useEffect(() => {
     if (open) {
-      // Auth-service doesn't return prices on the token shape, so we always
-      // start from a blank input. Currency falls back to INR or whatever was
-      // stamped onto the token by a prior price-update response, if any.
-      setPrice("");
+      const existing =
+        token?.price != null && token?.price !== ""
+          ? String(token.price)
+          : "";
+      setPrice(existing);
       setCurrency(token?.currency || "INR");
       setSubmitting(false);
       setPriceError("");
       setCurrencyError("");
       setFormError("");
     }
-  }, [open, token?.id, token?.currency]);
+  }, [open, token?.id, token?.currency, token?.price]);
 
   if (!open || !token) return null;
 

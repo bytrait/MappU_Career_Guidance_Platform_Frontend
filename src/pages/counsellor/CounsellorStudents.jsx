@@ -9,8 +9,6 @@ import {
   rotateDirectReferenceCode,
 } from "../../services/counsellorService";
 
-import { getReferenceCode } from "../../services/auth";
-
 import Pagination from "../../components/Pagination";
 import Spinner from "../../components/common/Spinner";
 import TokensTable from "../../components/counsellor/TokensTable";
@@ -30,9 +28,6 @@ const CounsellorStudents = () => {
 
   const [page, setPage] = useState(1);
 
-  // Legacy single reference code — demoted to the "default / primary" slot
-  const [legacyCode, setLegacyCode] = useState("");
-  const [legacyCopied, setLegacyCopied] = useState(false);
   const [showRotateModal, setShowRotateModal] = useState(false);
   const [rotating, setRotating] = useState(false);
 
@@ -40,10 +35,6 @@ const CounsellorStudents = () => {
 
   useEffect(() => {
     getCounsellorSchools().then(setSchools).catch(() => {});
-  }, []);
-
-  useEffect(() => {
-    getReferenceCode().then(setLegacyCode).catch(() => {});
   }, []);
 
   const fetchStudents = async () => {
@@ -99,23 +90,10 @@ const CounsellorStudents = () => {
     fetchStudents();
   }, [page, search, schoolFilter, statusFilter]);
 
-  const handleCopyLegacy = async () => {
-    if (!legacyCode) return;
-    try {
-      await navigator.clipboard.writeText(legacyCode);
-      setLegacyCopied(true);
-      toast.success("Copied");
-      setTimeout(() => setLegacyCopied(false), 1500);
-    } catch {
-      toast.error("Couldn't copy to clipboard");
-    }
-  };
-
   const handleRotate = async () => {
     try {
       setRotating(true);
-      const newCode = await rotateDirectReferenceCode();
-      setLegacyCode(newCode.code);
+      await rotateDirectReferenceCode();
       toast.success("Legacy reference code rotated");
       setShowRotateModal(false);
     } catch (error) {
@@ -139,11 +117,11 @@ const CounsellorStudents = () => {
         onClick={() => setShowRotateModal(true)}
         className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50"
       >
-        Quick-replace single code (legacy)
+        Quick rotate (legacy)
       </button>
       <p className="px-4 pb-2 pt-1 text-xs text-slate-400">
-        Auto-generates a fresh code on the legacy single-code endpoint used
-        by older signup flows.
+        Auto-generates one random code via the legacy endpoint. Prefer
+        &quot;Generate new token&quot; for custom codes.
       </p>
     </>
   );
@@ -175,47 +153,21 @@ const CounsellorStudents = () => {
 
       <TokensTable
         scope="counsellor"
-        title="My Reference Tokens"
-        description="Generate as many tokens as you need — each one onboards students independently."
+        title="Reference tokens"
+        description="Create custom codes for direct student onboarding. Each token can have its own label, dates, and optional price."
         legacyMenu={legacyMenu}
       />
-
-      {legacyCode && (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-wide text-slate-400">
-              Default / legacy reference code
-            </p>
-            <p className="text-lg font-bold tracking-widest text-slate-700 font-mono mt-1">
-              {legacyCode}
-            </p>
-            <p className="text-xs text-slate-400 mt-1">
-              Still works for older signup links — prefer the new tokens above.
-            </p>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleCopyLegacy}
-            className="px-4 py-2 border border-slate-200 rounded-xl text-slate-700 hover:bg-white text-sm"
-          >
-            {legacyCopied ? "Copied" : "Copy legacy code"}
-          </button>
-        </div>
-      )}
 
       {showRotateModal && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl p-6 w-full max-w-md shadow-lg">
             <h2 className="text-lg font-semibold text-slate-800 mb-4">
-              Quick-replace single code (legacy)?
+              Quick rotate (legacy)?
             </h2>
 
             <p className="text-sm text-slate-600 mb-6">
-              This rotates the legacy single reference code to a new
-              auto-generated value. Students using the old code will no longer
-              be able to register through it. New multi-token codes are
-              unaffected.
+              This calls the legacy endpoint and auto-generates a new random
+              code. It does not affect your multi-token codes above.
             </p>
 
             <div className="flex justify-end gap-3">
@@ -230,14 +182,13 @@ const CounsellorStudents = () => {
                 disabled={rotating}
                 className="px-4 py-2 bg-red-600 text-white rounded-xl hover:bg-red-700 transition disabled:opacity-50"
               >
-                {rotating ? "Rotating..." : "Confirm Rotate"}
+                {rotating ? "Rotating..." : "Confirm rotate"}
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Filters */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4">
         <input
           type="text"
@@ -281,7 +232,6 @@ const CounsellorStudents = () => {
         </select>
       </div>
 
-      {/* Table */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         {students.length === 0 ? (
           <p className="text-center py-12 text-slate-500">
@@ -315,9 +265,7 @@ const CounsellorStudents = () => {
                   <td className="py-4 px-6 font-medium text-slate-800">
                     {s.fullName}
                   </td>
-                  <td className="py-4 px-6 text-slate-600">
-                    {s.email}
-                  </td>
+                  <td className="py-4 px-6 text-slate-600">{s.email}</td>
                   <td className="py-4 px-6">
                     <span
                       className={`px-3 py-1 text-xs rounded-full font-medium ${
@@ -345,7 +293,6 @@ const CounsellorStudents = () => {
         )}
       </div>
 
-      {/* Pagination */}
       {meta?.totalPages > 1 && (
         <div className="flex justify-center">
           <Pagination
