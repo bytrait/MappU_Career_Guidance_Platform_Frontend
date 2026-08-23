@@ -7,10 +7,13 @@ import CareerInterests from "../../components/report/CareerInterests";
 import {
     demoPersonalityScores,
     demoRiasecScores,
-    demoAptitudeScores
-
+    demoAptitudeScores,
+    demoEqScores,
+    demoLearningScores,
 } from "../../data/demoReportData";
 import AptitudeStrengths from "../../components/report/AptitudeChart";
+import EqProfile from "../../components/report/EqProfile";
+import LearningPreferences from "../../components/report/LearningPreferences";
 import DemoCareerOptions from "./DemoCareerOptions";
 import democareerdata from "../../data/demo_career_options_with_details.json";
 
@@ -22,7 +25,8 @@ export default function DemoReportPage() {
         ...demoPersonalityScores,
         ...demoRiasecScores,
         ...demoAptitudeScores,
-
+        ...demoEqScores,
+        ...demoLearningScores,
     ];
 
     return (
@@ -68,6 +72,14 @@ export default function DemoReportPage() {
                 {/* Aptitude */}
                 <section className="mb-16">
                     <AptitudeStrengths scores={allDemoScores} language={language} />
+                </section>
+
+                <section className="mb-16">
+                    <EqProfile scores={allDemoScores} language={language} />
+                </section>
+
+                <section className="mb-16">
+                    <LearningPreferences scores={allDemoScores} language={language} />
                 </section>
 
                 <section className="mb-16">

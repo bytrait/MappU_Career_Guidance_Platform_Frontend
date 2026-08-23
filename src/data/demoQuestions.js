@@ -414,3 +414,137 @@ export const APTITUDE = [
     ]
   }
 ];
+
+/** Demo EQ — 1 question per dimension (full test has 20). */
+export const EQ = [
+  {
+    code: "SAW",
+    name: "Self-Awareness",
+    questions: [
+      {
+        order: 1,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I can usually identify what I am feeling when something important happens." },
+          { language: "mr", text: "काही महत्त्वाचे घडले की मी सहसा ओळखू शकतो की मी काय भावना अनुभवत आहे." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "SR",
+    name: "Self-Regulation",
+    questions: [
+      {
+        order: 2,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I can stay calm when something does not go according to plan." },
+          { language: "mr", text: "गोष्टी योजनेनुसार न झाल्यास मी शांत राहू शकतो." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "EM",
+    name: "Empathy",
+    questions: [
+      {
+        order: 3,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I can usually tell when someone around me is feeling uncomfortable or upset." },
+          { language: "mr", text: "माझ्या आजूबाजूची व्यक्ती अस्वस्थ किंवा दुःखी आहे हे मी सहसा ओळखू शकतो." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "SS",
+    name: "Social Skills",
+    questions: [
+      {
+        order: 4,
+        reverse: true,
+        translations: [
+          { language: "en", text: "I find it difficult to explain my feelings or opinions clearly to other people." },
+          { language: "mr", text: "माझ्या भावना किंवा मते स्पष्टपणे सांगणे मला कठीण जाते." }
+        ]
+      }
+    ]
+  }
+];
+
+/** Demo Learning Preferences — 1 question per dimension (full test has 20). */
+export const LEARNING = [
+  {
+    code: "VIS",
+    name: "Visual ↔ Verbal",
+    questions: [
+      {
+        order: 1,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I understand a new topic faster when I can see a diagram, picture or visual example." },
+          { language: "mr", text: "आकृती, चित्र किंवा दृश्य उदाहरण दिसले की नवीन विषय मला लवकर समजतो." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "ACT",
+    name: "Active ↔ Reflective",
+    questions: [
+      {
+        order: 2,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I learn best when I can practise something rather than just read or listen about it." },
+          { language: "mr", text: "फक्त वाचण्यापेक्षा किंवा ऐकण्यापेक्षा सराव करताना मी उत्तम शिकतो." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "STR",
+    name: "Structured ↔ Exploratory",
+    questions: [
+      {
+        order: 3,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I learn more comfortably when a teacher gives me clear steps to follow." },
+          { language: "mr", text: "शिक्षकाने स्पष्ट पावले सांगितली की मला अधिक आरामात शिकता येते." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "PRA",
+    name: "Practical ↔ Conceptual",
+    questions: [
+      {
+        order: 4,
+        reverse: false,
+        translations: [
+          { language: "en", text: "I understand a topic better when I can see how it is used in real life." },
+          { language: "mr", text: "वास्तविक जीवनात कसे वापरले जाते हे दिसले की विषय मला चांगला समजतो." }
+        ]
+      }
+    ]
+  },
+  {
+    code: "COL",
+    name: "Collaborative ↔ Independent",
+    questions: [
+      {
+        order: 5,
+        reverse: true,
+        translations: [
+          { language: "en", text: "I concentrate better when I study or work on a task by myself." },
+          { language: "mr", text: "मी एकटे अभ्यास किंवा काम करतो तेव्हा माझे लक्ष अधिक चांगले राहते." }
+        ]
+      }
+    ]
+  }
+];

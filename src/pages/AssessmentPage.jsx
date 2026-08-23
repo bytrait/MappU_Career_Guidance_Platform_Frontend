@@ -6,7 +6,10 @@ import CompletionModal from "../components/Assessment/CompletionModal";
 import InterestInstructions from "../components/Assessment/InterestInstructions";
 import RIASECCompletionModal from "../components/Assessment/RIASECCompletionModal";
 import AptitudeInstructions from "../components/Assessment/AptitudeInstructions";
-import OceanInstructions from "../components/Assessment/OceanInstructions"; // NEW
+import OceanInstructions from "../components/Assessment/OceanInstructions";
+import EqInstructions from "../components/Assessment/EqInstructions";
+import LearningInstructions from "../components/Assessment/LearningInstructions";
+import AssessmentCompletionModal from "../components/Assessment/AssessmentCompletionModal";
 import {
   fetchAssessmentQuestions,
   submitScores,
@@ -21,15 +24,17 @@ import {
   startUserProgress,
   updateUserProgress,
 } from "../services/userAssessmentProgressService";
+import {
+  assessmentTitle,
+  calculateAssessmentScores,
+} from "../utils/assessmentScoring";
 
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Spinner from "../components/common/Spinner";
 
 export default function AssessmentPage() {
-
   const navigation = useNavigate();
-  // TODO: dynamic from auth
   const [assessmentType, setAssessmentType] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
@@ -40,13 +45,14 @@ export default function AssessmentPage() {
   const [submitting, setSubmitting] = useState(false);
 
   const [showCompletionModal, setShowCompletionModal] = useState(false);
-  const [showInterestInstructions, setShowInterestInstructions] =
-    useState(false);
-  const [showRiasecCompletionModal, setShowRiasecCompletionModal] =
-    useState(false);
-  const [showAptitudeInstructions, setShowAptitudeInstructions] =
-    useState(false);
+  const [showInterestInstructions, setShowInterestInstructions] = useState(false);
+  const [showRiasecCompletionModal, setShowRiasecCompletionModal] = useState(false);
+  const [showAptitudeInstructions, setShowAptitudeInstructions] = useState(false);
   const [showOceanInstructions, setShowOceanInstructions] = useState(false);
+  const [showAptitudeCompletionModal, setShowAptitudeCompletionModal] = useState(false);
+  const [showEqInstructions, setShowEqInstructions] = useState(false);
+  const [showEqCompletionModal, setShowEqCompletionModal] = useState(false);
+  const [showLearningInstructions, setShowLearningInstructions] = useState(false);
 
   useEffect(() => {
     fetchUserProgress()
@@ -81,9 +87,7 @@ export default function AssessmentPage() {
             order: q.order,
           }));
         } else {
-
           formatted = data.flatMap((trait) =>
-            console.log(trait) ||
             trait.questions
               .sort((a, b) => a.order - b.order)
               .map((q) => ({
@@ -114,63 +118,10 @@ export default function AssessmentPage() {
     const updated = { ...answers, [questionId]: value };
     setAnswers(updated);
     saveToLocalStorage("assessment_answers", updated);
-
-
-  };
-
-  const calculateScores = () => {
-    if (assessmentType === "APTITUDE") {
-      let scoreMap = {};
-      for (const q of questions) {
-        const selectedOption = q.options.find(
-          (opt) => opt.id === answers[q.id]
-        );
-        const isCorrect = selectedOption?.isCorrect || false;
-        scoreMap[q.trait.code] =
-          (scoreMap[q.trait.code] || 0) + (isCorrect ? 1 : 0);
-      }
-      return Object.entries(scoreMap).map(([code, score]) => ({
-        assessmentType,
-        traitOrCategoryCode: code,
-        score,
-      }));
-    } else {
-      let scoreMap = {};
-      let questionCount = {};
-
-      // Count questions & accumulate scores
-      for (const q of questions) {
-        const val = answers[q.id];
-        if (val == null) continue;
-
-        const adjustedScore = q.reverse ? 6 - val : val;
-
-        scoreMap[q.trait.code] =
-          (scoreMap[q.trait.code] || 0) + adjustedScore;
-
-        questionCount[q.trait.code] =
-          (questionCount[q.trait.code] || 0) + 1;
-      }
-
-      // Normalize every trait to 0–30
-      return Object.entries(scoreMap).map(([code, rawScore]) => {
-        const totalQuestions = questionCount[code];
-
-        // convert to 0–30
-        const normalized = Math.round((rawScore / (totalQuestions * 5)) * 30);
-
-        return {
-          assessmentType,
-          traitOrCategoryCode: code,
-          score: normalized,
-        };
-      });
-    }
-
   };
 
   const submitScoresToAPI = async () => {
-    const scores = calculateScores();
+    const scores = calculateAssessmentScores(assessmentType, questions, answers);
     try {
       await submitScores(scores);
       console.log(`${assessmentType} scores submitted`, scores);
@@ -188,8 +139,7 @@ export default function AssessmentPage() {
   };
 
   const finishAssessment = async () => {
-    setSubmitting(true); // start spinner
-
+    setSubmitting(true);
     await submitScoresToAPI();
     saveToLocalStorage("assessment_answers", {});
 
@@ -201,6 +151,14 @@ export default function AssessmentPage() {
       await updateUserProgress("APTITUDE");
       setSubmitting(false);
       setShowRiasecCompletionModal(true);
+    } else if (assessmentType === "APTITUDE") {
+      await updateUserProgress("EQ");
+      setSubmitting(false);
+      setShowAptitudeCompletionModal(true);
+    } else if (assessmentType === "EQ") {
+      await updateUserProgress("LEARNING");
+      setSubmitting(false);
+      setShowEqCompletionModal(true);
     } else {
       await completeUserProgress();
       setSubmitting(false);
@@ -208,7 +166,6 @@ export default function AssessmentPage() {
     }
   };
 
-  // Handlers for modals and instructions
   const startInterestTest = () => {
     setShowCompletionModal(false);
     setShowInterestInstructions(true);
@@ -221,6 +178,11 @@ export default function AssessmentPage() {
     setAnswers({});
   };
 
+  const beginAptitudeInstructions = () => {
+    setShowRiasecCompletionModal(false);
+    setShowAptitudeInstructions(true);
+  };
+
   const startAptitudeTest = () => {
     setShowAptitudeInstructions(false);
     setAssessmentType("APTITUDE");
@@ -228,20 +190,37 @@ export default function AssessmentPage() {
     setAnswers({});
   };
 
-  const beginAptitudeInstructions = () => {
-    setShowRiasecCompletionModal(false);
-    setShowAptitudeInstructions(true);
+  const beginEqInstructions = () => {
+    setShowAptitudeCompletionModal(false);
+    setShowEqInstructions(true);
+  };
+
+  const startEqTest = () => {
+    setShowEqInstructions(false);
+    setAssessmentType("EQ");
+    saveToLocalStorage("assessment_type", "EQ");
+    setAnswers({});
+  };
+
+  const beginLearningInstructions = () => {
+    setShowEqCompletionModal(false);
+    setShowLearningInstructions(true);
+  };
+
+  const startLearningTest = () => {
+    setShowLearningInstructions(false);
+    setAssessmentType("LEARNING");
+    saveToLocalStorage("assessment_type", "LEARNING");
+    setAnswers({});
   };
 
   const currentQuestion = questions[current];
   const isEnd = current === questions.length - 1;
 
-  // Redirect to report if done
   if (assessmentType === "COMPLETED") {
     navigation("/congratulations");
   }
 
-  // Show Ocean Instructions first
   if (showOceanInstructions && assessmentType === "OCEAN") {
     return <OceanInstructions onStart={() => setShowOceanInstructions(false)} />;
   }
@@ -254,6 +233,14 @@ export default function AssessmentPage() {
     return <AptitudeInstructions onStart={startAptitudeTest} />;
   }
 
+  if (showEqInstructions) {
+    return <EqInstructions onStart={startEqTest} />;
+  }
+
+  if (showLearningInstructions) {
+    return <LearningInstructions onStart={startLearningTest} />;
+  }
+
   if (loading || submitting) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -261,15 +248,12 @@ export default function AssessmentPage() {
       </div>
     );
   }
+
   return (
     <div className="p-6 w-full max-w-7xl mx-auto flex flex-col min-h-[80vh]">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-primary">
-          {assessmentType === "OCEAN"
-            ? "Welcome to Personality Assessment"
-            : assessmentType === "RIASEC"
-              ? "RIASEC Career Interest Test"
-              : "Aptitude Test"}
+          {assessmentTitle(assessmentType)}
         </h1>
         <p className="mt-2 text-lg">
           Question <strong>{current + 1} / {questions.length}</strong>
@@ -331,6 +315,18 @@ export default function AssessmentPage() {
       )}
       {showRiasecCompletionModal && (
         <RIASECCompletionModal onClose={beginAptitudeInstructions} />
+      )}
+      {showAptitudeCompletionModal && (
+        <AssessmentCompletionModal
+          message="Well done! You have successfully completed the aptitude test"
+          onClose={beginEqInstructions}
+        />
+      )}
+      {showEqCompletionModal && (
+        <AssessmentCompletionModal
+          message="Well done! You have successfully completed the emotional intelligence profile"
+          onClose={beginLearningInstructions}
+        />
       )}
     </div>
   );

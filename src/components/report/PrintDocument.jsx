@@ -5,6 +5,8 @@ import PrintableCareerInterests from "./PrintableCareerInterests";
 import PrintableAptitudeStrengths from "./PrintableAptitudeStrengths";
 import PrintableCareerOptions from "./PrintableCareerOptions";
 import PrintableCareerDetail from "./PrintableCareerDetail";
+import EqProfile from "./EqProfile";
+import LearningPreferences from "./LearningPreferences";
 
 import careerFields from "../../data/career_fields.json";
 import { useMemo } from "react";
@@ -123,6 +125,14 @@ export default function PrintDocument({
         scores={scores}
         language={language}
       />
+
+      <div className="print-page mb-[60px]">
+        <EqProfile scores={scores} language={language} />
+      </div>
+
+      <div className="print-page mb-[60px]">
+        <LearningPreferences scores={scores} language={language} />
+      </div>
 
       {/* MULTI-PAGE SECTION (handles its own pages) */}
       <PrintableCareerOptions

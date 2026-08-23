@@ -10,24 +10,47 @@ import CompletionModal from "../../components/Assessment/CompletionModal";
 import InterestInstructions from "./DemoInterestInstructions";
 import RIASECCompletionModal from "../../components/Assessment/RIASECCompletionModal";
 import AptitudeInstructions from "./DemoAptitudeInstructions";
+import AssessmentCompletionModal from "../../components/Assessment/AssessmentCompletionModal";
+import DemoEqInstructions from "./DemoEqInstructions";
+import DemoLearningInstructions from "./DemoLearningInstructions";
 
 import { getFromLocalStorage, saveToLocalStorage } from "../../utils/localStorage.util";
+import {
+  assessmentTitle,
+  calculateAssessmentScores,
+} from "../../utils/assessmentScoring";
 
-import { OCEAN, RIASEC, APTITUDE } from "../../data/demoQuestions";
+import { OCEAN, RIASEC, APTITUDE, EQ, LEARNING } from "../../data/demoQuestions";
 
 import Spinner from "../../components/common/Spinner";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import DemoOceanInstructions from "./DemoOceanInstructions";
 
+function formatLikertBank(traits) {
+  return traits.flatMap((trait) =>
+    trait.questions.map((q, index) => ({
+      id: `${trait.code}-${q.order}-${index}`,
+      order: q.order,
+      reverse: q.reverse,
+      trait: {
+        code: trait.code,
+        name: trait.name,
+      },
+      text: {
+        en: q.translations.find((t) => t.language === "en")?.text || "",
+        mr: q.translations.find((t) => t.language === "mr")?.text || "",
+      },
+    }))
+  );
+}
+
 export default function DemoAssessmentPage() {
   const navigate = useNavigate();
 
-  // Flow states
-  const [assessmentType, setAssessmentType] = useState("OCEAN"); // start at OCEAN directly
+  const [assessmentType, setAssessmentType] = useState("OCEAN");
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
 
-  // answers stored in LS
   const [answers, setAnswers] = useState(
     getFromLocalStorage("demo_assessment_answers") || {}
   );
@@ -35,66 +58,29 @@ export default function DemoAssessmentPage() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
-  // instruction & modal control
   const [showOceanInstructions, setShowOceanInstructions] = useState(true);
   const [showInterestInstructions, setShowInterestInstructions] = useState(false);
   const [showAptitudeInstructions, setShowAptitudeInstructions] = useState(false);
+  const [showEqInstructions, setShowEqInstructions] = useState(false);
+  const [showLearningInstructions, setShowLearningInstructions] = useState(false);
 
-  const [showCompletionModal, setShowCompletionModal] = useState(false); // OCEAN → RIASEC
-  const [showRiasecCompletionModal, setShowRiasecCompletionModal] = useState(false); // RIASEC → APTITUDE
+  const [showCompletionModal, setShowCompletionModal] = useState(false);
+  const [showRiasecCompletionModal, setShowRiasecCompletionModal] = useState(false);
+  const [showAptitudeCompletionModal, setShowAptitudeCompletionModal] = useState(false);
+  const [showEqCompletionModal, setShowEqCompletionModal] = useState(false);
 
-  // ------------------------------------------------
-  // Load questions when assessmentType changes
-  // ------------------------------------------------
   useEffect(() => {
     let formatted = [];
 
-    // --------------------------------------------
-    // OCEAN → match main system
-    // --------------------------------------------
     if (assessmentType === "OCEAN") {
-      formatted = OCEAN.flatMap((trait) =>
-        trait.questions.map((q, index) => ({
-          id: `${trait.code}-${q.order}-${index}`, // unique id
-          order: q.order,
-          reverse: q.reverse,
-          trait: {
-            code: trait.code,
-            name: trait.name,
-          },
-          text: {
-            en: q.translations.find((t) => t.language === "en")?.text || "",
-            mr: q.translations.find((t) => t.language === "mr")?.text || "",
-          },
-        }))
-      );
-    }
-
-    // --------------------------------------------
-    // RIASEC → match main system
-    // --------------------------------------------
-    else if (assessmentType === "RIASEC") {
-      formatted = RIASEC.flatMap((trait) =>
-        trait.questions.map((q, index) => ({
-          id: `${trait.code}-${q.order}-${index}`,
-          order: q.order,
-          reverse: q.reverse,
-          trait: {
-            code: trait.code,
-            name: trait.name,
-          },
-          text: {
-            en: q.translations.find((t) => t.language === "en")?.text || "",
-            mr: q.translations.find((t) => t.language === "mr")?.text || "",
-          },
-        }))
-      );
-    }
-
-    // --------------------------------------------
-    // APTITUDE → match AptitudeQuestion component format
-    // --------------------------------------------
-    else if (assessmentType === "APTITUDE") {
+      formatted = formatLikertBank(OCEAN);
+    } else if (assessmentType === "RIASEC") {
+      formatted = formatLikertBank(RIASEC);
+    } else if (assessmentType === "EQ") {
+      formatted = formatLikertBank(EQ);
+    } else if (assessmentType === "LEARNING") {
+      formatted = formatLikertBank(LEARNING);
+    } else if (assessmentType === "APTITUDE") {
       formatted = APTITUDE.flatMap((category) =>
         category.questions.map((q, index) => ({
           id: `${category.code}-${q.order}-${index}`,
@@ -127,101 +113,44 @@ export default function DemoAssessmentPage() {
     setLoading(false);
   }, [assessmentType]);
 
-
-
-  // -------------------------------------------
-  // Answer handler
-  // -------------------------------------------
   const handleAnswer = (questionId, value) => {
     const updated = { ...answers, [questionId]: value };
     setAnswers(updated);
     saveToLocalStorage("demo_assessment_answers", updated);
   };
 
-  // -------------------------------------------
-  // Normalization and scoring
-  // -------------------------------------------
-  const calculateScores = () => {
-    if (assessmentType === "APTITUDE") {
-      let scoreMap = {};
-
-      for (const q of questions) {
-        const selected = q.options.find((opt) => opt.id === answers[q.id]);
-        const correct = selected?.isCorrect ? 1 : 0;
-
-        scoreMap[q.trait.code] = (scoreMap[q.trait.code] || 0) + correct;
-      }
-
-      return Object.entries(scoreMap).map(([code, score]) => ({
-        assessmentType,
-        traitOrCategoryCode: code,
-        score,
-      }));
-    }
-
-    // OCEAN & RIASEC — Likert 1–5
-    let scoreMap = {};
-    let questionCount = {};
-
-    for (const q of questions) {
-      const val = answers[q.id];
-      if (val == null) continue;
-
-      const adjusted = q.reverse ? 6 - val : val;
-
-      scoreMap[q.trait.code] = (scoreMap[q.trait.code] || 0) + adjusted;
-      questionCount[q.trait.code] = (questionCount[q.trait.code] || 0) + 1;
-    }
-
-    return Object.entries(scoreMap).map(([code, rawScore]) => {
-      const totalQ = questionCount[code];
-      const normalized = Math.round((rawScore / (totalQ * 5)) * 30);
-
-      return {
-        assessmentType,
-        traitOrCategoryCode: code,
-        score: normalized,
-      };
-    });
-  };
-
-
-  // ------------------------------------------------
-  // Next, Prev, Finish handlers
-  // ------------------------------------------------
   const nextQuestion = () => {
-    if (current < questions.length - 1) setCurrent(c => c + 1);
+    if (current < questions.length - 1) setCurrent((c) => c + 1);
   };
 
   const prevQuestion = () => {
-    if (current > 0) setCurrent(c => c - 1);
+    if (current > 0) setCurrent((c) => c - 1);
   };
-
 
   const finishAssessment = async () => {
     setSubmitting(true);
 
-    const scores = calculateScores();
+    const scores = calculateAssessmentScores(assessmentType, questions, answers);
     saveToLocalStorage(`demo_scores_${assessmentType}`, scores);
 
-    // Flow control:
     if (assessmentType === "OCEAN") {
       setSubmitting(false);
       setShowCompletionModal(true);
-    }
-    else if (assessmentType === "RIASEC") {
+    } else if (assessmentType === "RIASEC") {
       setSubmitting(false);
       setShowRiasecCompletionModal(true);
-    }
-    else {
+    } else if (assessmentType === "APTITUDE") {
+      setSubmitting(false);
+      setShowAptitudeCompletionModal(true);
+    } else if (assessmentType === "EQ") {
+      setSubmitting(false);
+      setShowEqCompletionModal(true);
+    } else {
       setSubmitting(false);
       navigate("/demo/congratulations");
     }
   };
 
-  // ------------------------------------------------
-  // Instruction transitions
-  // ------------------------------------------------
   const beginRiasecTest = () => {
     setShowCompletionModal(false);
     setShowInterestInstructions(false);
@@ -246,24 +175,46 @@ export default function DemoAssessmentPage() {
     setAnswers({});
   };
 
+  const beginEqInstructions = () => {
+    setShowAptitudeCompletionModal(false);
+    setShowEqInstructions(true);
+  };
 
-  // ------------------------------------------------
-  // UI Rendering
-  // ------------------------------------------------
+  const startEqTest = () => {
+    setShowEqInstructions(false);
+    setAssessmentType("EQ");
+    setAnswers({});
+  };
 
-  // Step 1: Ocean instructions
+  const beginLearningInstructions = () => {
+    setShowEqCompletionModal(false);
+    setShowLearningInstructions(true);
+  };
+
+  const startLearningTest = () => {
+    setShowLearningInstructions(false);
+    setAssessmentType("LEARNING");
+    setAnswers({});
+  };
+
   if (showOceanInstructions && assessmentType === "OCEAN") {
     return <DemoOceanInstructions onStart={() => setShowOceanInstructions(false)} />;
   }
 
-  // Step 2: RIASEC instructions
   if (showInterestInstructions) {
     return <InterestInstructions onStart={beginRiasecTest} />;
   }
 
-  // Step 3: Aptitude Instructions
   if (showAptitudeInstructions) {
     return <AptitudeInstructions onStart={startAptitudeTest} />;
+  }
+
+  if (showEqInstructions) {
+    return <DemoEqInstructions onStart={startEqTest} />;
+  }
+
+  if (showLearningInstructions) {
+    return <DemoLearningInstructions onStart={startLearningTest} />;
   }
 
   if (loading || submitting) {
@@ -277,17 +228,11 @@ export default function DemoAssessmentPage() {
   const currentQuestion = questions[current];
   const isEnd = current === questions.length - 1;
 
-
   return (
     <div className="p-6 w-full max-w-7xl mx-auto flex flex-col min-h-[80vh]">
-      {/* Header */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-blue-900">
-          {assessmentType === "OCEAN"
-            ? "Welcome to Personality Assessment"
-            : assessmentType === "RIASEC"
-              ? "RIASEC Career Interest Test"
-              : "Aptitude Test"}
+          {assessmentTitle(assessmentType)}
         </h1>
 
         <p className="mt-2 text-lg">
@@ -295,7 +240,6 @@ export default function DemoAssessmentPage() {
         </p>
       </div>
 
-      {/* Card */}
       <div className="w-full bg-white rounded-xl shadow-lg p-10 flex flex-col flex-1">
         <ProgressBar current={current + 1} total={questions.length} />
 
@@ -317,7 +261,6 @@ export default function DemoAssessmentPage() {
             ))}
         </div>
 
-        {/* Navigation Footer */}
         <div className="flex justify-end mt-6 pt-4 border-t border-gray-100">
           <button
             onClick={prevQuestion}
@@ -347,10 +290,21 @@ export default function DemoAssessmentPage() {
         </div>
       </div>
 
-      {/* Modals */}
       {showCompletionModal && <CompletionModal onClose={startInterestTest} />}
       {showRiasecCompletionModal && (
         <RIASECCompletionModal onClose={beginAptitudeInstructions} />
+      )}
+      {showAptitudeCompletionModal && (
+        <AssessmentCompletionModal
+          message="Well done! You have successfully completed the aptitude test"
+          onClose={beginEqInstructions}
+        />
+      )}
+      {showEqCompletionModal && (
+        <AssessmentCompletionModal
+          message="Well done! You have successfully completed the emotional intelligence profile"
+          onClose={beginLearningInstructions}
+        />
       )}
     </div>
   );

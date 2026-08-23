@@ -47,23 +47,37 @@ export default function ReportIndexPage() {
 
         <IndexRow
           number="4"
-          title="Career Clusters"
-          description="Top career fields aligned with your personality, interests, and abilities."
+          title="Emotional Intelligence Profile"
+          description="How you understand yourself, manage emotions, relate to others, and work with people."
           page="4"
         />
 
         <IndexRow
           number="5"
-          title="Careers recommended for You"
-          description="List of top recommended careers based on your assessment results."
+          title="Learning Preferences"
+          description="How you prefer to learn across visual/verbal, active/reflective, and related dimensions."
           page="5"
         />
 
         <IndexRow
           number="6"
+          title="Career Clusters"
+          description="Top career fields aligned with your personality, interests, and abilities."
+          page="6"
+        />
+
+        <IndexRow
+          number="7"
+          title="Careers recommended for You"
+          description="List of top recommended careers based on your assessment results."
+          page="7"
+        />
+
+        <IndexRow
+          number="8"
           title="Career details & Pathways"
-          description="Detailed step-by-step guidance for earch selected recommended career."
-          page="10 - End"
+          description="Detailed step-by-step guidance for each selected recommended career."
+          page="12 - End"
         />
       </div>
     </div>

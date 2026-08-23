@@ -24,3 +24,18 @@ export const demoAptitudeScores = [
   { assessmentType: "APTITUDE", traitOrCategoryCode: "LR", score: 6 },  // Logical
   { assessmentType: "APTITUDE", traitOrCategoryCode: "SA", score: 4 },  // Spatial
 ];
+
+export const demoEqScores = [
+  { assessmentType: "EQ", traitOrCategoryCode: "SAW", score: 78 },
+  { assessmentType: "EQ", traitOrCategoryCode: "SR", score: 65 },
+  { assessmentType: "EQ", traitOrCategoryCode: "EM", score: 82 },
+  { assessmentType: "EQ", traitOrCategoryCode: "SS", score: 70 },
+];
+
+export const demoLearningScores = [
+  { assessmentType: "LEARNING", traitOrCategoryCode: "VIS", score: 75 },
+  { assessmentType: "LEARNING", traitOrCategoryCode: "ACT", score: 68 },
+  { assessmentType: "LEARNING", traitOrCategoryCode: "STR", score: 55 },
+  { assessmentType: "LEARNING", traitOrCategoryCode: "PRA", score: 80 },
+  { assessmentType: "LEARNING", traitOrCategoryCode: "COL", score: 42 },
+];

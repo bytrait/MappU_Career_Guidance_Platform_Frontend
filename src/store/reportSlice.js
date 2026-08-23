@@ -4,7 +4,7 @@ const initialState = {
   language: "en",
   economicStatus: null,
 
-  scores: [],                   // RIASEC + OCEAN + Aptitude
+  scores: [],                   // OCEAN + RIASEC + Aptitude + EQ + Learning
   recommendedCareers: [],       // Top 10 careers
   selectedCareer: null,         // { id, title, description, steps[] }
 };

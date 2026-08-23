@@ -5,6 +5,8 @@ import ReactDOM from "react-dom/client";
 import PersonalityStrengths from "../../components/report/PersonalityStrengths";
 import CareerInterests from "../../components/report/CareerInterests";
 import AptitudeChart from "../../components/report/AptitudeChart";
+import EqProfile from "../../components/report/EqProfile";
+import LearningPreferences from "../../components/report/LearningPreferences";
 import CareerOptions from "../../components/report/CareerOptions";
 import Spinner from "../../components/common/Spinner";
 
@@ -307,6 +309,8 @@ export default function CounsellorStudentReport() {
           <PersonalityStrengths scores={scores} language={language} />
           <CareerInterests scores={scores} language={language} />
           <AptitudeChart scores={scores} language={language} />
+          <EqProfile scores={scores} language={language} />
+          <LearningPreferences scores={scores} language={language} />
 
           <section className="mb-16">
             <CareerOptions
