@@ -4,9 +4,12 @@ import { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import AuthAPI from "../services/authAxiosInstance";
 import API from "../services/axiosInstance";
+import { useTenant } from "../context/TenantContext";
+import { authRedirectUrl } from "../utils/tenantSlug";
 
 function ProtectedRoute({ children, roles }) {
   const location = useLocation();
+  const tenant = useTenant();
 
   const [authState, setAuthState] = useState({
     loading: true,
@@ -78,7 +81,7 @@ function ProtectedRoute({ children, roles }) {
   }
 
   if (!authState.isAuthenticated) {
-    const redirectUrl = import.meta.env.VITE_REDIRECT_URL;
+    const redirectUrl = authRedirectUrl(tenant?.code, '/');
 
     const returnTo = encodeURIComponent(
       location.pathname + location.search

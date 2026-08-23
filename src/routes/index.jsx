@@ -6,7 +6,6 @@ import PrivateLayout from "../layouts/PrivateLayout";
 import PublicLayout from "../layouts/PublicLayout";
 
 // Student Pages
-import WelcomePage from "../pages/WelcomePage";
 import AssessmentPage from "../pages/AssessmentPage";
 import ReportPage from "../pages/ReportPage";
 import CongratulationsPage from "../pages/CongratulationsPage";
@@ -39,7 +38,8 @@ import StudentPaymentPage from "../pages/StudentPaymentPage";
 
 import DynamicRoute from './DynamicRoute'
 import { resolvePage } from '../pages/resolver'
-export const router = createBrowserRouter([
+
+export const appRoutes = [
 
   // ---------------------------------------
   // 1) STUDENT ROUTES (Authenticated, STUDENT)
@@ -105,4 +105,11 @@ export const router = createBrowserRouter([
     ],
   },
 
-]);
+];
+
+export function createAppRouter(basename = '/') {
+  return createBrowserRouter(appRoutes, { basename });
+}
+
+/** @deprecated prefer createAppRouter(basename) after tenant load */
+export const router = createBrowserRouter(appRoutes);

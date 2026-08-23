@@ -2,17 +2,16 @@ import { PAGE_REGISTRY } from './registry'
 import { PLAN_RULES } from '../config/planRules'
 
 export function resolvePage(pageKey, tenant) {
-  const { code, plan } = tenant
-  const rules = PLAN_RULES[plan]
+  const code = tenant?.code
+  const plan = tenant?.plan || 'basic'
+  const rules = PLAN_RULES[plan] || PLAN_RULES.basic
+  const pages = PAGE_REGISTRY[pageKey] || {}
 
   // BASIC → no customization
   if (!rules.allowCustomLayout) {
-    return PAGE_REGISTRY[pageKey].default
+    return pages.default
   }
 
   // ADVANCED → allow override
-  return (
-    PAGE_REGISTRY[pageKey][code] ||
-    PAGE_REGISTRY[pageKey].default
-  )
+  return pages[code] || pages.default
 }

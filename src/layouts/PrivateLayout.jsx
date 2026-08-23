@@ -1,17 +1,17 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useTenant } from "../context/TenantContext";
+import { authRedirectUrl } from "../utils/tenantSlug";
 
 function PrivateLayout() {
   const location = useLocation();
+  const tenant = useTenant();
 
   const handleLogout = () => {
-    const redirectUrl = import.meta.env.VITE_REDIRECT_URL;
-    window.location.href = redirectUrl;
+    window.location.href = authRedirectUrl(tenant?.code, "/");
   };
 
-  // Hide navbar"/"
-  const hideNavbarRoutes = ["/","/payment"];
-
+  const hideNavbarRoutes = ["/", "/payment"];
   const isNavbarHidden = hideNavbarRoutes.includes(location.pathname);
 
   return (
@@ -24,7 +24,6 @@ function PrivateLayout() {
     >
       <main>
         {!isNavbarHidden && <Navbar onLogout={handleLogout} />}
-
         <Outlet />
       </main>
     </div>

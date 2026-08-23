@@ -3,11 +3,19 @@ import axios from "axios";
 import { toast } from "sonner";
 
 import { normalizeApiError } from "./apiError";
+import { authRedirectUrl, getSlugFromPath } from "../utils/tenantSlug";
 
 const AuthAPI = axios.create({
   baseURL: import.meta.env.VITE_AUTH_BASE_URL,
   withCredentials: true,
   headers: { "Content-Type": "application/json" },
+});
+
+AuthAPI.interceptors.request.use((config) => {
+  const slug = getSlugFromPath();
+  config.headers = config.headers || {};
+  config.headers["X-Tenant-Slug"] = slug;
+  return config;
 });
 
 // Module-level guards prevent toast/redirect spam when a burst of parallel
@@ -42,7 +50,7 @@ const handleGlobalErrorSideEffects = (apiError, requestUrl = "") => {
     if (sessionExpiredHandled) return true;
     sessionExpiredHandled = true;
 
-    const redirectUrl = import.meta.env.VITE_REDIRECT_URL || "/";
+    const redirectUrl = authRedirectUrl(getSlugFromPath(), '/');
     const returnTo = encodeURIComponent(
       window.location.pathname + window.location.search
     );

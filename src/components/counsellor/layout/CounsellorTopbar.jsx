@@ -2,10 +2,15 @@ import { Menu } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../../../assets/bytrait_logo.png";
 import { logout } from "../../../services/auth";
+import { useTenant } from "../../../context/TenantContext";
+import { authRedirectUrl } from "../../../utils/tenantSlug";
 
 export default function CounsellorTopbar({ setSidebarOpen }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const tenant = useTenant();
+  const brandLogo = tenant?.theme?.logo || logo;
+  const brandName = tenant?.name || "ByTrait";
 
   // Auto-generate page title from route
   const getPageTitle = () => {
@@ -17,11 +22,9 @@ export default function CounsellorTopbar({ setSidebarOpen }) {
   };
 
   const handleLogout = async () => {
-    const redirectUrl = import.meta.env.VITE_REDIRECT_URL;
-
     try {
       await logout();
-      window.location.href = redirectUrl;
+      window.location.href = authRedirectUrl(tenant?.code, '/');
     } catch (err) {
       console.error("Logout failed:", err);
     }
@@ -46,7 +49,7 @@ export default function CounsellorTopbar({ setSidebarOpen }) {
           onClick={() => navigate("/counsellor/dashboard")}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <img src={logo} alt="ByTrait Logo" className="h-8 w-auto" />
+          <img src={brandLogo} alt={`${brandName} Logo`} className="h-8 w-auto" />
         </div>
 
         </div>
