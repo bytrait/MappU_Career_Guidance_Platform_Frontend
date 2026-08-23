@@ -16,19 +16,15 @@ import { getPreference } from "../services/preferenceService";
 import { getRecommendedCareers } from "../services/careerService";
 import { fetchUserDetailsById } from "../services/userAssessmentProgressService";
 
-import PersonalityStrengths from "../components/report/PersonalityStrengths";
-import CareerInterests from "../components/report/CareerInterests";
-import AptitudeChart from "../components/report/AptitudeChart";
-import CareerOptions from "../components/report/CareerOptions";
-import Spinner from "../components/common/Spinner";
-
-import PrintDocument from "../components/report/PrintDocument";
-import PrintCoverPage from "../components/report/PrintCoverPage";
-import ReportOverviewPage from "../components/report/ReportOverviewPage";
 import { downloadReportPDF } from "../services/reportService";
 import ReportIndexPage from "../components/report/ReportIndexPage";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+
+import { useTenant } from '../context/TenantContext'
+import {
+  REPORT_LAYOUT_REGISTRY,
+  PRINT_LAYOUT_REGISTRY,
+} from '../reports/registry'
+import { resolvePrintLayout, resolveReportLayout } from "../reports/resolver";
 
 /* ------------------ PRINT STYLES ------------------ */
 function collectStylesForIframe() {
@@ -100,6 +96,10 @@ export default function ReportPage() {
 
   const offscreenRootRef = useRef(null);
   const iframeRef = useRef(null);
+
+  const tenant = useTenant()
+  const ReportLayout = resolveReportLayout(tenant)
+  const PrintLayout = resolvePrintLayout(tenant)
 
   const [userDetails, setUserDetails] = useState(null);
   const [showPrintModal, setShowPrintModal] = useState(false);
@@ -216,16 +216,13 @@ export default function ReportPage() {
     const root = ReactDOM.createRoot(container);
 
     root.render(
-      <>
-        <PrintCoverPage userDetails={userDetails} language={language} />
-        <ReportOverviewPage />
-        <PrintDocument
-          scores={scores}
-          language={language}
-          recommendedCareers={recommendedCareers}
-          selectedCareerIds={selectedCareerIds}
-        />
-      </>
+      <PrintLayout
+        userDetails={userDetails}
+        language={language}
+        scores={scores}
+        recommendedCareers={recommendedCareers}
+        selectedCareerIds={selectedCareerIds}
+      />
     );
 
     await new Promise(r => setTimeout(r, 500));
@@ -322,23 +319,14 @@ export default function ReportPage() {
           {userDetails?.fullName}
         </h1>
 
-        <PersonalityStrengths scores={scores} language={language} />
-        <CareerInterests scores={scores} language={language} />
-        <AptitudeChart scores={scores} language={language} />
-
-        <section className="mb-16">
-          {isLoading ? (
-            <Spinner />
-          ) : (
-            <CareerOptions
-              scores={scores}
-              careers={recommendedCareers}
-              economicStatus={economicStatus}
-              language={language}
-              onSelectCareer={c => dispatch(setSelectedCareer(c))}
-            />
-          )}
-        </section>
+        <ReportLayout
+          scores={scores}
+          language={language}
+          economicStatus={economicStatus}
+          recommendedCareers={recommendedCareers}
+          isLoading={isLoading}
+          dispatch={dispatch}
+        />
       </div>
 
       {/* PRINT MODAL */}
@@ -416,4 +404,4 @@ export default function ReportPage() {
       <iframe ref={iframeRef} style={{ display: "none" }} title="print" />
     </>
   );
-}
+} 
