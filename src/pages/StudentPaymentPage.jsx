@@ -15,6 +15,7 @@ import {
     verifyStudentPayment,
 } from '../services/studentPaymentService';
 import { Toaster, toast } from 'sonner';
+import { useTenant } from '../context/TenantContext';
 
 const ACCESS_FEATURES = [
     'Personality Insights',
@@ -52,6 +53,9 @@ const viewportShell =
     'fixed inset-0 overflow-x-hidden overflow-y-auto lg:overflow-y-hidden bg-gradient-to-br from-slate-100 via-blue-50/90 to-indigo-100/80';
 
 const StudentPaymentPage = () => {
+    const tenant = useTenant();
+    const brandName =
+        tenant?.customization?.displayName || tenant?.name || 'ByTrait';
     const [paymentData, setPaymentData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [paying, setPaying] = useState(false);
@@ -81,7 +85,7 @@ const StudentPaymentPage = () => {
                 key: order.key,
                 amount: order.amount * 100,
                 currency: order.currency,
-                name: 'Mapp My University',
+                name: brandName,
                 description: 'Career Assessment & Student Dashboard Access',
                 order_id: order.razorpayOrderId,
 
@@ -192,9 +196,9 @@ const StudentPaymentPage = () => {
                                     </h1>
 
                                     <p className="mt-3 text-slate-600 text-sm sm:text-[15px] leading-relaxed">
-                                        Unlock your personalized MapU Career Psychometric Assessment
-                                        and discover the right career path based on your interest,
-                                        aptitude and personality.
+                                        Unlock your personalized {brandName} Career Psychometric
+                                        Assessment and discover the right career path based on your
+                                        interest, aptitude and personality.
                                     </p>
                                 </div>
 

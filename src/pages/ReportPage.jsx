@@ -258,7 +258,8 @@ export default function ReportPage() {
 
       const link = document.createElement("a");
 
-      const fileName = `${userDetails?.fullName || "Student"}_MappU_Report_${new Date()
+      const brandSlug = (tenant?.code || "ByTrait").replace(/\s+/g, "");
+      const fileName = `${userDetails?.fullName || "Student"}_${brandSlug}_Report_${new Date()
         .toISOString()
         .slice(0, 10)}.pdf`;
 

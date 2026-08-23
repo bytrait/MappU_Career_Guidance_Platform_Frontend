@@ -1,6 +1,5 @@
 import { Menu } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from "../../../assets/bytrait_logo.png";
 import { logout } from "../../../services/auth";
 import { useTenant } from "../../../context/TenantContext";
 import { authRedirectUrl } from "../../../utils/tenantSlug";
@@ -9,7 +8,7 @@ export default function CounsellorTopbar({ setSidebarOpen }) {
   const navigate = useNavigate();
   const location = useLocation();
   const tenant = useTenant();
-  const brandLogo = tenant?.theme?.logo || logo;
+  const brandLogo = tenant?.theme?.logo || "/logos/bytrait_logo.png";
   const brandName = tenant?.name || "ByTrait";
 
   // Auto-generate page title from route

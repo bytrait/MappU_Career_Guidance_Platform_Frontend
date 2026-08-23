@@ -1,15 +1,17 @@
 // src/layouts/PublicLayout.jsx
 import { Outlet, useLocation } from "react-router-dom";
-import logo from "../assets/bytrait_logo.png";
+import { useTenant } from "../context/TenantContext";
 
 export default function PublicLayout() {
   const location = useLocation();
+  const tenant = useTenant();
+  const logo = tenant?.theme?.logo || "/logos/bytrait_logo.png";
+  const brandName = tenant?.name || "ByTrait";
 
   // Only hide navbar on these exact pages
   const hiddenNavbarRoutes = ["/demo", "/demo/welcome"];
 
   const isNavbarHidden = hiddenNavbarRoutes.includes(location.pathname);
-  console.log("Current path:", location.pathname, " - Navbar hidden:", isNavbarHidden);
 
   return (
     <div
@@ -24,7 +26,7 @@ export default function PublicLayout() {
           <div className="flex items-center">
             <img
               src={logo}
-              alt="Careerlogy Logo"
+              alt={`${brandName} Logo`}
               className="h-10 w-auto"
             />
           </div>
