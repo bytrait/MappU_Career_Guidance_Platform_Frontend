@@ -3,7 +3,20 @@ import React from "react";
 
 export default function ReportOverviewPage() {
   return (
-    <div className="w-[210mm] min-h-[297mm] px-[18mm] py-[28mm] text-gray-900 font-sans leading-relaxed print-page">
+    <div
+      className="print-page font-sans text-gray-900 leading-relaxed"
+      style={{
+        width: "210mm",
+        height: "297mm",
+        maxHeight: "297mm",
+        boxSizing: "border-box",
+        padding: "18mm 18mm",
+        background: "#ffffff",
+        overflow: "hidden",
+        pageBreakAfter: "always",
+        breakAfter: "page",
+      }}
+    >
       {/* Title */}
       <h1 className="text-3xl font-bold mb-6">
         Brief Overview

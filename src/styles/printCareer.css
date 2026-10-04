@@ -1,5 +1,35 @@
 /* ===== Career Printable Content Styling ===== */
 
+@media print, all {
+  .print-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    overflow: hidden !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-sizing: border-box !important;
+  }
+
+  .career-detail-page,
+  .career-detail-wrapper {
+    display: block !important;
+    width: 100% !important;
+    page-break-before: always !important;
+    page-break-after: always !important;
+    break-before: page !important;
+    break-after: page !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-sizing: border-box !important;
+  }
+}
+
 .careerContentContainer {
   line-height: 1.75;
   color: #1f2937;
@@ -22,9 +52,11 @@
 .careerContentContainer h1 {
   font-size: 1.8rem;
 }
+
 .careerContentContainer h2 {
   font-size: 1.4rem;
 }
+
 .careerContentContainer h3 {
   font-size: 1.2rem;
 }
@@ -176,6 +208,7 @@
 .section:last-child {
   margin-bottom: 0;
 }
+
 /* PRINT SEGMENTED CONTENT */
 
 .print-section {

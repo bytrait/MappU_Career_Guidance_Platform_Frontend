@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import ProgressBar from "../components/Assessment/ProgressBar";
 import AssessmentQuestion from "../components/Assessment/AssessmentQuestion";
 import AptitudeQuestion from "../components/Assessment/AptitudeQuestion";
@@ -10,6 +10,7 @@ import OceanInstructions from "../components/Assessment/OceanInstructions";
 import EqInstructions from "../components/Assessment/EqInstructions";
 import LearningInstructions from "../components/Assessment/LearningInstructions";
 import AssessmentCompletionModal from "../components/Assessment/AssessmentCompletionModal";
+import { interleaveQuestions } from "../utils/interleave.util";
 import {
   fetchAssessmentQuestions,
   submitScores,
@@ -23,6 +24,9 @@ import {
   fetchUserProgress,
   startUserProgress,
   updateUserProgress,
+  fetchAssessmentState,
+  saveAssessmentState,
+  clearAssessmentState,
 } from "../services/userAssessmentProgressService";
 import {
   assessmentTitle,
@@ -54,6 +58,25 @@ export default function AssessmentPage() {
   const [showEqCompletionModal, setShowEqCompletionModal] = useState(false);
   const [showLearningInstructions, setShowLearningInstructions] = useState(false);
 
+  const saveTimeoutRef = useRef(null);
+
+  // Debounced server state persistence
+  const persistStateToServer = useCallback((type, currIdx, ans) => {
+    if (!type || type === "COMPLETED") return;
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+    }
+    saveTimeoutRef.current = setTimeout(() => {
+      saveAssessmentState({
+        assessmentType: type,
+        currentQuestionIndex: currIdx,
+        answers: ans,
+      }).catch((err) => {
+        console.error("Failed to auto-save assessment state to server:", err);
+      });
+    }, 300);
+  }, []);
+
   useEffect(() => {
     fetchUserProgress()
       .then((progress) => {
@@ -75,8 +98,13 @@ export default function AssessmentPage() {
     if (assessmentType === "COMPLETED" || assessmentType === null) return;
 
     setLoading(true);
-    fetchAssessmentQuestions(assessmentType)
-      .then((data) => {
+
+    // Fetch questions and saved state in parallel
+    Promise.all([
+      fetchAssessmentQuestions(assessmentType),
+      fetchAssessmentState(assessmentType).catch(() => null),
+    ])
+      .then(([data, savedServerState]) => {
         let formatted;
         if (assessmentType === "APTITUDE") {
           formatted = data.map((q) => ({
@@ -88,28 +116,47 @@ export default function AssessmentPage() {
           }));
         } else {
           formatted = data.flatMap((trait) =>
-            trait.questions
-              .sort((a, b) => a.order - b.order)
-              .map((q) => ({
-                id: q.id,
-                text: q.text,
-                reverse: q.reverse,
-                trait: {
-                  id: trait.id,
-                  code: trait.code,
-                  name: trait.name,
-                },
-                order: q.order,
-              }))
+            trait.questions.map((q) => ({
+              id: q.id,
+              text: q.text,
+              reverse: q.reverse,
+              trait: {
+                id: trait.id,
+                code: trait.code,
+                name: trait.name,
+              },
+              order: q.order,
+            }))
           );
         }
 
-        setQuestions(formatted);
-        setCurrent(0);
+        // Static, deterministic interleaving across traits
+        const staticOrderedQuestions = interleaveQuestions(formatted, assessmentType);
+        setQuestions(staticOrderedQuestions);
+        saveToLocalStorage(`assessment_questions_${assessmentType}`, staticOrderedQuestions);
+
+        // Hydrate answers from server state merged with local storage
+        const localAnswers = getFromLocalStorage("assessment_answers") || {};
+        const serverAnswers = savedServerState?.answers || {};
+        const combinedAnswers = { ...localAnswers, ...serverAnswers };
+
+        setAnswers(combinedAnswers);
+        saveToLocalStorage("assessment_answers", combinedAnswers);
+
+        // Resume at saved question index or first unanswered question
+        let resumeIndex = 0;
+        if (typeof savedServerState?.currentQuestionIndex === "number" && savedServerState.currentQuestionIndex >= 0) {
+          resumeIndex = Math.min(savedServerState.currentQuestionIndex, Math.max(0, staticOrderedQuestions.length - 1));
+        } else {
+          const firstUnansweredIndex = staticOrderedQuestions.findIndex((q) => combinedAnswers[q.id] == null);
+          resumeIndex = firstUnansweredIndex !== -1 ? firstUnansweredIndex : 0;
+        }
+
+        setCurrent(resumeIndex);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Failed to fetch questions", err);
+        console.error("Failed to load assessment and state:", err);
         setLoading(false);
       });
   }, [assessmentType]);
@@ -118,6 +165,7 @@ export default function AssessmentPage() {
     const updated = { ...answers, [questionId]: value };
     setAnswers(updated);
     saveToLocalStorage("assessment_answers", updated);
+    persistStateToServer(assessmentType, current, updated);
   };
 
   const submitScoresToAPI = async () => {
@@ -131,17 +179,29 @@ export default function AssessmentPage() {
   };
 
   const nextQuestion = () => {
-    if (current < questions.length - 1) setCurrent((c) => c + 1);
+    if (current < questions.length - 1) {
+      const nextIdx = current + 1;
+      setCurrent(nextIdx);
+      persistStateToServer(assessmentType, nextIdx, answers);
+    }
   };
 
   const prevQuestion = () => {
-    if (current > 0) setCurrent((c) => c - 1);
+    if (current > 0) {
+      const prevIdx = current - 1;
+      setCurrent(prevIdx);
+      persistStateToServer(assessmentType, prevIdx, answers);
+    }
   };
 
   const finishAssessment = async () => {
     setSubmitting(true);
     await submitScoresToAPI();
+
+    // Clear server in-progress state and local cache for completed stage
+    await clearAssessmentState(assessmentType).catch(() => {});
     saveToLocalStorage("assessment_answers", {});
+    setAnswers({});
 
     if (assessmentType === "OCEAN") {
       await updateUserProgress("RIASEC");
@@ -331,3 +391,4 @@ export default function AssessmentPage() {
     </div>
   );
 }
+

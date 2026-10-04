@@ -60,90 +60,140 @@ function TraitCard({ trait, language }) {
   const c = trait.content;
   if (!c) return null;
 
-  const renderShort = (list) => list?.slice(0, 2).join(", ");
+  const renderShort = (list) => {
+    if (!list) return "";
+    if (Array.isArray(list)) return list.slice(0, 2).join(", ");
+    return list;
+  };
+
+  const getLearningText = () => {
+    if (!c.learning_preference?.[language]) return "";
+    if (Array.isArray(c.learning_preference[language])) {
+      return c.learning_preference[language][0];
+    }
+    return c.learning_preference[language];
+  };
+
+  const getLearningQuote = () => {
+    if (Array.isArray(c.learning_preference?.[language]) && c.learning_preference[language].length > 1) {
+      return c.learning_preference[language][1];
+    }
+    return null;
+  };
 
   return (
-    <div className="bg-white rounded-2xl p-6">
+    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between">
+      <div>
+        {/* HEADER */}
+        <div className="flex items-center justify-between mb-5">
+          <h3 className="text-blue-700 font-semibold text-xl flex items-center">
+            <i className="bi bi-person-lines-fill mr-2"></i>
+            {trait.label}
+          </h3>
 
-      {/* HEADER */}
-      <div className="flex items-center justify-between mb-5">
-        <h3 className="text-primary font-semibold text-xl flex items-center">
-          <i className="bi bi-person-lines-fill mr-2"></i>
-          {trait.label}
-        </h3>
-
-        <div className="text-xs bg-blue-50 text-primary px-3 py-1 rounded-full font-medium">
-          {trait.title}
+          <div className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium border border-blue-100">
+            {trait.title}
+          </div>
         </div>
-      </div>
 
-      {/* MEANING */}
-      <div className="bg-gray-50 rounded-xl p-4 mb-6 border border-gray-100">
-        <p className="text-gray-800 text-base leading-relaxed font-medium">
-          {c.meaning?.[language]}
-        </p>
-      </div>
-
-      {/* QUICK GRID */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
-
-        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
-          <p className="text-gray-500 text-sm mb-1 flex items-center">
-            <i className="bi bi-eye mr-1"></i>
-            {language === "mr" ? "वर्तन" : "Behavior"}
-          </p>
-          <p className="text-default font-medium text-sm leading-snug">
-            {renderShort(c.how_it_shows?.[language])}
+        {/* MEANING */}
+        <div className="bg-gray-50 rounded-xl p-4 mb-6 border border-gray-100">
+          <p className="text-gray-800 text-base leading-relaxed font-medium">
+            {c.meaning?.[language]}
           </p>
         </div>
 
-        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
-          <p className="text-gray-500 text-sm mb-1 flex items-center">
-            <i className="bi bi-book mr-1"></i>
-            {language === "mr" ? "शिकणे" : "Learning"}
+        {/* QUICK GRID */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
+            <p className="text-gray-500 text-sm mb-1 flex items-center font-medium">
+              <i className="bi bi-eye mr-1 text-blue-600"></i>
+              {language === "mr" ? "वर्तन" : "Behavior"}
+            </p>
+            <p className="text-gray-700 font-medium text-sm leading-snug">
+              {renderShort(c.how_it_shows?.[language])}
+            </p>
+          </div>
+
+          <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
+            <p className="text-gray-500 text-sm mb-1 flex items-center font-medium">
+              <i className="bi bi-book mr-1 text-blue-600"></i>
+              {language === "mr" ? "शिकणे" : "Learning"}
+            </p>
+            <p className="text-gray-700 font-medium text-sm leading-snug">
+              {getLearningText()}
+            </p>
+          </div>
+        </div>
+
+        {/* LEARNING QUOTE (IF PRESENT) */}
+        {getLearningQuote() && (
+          <div className="bg-slate-50 border-l-2 border-blue-400 px-3.5 py-2 mb-6 rounded-r-lg">
+            <p className="text-xs italic text-gray-600">
+              {getLearningQuote()}
+            </p>
+          </div>
+        )}
+
+        {/* STRENGTH */}
+        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+          <p className="text-sm text-blue-700 mb-1 flex items-center font-medium">
+            <i className="bi bi-stars mr-1"></i>
+            {language === "mr" ? "तुमची ताकद" : "Your Strength"}
           </p>
-          <p className="text-gray-700 font-medium text-sm leading-snug">
-            {renderShort(c.learning_preference?.[language])}
+          <p className="text-gray-800 text-sm font-semibold leading-snug">
+            {renderShort(c.strengths?.[language])}
           </p>
         </div>
 
+        {/* GROWTH */}
+        <div className="pt-3 border-t border-gray-100">
+          <p className="text-sm text-gray-500 mb-2 flex items-center font-medium">
+            <i className="bi bi-graph-up mr-1 text-green-600"></i>
+            {language === "mr" ? "सुधारणा सूचना" : "Growth Suggestions"}
+          </p>
+
+          {Array.isArray(c.growth_suggestions?.[language]) ? (
+            <ul className="text-sm text-gray-700 space-y-1.5 pl-1">
+              {c.growth_suggestions[language].map((s, idx) => (
+                <li key={idx} className="flex items-start text-xs sm:text-sm">
+                  <span className="text-blue-500 mr-2 font-bold">•</span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-gray-700 leading-relaxed">
+              {c.growth_suggestions?.[language]}
+            </p>
+          )}
+        </div>
+
+        {/* CAREER DIRECTION */}
+        {c.career_direction?.[language] && (
+          <div className="pt-3 border-t border-gray-100 mt-4">
+            <p className="text-sm text-gray-500 mb-1 flex items-center font-medium">
+              <i className="bi bi-compass mr-1 text-purple-600"></i>
+              {language === "mr" ? "करिअर दिशा" : "Career Direction"}
+            </p>
+            <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+              {c.career_direction[language]}
+            </p>
+          </div>
+        )}
+
+        {/* REFLECTION */}
+        <div className="pt-3 border-t border-gray-100 mt-4">
+          <p className="text-sm text-gray-500 mb-1 flex items-center font-medium">
+            <i className="bi bi-question-circle mr-1 text-amber-500"></i>
+            {language === "mr" ? "विचार करा" : "Reflection"}
+          </p>
+
+          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+            {c.reflection_prompts?.[language]?.[0]}
+          </p>
+        </div>
       </div>
-
-      {/* STRENGTH */}
-      <div className="bg-accent-light border border-primary-light rounded-xl p-4 mb-6">
-        <p className="text-sm font-semibold text-primary mb-1 flex items-center font-sm">
-          <i className="bi bi-stars mr-1"></i>
-          {language === "mr" ? "तुमची ताकद" : "Your Strength"}
-        </p>
-        <p className="text-default text-sm font-semibold leading-snug">
-          {renderShort(c.strengths?.[language])}
-        </p>
-      </div>
-
-      {/* GROWTH */}
-      <div className="pt-3 border-t border-gray-100">
-        <p className="text-sm text-gray-500 mb-1 flex items-center">
-          <i className="bi bi-graph-up mr-1"></i>
-          {language === "mr" ? "सुधारणा" : "Growth"}
-        </p>
-
-        <p className="text-sm text-gray-700 leading-relaxed">
-          {renderShort(c.growth_suggestions?.[language])}
-        </p>
-      </div>
-
-      {/* REFLECTION */}
-      <div className="pt-3 border-t border-gray-100 mt-4">
-        <p className="text-sm text-gray-500 mb-1 flex items-center">
-          <i className="bi bi-question-circle mr-1"></i>
-          {language === "mr" ? "विचार करा" : "Reflection"}
-        </p>
-
-        <p className="text-sm text-gray-700 leading-relaxed">
-          {c.reflection_prompts?.[language]?.[0]}
-        </p>
-      </div>
-
     </div>
   );
 }
@@ -193,12 +243,12 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
       <div className="max-w-7xl w-full px-0 sm:px-2">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-3xl font-semibold text-primary">
+            <h2 className="text-3xl font-semibold text-gray-800">
               {language === "mr"
                 ? "तुमचे प्रमुख व्यक्तिमत्त्वाचे गुण"
                 : "Your Top Personality Strengths"}
             </h2>
-            <p className="text-muted mt-3">
+            <p className="text-gray-600 mt-3">
               {language === "mr"
                 ? "खालील विभाग तुमच्या प्रतिसादांवर आधारित व्यक्तिमत्त्वाचे गुण दाखवतो."
                 : "The following section shows your personality traits based on your responses."}
@@ -209,7 +259,7 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
 
       <div className="w-full max-w-7xl mx-auto px-4">
 
-        <div className="grid lg:grid-cols-2 gap-2 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
 
           {/* Image */}
           <div className="w-full flex justify-center">
@@ -225,7 +275,7 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={chartData}
-                margin={{ top: 0, right: 40, left: -25, bottom: 10 }}
+                margin={{ top: 0, right: 40, left: -40, bottom: 10 }}
               >
                 <CartesianGrid stroke="#e5e7eb" />
                 <XAxis
@@ -248,13 +298,13 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
 
         </div>
         <div className="max-w-7xl w-full mt-10 mb-4 px-2">
-          <h3 className="text-2xl font-semibold text-primary">
+          <h3 className="text-2xl font-semibold text-gray-800">
             {language === "mr"
               ? "तुमचे व्यक्तिमत्त्व तपशील"
               : "Your Personality Insights"}
           </h3>
 
-          <p className="text-muted mt-1 text-sm">
+          <p className="text-gray-500 mt-1 text-sm">
             {language === "mr"
               ? "तुमच्या गुणधर्मांचे सविस्तर विश्लेषण"
               : "A deeper understanding of your personality traits"}
@@ -267,10 +317,10 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
           ))}
 
           {/* 6th Card (Motivation) */}
-          <div className="bg-white border border-gray-50 rounded-2xl p-6 flex items-center justify-center text-center h-full">
+          <div className="bg-transparent rounded-2xl p-6 flex items-center justify-center text-center h-full">
             <p className="text-xl sm:text-5xl font-bold leading-relaxed">
 
-              <span className="text-primary">
+              <span className="text-gray-900">
                 {language === "mr"
                   ? "तुमच्यातील प्रत्येक गुण"
                   : "Every trait you have"}
@@ -278,7 +328,7 @@ export default function PersonalityStrengths({ scores = [], language = "en" }) {
 
               <br />
 
-              <span className="bg-accent text-transparent bg-clip-text">
+              <span className="bg-blue-600 text-transparent bg-clip-text">
                 {language === "mr"
                   ? "तुमची ताकद आहे"
                   : "is your strength"}

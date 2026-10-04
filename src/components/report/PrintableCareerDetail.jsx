@@ -1,5 +1,6 @@
 import { cleanHtmlContent } from "../../utils/cleanHtmlContent";
 import { segmentCareerHtml } from "../../utils/segmentCareerHtml";
+import careerFields from "../../data/career_fields.json";
 
 /* ---------------- ICON MAP ---------------- */
 
@@ -47,10 +48,31 @@ const STEP_ICON_MAP = {
   "उत्पन्न": "bi bi-cash-stack",
 };
 
+function getCategoryLabel(career, language) {
+  const field = careerFields.find(
+    (f) => f.category_id === career.category_id
+  );
+
+  if (field?.careerField) {
+    return language === "mr"
+      ? field.careerField.mr
+      : field.careerField.en;
+  }
+
+  return (
+    career.category?.value ||
+    career.category?.[language] ||
+    career.category_name ||
+    null
+  );
+}
+
 /* ---------------- COMPONENT ---------------- */
 
 export default function PrintableCareerDetail({ career, language = "en" }) {
   if (!career) return null;
+
+  const categoryLabel = getCategoryLabel(career, language);
 
   const steps = [...(career.steps || [])].sort(
     (a, b) => (a.order ?? 0) - (b.order ?? 0)
@@ -66,13 +88,34 @@ export default function PrintableCareerDetail({ career, language = "en" }) {
           padding: 24,
         }}
       >
-        {/* CAREER TITLE */}
+        {/* CATEGORY + CAREER TITLE */}
+        {categoryLabel && (
+          <span
+            style={{
+              display: "inline-block",
+              maxWidth: "100%",
+              marginBottom: 8,
+              padding: "4px 10px",
+              borderRadius: 6,
+              background: "#eff6ff",
+              color: "#1d4ed8",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+            }}
+          >
+            {categoryLabel}
+          </span>
+        )}
+
         <h1
           style={{
             fontSize: 28,
             fontWeight: 700,
             color: "#1e3a8a",
             marginBottom: 24,
+            marginTop: categoryLabel ? 4 : 0,
           }}
         >
           {career.title?.[language] || career.title?.value}

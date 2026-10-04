@@ -1,7 +1,6 @@
 // src/pages/ReportPage.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ReactDOM from "react-dom/client";
 
 import {
   setScores,
@@ -45,23 +44,47 @@ function collectStylesForIframe() {
     <link rel="stylesheet" href="/src/styles/printCareer.css" />
 
     <style>
-      @page { size: A4 portrait;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+      @page { 
+        size: A4 portrait; 
+        margin: 0 !important; 
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
-      @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-sizing: border-box !important;
+      }
+
+      @media print, all {
         .print-page {
-          page-break-after: always;
+          width: 210mm !important;
+          height: 297mm !important;
+          max-height: 297mm !important;
+          overflow: hidden !important;
+          page-break-after: always !important;
+          break-after: page !important;
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+          box-sizing: border-box !important;
         }
         .print-page:last-child {
-          page-break-after: auto;
+          page-break-after: auto !important;
+          break-after: auto !important;
+        }
+        .career-detail-wrapper {
+          page-break-before: always !important;
+          break-before: page !important;
         }
       }
 
       html, body {
+        margin: 0 !important;
+        padding: 0 !important;
         background: white !important;
         color: #111827 !important;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
@@ -94,12 +117,12 @@ async function waitForIframeAssets(doc) {
 export default function ReportPage() {
   const dispatch = useDispatch();
 
-  const offscreenRootRef = useRef(null);
+  const offscreenPrintRef = useRef(null);
   const iframeRef = useRef(null);
 
-  const tenant = useTenant()
-  const ReportLayout = resolveReportLayout(tenant)
-  const PrintLayout = resolvePrintLayout(tenant)
+  const tenant = useTenant();
+  const ReportLayout = resolveReportLayout(tenant);
+  const PrintLayout = resolvePrintLayout(tenant);
 
   const [userDetails, setUserDetails] = useState(null);
   const [showPrintModal, setShowPrintModal] = useState(false);
@@ -127,7 +150,6 @@ export default function ReportPage() {
     load();
   }, []);
 
-  console.log("Scores:", scores);
   /* ------------------ LOAD CAREERS ------------------ */
   useEffect(() => {
     async function loadCareers() {
@@ -170,81 +192,34 @@ export default function ReportPage() {
     setShowPrintModal(true);
   }
 
-  /* ------------------ OFFSCREEN ROOT ------------------ */
-  function ensureOffscreenRoot() {
-    if (offscreenRootRef.current) return offscreenRootRef.current;
-
-    const div = document.createElement("div");
-    div.style.position = "fixed";
-    div.style.left = "-9999px";
-
-    // ✅ Inject safe CSS override here
-    const style = document.createElement("style");
-    style.innerHTML = `
-    * {
-      color: #111827 !important;
-      background-color: transparent !important;
-      border-color: #e5e7eb !important;
-    }
-  `;
-
-    div.appendChild(style);
-
-    document.body.appendChild(div);
-    offscreenRootRef.current = div;
-    return div;
-  }
-
-
-  function ensureIframe() {
-    if (iframeRef.current) return iframeRef.current;
-
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-    iframeRef.current = iframe;
-    return iframe;
-  }
-
   /* ------------------ PRINT ------------------ */
   async function handleDownloadPDF() {
     setIsDownloading(true);
 
-    const container = ensureOffscreenRoot();
-    container.innerHTML = "";
-
-    const root = ReactDOM.createRoot(container);
-
-    root.render(
-      <PrintLayout
-        userDetails={userDetails}
-        language={language}
-        scores={scores}
-        recommendedCareers={recommendedCareers}
-        selectedCareerIds={selectedCareerIds}
-      />
-    );
-
-    await new Promise(r => setTimeout(r, 500));
-
-    const styles = collectStylesForIframe();
-
-    const finalHTML = `
-    <!doctype html>
-    <html>
-      <head>
-        <base href="${window.location.origin}" />
-        <meta charset="utf-8" />
-        <title>${userDetails?.fullName || "Report"}</title>
-        ${styles}
-      </head>
-      <body>
-        ${container.innerHTML}
-      </body>
-    </html>
-  `;
-
     try {
+      if (!offscreenPrintRef.current) {
+        throw new Error("Print template container is not mounted");
+      }
+
+      await new Promise(r => setTimeout(r, 400));
+
+      const styles = collectStylesForIframe();
+
+      const finalHTML = `
+      <!doctype html>
+      <html>
+        <head>
+          <base href="${window.location.origin}" />
+          <meta charset="utf-8" />
+          <title>${userDetails?.fullName || "Report"}</title>
+          ${styles}
+        </head>
+        <body>
+          ${offscreenPrintRef.current.innerHTML}
+        </body>
+      </html>
+    `;
+
       const response = await downloadReportPDF({
         html: finalHTML,
         studentName: userDetails?.fullName,
@@ -273,17 +248,44 @@ export default function ReportPage() {
       window.URL.revokeObjectURL(url);
     } catch (error) {
       console.error("PDF download failed:", error);
+    } finally {
+      setIsDownloading(false);
+      setShowPrintModal(false);
     }
-    setIsDownloading(false);
-    root.unmount();
-    container.remove();
-    offscreenRootRef.current = null;
-    setShowPrintModal(false);
   }
 
   /* ------------------ RENDER ------------------ */
   return (
     <>
+      {/* Offscreen Print Container managed cleanly by React */}
+      <div
+        ref={offscreenPrintRef}
+        style={{
+          position: "fixed",
+          left: "-99999px",
+          top: "-99999px",
+          width: "210mm",
+          opacity: 0,
+          pointerEvents: "none",
+          zIndex: -9999,
+        }}
+        aria-hidden="true"
+      >
+        {scores?.length > 0 && (
+          <PrintLayout
+            userDetails={userDetails}
+            language={language}
+            scores={scores}
+            recommendedCareers={recommendedCareers}
+            selectedCareerIds={
+              selectedCareerIds.length
+                ? selectedCareerIds
+                : recommendedCareers.slice(0, 3).map(c => c.id)
+            }
+          />
+        )}
+      </div>
+
       {/* Language Switch */}
       {/* <div className="flex justify-end px-6 py-4 no-print">
         <div className="flex gap-2 bg-gray-100 p-1 rounded-full">

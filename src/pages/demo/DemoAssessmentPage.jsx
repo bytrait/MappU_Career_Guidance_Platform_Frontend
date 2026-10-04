@@ -15,10 +15,12 @@ import DemoEqInstructions from "./DemoEqInstructions";
 import DemoLearningInstructions from "./DemoLearningInstructions";
 
 import { getFromLocalStorage, saveToLocalStorage } from "../../utils/localStorage.util";
+import { interleaveQuestions } from "../../utils/interleave.util";
 import {
   assessmentTitle,
   calculateAssessmentScores,
 } from "../../utils/assessmentScoring";
+
 
 import { OCEAN, RIASEC, APTITUDE, EQ, LEARNING } from "../../data/demoQuestions";
 
@@ -107,11 +109,12 @@ export default function DemoAssessmentPage() {
       );
     }
 
-    formatted.sort((a, b) => a.order - b.order);
-    setQuestions(formatted);
+    const staticOrdered = interleaveQuestions(formatted, assessmentType);
+    setQuestions(staticOrdered);
     setCurrent(0);
     setLoading(false);
   }, [assessmentType]);
+
 
   const handleAnswer = (questionId, value) => {
     const updated = { ...answers, [questionId]: value };
