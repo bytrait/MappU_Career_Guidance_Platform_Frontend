@@ -31,32 +31,26 @@ export default function ReportOverviewPage() {
 
       <OverviewRow
         icon="bi-person-lines-fill"
-        title="Personality Assessment"
-        text="Your personality explains how you think, learn, and react in different situations. Knowing this helps you choose careers where you feel comfortable, confident, and motivated."
+        title="Personality Snapshot"
+        text="Your personality explains how you think, learn, and react across the Big Five dimensions. Knowing this helps you choose careers where you feel comfortable, confident, and motivated."
       />
 
       <OverviewRow
         icon="bi-heart"
-        title="Interest Analysis"
-        text="Your interests show what you naturally enjoy doing. When your career matches your interests, learning becomes enjoyable and work feels meaningful."
+        title="Career Interests"
+        text="Your interests show what you naturally enjoy doing using the Holland Code framework. When your career matches your interests, learning becomes enjoyable and work feels meaningful."
       />
 
       <OverviewRow
         icon="bi-lightning-charge"
-        title="Aptitude & Skills"
-        text="Aptitude reflects your natural abilities like logical thinking, communication, and problem-solving. These strengths help you perform better in suitable career paths."
-      />
-
-      <OverviewRow
-        icon="bi-graph-up-arrow"
-        title="Skill Improvement"
-        text="This section highlights which skills you can improve to become future-ready. With the right practice and guidance, every skill can grow."
+        title="Aptitude & Cognitive Strengths"
+        text="Aptitude reflects your natural cognitive abilities like logical reasoning, numerical problem-solving, and verbal communication. These strengths help you perform better in suitable career paths."
       />
 
       <OverviewRow
         icon="bi-signpost-split"
-        title="Career Pathways"
-        text="Careers are recommended by combining your personality, interests, and aptitude. Each pathway shows education steps, skills to build, and long-term growth."
+        title="Career Clusters & Pathways"
+        text="All 16 career clusters are evaluated and ranked based on your profile. Each pathway shows educational study routes, preparation steps, and future demand in the AI era."
         isLast
       />
 

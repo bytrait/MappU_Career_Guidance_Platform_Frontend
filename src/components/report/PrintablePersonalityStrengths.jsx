@@ -6,7 +6,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  LabelList
+  LabelList,
 } from "recharts";
 
 import traitsData from "../../data/personality_traits_v2.json";
@@ -17,17 +17,17 @@ import PersonalityImg from "../../assets/personality.png";
 const TRAIT_JSON_KEY = {
   O: "Openness",
   C: "Conscientiousness",
-  E: "Extroversion",
+  E: "Extraversion",
   A: "Agreeableness",
-  N: "Neuroticism",
+  N: "Emotional Stability",
 };
 
 const TRAIT_DISPLAY = {
-  O: { en: "Openness", mr: "मोकळेपणा" },
-  C: { en: "Conscientiousness", mr: "कर्मठपणा" },
-  E: { en: "Extroversion", mr: "बहिर्मुखता" },
-  A: { en: "Agreeableness", mr: "सहमतता" },
-  N: { en: "Neuroticism", mr: "भावनिक अस्थिरता" },
+  O: "Openness",
+  C: "Conscientiousness",
+  E: "Extraversion",
+  A: "Agreeableness",
+  N: "Emotional Stability",
 };
 
 /* ---------------- HELPERS ---------------- */
@@ -39,123 +39,170 @@ function getCategory(traitJsonKey, score) {
     const alt = {
       Extroversion: "Extraversion",
       Extraversion: "Extroversion",
+      Neuroticism: "Emotional Stability",
+      "Emotional Stability": "Neuroticism",
     };
     traitInfo = traitsData?.traits?.[alt[traitJsonKey]];
   }
 
   if (!traitInfo) return null;
 
-  return traitInfo.categories.find(
+  // 1. Direct match on 0-40 scale (if score > 30)
+  if (score > 30) {
+    const found = traitInfo.categories.find(
+      (c) => score >= c.level_score.min && score <= c.level_score.max
+    );
+    if (found) return found;
+  }
+
+  // 2. Normalization for 0-30 scale from assessment scoring
+  const scaledScore = Math.round((score / 30) * 40);
+  const scaledFound = traitInfo.categories.find(
+    (c) => scaledScore >= c.level_score.min && scaledScore <= c.level_score.max
+  );
+  if (scaledFound) return scaledFound;
+
+  // 3. Fallback direct match
+  const directFound = traitInfo.categories.find(
     (c) => score >= c.level_score.min && score <= c.level_score.max
   );
+  return directFound || traitInfo.categories[0];
 }
 
-/* ---------------- TRAIT CARD ---------------- */
+/* ---------------- TRAIT CARD (DESIGNED FOR NEW REVIEWED OCEAN) ---------------- */
 
-function TraitCard({ trait, language }) {
-  const c = trait.content;
-  if (!c) return null;
+function TraitCard({ trait }) {
+  const cat = trait.category || trait.content || {};
+  const meaning = cat.meaning?.en || cat.meaning || "";
+  const howItShows = typeof cat.how_it_shows === "string" 
+    ? cat.how_it_shows 
+    : (Array.isArray(cat.how_it_shows?.en) ? cat.how_it_shows.en[0] : (Array.isArray(cat.how_it_shows) ? cat.how_it_shows[0] : ""));
+  
+  const learningStyle = cat.learning_preference?.style || 
+    (Array.isArray(cat.learning_preference?.en) ? cat.learning_preference.en[0] : "");
+  const learningQuote = cat.learning_preference?.quote || 
+    (Array.isArray(cat.learning_preference?.en) && cat.learning_preference.en.length > 1 ? cat.learning_preference.en[1] : "");
 
-  const renderShort = (list) => {
-    if (!list) return "";
-    if (Array.isArray(list)) return list.slice(0, 2).join(", ");
-    return list;
-  };
-
-  const getLearningText = () => {
-    if (!c.learning_preference?.[language]) return "";
-    if (Array.isArray(c.learning_preference[language])) {
-      return c.learning_preference[language][0];
-    }
-    return c.learning_preference[language];
-  };
+  const strengths = cat.strengths?.en || cat.strengths || [];
+  const growthList = cat.growth_suggestions?.en || cat.growth_suggestions || [];
+  const prompt = cat.reflection_prompt || (Array.isArray(cat.reflection_prompts?.en) ? cat.reflection_prompts.en[0] : "");
+  const archetype = typeof cat.archetype === "string" ? cat.archetype : (cat.archetype?.en || trait.label || "");
+  const level = cat.level || cat.range || "";
 
   return (
     <div
-      className="bg-white border border-gray-200/80 rounded-2xl p-4 shadow-sm flex flex-col justify-between"
+      className="bg-white border border-slate-200/90 rounded-2xl p-3.5 shadow-2xs flex flex-col justify-between"
       style={{ pageBreakInside: "avoid", boxSizing: "border-box" }}
     >
       <div>
-        <div className="flex items-center justify-between mb-2.5">
-          <h3 className="font-semibold text-[15px] flex items-center" style={{ color: "#1e3a8a" }}>
-            <i className="bi bi-person-lines-fill mr-2" style={{ color: "#2563eb" }}></i>
-            {trait.label}
-          </h3>
+        {/* HEADER: Trait Name + Archetype Badge + Level */}
+        <div className="flex items-center justify-between gap-1.5 mb-2 pb-1.5 border-b border-slate-100">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-md bg-blue-50 text-blue-700 flex items-center justify-center text-xs">
+              <i className="bi bi-person-badge-fill" />
+            </div>
+            <div>
+              <h3 className="font-bold text-sm text-[#1e3a8a] leading-tight">
+                {trait.title || trait.code}
+              </h3>
+            </div>
+          </div>
 
-          <div
-            className="text-[11px] px-2.5 py-0.5 rounded-full font-semibold border"
-            style={{ backgroundColor: "#eff6ff", color: "#1d4ed8", borderColor: "#bfdbfe" }}
-          >
-            {trait.title}
+          <div className="flex items-center gap-1.5">
+            <span className="text-[9.5px] px-2 py-0.5 rounded-full font-semibold bg-blue-50 text-blue-800 border border-blue-200/70">
+              {archetype}
+            </span>
+            <span className="text-[8.5px] px-1.5 py-0.5 rounded-md font-medium bg-slate-100 text-slate-600 border border-slate-200/60">
+              {level}
+            </span>
           </div>
         </div>
 
-        <div
-          className="rounded-xl p-2.5 mb-2.5 border"
-          style={{ backgroundColor: "#f8fafc", borderColor: "#f1f5f9" }}
-        >
-          <p className="text-xs leading-relaxed font-medium" style={{ color: "#1e293b" }}>
-            {c.meaning?.[language]}
+        {/* 1. WHAT THIS MEANS FOR YOU */}
+        <div className="rounded-xl p-2.5 mb-2 border bg-slate-50/80 border-slate-100">
+          <p className="text-[11px] leading-relaxed text-slate-800 font-medium">
+            {meaning}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 mb-2.5">
-          <div
-            className="rounded-lg p-2 border"
-            style={{ backgroundColor: "#f8fafc", borderColor: "#f1f5f9" }}
-          >
-            <p className="text-[11px] font-semibold mb-0.5" style={{ color: "#64748b" }}>
-              {language === "mr" ? "वर्तन" : "Behavior"}
-            </p>
-            <p className="text-xs font-medium" style={{ color: "#334155" }}>
-              {renderShort(c.how_it_shows?.[language])}
-            </p>
+        {/* 2. HOW THIS SHOWS UP & LEARNING STYLE (2-COL GRID) */}
+        <div className="grid grid-cols-2 gap-2 mb-2">
+          {/* Behavior / How It Shows Up */}
+          <div className="rounded-lg p-2 border bg-slate-50 border-slate-100 flex flex-col justify-between">
+            <div>
+              <p className="text-[9.5px] font-bold text-slate-500 uppercase tracking-wide flex items-center gap-1 mb-1">
+                <i className="bi bi-eye text-blue-600" />
+                How This Shows Up
+              </p>
+              <p className="text-[10px] text-slate-700 font-medium leading-snug">
+                {howItShows}
+              </p>
+            </div>
           </div>
 
-          <div
-            className="rounded-lg p-2 border"
-            style={{ backgroundColor: "#f8fafc", borderColor: "#f1f5f9" }}
-          >
-            <p className="text-[11px] font-semibold mb-0.5" style={{ color: "#64748b" }}>
-              {language === "mr" ? "शिकणे" : "Learning"}
-            </p>
-            <p className="text-xs font-medium" style={{ color: "#334155" }}>
-              {getLearningText()}
-            </p>
+          {/* Learning Style */}
+          <div className="rounded-lg p-2 border bg-slate-50 border-slate-100 flex flex-col justify-between">
+            <div>
+              <p className="text-[9.5px] font-bold text-slate-500 uppercase tracking-wide flex items-center gap-1 mb-1">
+                <i className="bi bi-journal-check text-blue-600" />
+                Learning Preference
+              </p>
+              <p className="text-[10px] text-slate-700 font-semibold leading-snug">
+                {learningStyle}
+              </p>
+              {learningQuote && (
+                <p className="text-[9.5px] text-slate-500 italic mt-0.5 leading-snug">
+                  {learningQuote}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 
-        <div
-          className="rounded-xl p-2.5 mb-2.5 border"
-          style={{ backgroundColor: "#eff6ff", borderColor: "#bfdbfe" }}
-        >
-          <p className="text-[11px] font-bold mb-0.5" style={{ color: "#1e3a8a" }}>Strength</p>
-          <p className="text-xs font-semibold" style={{ color: "#1d4ed8" }}>
-            {renderShort(c.strengths?.[language])}
-          </p>
+        {/* 3. KEY STRENGTHS */}
+        <div className="rounded-xl px-2.5 py-1.5 mb-2 border bg-blue-50/60 border-blue-200/80">
+          <div className="text-[10px] leading-snug">
+            <span className="font-bold text-[#1e3a8a] inline-flex items-center gap-1 mr-1.5">
+              <i className="bi bi-star-fill text-blue-600 text-[9px]" />
+              Key Strengths:
+            </span>
+            <span className="font-semibold text-blue-900">
+              {Array.isArray(strengths) ? strengths.join(" · ") : strengths}
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="mt-1">
-        <div className="pt-2 border-t border-gray-100">
-          <p className="text-[11px] font-medium" style={{ color: "#64748b" }}>Growth</p>
-          <p className="text-xs" style={{ color: "#334155" }}>
-            {renderShort(c.growth_suggestions?.[language])}
-          </p>
-        </div>
+      {/* 4. GROWTH SUGGESTIONS & REFLECTION PROMPT */}
+      <div className="pt-1.5 border-t border-slate-100">
+        {growthList.length > 0 && (
+          <div className="mb-1.5">
+            <p className="text-[9.5px] font-bold text-slate-500 uppercase tracking-wide flex items-center gap-1 mb-0.5">
+              <i className="bi bi-arrow-up-right-circle text-emerald-600" />
+              Growth Suggestions
+            </p>
+            <ul className="text-[9.5px] text-slate-700 space-y-0.5 pl-3 list-disc">
+              {growthList.map((item, idx) => (
+                <li key={idx} className="leading-tight">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-        <div className="pt-1.5 border-t border-gray-100 mt-1.5">
-          <p className="text-[11px] font-medium" style={{ color: "#64748b" }}>Reflection</p>
-          <p className="text-xs italic" style={{ color: "#475569" }}>
-            {c.reflection_prompts?.[language]?.[0]}
-          </p>
-        </div>
+        {prompt && (
+          <div className="pt-1 border-t border-slate-100 text-[9.5px] text-slate-600 italic">
+            <span className="font-bold text-slate-500 not-italic mr-1">Reflect:</span>
+            {prompt}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-/* ---------------- MAIN COMPONENT (2 CLEAN PAGES) ---------------- */
+/* ---------------- MAIN COMPONENT (2 STRICT A4 PAGES) ---------------- */
 
 export default function PrintablePersonalityStrengthsA4({
   scores = [],
@@ -173,7 +220,7 @@ export default function PrintablePersonalityStrengthsA4({
     const chart = ordered.map((code) => {
       const item = oceanScores.find((s) => s.traitOrCategoryCode === code);
       return {
-        name: TRAIT_DISPLAY[code]?.[language],
+        name: TRAIT_DISPLAY[code],
         value: item?.score || 0,
       };
     });
@@ -188,9 +235,11 @@ export default function PrintablePersonalityStrengthsA4({
 
       return {
         code,
-        title: TRAIT_DISPLAY[code]?.[language],
-        label: cat?.archetype?.[language] || cat?.archetype?.en,
-        content: cat?.content,
+        title: TRAIT_DISPLAY[code] || TRAIT_JSON_KEY[code],
+        label: cat?.archetype || "",
+        category: cat,
+        content: cat?.content || cat,
+        score,
       };
     });
 
@@ -222,16 +271,12 @@ export default function PrintablePersonalityStrengthsA4({
           <div className="flex justify-center items-center gap-3">
             <i className="bi bi-lightbulb text-yellow-500 text-3xl" />
             <h1 className="text-3xl font-bold" style={{ color: "#1e3a8a" }}>
-              {language === "mr"
-                ? "तुमचे व्यक्तिमत्त्व विश्लेषण"
-                : "Your Personality Snapshot"}
+              Your Personality Snapshot
             </h1>
           </div>
 
           <p className="text-base text-gray-500 mt-1">
-            {language === "mr"
-              ? "तुम्ही कसे विचार करता आणि कसे शिकता हे समजून घ्या"
-              : "Understanding how you think and learn"}
+            Understanding how you think, act, and learn
           </p>
 
           <div className="mt-3 mb-3">
@@ -239,9 +284,7 @@ export default function PrintablePersonalityStrengthsA4({
           </div>
 
           <p className="text-sm text-gray-600 max-w-2xl mx-auto">
-            {language === "mr"
-              ? "तुमचे विचार, भावना आणि शिकण्याची पद्धत समजून घेण्यासाठी तुमच्या व्यक्तिमत्त्व गुणांचा अभ्यास करूया."
-              : "Let's explore your personality traits to see what makes you unique and how you like to think and learn."}
+            Let's explore your personality traits across the Big Five dimensions to understand your natural strengths, work preferences, and growth areas.
           </p>
         </div>
 
@@ -278,21 +321,17 @@ export default function PrintablePersonalityStrengthsA4({
         {/* SUBTITLE */}
         <div className="w-full mb-3">
           <h3 className="text-xl font-bold" style={{ color: "#1e3a8a" }}>
-            {language === "mr"
-              ? "तुमचे व्यक्तिमत्त्व तपशील"
-              : "Your Personality Insights"}
+            Your Personality Insights
           </h3>
           <p className="text-xs text-gray-500">
-            {language === "mr"
-              ? "तुमच्या गुणधर्मांचे सविस्तर विश्लेषण"
-              : "A deeper understanding of your personality traits"}
+            A deeper understanding of your core dimensions
           </p>
         </div>
 
         {/* TRAITS ROW (2 CARDS) */}
         <div className="grid grid-cols-2 gap-4">
           {page1Traits.map((t) => (
-            <TraitCard key={t.code} trait={t} language={language} />
+            <TraitCard key={t.code} trait={t} />
           ))}
         </div>
       </div>
@@ -316,41 +355,38 @@ export default function PrintablePersonalityStrengthsA4({
         <div className="w-full mb-4">
           <div className="flex items-center justify-between pb-2 border-b border-gray-200">
             <h2 className="text-xl font-bold" style={{ color: "#1e3a8a" }}>
-              {language === "mr" ? "व्यक्तिमत्त्व तपशील (भाग २)" : "Personality Dimensions (Part 2)"}
+              Personality Dimensions (Part 2)
             </h2>
             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-              {language === "mr" ? "सविस्तर विश्लेषण" : "Detailed Insights"}
+              Detailed Insights
             </span>
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           {page2Traits.map((t) => (
-            <TraitCard key={t.code} trait={t} language={language} />
+            <TraitCard key={t.code} trait={t} />
           ))}
 
-          {/* 4th Card (Motivation Card) */}
+          {/* 6th Card (Motivation) */}
           <div
-            className="rounded-2xl p-6 flex flex-col items-center justify-center text-center border"
+            className="rounded-2xl p-6 flex flex-col items-center justify-center text-center border shadow-2xs"
             style={{
               backgroundColor: "#eff6ff",
               borderColor: "#bfdbfe",
               pageBreakInside: "avoid",
+              boxSizing: "border-box",
               minHeight: "220px",
             }}
           >
             <i className="bi bi-stars text-3xl mb-3" style={{ color: "#2563eb" }} />
             <p className="text-2xl font-extrabold leading-relaxed">
               <span style={{ color: "#1e3a8a" }}>
-                {language === "mr"
-                  ? "तुमच्यातील प्रत्येक गुण"
-                  : "Every trait you have"}
+                Every trait you have
               </span>
               <br />
               <span style={{ color: "#2563eb" }}>
-                {language === "mr"
-                  ? "तुमची ताकद आहे"
-                  : "is your strength"}
+                is your strength
               </span>
             </p>
           </div>

@@ -45,6 +45,7 @@ export default function ReportIndexPage() {
           page="3"
         />
 
+        {/* Commented out as requested:
         <IndexRow
           number="4"
           title="Emotional Intelligence Profile"
@@ -58,26 +59,13 @@ export default function ReportIndexPage() {
           description="How you prefer to learn across visual/verbal, active/reflective, and related dimensions."
           page="5"
         />
+        */}
 
         <IndexRow
-          number="6"
-          title="Career Clusters"
-          description="Top career fields aligned with your personality, interests, and abilities."
-          page="6"
-        />
-
-        <IndexRow
-          number="7"
-          title="Careers recommended for You"
-          description="List of top recommended careers based on your assessment results."
-          page="7"
-        />
-
-        <IndexRow
-          number="8"
-          title="Career details & Pathways"
-          description="Detailed step-by-step guidance for each selected recommended career."
-          page="12 - End"
+          number="4"
+          title="Career Clusters Scorecard & Deep-Dives"
+          description="All 16 career clusters aligned with your profile, featuring education study routes, emerging roles, and AI outlook."
+          page="9 - End"
         />
       </div>
     </div>

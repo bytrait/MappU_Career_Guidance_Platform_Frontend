@@ -53,20 +53,18 @@
         margin-right: 0 !important;
     }
 
-    /* Make borders flush and consistent */
-    .border {
-        border-style: solid !important;
-        border-color: #d1d5db !important;
-        /* tailwind gray-300 */
-        border-width: 1px !important;
-        box-sizing: border-box !important;
+    /* Preserve modern rounded cards in print reports */
+    .print-page .rounded-2xl {
+        border-radius: 1rem !important;
     }
-
-    /* Remove rounded corners and shadows in print so borders align */
-    .rounded-xl,
-    .rounded-lg,
-    .rounded-md {
-        border-radius: 0 !important;
+    .print-page .rounded-xl {
+        border-radius: 0.75rem !important;
+    }
+    .print-page .rounded-lg {
+        border-radius: 0.5rem !important;
+    }
+    .print-page .rounded-md {
+        border-radius: 0.375rem !important;
     }
 
     .shadow,

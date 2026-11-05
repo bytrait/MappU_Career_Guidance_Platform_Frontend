@@ -21,8 +21,8 @@ export default function ReportLayout({
       <PersonalityStrengths scores={scores} language={language} />
       <CareerInterests scores={scores} language={language} />
       <AptitudeChart scores={scores} language={language} />
-      <EqProfile scores={scores} language={language} />
-      <LearningPreferences scores={scores} language={language} />
+      {/* <EqProfile scores={scores} language={language} /> */}
+      {/* <LearningPreferences scores={scores} language={language} /> */}
 
       <section className="mb-16">
         {isLoading ? (

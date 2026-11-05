@@ -77,6 +77,25 @@ function collectStylesForIframe() {
           page-break-before: always !important;
           break-before: page !important;
         }
+
+        .print-page .rounded-3xl {
+          border-radius: 1.5rem !important;
+        }
+        .print-page .rounded-2xl {
+          border-radius: 1rem !important;
+        }
+        .print-page .rounded-xl {
+          border-radius: 0.75rem !important;
+        }
+        .print-page .rounded-lg {
+          border-radius: 0.5rem !important;
+        }
+        .print-page .rounded-md {
+          border-radius: 0.375rem !important;
+        }
+        .print-page .rounded-full {
+          border-radius: 9999px !important;
+        }
       }
 
       html, body {

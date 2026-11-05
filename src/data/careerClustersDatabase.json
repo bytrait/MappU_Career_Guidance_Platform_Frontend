@@ -1,0 +1,4546 @@
+{
+  "C01": {
+    "clusterId": "C01",
+    "name": "Manufacturing, Industrial & Automation",
+    "onetPrimary": "Advanced Manufacturing",
+    "hollandCode": "I-R-C",
+    "description": "Make products in factories \u2014 run machines, robots and quality checks.",
+    "iconKey": "factory",
+    "icon": "bi-gear-wide-connected",
+    "futureBottomLine": "Factories are automating; jobs go to people who can run and fix automated machines.",
+    "parentNote": "Myth: \u201cFactory jobs are low-skill\u201d \u2014 automated plants need trained technicians. ITI plus apprenticeship lets students earn while they learn.",
+    "riasecWeights": {
+      "R": 14.0,
+      "I": 15.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 7.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "CNC Machine Operator",
+        "description": "Runs computer-controlled machines.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Maintenance Technician",
+        "description": "Keeps machines running, fixes breakdowns.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Robotics & Automation Technician",
+        "description": "Sets up and fixes robots and PLCs.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Quality Inspector",
+        "description": "Checks products meet standards.",
+        "studyRoutesShort": "ITI \u00b7 Diploma \u00b7 BSc",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 5,
+        "title": "Production Supervisor",
+        "description": "Plans and runs a factory shift.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 6,
+        "title": "Mechanical / Industrial Engineer",
+        "description": "Designs machines and better processes.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Core to running and fixing machines",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 2,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Reading drawings and parts",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Measurements and tolerances",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Finding the cause of faults",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 5,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Manuals and safety rules",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Automation & robotics",
+        "Electronics manufacturing",
+        "EV components"
+      ],
+      "changing": [
+        "Machine operation",
+        "Quality checks",
+        "Production planning"
+      ],
+      "shrinking": [
+        "Manual assembly",
+        "Manual inspection",
+        "Paper record-keeping"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Spot defects with cameras",
+        "Predict machine breakdowns",
+        "Plan production schedules"
+      ],
+      "peopleWillStillDo": [
+        "Repair and maintain machines",
+        "Keep the shop floor safe",
+        "Solve new problems on the line"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Take apart simple things; build maths and science basics."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "ITI after 10th, or Science + Maths for diploma/BTech."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Do an apprenticeship; learn CNC, PLC or CAD."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn automation tools; earn safety certificates."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Capital Goods SSC, PMKVY)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Operator, helper",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "ITI (Fitter, Machinist, Electrician)",
+        "startAfter": "10th",
+        "years": "1\u20132",
+        "costLevel": "Low",
+        "leadsTo": "Operator, technician",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "Apprenticeship (NAPS / NATS)",
+        "startAfter": "ITI or diploma",
+        "years": "1",
+        "costLevel": "Free (stipend)",
+        "leadsTo": "Factory jobs",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "Polytechnic diploma (Mechanical, Mechatronics)",
+        "startAfter": "10th",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Technician, supervisor",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 5,
+        "route": "BTech (Mechanical, Production, Mechatronics)",
+        "startAfter": "12th Sci + Maths + entrance",
+        "years": "4",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Engineer, manager",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "Good",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 3,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C02": {
+    "clusterId": "C02",
+    "name": "Agriculture, Food & Agritech",
+    "onetPrimary": "Agriculture",
+    "hollandCode": "I-R-E",
+    "description": "Grow, process and sell food \u2014 using science and technology.",
+    "iconKey": "sprout",
+    "icon": "bi-flower1",
+    "futureBottomLine": "Growth is in processing, technology and adding value \u2014 not only in farming itself.",
+    "parentNote": "State agriculture universities are low-cost and lead to government jobs. Myth: \u201cAgriculture means only farming\u201d \u2014 food processing and agritech are growing fast.",
+    "riasecWeights": {
+      "R": 19.0,
+      "I": 24.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 8.0,
+      "C": 5.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Agritech Field Executive",
+        "description": "Helps farmers use apps, drones, sensors.",
+        "studyRoutesShort": "Diploma \u00b7 BSc Agri",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Food Technologist",
+        "description": "Makes processed food safe and tasty.",
+        "studyRoutesShort": "BSc \u00b7 BTech Food Tech",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 3,
+        "title": "Agronomist / Agri Officer",
+        "description": "Advises farmers on crops and soil.",
+        "studyRoutesShort": "BSc Agriculture",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 4,
+        "title": "Dairy & Animal Care Specialist",
+        "description": "Manages cattle health and milk quality.",
+        "studyRoutesShort": "Diploma \u00b7 BSc Dairy \u00b7 BVSc",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 5,
+        "title": "Horticulturist",
+        "description": "Grows fruits, vegetables and flowers.",
+        "studyRoutesShort": "Diploma \u00b7 BSc Horticulture",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 6,
+        "title": "Farm Machinery Technician",
+        "description": "Repairs tractors and farm equipment.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Applying science to crops and food",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 2,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Yields, costs and doses",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 3,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Advising farmers clearly",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 4,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Farm machines and equipment",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 5,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Field layouts",
+        "focusAction": "Draw objects from different angles daily."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Food processing",
+        "Agritech & drones",
+        "Organic & export farming"
+      ],
+      "changing": [
+        "Crop advisory",
+        "Dairy",
+        "Farm machinery"
+      ],
+      "shrinking": [
+        "Manual farm labour",
+        "Traditional middlemen",
+        "Paper-based mandi work"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Predict weather and pests",
+        "Detect crop disease from photos",
+        "Forecast market prices"
+      ],
+      "peopleWillStillDo": [
+        "Work with farmers on the ground",
+        "Care for animals and soil",
+        "Build trust in villages"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Grow plants at home; visit a local farm or dairy."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Science (PCB or PCM) for BSc Agri; any stream for agribusiness."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Do field internships at KVKs or food plants."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn new tools: drones, sensors, market apps."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Agriculture SSC)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Field assistant, agri-input sales",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "Diploma (Agriculture, Horticulture, Dairy)",
+        "startAfter": "10th",
+        "years": "2\u20133",
+        "costLevel": "Low",
+        "leadsTo": "Field and farm jobs",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BSc Agriculture / Horticulture",
+        "startAfter": "12th Science + state CET / ICAR",
+        "years": "4",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Agri Officer, bank agri jobs",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "BTech Food Tech / Agri Engineering",
+        "startAfter": "12th Sci + Maths + entrance",
+        "years": "4",
+        "costLevel": "Med",
+        "leadsTo": "Food technologist, agri engineer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "BVSc (Veterinary)",
+        "startAfter": "12th PCB + NEET",
+        "years": "5.5",
+        "costLevel": "Med",
+        "leadsTo": "Veterinary doctor",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C03": {
+    "clusterId": "C03",
+    "name": "Arts, Media, Design & Entertainment",
+    "onetPrimary": "Arts, Entertainment, & Design",
+    "hollandCode": "A-E-C",
+    "description": "Create images, videos, stories and designs people see and enjoy.",
+    "iconKey": "palette",
+    "icon": "bi-palette",
+    "futureBottomLine": "AI makes creating faster. Your edge: original ideas and a strong portfolio.",
+    "parentNote": "Myth: \u201cArt has no jobs\u201d \u2014 every business needs design and video. Check placement records before paying for costly private courses.",
+    "riasecWeights": {
+      "R": 8.0,
+      "I": 5.0,
+      "A": 49.0,
+      "S": 5.0,
+      "E": 28.0,
+      "C": 22.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Graphic Designer",
+        "description": "Designs posters, logos and posts.",
+        "studyRoutesShort": "Diploma \u00b7 BFA \u00b7 BDes",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Video Editor & Creator",
+        "description": "Shoots and edits videos.",
+        "studyRoutesShort": "Skill course \u00b7 BMM",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Animator & VFX Artist",
+        "description": "Brings characters to life.",
+        "studyRoutesShort": "Diploma \u00b7 B.Sc Animation",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "UI / UX Designer",
+        "description": "Designs how apps look and work.",
+        "studyRoutesShort": "BDes \u00b7 BFA + course",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Journalist & Content Writer",
+        "description": "Finds and tells stories.",
+        "studyRoutesShort": "BA \u00b7 BJMC \u00b7 BMM",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Fashion & Textile Designer",
+        "description": "Designs clothes and fabrics.",
+        "studyRoutesShort": "ITI \u00b7 Diploma \u00b7 BDes",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Layouts, drawing and 3D work",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 2,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Scripts and client briefs",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 3,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Planning design projects",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 4,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Cameras and lighting",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 5,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Pricing and budgets",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Animation",
+        "UI/UX design",
+        "Video content"
+      ],
+      "changing": [
+        "Graphic design",
+        "Photography",
+        "Writing"
+      ],
+      "shrinking": [
+        "Photo edits",
+        "Simple logos",
+        "Copywriting"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Quick images and drafts",
+        "Basic photo and video edits",
+        "Simple captions and ads"
+      ],
+      "peopleWillStillDo": [
+        "Come up with original ideas",
+        "Tell local stories",
+        "Understand clients"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Draw, write or film weekly. Save your best work."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream works. Practise drawing for entrances."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Build a 10\u201315 piece portfolio. Take paid projects."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn new tools, AI included. Build a network."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Media SSC, PMKVY)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Video, photography",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "ITI / Diploma (Art, Fashion)",
+        "startAfter": "10th",
+        "years": "1\u20133",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Design, fashion",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": "Average"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 2
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BFA / BA / BMM / BJMC",
+        "startAfter": "12th, any stream",
+        "years": "3\u20134",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Design, media, writing",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": "Average"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 2
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "B.Sc Animation / VFX",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Animation, gaming",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": "Average"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 2
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 5,
+        "route": "BDes (NID, NIFT, IIT)",
+        "startAfter": "12th + entrance",
+        "years": "4",
+        "costLevel": "High",
+        "leadsTo": "UI/UX, fashion, product",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": "Good"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 3
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C04": {
+    "clusterId": "C04",
+    "name": "Construction, Infrastructure & Real Estate",
+    "onetPrimary": "Construction",
+    "hollandCode": "R-I-C",
+    "description": "Plan and build roads, buildings, bridges and homes.",
+    "iconKey": "building",
+    "icon": "bi-building",
+    "futureBottomLine": "Spending on roads, rail and housing keeps demand strong; skilled supervisors are short.",
+    "parentNote": "A civil diploma from a government polytechnic is low-cost and leads to site jobs. Site work means travel and outdoor conditions.",
+    "riasecWeights": {
+      "R": 21.0,
+      "I": 16.0,
+      "A": 2.0,
+      "S": 0.0,
+      "E": 4.0,
+      "C": 16.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Site Supervisor",
+        "description": "Runs daily work on a building site.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "CAD Draughtsperson",
+        "description": "Draws building plans on computer.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Civil Engineer",
+        "description": "Designs and builds roads and buildings.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 4,
+        "title": "Architect",
+        "description": "Designs useful, beautiful buildings.",
+        "studyRoutesShort": "BArch",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Quantity Surveyor",
+        "description": "Works out costs and materials.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 6,
+        "title": "Real Estate Advisor",
+        "description": "Helps people buy, sell and rent.",
+        "studyRoutesShort": "Any degree + RERA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Reading and drawing plans",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 2,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Measurements and estimates",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 3,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Structures, loads and machines",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 4,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Planning work sequences",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 5,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Specs and site reports",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Infrastructure projects",
+        "Green buildings",
+        "Project management"
+      ],
+      "changing": [
+        "Site supervision",
+        "Surveying (drones)",
+        "Design & drafting"
+      ],
+      "shrinking": [
+        "Manual drafting",
+        "Manual surveying",
+        "Unskilled site labour"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Draft plans and 3D models",
+        "Estimate costs and materials",
+        "Monitor sites with drones"
+      ],
+      "peopleWillStillDo": [
+        "Lead teams on site",
+        "Ensure safety and quality",
+        "Solve problems on the ground"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Sketch your home's plan; notice how buildings are made."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Science + Maths for BTech/BArch; ITI or diploma after 10th."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Intern on a real site; learn AutoCAD."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn BIM tools; earn safety certificates."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Construction SSC)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Site helper, mason, electrician",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "ITI (Draughtsman Civil, Electrician, Plumber)",
+        "startAfter": "10th",
+        "years": "1\u20132",
+        "costLevel": "Low",
+        "leadsTo": "Draughtsperson, technician",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": "Average"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 2
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "Polytechnic diploma (Civil)",
+        "startAfter": "10th",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Site supervisor, surveyor",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": "Average"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 2
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "BTech Civil",
+        "startAfter": "12th Sci + Maths + entrance",
+        "years": "4",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Civil engineer",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "Good",
+          "SPA": "Good"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 3,
+          "SPA": 3
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "BArch",
+        "startAfter": "12th Sci + Maths + NATA/JEE",
+        "years": "5",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Architect",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": "Good"
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 3
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C05": {
+    "clusterId": "C05",
+    "name": "IT, Software, Data & AI",
+    "onetPrimary": "Digital Technology",
+    "hollandCode": "I-C-R",
+    "description": "Build apps, run networks, protect data, and teach computers to learn.",
+    "iconKey": "laptop",
+    "icon": "bi-laptop",
+    "futureBottomLine": "AI won't remove this field; people who use AI well will move ahead.",
+    "parentNote": "Lowest-cost: govt ITI and polytechnic. Myth: \u201cOnly engineers get IT jobs\u201d \u2014 many start after a diploma.",
+    "riasecWeights": {
+      "R": 9.0,
+      "I": 71.0,
+      "A": 5.0,
+      "S": 1.0,
+      "E": 7.0,
+      "C": 70.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Software / App Developer",
+        "description": "Builds apps and websites people use.",
+        "studyRoutesShort": "Diploma \u00b7 BCA \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 2,
+        "title": "Data Analyst",
+        "description": "Turns data into useful answers.",
+        "studyRoutesShort": "BCA \u00b7 B.Sc \u00b7 B.Com",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 3,
+        "title": "AI / ML Engineer",
+        "description": "Teaches computers to find patterns.",
+        "studyRoutesShort": "BTech \u00b7 B.Sc",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 4,
+        "title": "Cybersecurity Analyst",
+        "description": "Protects data from hackers.",
+        "studyRoutesShort": "Diploma \u00b7 BCA \u00b7 BTech",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 5,
+        "title": "IT Support Technician",
+        "description": "Fixes computers and networks.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 6,
+        "title": "Cloud Engineer",
+        "description": "Runs apps on big servers.",
+        "studyRoutesShort": "Diploma \u00b7 BCA \u00b7 BTech",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree/Diploma"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Core to coding and problem-solving",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 2,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Data and AI work (Excellent for AI)",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 3,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Most IT learning is in English",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 4,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Hardware and networks",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 5,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "UI design and network layouts",
+        "focusAction": "Draw objects from different angles daily."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "AI & ML",
+        "Data analytics",
+        "Cybersecurity"
+      ],
+      "changing": [
+        "Coding",
+        "Testing",
+        "IT support"
+      ],
+      "shrinking": [
+        "Data entry",
+        "Basic operator",
+        "Call scripts"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Writing routine code",
+        "Entering and cleaning data",
+        "Common help-desk replies"
+      ],
+      "peopleWillStillDo": [
+        "Understand real problems",
+        "Check AI's work is right",
+        "Fix what breaks"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Build maths and English. Make a Scratch game."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Science + Maths keeps all routes open."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Build 2\u20133 real projects, do an internship, add a certificate."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn a new tool each year. Use AI, and check its work."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (IT-ITeS SSC, PMKVY)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "IT support",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "ITI \u2013 COPA",
+        "startAfter": "10th",
+        "years": "1",
+        "costLevel": "Low",
+        "leadsTo": "IT support, operator",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "Polytechnic diploma (CS / IT)",
+        "startAfter": "10th",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Support, cloud, dev",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "BCA / B.Sc (CS, IT, Data)",
+        "startAfter": "12th, any stream*",
+        "years": "3\u20134",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Developer, data analyst",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 5,
+        "route": "BTech / BE (CSE, IT, AI & DS)",
+        "startAfter": "12th Sci + Maths + entrance",
+        "years": "4",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "All, incl. AI / ML",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C06": {
+    "clusterId": "C06",
+    "name": "Education, Training & Academia",
+    "onetPrimary": "Education",
+    "hollandCode": "S-I-C",
+    "description": "Help people learn \u2014 in schools, colleges, training centres and online.",
+    "iconKey": "book",
+    "icon": "bi-book",
+    "futureBottomLine": "Teachers stay essential; AI changes how they teach, not the need for them.",
+    "parentNote": "Government teaching jobs need TET/CTET and are competitive. Myth: \u201cAnyone can teach\u201d \u2014 good training makes a big difference.",
+    "riasecWeights": {
+      "R": 6.0,
+      "I": 93.0,
+      "A": 19.0,
+      "S": 169.0,
+      "E": 10.0,
+      "C": 25.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "School Teacher",
+        "description": "Teaches a subject to a class.",
+        "studyRoutesShort": "Degree + BEd",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 2,
+        "title": "Pre-primary / Anganwadi Teacher",
+        "description": "Cares for and teaches young children.",
+        "studyRoutesShort": "D.El.Ed \u00b7 NTT diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Special Educator",
+        "description": "Teaches children with learning needs.",
+        "studyRoutesShort": "Diploma \u00b7 BEd Special Ed",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Skill / Corporate Trainer",
+        "description": "Trains adults in job skills.",
+        "studyRoutesShort": "Any degree + ToT",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Instructional Designer",
+        "description": "Creates online courses.",
+        "studyRoutesShort": "Degree + course",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Professor / Researcher",
+        "description": "Teaches and researches in college.",
+        "studyRoutesShort": "PG + NET \u00b7 PhD",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Explaining ideas clearly",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Planning lessons",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Marks, records, maths teaching",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Early childhood education",
+        "Special education",
+        "Skill training"
+      ],
+      "changing": [
+        "School teaching",
+        "Coaching & tuition",
+        "Online course design"
+      ],
+      "shrinking": [
+        "Rote-learning coaching",
+        "Manual exam checking",
+        "Basic content writing"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Check homework and tests",
+        "Draft worksheets and lessons",
+        "Give students instant practice"
+      ],
+      "peopleWillStillDo": [
+        "Motivate and mentor students",
+        "Manage a classroom",
+        "Spot who is struggling and why"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Teach a younger child a topic; notice what works."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream; choose subjects you'd like to teach."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Get BEd or D.El.Ed; clear TET/CTET."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn digital teaching tools; keep upgrading."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill trainer course (ToT, NSDC)",
+        "startAfter": "12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Skill trainer",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "D.El.Ed / Pre-school teacher diploma",
+        "startAfter": "12th",
+        "years": "2",
+        "costLevel": "Low",
+        "leadsTo": "Primary / pre-primary teacher",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BA / BSc / BCom + BEd",
+        "startAfter": "12th",
+        "years": "3 + 2",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "School teacher",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "Integrated BA/BSc-BEd (ITEP)",
+        "startAfter": "12th + NCET",
+        "years": "4",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "School teacher",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "MA / MSc + NET / PhD",
+        "startAfter": "Degree + entrance",
+        "years": "2\u20135",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Professor, researcher",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C07": {
+    "clusterId": "C07",
+    "name": "Energy, Environment & Natural Resources",
+    "onetPrimary": "Energy & Natural Resources",
+    "hollandCode": "I-R-C",
+    "description": "Produce clean energy and protect forests, water and land.",
+    "iconKey": "sun",
+    "icon": "bi-briefcase",
+    "futureBottomLine": "The renewable energy push creates many technician jobs reachable through ITI and short courses.",
+    "parentNote": "Solar and electrical technician jobs are growing and start after short, low-cost training. Field jobs can involve travel.",
+    "riasecWeights": {
+      "R": 44.0,
+      "I": 49.0,
+      "A": 0.0,
+      "S": 3.0,
+      "E": 3.0,
+      "C": 20.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Solar PV Technician",
+        "description": "Installs and repairs solar panels.",
+        "studyRoutesShort": "ITI \u00b7 Skill course",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Power Plant Technician",
+        "description": "Runs and maintains power equipment.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Environmental Scientist",
+        "description": "Tests and cleans air, water, soil.",
+        "studyRoutesShort": "BSc \u00b7 MSc \u00b7 BTech",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 4,
+        "title": "Sustainability Analyst",
+        "description": "Helps firms cut waste and emissions.",
+        "studyRoutesShort": "Degree + course",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Forest / Wildlife Officer",
+        "description": "Protects forests and wildlife.",
+        "studyRoutesShort": "BSc + state/UPSC exam",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Mining Engineer",
+        "description": "Plans safe mining of minerals.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Installing and fixing equipment",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Science and fault-finding",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Readings, loads and data",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Site layouts and maps",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Reports and safety rules",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Solar & wind",
+        "EV & batteries",
+        "Sustainability reporting"
+      ],
+      "changing": [
+        "Power plant operation",
+        "Mining",
+        "Water management"
+      ],
+      "shrinking": [
+        "Coal plant jobs (slowly)",
+        "Manual meter reading",
+        "Paper-based surveys"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Forecast solar and wind output",
+        "Monitor pollution with sensors",
+        "Analyse satellite images"
+      ],
+      "peopleWillStillDo": [
+        "Install and repair equipment",
+        "Do fieldwork at sites and forests",
+        "Work with local communities"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Learn how electricity reaches your home; join an eco club."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Science for BSc/BTech; ITI Electrician after 10th."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Take solar training; intern on energy projects."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn new energy tech; keep safety certificates current."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Suryamitra, Green Jobs SSC)",
+        "startAfter": "10th or 12th",
+        "years": "3 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Solar technician",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "ITI (Electrician, Wireman)",
+        "startAfter": "10th",
+        "years": "2",
+        "costLevel": "Low",
+        "leadsTo": "Electrician, plant technician",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "Polytechnic diploma (Electrical, Mining)",
+        "startAfter": "10th",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Technician, supervisor",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "BSc Environmental Science / Forestry",
+        "startAfter": "12th Science",
+        "years": "3\u20134",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Environmental scientist, forest officer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 5,
+        "route": "BTech (Electrical, Environmental, Mining)",
+        "startAfter": "12th Sci + Maths + entrance",
+        "years": "4",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Engineer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "Good",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 3,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C08": {
+    "clusterId": "C08",
+    "name": "Banking, Finance & Insurance",
+    "onetPrimary": "Financial Services",
+    "hollandCode": "C-E-I",
+    "description": "Manage money \u2014 loans, savings, insurance, accounts and investments.",
+    "iconKey": "rupee",
+    "icon": "bi-briefcase",
+    "futureBottomLine": "Digital banking cuts routine jobs but grows roles that need judgement, data and trust.",
+    "parentNote": "CA is low-cost to study but pass rates are low \u2014 it needs persistence. Bank jobs need strong exam preparation.",
+    "riasecWeights": {
+      "R": 1.0,
+      "I": 17.0,
+      "A": 0.0,
+      "S": 7.0,
+      "E": 42.0,
+      "C": 59.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Bank Officer / Clerk",
+        "description": "Serves customers; handles loans.",
+        "studyRoutesShort": "Any degree + bank exam",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 2,
+        "title": "Accountant",
+        "description": "Keeps business accounts and taxes.",
+        "studyRoutesShort": "BCom \u00b7 Tally \u00b7 CA Inter",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 3,
+        "title": "Chartered Accountant",
+        "description": "Audits accounts; advises on tax.",
+        "studyRoutesShort": "CA (after 12th)",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 4,
+        "title": "Insurance Advisor",
+        "description": "Helps families choose insurance.",
+        "studyRoutesShort": "12th + IRDAI licence",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 5,
+        "title": "Financial Analyst",
+        "description": "Studies companies for investment.",
+        "studyRoutesShort": "BCom \u00b7 BBA \u00b7 MBA \u00b7 CFA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Fintech / Credit Analyst",
+        "description": "Checks loans using data and apps.",
+        "studyRoutesShort": "BCom \u00b7 BBA + data skills",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Core to accounts and finance",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Analysis and decisions",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Rules, reports and clients",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Fintech & digital payments",
+        "Credit & risk analysis",
+        "Financial advice"
+      ],
+      "changing": [
+        "Accounting",
+        "Bank branch work",
+        "Insurance sales"
+      ],
+      "shrinking": [
+        "Bookkeeping & data entry",
+        "Cash handling",
+        "Manual claims processing"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Bookkeeping and reconciliation",
+        "Screen loan applications",
+        "Detect fraud"
+      ],
+      "peopleWillStillDo": [
+        "Advise and build customer trust",
+        "Make final credit decisions",
+        "Explain money simply"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Track household expenses; learn how UPI and savings work."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Commerce with Maths is ideal; any stream for bank exams."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Do an internship or articleship; learn Excel and Tally."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Earn certifications (CA, CFA, NISM); learn fintech tools."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (BFSI SSC, Tally)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Accounts assistant, insurance",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "BCom / BBA",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Accountant, bank, finance",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "CA / CMA / CS",
+        "startAfter": "12th + foundation exam",
+        "years": "4\u20135",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Chartered / cost accountant",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "Bank exams (IBPS, SBI)",
+        "startAfter": "Any degree",
+        "years": "Prep 1",
+        "costLevel": "Low",
+        "leadsTo": "Bank officer / clerk",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "MBA Finance",
+        "startAfter": "Degree + CAT / CET",
+        "years": "2",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Financial analyst, manager",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C09": {
+    "clusterId": "C09",
+    "name": "Healthcare, Life Sciences & Social Services",
+    "onetPrimary": "Healthcare & Human Services",
+    "hollandCode": "I-S-R",
+    "description": "Care for people's health and wellbeing \u2014 in hospitals, labs and communities.",
+    "iconKey": "heart",
+    "icon": "bi-heart-pulse",
+    "futureBottomLine": "Healthcare grows as India ages; caring roles are hard for AI to replace.",
+    "parentNote": "NEET is very competitive \u2014 keep a backup such as nursing, pharmacy or lab technology, which are in demand. Private medical seats are very costly.",
+    "riasecWeights": {
+      "R": 68.0,
+      "I": 194.0,
+      "A": 4.0,
+      "S": 168.0,
+      "E": 12.0,
+      "C": 45.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Nurse",
+        "description": "Cares for patients in hospitals.",
+        "studyRoutesShort": "GNM \u00b7 BSc Nursing",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Medical Lab Technician",
+        "description": "Tests blood and samples.",
+        "studyRoutesShort": "DMLT \u00b7 BSc MLT",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Pharmacist",
+        "description": "Gives medicines; advises patients.",
+        "studyRoutesShort": "DPharm \u00b7 BPharm",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Physiotherapist",
+        "description": "Helps people recover movement.",
+        "studyRoutesShort": "BPT",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Doctor (MBBS / AYUSH)",
+        "description": "Diagnoses and treats illness.",
+        "studyRoutesShort": "MBBS \u00b7 BAMS (NEET)",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Social Worker / Counsellor",
+        "description": "Supports families and communities.",
+        "studyRoutesShort": "BSW \u00b7 MSW \u00b7 MA Psych",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Understanding patients and records",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Diagnosis and lab science",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Doses and measurements",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Useful for equipment, not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 5,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Useful for anatomy, not critical",
+        "focusAction": "Draw objects from different angles daily."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Nursing & elder care",
+        "Allied health (lab, physio)",
+        "Counselling & social care"
+      ],
+      "changing": [
+        "Diagnostics",
+        "Pharmacy",
+        "Medical records"
+      ],
+      "shrinking": [
+        "Medical transcription",
+        "Paper records",
+        "Basic billing"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Read scans and reports",
+        "Manage records and appointments",
+        "Suggest possible diagnoses"
+      ],
+      "peopleWillStillDo": [
+        "Care for and comfort patients",
+        "Make final medical decisions",
+        "Counsel and support families"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Learn first aid; volunteer at a health camp."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Science with Biology (PCB) for most routes; any stream for social work."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Complete clinical training; build patience and communication."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Keep up with new treatments; renew licences."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "ANM / GDA / Health skill course",
+        "startAfter": "10th or 12th",
+        "years": "1\u20132",
+        "costLevel": "Low",
+        "leadsTo": "Health assistant, ANM",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "DMLT / DPharm / GNM",
+        "startAfter": "12th Science",
+        "years": "2\u20133",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Lab tech, pharmacist, nurse",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BSc Nursing / BPT / BPharm",
+        "startAfter": "12th PCB + entrance",
+        "years": "4",
+        "costLevel": "Med",
+        "leadsTo": "Nurse, physio, pharmacist",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "MBBS / BAMS / BDS",
+        "startAfter": "12th PCB + NEET",
+        "years": "5.5",
+        "costLevel": "Low (govt) \u2013 High",
+        "leadsTo": "Doctor",
+        "minLevels": {
+          "LOG": "Excellent",
+          "NUM": "Good",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 4,
+          "NUM": 3,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "BSW / BA Psychology",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low",
+        "leadsTo": "Social worker, counsellor (with MA)",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      }
+    ]
+  },
+  "C10": {
+    "clusterId": "C10",
+    "name": "Hospitality, Tourism & Events",
+    "onetPrimary": "Hospitality, Events, & Tourism",
+    "hollandCode": "E-S-C",
+    "description": "Make people's travel, stays, food and events enjoyable.",
+    "iconKey": "suitcase",
+    "icon": "bi-briefcase",
+    "futureBottomLine": "Tourism is growing; people skills matter most, and many jobs start after short courses.",
+    "parentNote": "Hospitality means long hours and shift work, but strong growth. Government IHMs are good value; check placement records of private academies, especially for cabin crew.",
+    "riasecWeights": {
+      "R": 1.0,
+      "I": 0.0,
+      "A": 0.0,
+      "S": 8.0,
+      "E": 14.0,
+      "C": 7.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Chef / Cook",
+        "description": "Plans and cooks food in kitchens.",
+        "studyRoutesShort": "ITI \u00b7 Diploma \u00b7 BHM",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Hotel Front Office Executive",
+        "description": "Welcomes and helps guests.",
+        "studyRoutesShort": "Diploma \u00b7 BHM",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Food & Beverage Service",
+        "description": "Serves guests in restaurants.",
+        "studyRoutesShort": "Skill course \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Event Manager",
+        "description": "Organises weddings, shows, conferences.",
+        "studyRoutesShort": "Diploma \u00b7 BBA Events",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 5,
+        "title": "Travel & Tour Guide",
+        "description": "Plans trips; shows places.",
+        "studyRoutesShort": "Skill course \u00b7 BTTM",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 6,
+        "title": "Cabin Crew / Ground Staff",
+        "description": "Looks after air passengers.",
+        "studyRoutesShort": "12th + academy course",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Talking to guests, often in English",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 2,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Bills, stock and budgets",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 3,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Planning events and trips",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 4,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Kitchen equipment, not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 5,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Event layouts, not critical",
+        "focusAction": "Draw objects from different angles daily."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Domestic tourism",
+        "Weddings & events",
+        "Aviation services"
+      ],
+      "changing": [
+        "Hotel operations",
+        "Travel planning",
+        "Restaurant service"
+      ],
+      "shrinking": [
+        "Ticket booking agents",
+        "Manual reservations",
+        "Booking call centres"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Bookings and reservations",
+        "Answer common guest questions",
+        "Plan trip itineraries"
+      ],
+      "peopleWillStillDo": [
+        "Welcome and care for guests",
+        "Cook and present food",
+        "Fix problems face to face"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Help at family events; practise talking to new people."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream; improve English and one more language."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Do hotel industrial training; learn service basics."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn new cuisines and tools; build service skills."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Tourism & Hospitality SSC)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "F&B service, housekeeping",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "ITI (Food Production)",
+        "startAfter": "10th",
+        "years": "1",
+        "costLevel": "Low",
+        "leadsTo": "Cook, kitchen assistant",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "Food Craft / Hotel diploma (IHM, FCI)",
+        "startAfter": "10th or 12th",
+        "years": "1\u20131.5",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Cook, front office, service",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "BSc Hospitality (IHM via NCHM JEE)",
+        "startAfter": "12th + entrance",
+        "years": "3",
+        "costLevel": "Med",
+        "leadsTo": "Hotel manager, chef",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "BTTM / BBA Tourism & Events",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Travel, events",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      }
+    ]
+  },
+  "C11": {
+    "clusterId": "C11",
+    "name": "Management, Business & Entrepreneurship",
+    "onetPrimary": "Management & Entrepreneurship",
+    "hollandCode": "E-C-I",
+    "description": "Run organisations and start businesses \u2014 plan, lead and grow.",
+    "iconKey": "briefcase",
+    "icon": "bi-briefcase",
+    "futureBottomLine": "AI handles routine office work; demand grows for people who lead teams and decide.",
+    "parentNote": "An MBA is most useful after some work experience. Schemes such as PMEGP and Mudra give loans to start small businesses.",
+    "riasecWeights": {
+      "R": 8.0,
+      "I": 29.0,
+      "A": 2.0,
+      "S": 15.0,
+      "E": 89.0,
+      "C": 77.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Entrepreneur / Shop Owner",
+        "description": "Starts and runs own business.",
+        "studyRoutesShort": "Any route + skills",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Operations Manager",
+        "description": "Gets work done on time, on budget.",
+        "studyRoutesShort": "BBA \u00b7 MBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 3,
+        "title": "HR Executive",
+        "description": "Hires, trains and supports staff.",
+        "studyRoutesShort": "BBA \u00b7 MBA HR",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 4,
+        "title": "Business Analyst",
+        "description": "Improves how a business works.",
+        "studyRoutesShort": "BBA \u00b7 BTech \u00b7 MBA",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Management Consultant",
+        "description": "Advises companies on problems.",
+        "studyRoutesShort": "Degree + MBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Office / Admin Executive",
+        "description": "Manages office work and records.",
+        "studyRoutesShort": "BCom \u00b7 BBA \u00b7 Skill course",
+        "aiOutlook": "Shrinking",
+        "entryLevel": "Non-degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Decisions and problem-solving",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 2,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Communication and reports",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Budgets, costs and profit",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Startups & small business",
+        "Business analytics",
+        "Project management"
+      ],
+      "changing": [
+        "HR",
+        "Operations",
+        "Consulting"
+      ],
+      "shrinking": [
+        "Basic admin",
+        "Data entry",
+        "Routine reporting"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Write reports and emails",
+        "Analyse sales data",
+        "Screen job applications"
+      ],
+      "peopleWillStillDo": [
+        "Lead and motivate teams",
+        "Make final decisions",
+        "Build relationships and deals"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Run a stall or school event and handle its money."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Commerce suits most; any stream works."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Start a small project or club; intern at a business."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn data and AI tools; take on team roles."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Entrepreneurship, MSME)",
+        "startAfter": "10th or 12th",
+        "years": "1\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Own business, admin",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "BBA / BMS / BCom",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Executive roles",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "Integrated BBA-MBA (IPM via IPMAT)",
+        "startAfter": "12th + entrance",
+        "years": "5",
+        "costLevel": "High",
+        "leadsTo": "Manager",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "MBA / PGDM",
+        "startAfter": "Degree + CAT / CET",
+        "years": "2",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Manager, consultant",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "Govt business support (PMEGP, Mudra)",
+        "startAfter": "Any stage",
+        "years": "\u2014",
+        "costLevel": "Loan support",
+        "leadsTo": "Own business",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      }
+    ]
+  },
+  "C12": {
+    "clusterId": "C12",
+    "name": "Marketing, Sales & Communications",
+    "onetPrimary": "Marketing & Sales",
+    "hollandCode": "E-C-R",
+    "description": "Help products reach people \u2014 through ads, social media, sales and PR.",
+    "iconKey": "megaphone",
+    "icon": "bi-megaphone",
+    "futureBottomLine": "AI makes ads cheap; people who understand customers and can sell stay valuable.",
+    "parentNote": "Sales jobs often add incentives to salary, so income can vary. Digital marketing can be learned free online.",
+    "riasecWeights": {
+      "R": 2.0,
+      "I": 2.0,
+      "A": 1.0,
+      "S": 1.0,
+      "E": 32.0,
+      "C": 23.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Digital Marketing Executive",
+        "description": "Runs online ads and social media.",
+        "studyRoutesShort": "Skill course \u00b7 BBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Sales Executive",
+        "description": "Meets customers and sells products.",
+        "studyRoutesShort": "12th \u00b7 Any degree",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Retail Store Manager",
+        "description": "Runs a shop and its team.",
+        "studyRoutesShort": "Skill course \u00b7 BBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Brand Manager",
+        "description": "Shapes how people see a product.",
+        "studyRoutesShort": "BBA \u00b7 MBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "PR / Communications Officer",
+        "description": "Manages a company's public image.",
+        "studyRoutesShort": "BA \u00b7 BJMC",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Market Research Analyst",
+        "description": "Studies what customers want.",
+        "studyRoutesShort": "BBA \u00b7 BSc Stats \u00b7 MBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Persuasive talking and writing",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Reading what customers want",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Targets, prices, results",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Ad layouts, not critical",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Digital & social media",
+        "Regional-language marketing",
+        "E-commerce sales"
+      ],
+      "changing": [
+        "Brand management",
+        "Field sales",
+        "Market research"
+      ],
+      "shrinking": [
+        "Telecalling",
+        "Print ad layout",
+        "Basic copywriting"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Write ad copy and posts",
+        "Target ads to the right people",
+        "Analyse campaign results"
+      ],
+      "peopleWillStillDo": [
+        "Understand local customers",
+        "Build relationships, close sales",
+        "Create big campaign ideas"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Help sell at a school fair; study ads you like."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream; Commerce helps."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Run a social media page; do sales internships."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn new platforms and AI tools every year."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Online certificates (Google, Meta)",
+        "startAfter": "Any stage",
+        "years": "1\u20133 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Digital marketing",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "Skill course (Retail SSC)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Retail sales, store staff",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BBA / BMS / BCom",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Sales, marketing executive",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "BA / BJMC (Mass Communication)",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "PR, communications",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 5,
+        "route": "MBA Marketing",
+        "startAfter": "Degree + CAT / CET",
+        "years": "2",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Brand / marketing manager",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Average",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 2,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C13": {
+    "clusterId": "C13",
+    "name": "Government, Public Service & Security",
+    "onetPrimary": "Public Service & Safety",
+    "hollandCode": "I-C-E",
+    "description": "Serve the public \u2014 in administration, police, defence and emergency services.",
+    "iconKey": "shield",
+    "icon": "bi-shield-check",
+    "futureBottomLine": "Government jobs are secure but very competitive; selection is by exams with many applicants per seat.",
+    "parentNote": "Selection rates are very low \u2014 always keep a backup career. Check results before paying for costly coaching; good free material exists online.",
+    "riasecWeights": {
+      "R": 1.0,
+      "I": 17.0,
+      "A": 3.0,
+      "S": 9.0,
+      "E": 13.0,
+      "C": 15.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Govt Clerk / Officer (SSC, Railways)",
+        "description": "Runs government office work.",
+        "studyRoutesShort": "10th/12th/degree + exam",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Police Constable / Officer",
+        "description": "Keeps law and order.",
+        "studyRoutesShort": "12th/degree + recruitment",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Defence (Army, Navy, Air Force)",
+        "description": "Protects the country.",
+        "studyRoutesShort": "12th (NDA, Agniveer) \u00b7 CDS",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Firefighter / Disaster Response",
+        "description": "Responds to fires and disasters.",
+        "studyRoutesShort": "10th/12th + fire course",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 5,
+        "title": "Civil Services (IAS / State PCS)",
+        "description": "Runs districts and departments.",
+        "studyRoutesShort": "Any degree + UPSC/PSC",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Rural Development Officer",
+        "description": "Runs schemes for villages.",
+        "studyRoutesShort": "Degree + state exam",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Exam reasoning and decisions",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 2,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "GK, laws and reports",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Exam maths",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Useful in defence tech, not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 5,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Draw objects from different angles daily."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Cybercrime & digital policing",
+        "Disaster management",
+        "Defence technology"
+      ],
+      "changing": [
+        "Administration (e-governance)",
+        "Policing",
+        "Clerical services"
+      ],
+      "shrinking": [
+        "Paper-based clerical work",
+        "Manual record rooms",
+        "Manual counters"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Process applications and records",
+        "Analyse CCTV and data",
+        "Answer public queries"
+      ],
+      "peopleWillStillDo": [
+        "Make fair decisions",
+        "Handle emergencies and crowds",
+        "Listen to and serve citizens"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Read the newspaper daily; build fitness for uniformed jobs."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream; Science + Maths for NDA technical roles."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Start exam practice (GK, reasoning); NCC helps."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Prepare for promotions; learn e-governance tools."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Agniveer / Police constable",
+        "startAfter": "10th or 12th + test",
+        "years": "4 / \u2014",
+        "costLevel": "Free (paid)",
+        "leadsTo": "Soldier, constable",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 2,
+        "route": "NDA",
+        "startAfter": "12th + NDA exam",
+        "years": "3\u20134",
+        "costLevel": "Free (paid)",
+        "leadsTo": "Defence officer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 3,
+        "route": "SSC / RRB / state exams",
+        "startAfter": "10th, 12th or degree",
+        "years": "Prep 1\u20132",
+        "costLevel": "Low",
+        "leadsTo": "Clerk, officer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Average",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 2,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "Degree, then UPSC / State PSC",
+        "startAfter": "12th, any stream",
+        "years": "3 + prep",
+        "costLevel": "Low",
+        "leadsTo": "Civil services",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "Fire & safety diploma",
+        "startAfter": "10th or 12th",
+        "years": "1",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Firefighter, safety officer",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      }
+    ]
+  },
+  "C14": {
+    "clusterId": "C14",
+    "name": "Supply Chain, Logistics & Transportation",
+    "onetPrimary": "Supply Chain & Transportation",
+    "hollandCode": "C-E-R",
+    "description": "Move goods and people \u2014 by road, rail, sea and air.",
+    "iconKey": "truck",
+    "icon": "bi-truck",
+    "futureBottomLine": "E-commerce and new highways are growing logistics; tech-savvy supervisors are in demand.",
+    "parentNote": "Logistics offers jobs in many towns, not just cities. AME is costly \u2014 choose only DGCA-approved institutes.",
+    "riasecWeights": {
+      "R": 9.0,
+      "I": 6.0,
+      "A": 0.0,
+      "S": 0.0,
+      "E": 11.0,
+      "C": 19.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Warehouse Supervisor",
+        "description": "Runs storage and dispatch.",
+        "studyRoutesShort": "Skill course \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Logistics Coordinator",
+        "description": "Plans how goods move on time.",
+        "studyRoutesShort": "Diploma \u00b7 BBA Logistics",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 3,
+        "title": "Commercial Driver / Fleet Operator",
+        "description": "Drives and manages vehicles.",
+        "studyRoutesShort": "Licence + skill course",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 4,
+        "title": "Railway / Port Operations",
+        "description": "Runs train, port and cargo work.",
+        "studyRoutesShort": "ITI/degree + RRB exam",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 5,
+        "title": "Procurement Officer",
+        "description": "Buys materials at the right price.",
+        "studyRoutesShort": "BCom \u00b7 BBA \u00b7 MBA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Aircraft Maintenance Engineer",
+        "description": "Inspects and repairs aircraft.",
+        "studyRoutesShort": "AME licence course",
+        "aiOutlook": "Growing",
+        "entryLevel": "Non-degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Stock, costs and schedules",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Planning routes and flows",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Vehicles and equipment",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Maps and warehouse layout",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Documents and coordination",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "E-commerce delivery",
+        "Warehousing & cold chains",
+        "Aviation & ports"
+      ],
+      "changing": [
+        "Fleet management",
+        "Procurement",
+        "Railway operations"
+      ],
+      "shrinking": [
+        "Manual stock counting",
+        "Paper documents",
+        "Manual sorting"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Plan delivery routes",
+        "Forecast stock needs",
+        "Track shipments"
+      ],
+      "peopleWillStillDo": [
+        "Handle problems on the ground",
+        "Manage drivers and teams",
+        "Negotiate with suppliers"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Notice how a parcel reaches you; practise maths."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream; Science + Maths for AME."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Intern at a warehouse or courier; learn Excel."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Learn warehouse software; earn certifications."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Skill course (Logistics SSC)",
+        "startAfter": "10th or 12th",
+        "years": "3\u20136 mo",
+        "costLevel": "Free\u2013Low",
+        "leadsTo": "Warehouse, delivery",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "Diploma in Logistics / Supply Chain",
+        "startAfter": "12th",
+        "years": "1",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Logistics coordinator",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BBA / BCom (Logistics)",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Logistics, procurement",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 4,
+        "route": "Railway jobs (RRB)",
+        "startAfter": "10th, ITI or degree + exam",
+        "years": "Prep 1",
+        "costLevel": "Low",
+        "leadsTo": "Railway staff",
+        "minLevels": {
+          "LOG": "Average",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 2,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "AME (DGCA-approved)",
+        "startAfter": "12th Sci + Maths",
+        "years": "2\u20134",
+        "costLevel": "High",
+        "leadsTo": "Aircraft maintenance engineer",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "Good",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 3,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C15": {
+    "clusterId": "C15",
+    "name": "Engineering & Applied Sciences",
+    "onetPrimary": "\u2014",
+    "hollandCode": "R-I-C",
+    "description": "Use science and maths to design electronics, chemicals, machines and new technology.",
+    "iconKey": "atom",
+    "icon": "bi-briefcase",
+    "futureBottomLine": "India is investing in electronics and semiconductors; strong maths and physics open the best doors.",
+    "parentNote": "A government polytechnic diploma plus lateral entry to BTech saves money. Engineering college quality varies widely \u2014 check placements.",
+    "riasecWeights": {
+      "R": 65.0,
+      "I": 63.0,
+      "A": 3.0,
+      "S": 0.0,
+      "E": 0.0,
+      "C": 29.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Instrumentation Technician",
+        "description": "Installs and calibrates sensors.",
+        "studyRoutesShort": "ITI \u00b7 Diploma",
+        "aiOutlook": "Changing",
+        "entryLevel": "Non-degree"
+      },
+      {
+        "seq": 2,
+        "title": "Electronics / Embedded Engineer",
+        "description": "Builds circuits and smart devices.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 3,
+        "title": "Electrical Engineer",
+        "description": "Designs power systems and equipment.",
+        "studyRoutesShort": "Diploma \u00b7 BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree/Diploma"
+      },
+      {
+        "seq": 4,
+        "title": "Chemical Engineer",
+        "description": "Designs processes for chemicals, fuels.",
+        "studyRoutesShort": "BTech",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Biomedical Engineer",
+        "description": "Builds medical machines.",
+        "studyRoutesShort": "BTech",
+        "aiOutlook": "Growing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "R&D Scientist",
+        "description": "Researches new materials and tech.",
+        "studyRoutesShort": "BSc \u00b7 MSc \u00b7 PhD",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Core to engineering (Excellent for research)",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Problem-solving and design",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Machines, forces and circuits",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Drawings and 3D design",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Technical documents",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Semiconductors & electronics",
+        "EV & batteries",
+        "Medical devices"
+      ],
+      "changing": [
+        "Core design work",
+        "Testing & calibration",
+        "Plant engineering"
+      ],
+      "shrinking": [
+        "Manual drafting",
+        "Routine testing",
+        "Paper documentation"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Run simulations and design checks",
+        "Analyse test data",
+        "Draft technical documents"
+      ],
+      "peopleWillStillDo": [
+        "Invent and test new ideas",
+        "Take responsibility for safety",
+        "Solve real-world failures"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Build simple circuits or science projects; strengthen maths."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Science with Maths (PCM) is essential for BTech."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Do projects and internships; learn simulation tools."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Specialise; keep learning new technology."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "ITI (Electronics, Instrument Mechanic)",
+        "startAfter": "10th",
+        "years": "2",
+        "costLevel": "Low",
+        "leadsTo": "Technician",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "Polytechnic diploma (Electrical, Electronics, Chemical)",
+        "startAfter": "10th",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Technician; lateral entry to BTech",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "",
+          "MECH": "Average",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 0,
+          "MECH": 2,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 3,
+        "route": "BTech (EE, ECE, Chemical, Biomedical)",
+        "startAfter": "12th Sci + Maths + JEE / CET",
+        "years": "4",
+        "costLevel": "Med\u2013High",
+        "leadsTo": "Engineer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "Good",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 3,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "BSc \u2192 MSc (Physics, Chemistry)",
+        "startAfter": "12th Science",
+        "years": "3 + 2",
+        "costLevel": "Low",
+        "leadsTo": "Scientist, lab roles",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Good",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 3,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 5,
+        "route": "Integrated MSc (IISER, NISER)",
+        "startAfter": "12th Science + IAT / NEST",
+        "years": "5",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Researcher",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "Excellent",
+          "READ": "",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 4,
+          "READ": 0,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      }
+    ]
+  },
+  "C16": {
+    "clusterId": "C16",
+    "name": "Legal, Policy & Compliance",
+    "onetPrimary": "\u2014",
+    "hollandCode": "C-E-I",
+    "description": "Make sure people and businesses follow the law \u2014 and get justice.",
+    "iconKey": "scale",
+    "icon": "bi-briefcase",
+    "futureBottomLine": "AI speeds up research and drafting; people who argue, advise and judge stay in demand. Early court practice pays little.",
+    "parentNote": "Government law colleges are low-cost; NLUs are costly but offer scholarships. Court practice pays little in early years; corporate roles pay more.",
+    "riasecWeights": {
+      "R": 0.0,
+      "I": 3.0,
+      "A": 0.0,
+      "S": 2.0,
+      "E": 17.0,
+      "C": 18.0
+    },
+    "careers": [
+      {
+        "seq": 1,
+        "title": "Lawyer / Advocate",
+        "description": "Represents clients in court.",
+        "studyRoutesShort": "LLB (5-yr or 3-yr)",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 2,
+        "title": "Corporate Lawyer",
+        "description": "Drafts contracts; advises companies.",
+        "studyRoutesShort": "BA LLB \u00b7 LLM",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 3,
+        "title": "Judge / Judicial Officer",
+        "description": "Hears cases; gives judgments.",
+        "studyRoutesShort": "LLB + judicial exam",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 4,
+        "title": "Company Secretary",
+        "description": "Keeps a company legally compliant.",
+        "studyRoutesShort": "CS (ICSI)",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 5,
+        "title": "Compliance / Tax Officer",
+        "description": "Checks tax and finance rules are met.",
+        "studyRoutesShort": "BCom \u00b7 LLB \u00b7 CA",
+        "aiOutlook": "Changing",
+        "entryLevel": "Degree"
+      },
+      {
+        "seq": 6,
+        "title": "Paralegal / Legal Assistant",
+        "description": "Helps lawyers with documents.",
+        "studyRoutesShort": "Certificate \u00b7 Diploma",
+        "aiOutlook": "Shrinking",
+        "entryLevel": "Non-degree"
+      }
+    ],
+    "aptitudeNeeds": [
+      {
+        "priority": 1,
+        "code": "READ",
+        "name": "Reading & language",
+        "neededLevel": "Excellent",
+        "neededScore": 4,
+        "whyItMatters": "Core: reading, writing and arguing",
+        "focusAction": "Read one page daily (newspaper or book) and summarise it."
+      },
+      {
+        "priority": 2,
+        "code": "LOG",
+        "name": "Logical reasoning",
+        "neededLevel": "Good",
+        "neededScore": 3,
+        "whyItMatters": "Legal reasoning",
+        "focusAction": "Solve one puzzle daily (sudoku, patterns, riddles)."
+      },
+      {
+        "priority": 3,
+        "code": "NUM",
+        "name": "Numeracy",
+        "neededLevel": "Average",
+        "neededScore": 2,
+        "whyItMatters": "Tax and compliance work",
+        "focusAction": "Do 15 minutes of mental maths daily."
+      },
+      {
+        "priority": 4,
+        "code": "SPA",
+        "name": "Spatial thinking",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Draw objects from different angles daily."
+      },
+      {
+        "priority": 5,
+        "code": "MECH",
+        "name": "Mechanical reasoning",
+        "neededLevel": "Low",
+        "neededScore": 1,
+        "whyItMatters": "Not critical",
+        "focusAction": "Take apart and reassemble simple things (torch, pen)."
+      }
+    ],
+    "futureDemand": {
+      "growing": [
+        "Corporate & tech law",
+        "Compliance & data privacy",
+        "GST & tax advisory"
+      ],
+      "changing": [
+        "Court practice",
+        "Legal research",
+        "Policy analysis"
+      ],
+      "shrinking": [
+        "Standard drafting",
+        "Paralegal research",
+        "Paper filing"
+      ]
+    },
+    "aiImpact": {
+      "aiWillDoMoreOf": [
+        "Search case law",
+        "Draft standard contracts",
+        "Review documents"
+      ],
+      "peopleWillStillDo": [
+        "Argue cases in court",
+        "Advise clients with judgement",
+        "Negotiate and settle disputes"
+      ]
+    },
+    "prepare": [
+      {
+        "stage": 1,
+        "stageLabel": "Now (Class 10)",
+        "text": "Read the newspaper; join debates and elocution."
+      },
+      {
+        "stage": 2,
+        "stageLabel": "Class 11\u201312",
+        "text": "Any stream; prepare for CLAT or state law CETs."
+      },
+      {
+        "stage": 3,
+        "stageLabel": "College / diploma",
+        "text": "Intern with advocates and firms; take part in moot courts."
+      },
+      {
+        "stage": 4,
+        "stageLabel": "Working life",
+        "text": "Specialise; keep up with new laws."
+      }
+    ],
+    "studyRoutes": [
+      {
+        "seq": 1,
+        "route": "Diploma (Cyber, Labour, Tax law)",
+        "startAfter": "12th or degree",
+        "years": "1",
+        "costLevel": "Low",
+        "leadsTo": "Paralegal, compliance assistant",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 0,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      },
+      {
+        "seq": 2,
+        "route": "5-yr BA LLB (NLU via CLAT, state CET)",
+        "startAfter": "12th + entrance",
+        "years": "5",
+        "costLevel": "Low (govt) \u2013 High",
+        "leadsTo": "Lawyer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 3,
+        "route": "3-yr LLB",
+        "startAfter": "Any degree + entrance",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Lawyer",
+        "minLevels": {
+          "LOG": "Good",
+          "NUM": "",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 3,
+          "NUM": 0,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 4,
+        "route": "CS (ICSI)",
+        "startAfter": "12th + exams",
+        "years": "3\u20134",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Company secretary",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "Good",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 3,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "Y"
+      },
+      {
+        "seq": 5,
+        "route": "BCom + tax / GST course",
+        "startAfter": "12th, any stream",
+        "years": "3",
+        "costLevel": "Low\u2013Med",
+        "leadsTo": "Tax and compliance roles",
+        "minLevels": {
+          "LOG": "",
+          "NUM": "Average",
+          "READ": "Average",
+          "MECH": "",
+          "SPA": ""
+        },
+        "minScores": {
+          "LOG": 0,
+          "NUM": 2,
+          "READ": 2,
+          "MECH": 0,
+          "SPA": 0
+        },
+        "entranceExam": "N"
+      }
+    ]
+  }
+}

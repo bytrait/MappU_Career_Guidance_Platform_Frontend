@@ -29,7 +29,7 @@ export const fetchStudentReportPdfBlob = async (studentId, { language = "en", do
   const response = await API.get(
     `/assessment/report/student/${studentId}/pdf`,
     {
-      params: { language, download: download ? "true" : "false" },
+      params: { language, download: download ? "true" : "false", _t: Date.now() },
       responseType: "blob",
     }
   );

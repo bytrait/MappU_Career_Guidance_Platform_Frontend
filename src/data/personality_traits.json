@@ -3,191 +3,2763 @@
     "Openness": {
       "categories": [
         {
-          "range": "27-40",
-          "icon": "bi-lightbulb",
-          "label": {
-            "en": "Ideator/Innovator",
-            "mr": "कल्पक / नवोन्मेषक"
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 37,
+            "max": 40
           },
-          "summary": {
-            "en": "You’re a creative and curious thinker who loves exploring new ideas and expressing yourself in original, imaginative ways.",
-            "mr": "तुम्ही सर्जनशील (क्रिएटिव) आहात आणि नव्या गोष्टी जाणून घेण्यात तुमची रुची आहे. तुमच्या मनात वेगवेगळ्या कल्पना येतात आणि त्या तुम्ही कल्पकतेने व्यक्त करता."
+          "archetype": "Explorer",
+          "meaning": "You tend to be curious and drawn to exploring ideas and possibilities. You may enjoy thinking about how different concepts connect and often feel energized by learning something new.",
+          "how_it_shows": "This often looks like asking deeper questions, exploring topics beyond the syllabus, enjoying creative activities, and connecting ideas across subjects.",
+          "learning_preference": {
+            "style": "Exploratory, discovery-based learning.",
+            "quote": "“You'd rather dig into a topic that interests you than follow the textbook page by page.”",
+            "raw": [
+              "Exploratory, discovery-based learning.",
+              "“You'd rather dig into a topic that interests you than follow the textbook page by page.”"
+            ]
+          },
+          "strengths": [
+            "Creativity",
+            "curiosity",
+            "adaptability",
+            "innovation"
+          ],
+          "growth_suggestions": [
+            "Finish one idea before chasing the next.",
+            "Test a big idea small before pitching it.",
+            "Reality-check a plan's time cost before committing."
+          ],
+          "reflection_prompt": "Do you enjoy exploring ideas beyond what is taught in class? When learning something new, do you look for additional information out of curiosity?",
+          "content": {
+            "meaning": {
+              "en": "You tend to be curious and drawn to exploring ideas and possibilities. You may enjoy thinking about how different concepts connect and often feel energized by learning something new."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like asking deeper questions, exploring topics beyond the syllabus, enjoying creative activities, and connecting ideas across subjects."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Exploratory, discovery-based learning.",
+                "“You'd rather dig into a topic that interests you than follow the textbook page by page.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Creativity",
+                "curiosity",
+                "adaptability",
+                "innovation"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Finish one idea before chasing the next.",
+                "Test a big idea small before pitching it.",
+                "Reality-check a plan's time cost before committing."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you enjoy exploring ideas beyond what is taught in class? When learning something new, do you look for additional information out of curiosity?"
+              ]
+            }
           }
         },
         {
-          "range": "14-26",
-          "icon": "bi-tools",
-          "label": {
-            "en": "Realistic Innovator",
-            "mr": "वास्तववादी नवोन्मेषक"
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 34,
+            "max": 36
           },
-          "summary": {
-            "en": "You’re a practical problem-solver who blends creativity with real-world thinking to turn ideas into impactful solutions.",
-            "mr": "तुम्ही समस्या सोडवायला हुशार आहात. तुम्ही कल्पना आणि वास्तव एकत्र करता, म्हणून तुमच्या कल्पना उपयोगी उपायांमध्ये बदलतात."
+          "archetype": "Eager Pragmatist",
+          "meaning": "You lean toward new ideas and possibilities, but you're not chasing novelty for its own sake — for instance, when a friend suggests an unusual elective or hobby, you're quick to say yes, but you'll still ask around about it first.",
+          "how_it_shows": "This tends to look like real enthusiasm for new topics, paired with a habit of checking whether they're actually worth pursuing.",
+          "learning_preference": {
+            "style": "Mostly exploratory, with a practical check.",
+            "quote": "“You go looking for new ideas, but you'll still ask if this is actually useful.”",
+            "raw": [
+              "Mostly exploratory, with a practical check.",
+              "“You go looking for new ideas, but you'll still ask if this is actually useful.”"
+            ]
+          },
+          "strengths": [
+            "Applied curiosity",
+            "informed enthusiasm",
+            "adaptable thinking"
+          ],
+          "growth_suggestions": [
+            "Give a promising idea a deadline before it becomes a distraction.",
+            "Pitch one exploratory idea to a mentor for a reality check.",
+            "Track which curiosities actually led somewhere this term."
+          ],
+          "reflection_prompt": "Do you get genuinely excited about new ideas, while still checking they're worth the effort?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward new ideas and possibilities, but you're not chasing novelty for its own sake — for instance, when a friend suggests an unusual elective or hobby, you're quick to say yes, but you'll still ask around about it first."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like real enthusiasm for new topics, paired with a habit of checking whether they're actually worth pursuing."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly exploratory, with a practical check.",
+                "“You go looking for new ideas, but you'll still ask if this is actually useful.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Applied curiosity",
+                "informed enthusiasm",
+                "adaptable thinking"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Give a promising idea a deadline before it becomes a distraction.",
+                "Pitch one exploratory idea to a mentor for a reality check.",
+                "Track which curiosities actually led somewhere this term."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you get genuinely excited about new ideas, while still checking they're worth the effort?"
+              ]
+            }
           }
         },
         {
-          "range": "0-13",
-          "icon": "bi-check-circle",
-          "label": {
-            "en": "Pragmatist",
-            "mr": "व्यावहारिक विचारक"
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 31,
+            "max": 33
           },
-          "summary": {
-            "en": "You’re a practical and adaptable thinker who focuses on real-world results, using logic and clear goals to solve problems efficiently.",
-            "mr": "तुम्ही विचारपूर्वक आणि परिस्थितीनुसार विचार करणारे आहात. तुमचं लक्ष नेहमी प्रत्यक्ष परिणामांवर असतं. तुम्ही विचार करून, स्पष्ट उद्दिष्ट ठेऊन समस्यांचा चांगला उपाय करता."
+          "archetype": "Curious Realist",
+          "meaning": "You tip slightly toward the new over the proven — for example, given two ways to prepare for a test, you're a little more likely to try the unconventional study method than stick with what's always worked.",
+          "how_it_shows": "This tends to look like reaching for the new idea first, then checking it holds up before committing.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward the new.",
+            "quote": "“You'll try the new approach first, but you still want to see it work before trusting it.”",
+            "raw": [
+              "Balanced, tipped toward the new.",
+              "“You'll try the new approach first, but you still want to see it work before trusting it.”"
+            ]
+          },
+          "strengths": [
+            "Open-minded judgement",
+            "grounded curiosity",
+            "informed risk-taking"
+          ],
+          "growth_suggestions": [
+            "Let the familiar option win once when a decision is genuinely close.",
+            "Pitch one new idea to a mentor before assuming it's right.",
+            "Track how often the new choice actually paid off this term."
+          ],
+          "reflection_prompt": "When a decision is close, do you usually lean toward the newer option?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward the new over the proven — for example, given two ways to prepare for a test, you're a little more likely to try the unconventional study method than stick with what's always worked."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like reaching for the new idea first, then checking it holds up before committing."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward the new.",
+                "“You'll try the new approach first, but you still want to see it work before trusting it.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Open-minded judgement",
+                "grounded curiosity",
+                "informed risk-taking"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Let the familiar option win once when a decision is genuinely close.",
+                "Pitch one new idea to a mentor before assuming it's right.",
+                "Track how often the new choice actually paid off this term."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "When a decision is close, do you usually lean toward the newer option?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 28,
+            "max": 30
+          },
+          "archetype": "Practical Idealist",
+          "meaning": "Given equal footing, the tried-and-tested option usually wins out for you — for instance, offered a new productivity app versus your usual notebook, you'd probably stick with the notebook unless the app clearly does something better.",
+          "how_it_shows": "This tends to look like weighing a new idea seriously, then usually choosing the safer, more familiar option when it's close.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward the familiar.",
+            "quote": "“You'll consider a new approach, but the tried-and-tested one usually wins when you're unsure.”",
+            "raw": [
+              "Balanced, tipped toward the familiar.",
+              "“You'll consider a new approach, but the tried-and-tested one usually wins when you're unsure.”"
+            ]
+          },
+          "strengths": [
+            "Balanced judgement",
+            "measured risk-taking",
+            "practical open-mindedness"
+          ],
+          "growth_suggestions": [
+            "Choose the new option once when a decision is genuinely close.",
+            "Ask a mentor which of your “safe” choices might be worth questioning.",
+            "Track how often the familiar choice was actually the better one."
+          ],
+          "reflection_prompt": "When a decision is close, do you usually lean toward the more familiar option?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, the tried-and-tested option usually wins out for you — for instance, offered a new productivity app versus your usual notebook, you'd probably stick with the notebook unless the app clearly does something better."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like weighing a new idea seriously, then usually choosing the safer, more familiar option when it's close."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward the familiar.",
+                "“You'll consider a new approach, but the tried-and-tested one usually wins when you're unsure.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Balanced judgement",
+                "measured risk-taking",
+                "practical open-mindedness"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Choose the new option once when a decision is genuinely close.",
+                "Ask a mentor which of your “safe” choices might be worth questioning.",
+                "Track how often the familiar choice was actually the better one."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "When a decision is close, do you usually lean toward the more familiar option?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 24,
+            "max": 27
+          },
+          "archetype": "Cautious Explorer",
+          "meaning": "Your default is proven, practical approaches, though a genuinely interesting idea can still pull you in — for example, you'll usually pick the well-reviewed course over the experimental one, but a compelling recommendation from someone you trust can change your mind.",
+          "how_it_shows": "This tends to look like sticking with what works most of the time, with occasional real curiosity breaking through.",
+          "learning_preference": {
+            "style": "Mostly proven methods, some curiosity.",
+            "quote": "“You'll try something new sometimes, but you need a real reason first.”",
+            "raw": [
+              "Mostly proven methods, some curiosity.",
+              "“You'll try something new sometimes, but you need a real reason first.”"
+            ]
+          },
+          "strengths": [
+            "Groundedness",
+            "selective curiosity",
+            "dependable judgement"
+          ],
+          "growth_suggestions": [
+            "Say yes to one unfamiliar idea this month, no strings attached.",
+            "Ask what's changed in your field before assuming it hasn't.",
+            "Notice when caution is habit rather than a real reason."
+          ],
+          "reflection_prompt": "Do you lean toward familiar approaches, while still being open to a genuinely good new idea?",
+          "content": {
+            "meaning": {
+              "en": "Your default is proven, practical approaches, though a genuinely interesting idea can still pull you in — for example, you'll usually pick the well-reviewed course over the experimental one, but a compelling recommendation from someone you trust can change your mind."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like sticking with what works most of the time, with occasional real curiosity breaking through."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly proven methods, some curiosity.",
+                "“You'll try something new sometimes, but you need a real reason first.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Groundedness",
+                "selective curiosity",
+                "dependable judgement"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Say yes to one unfamiliar idea this month, no strings attached.",
+                "Ask what's changed in your field before assuming it hasn't.",
+                "Notice when caution is habit rather than a real reason."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you lean toward familiar approaches, while still being open to a genuinely good new idea?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 23
+          },
+          "archetype": "Practical Builder",
+          "meaning": "You prefer clear information, structured approaches, and practical solutions. Proven methods may feel more comfortable than abstract or untested ideas.",
+          "how_it_shows": "Typically, this shows up as focusing on reliable solutions, following clear instructions, and valuing efficiency over experimentation.",
+          "learning_preference": {
+            "style": "Step-by-step, demonstration-based learning.",
+            "quote": "“You'd rather see a worked example first than figure it out from scratch.”",
+            "raw": [
+              "Step-by-step, demonstration-based learning.",
+              "“You'd rather see a worked example first than figure it out from scratch.”"
+            ]
+          },
+          "strengths": [
+            "Practical thinking",
+            "reliability",
+            "consistency",
+            "attention to detail"
+          ],
+          "growth_suggestions": [
+            "Sit in on one unfamiliar field a semester.",
+            "Try an unconventional suggestion before dismissing it.",
+            "Ask one “what if” before a real interview."
+          ],
+          "reflection_prompt": "Do you feel more comfortable when tasks have clear instructions and practical outcomes?",
+          "content": {
+            "meaning": {
+              "en": "You prefer clear information, structured approaches, and practical solutions. Proven methods may feel more comfortable than abstract or untested ideas."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as focusing on reliable solutions, following clear instructions, and valuing efficiency over experimentation."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Step-by-step, demonstration-based learning.",
+                "“You'd rather see a worked example first than figure it out from scratch.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Practical thinking",
+                "reliability",
+                "consistency",
+                "attention to detail"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Sit in on one unfamiliar field a semester.",
+                "Try an unconventional suggestion before dismissing it.",
+                "Ask one “what if” before a real interview."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel more comfortable when tasks have clear instructions and practical outcomes?"
+              ]
+            }
           }
         }
       ]
     },
-
     "Conscientiousness": {
       "categories": [
         {
-          "range": "27-40",
-          "icon": "bi-list-check",
-          "label": {
-            "en": "Organized",
-            "mr": "संघटित"
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 32,
+            "max": 40
           },
-          "summary": {
-            "en": "You’re a focused and dependable achiever who stays organized, manages time well, and works hard to reach your goals with discipline and responsibility.",
-            "mr": "तुम्ही लक्ष केंद्रित करणारे आणि विश्वासू व्यक्ती आहात. तुम्ही वेळेचं योग्य नियोजन करता. तुम्ही शिस्तीने आणि जबाबदारीने मेहनत करता, जेणेकरून तुमचं उद्दिष्ट पूर्ण होईल."
+          "archetype": "Organizer",
+          "meaning": "You naturally approach work with discipline and organization, and often prefer having clear goals and structured plans.",
+          "how_it_shows": "This often looks like planning your work carefully, tracking deadlines, organizing study materials, and staying focused until tasks are complete.",
+          "learning_preference": {
+            "style": "Structured, goal-tracked learning.",
+            "quote": "“An open-ended ‘just study’ plan stresses you out more than the studying itself — you feel calmer once there's a checklist.”",
+            "raw": [
+              "Structured, goal-tracked learning.",
+              "“An open-ended ‘just study’ plan stresses you out more than the studying itself — you feel calmer once there's a checklist.”"
+            ]
+          },
+          "strengths": [
+            "Discipline",
+            "persistence",
+            "reliability",
+            "responsibility"
+          ],
+          "growth_suggestions": [
+            "Build a buffer day into every deadline.",
+            "Notice “good enough” and stop revising.",
+            "Adjust only the affected part when plans shift."
+          ],
+          "reflection_prompt": "Do schedules, checklists, or study plans help you stay productive?",
+          "content": {
+            "meaning": {
+              "en": "You naturally approach work with discipline and organization, and often prefer having clear goals and structured plans."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like planning your work carefully, tracking deadlines, organizing study materials, and staying focused until tasks are complete."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Structured, goal-tracked learning.",
+                "“An open-ended ‘just study’ plan stresses you out more than the studying itself — you feel calmer once there's a checklist.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Discipline",
+                "persistence",
+                "reliability",
+                "responsibility"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Build a buffer day into every deadline.",
+                "Notice “good enough” and stop revising.",
+                "Adjust only the affected part when plans shift."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do schedules, checklists, or study plans help you stay productive?"
+              ]
+            }
           }
         },
         {
-          "range": "14-26",
-          "icon": "bi-sliders",
-          "label": {
-            "en": "Balanced",
-            "mr": "संतुलित"
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 28,
+            "max": 31
           },
-          "summary": {
-            "en": "You have a flexible and balanced approach to work that is responsible when needed, adaptable across situations, and able to adjust your habits based on the task.",
-            "mr": "तुमच्याकडे काम करण्यासाठी एक अनुकूलनशील आणि संतुलित दृष्टिकोन आहे जो गरज पडल्यास जबाबदार असतो, परिस्थितीनुसार जुळवून घेण्यास सक्षम असतो आणि कामानुसार तुमच्या सवयी समायोजित करण्यास सक्षम असतो."
+          "archetype": "Reliable Organizer",
+          "meaning": "You lean toward planning and structure, but you're not rigid about it — for instance, you'll walk into an internship with a rough 90-day plan, and rewrite half of it in week two without much stress.",
+          "how_it_shows": "This tends to look like a real plan going into most tasks, reworked without much friction when circumstances change.",
+          "learning_preference": {
+            "style": "Mostly structured, with room to adjust.",
+            "quote": "“You want a plan in place, but you'll rework it without much stress if it stops fitting.”",
+            "raw": [
+              "Mostly structured, with room to adjust.",
+              "“You want a plan in place, but you'll rework it without much stress if it stops fitting.”"
+            ]
+          },
+          "strengths": [
+            "Consistency",
+            "dependable follow-through",
+            "composed adaptability"
+          ],
+          "growth_suggestions": [
+            "Flag one deadline this term where a buffer day would help most.",
+            "Ask a mentor how they decide when a plan needs to change.",
+            "Offer to help a less-structured teammate build their first plan."
+          ],
+          "reflection_prompt": "Do you usually follow a plan closely, but adjust it without much stress when things change?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward planning and structure, but you're not rigid about it — for instance, you'll walk into an internship with a rough 90-day plan, and rewrite half of it in week two without much stress."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like a real plan going into most tasks, reworked without much friction when circumstances change."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly structured, with room to adjust.",
+                "“You want a plan in place, but you'll rework it without much stress if it stops fitting.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Consistency",
+                "dependable follow-through",
+                "composed adaptability"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Flag one deadline this term where a buffer day would help most.",
+                "Ask a mentor how they decide when a plan needs to change.",
+                "Offer to help a less-structured teammate build their first plan."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you usually follow a plan closely, but adjust it without much stress when things change?"
+              ]
+            }
           }
         },
         {
-          "range": "0-13",
-          "icon": "bi-wind",
-          "label": {
-            "en": "Free-spirited",
-            "mr": "मोकळ्या स्वभावाचा"
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 24,
+            "max": 27
           },
-          "summary": {
-            "en": "You have a laid-back and flexible style, often preferring spontaneity over strict routines and working best when you’re not confined by rigid structure.",
-            "mr": "तुमचं वागणं शांत आणि अनुकूलनशील आहे. तुम्हाला ठरलेली कडक नियमांची शिस्त फारशी आवडत नाही. तुम्ही सहजपणे आणि मोकळ्या पद्धतीने चांगलं काम करता."
+          "archetype": "Purposeful Planner",
+          "meaning": "You tip slightly toward planning over improvising — for example, before a group assignment starts, you're a little more likely than not to jot down a rough timeline, even if nobody else does.",
+          "how_it_shows": "This tends to look like sketching a real plan before starting, while staying open to reworking it along the way.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward planning.",
+            "quote": "“You like having a plan going in, but you won't panic if it needs to change.”",
+            "raw": [
+              "Balanced, tipped toward planning.",
+              "“You like having a plan going in, but you won't panic if it needs to change.”"
+            ]
+          },
+          "strengths": [
+            "Grounded planning",
+            "adaptable follow-through",
+            "reasonable pacing"
+          ],
+          "growth_suggestions": [
+            "Give your biggest project a two-day cushion before the real deadline.",
+            "Ask whether a plan needs a full rebuild or just a small tweak.",
+            "Share your planning approach with a less structured teammate."
+          ],
+          "reflection_prompt": "Do you usually plan ahead, while staying comfortable adjusting along the way?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward planning over improvising — for example, before a group assignment starts, you're a little more likely than not to jot down a rough timeline, even if nobody else does."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like sketching a real plan before starting, while staying open to reworking it along the way."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward planning.",
+                "“You like having a plan going in, but you won't panic if it needs to change.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Grounded planning",
+                "adaptable follow-through",
+                "reasonable pacing"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Give your biggest project a two-day cushion before the real deadline.",
+                "Ask whether a plan needs a full rebuild or just a small tweak.",
+                "Share your planning approach with a less structured teammate."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you usually plan ahead, while staying comfortable adjusting along the way?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 21,
+            "max": 23
+          },
+          "archetype": "Practical Improviser",
+          "meaning": "Given equal footing, starting now usually wins out over planning first — for instance, handed a new project, you're more likely to just start than to map it out on paper, though you'll add structure once a deadline gets close.",
+          "how_it_shows": "This tends to look like starting with a loose idea and adding structure only once it's clearly needed.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward improvising.",
+            "quote": "“You'll sketch a rough plan, but you're quicker to start than to finish planning.”",
+            "raw": [
+              "Balanced, tipped toward improvising.",
+              "“You'll sketch a rough plan, but you're quicker to start than to finish planning.”"
+            ]
+          },
+          "strengths": [
+            "Practical adaptability",
+            "quick judgement",
+            "comfort with ambiguity"
+          ],
+          "growth_suggestions": [
+            "Write a plan's first three steps before starting anything big.",
+            "Set one checkpoint date ahead of your next real deadline.",
+            "Notice which tasks genuinely need structure upfront."
+          ],
+          "reflection_prompt": "Do you tend to start working before you've planned everything out?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, starting now usually wins out over planning first — for instance, handed a new project, you're more likely to just start than to map it out on paper, though you'll add structure once a deadline gets close."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like starting with a loose idea and adding structure only once it's clearly needed."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward improvising.",
+                "“You'll sketch a rough plan, but you're quicker to start than to finish planning.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Practical adaptability",
+                "quick judgement",
+                "comfort with ambiguity"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Write a plan's first three steps before starting anything big.",
+                "Set one checkpoint date ahead of your next real deadline.",
+                "Notice which tasks genuinely need structure upfront."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you tend to start working before you've planned everything out?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 17,
+            "max": 20
+          },
+          "archetype": "Flexible Starter",
+          "meaning": "Your default is flexibility and spontaneity, though you'll organize when something genuinely needs it — for example, you might wing most of a semester, then build a real revision timetable only once finals are close enough to feel real.",
+          "how_it_shows": "This tends to look like working in bursts, with just enough structure to keep the essentials from slipping.",
+          "learning_preference": {
+            "style": "Mostly flexible, light structure when needed.",
+            "quote": "“You work in bursts, but you'll jot down a plan when the stakes are high enough.”",
+            "raw": [
+              "Mostly flexible, light structure when needed.",
+              "“You work in bursts, but you'll jot down a plan when the stakes are high enough.”"
+            ]
+          },
+          "strengths": [
+            "Adaptability",
+            "quick starts",
+            "comfort with change"
+          ],
+          "growth_suggestions": [
+            "Jot down three things due this week, even loosely.",
+            "Pick a start time for one task you'd normally leave until the last minute.",
+            "Notice which tasks actually need more structure than you're giving them."
+          ],
+          "reflection_prompt": "Do you lean toward flexible work habits, while still organizing when it really matters?",
+          "content": {
+            "meaning": {
+              "en": "Your default is flexibility and spontaneity, though you'll organize when something genuinely needs it — for example, you might wing most of a semester, then build a real revision timetable only once finals are close enough to feel real."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like working in bursts, with just enough structure to keep the essentials from slipping."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly flexible, light structure when needed.",
+                "“You work in bursts, but you'll jot down a plan when the stakes are high enough.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Adaptability",
+                "quick starts",
+                "comfort with change"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Jot down three things due this week, even loosely.",
+                "Pick a start time for one task you'd normally leave until the last minute.",
+                "Notice which tasks actually need more structure than you're giving them."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you lean toward flexible work habits, while still organizing when it really matters?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 16
+          },
+          "archetype": "Free Spirit",
+          "meaning": "You prefer flexibility and spontaneity over strict routines, and may enjoy exploring ideas without rigid schedules.",
+          "how_it_shows": "Typically, this shows up as working in bursts of inspiration and favoring flexible, less regimented study approaches.",
+          "learning_preference": {
+            "style": "Flexible, hands-on learning.",
+            "quote": "“A rigid timetable feels stifling — you focus best when you dive in on your own terms.”",
+            "raw": [
+              "Flexible, hands-on learning.",
+              "“A rigid timetable feels stifling — you focus best when you dive in on your own terms.”"
+            ]
+          },
+          "strengths": [
+            "Adaptability",
+            "creativity",
+            "openness to change"
+          ],
+          "growth_suggestions": [
+            "Keep one running list of open tasks.",
+            "Set a start time, not just a deadline.",
+            "Turn one habit into a fixed routine."
+          ],
+          "reflection_prompt": "Do you feel more motivated when learning tasks allow flexibility and creativity?",
+          "content": {
+            "meaning": {
+              "en": "You prefer flexibility and spontaneity over strict routines, and may enjoy exploring ideas without rigid schedules."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as working in bursts of inspiration and favoring flexible, less regimented study approaches."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Flexible, hands-on learning.",
+                "“A rigid timetable feels stifling — you focus best when you dive in on your own terms.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Adaptability",
+                "creativity",
+                "openness to change"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Keep one running list of open tasks.",
+                "Set a start time, not just a deadline.",
+                "Turn one habit into a fixed routine."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel more motivated when learning tasks allow flexibility and creativity?"
+              ]
+            }
           }
         }
       ]
     },
-
+    "Extraversion": {
+      "categories": [
+        {
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 30,
+            "max": 40
+          },
+          "archetype": "Connector",
+          "meaning": "You tend to gain energy from interacting with people and sharing ideas, and social environments may feel motivating rather than draining.",
+          "how_it_shows": "This often looks like enjoying conversations, group discussions, teamwork, and presenting ideas to others.",
+          "learning_preference": {
+            "style": "Group, discussion-based learning.",
+            "quote": "“You understand something better once you've talked it through with someone, not just read about it silently.”",
+            "raw": [
+              "Group, discussion-based learning.",
+              "“You understand something better once you've talked it through with someone, not just read about it silently.”"
+            ]
+          },
+          "strengths": [
+            "Communication skills",
+            "social confidence",
+            "leadership potential"
+          ],
+          "growth_suggestions": [
+            "Schedule solo prep time like a real appointment.",
+            "Ask a question before sharing your opinion.",
+            "Protect quiet time before a big interview."
+          ],
+          "reflection_prompt": "Do you feel energized after discussions or teamwork activities?",
+          "content": {
+            "meaning": {
+              "en": "You tend to gain energy from interacting with people and sharing ideas, and social environments may feel motivating rather than draining."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like enjoying conversations, group discussions, teamwork, and presenting ideas to others."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Group, discussion-based learning.",
+                "“You understand something better once you've talked it through with someone, not just read about it silently.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Communication skills",
+                "social confidence",
+                "leadership potential"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Schedule solo prep time like a real appointment.",
+                "Ask a question before sharing your opinion.",
+                "Protect quiet time before a big interview."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel energized after discussions or teamwork activities?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 24,
+            "max": 29
+          },
+          "archetype": "Confident Connector",
+          "meaning": "You lean toward social settings and engage easily, but you're not nonstop about it — for instance, you'll happily take the lead organizing a class trip, then skip the after-party to unwind alone.",
+          "how_it_shows": "This tends to look like being one of the more active voices in a group, then genuinely stepping back afterward rather than seeking out the next interaction.",
+          "learning_preference": {
+            "style": "Mostly group, with real solo recovery time.",
+            "quote": "“You like talking things through with others, but you need quiet time after to make it stick.”",
+            "raw": [
+              "Mostly group, with real solo recovery time.",
+              "“You like talking things through with others, but you need quiet time after to make it stick.”"
+            ]
+          },
+          "strengths": [
+            "Social confidence",
+            "initiative",
+            "self-aware energy management"
+          ],
+          "growth_suggestions": [
+            "Protect one solo block after a socially heavy day.",
+            "Volunteer to lead the next group project you're part of.",
+            "Notice when quiet time feels earned rather than avoided."
+          ],
+          "reflection_prompt": "Are you often one of the more active voices in a group, even though you still need real time alone?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward social settings and engage easily, but you're not nonstop about it — for instance, you'll happily take the lead organizing a class trip, then skip the after-party to unwind alone."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like being one of the more active voices in a group, then genuinely stepping back afterward rather than seeking out the next interaction."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly group, with real solo recovery time.",
+                "“You like talking things through with others, but you need quiet time after to make it stick.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Social confidence",
+                "initiative",
+                "self-aware energy management"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Protect one solo block after a socially heavy day.",
+                "Volunteer to lead the next group project you're part of.",
+                "Notice when quiet time feels earned rather than avoided."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Are you often one of the more active voices in a group, even though you still need real time alone?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 20,
+            "max": 23
+          },
+          "archetype": "Engaged Contributor",
+          "meaning": "You tip slightly toward group time over solo time — for example, given a free evening, you're a little more likely to text a friend to hang out than to stay in, though staying in doesn't bother you either.",
+          "how_it_shows": "This tends to look like joining in readily and sometimes starting the conversation, while still being fine working alone when needed.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward group.",
+            "quote": "“You'll default to joining the discussion, but solo work doesn't bother you either.”",
+            "raw": [
+              "Balanced, tipped toward group.",
+              "“You'll default to joining the discussion, but solo work doesn't bother you either.”"
+            ]
+          },
+          "strengths": [
+            "Approachable engagement",
+            "flexible energy",
+            "easy collaboration"
+          ],
+          "growth_suggestions": [
+            "Block solo time once this week instead of defaulting to company.",
+            "Take the lead on one small part of a group project.",
+            "Notice when you're socializing from habit rather than real interest."
+          ],
+          "reflection_prompt": "Left to choose, do you usually lean toward joining a group over working alone?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward group time over solo time — for example, given a free evening, you're a little more likely to text a friend to hang out than to stay in, though staying in doesn't bother you either."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like joining in readily and sometimes starting the conversation, while still being fine working alone when needed."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward group.",
+                "“You'll default to joining the discussion, but solo work doesn't bother you either.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Approachable engagement",
+                "flexible energy",
+                "easy collaboration"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Block solo time once this week instead of defaulting to company.",
+                "Take the lead on one small part of a group project.",
+                "Notice when you're socializing from habit rather than real interest."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Left to choose, do you usually lean toward joining a group over working alone?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 15,
+            "max": 19
+          },
+          "archetype": "Measured Participant",
+          "meaning": "Given equal footing, working alone usually wins out for you — for instance, given a free evening, you'd probably choose to stay in over going out, though you'll happily join if someone specifically invites you.",
+          "how_it_shows": "This tends to look like joining in when invited, but rarely being the one who starts the conversation.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward solo.",
+            "quote": "“You're fine in a group, but left alone you'll usually choose to work solo.”",
+            "raw": [
+              "Balanced, tipped toward solo.",
+              "“You're fine in a group, but left alone you'll usually choose to work solo.”"
+            ]
+          },
+          "strengths": [
+            "Comfortable flexibility",
+            "measured social energy",
+            "reliable presence"
+          ],
+          "growth_suggestions": [
+            "Start the conversation once this week instead of waiting to be asked.",
+            "Volunteer one comment in your next group session, unprompted.",
+            "Notice which groups actually energize you, not just tire you less."
+          ],
+          "reflection_prompt": "Left to choose, do you usually lean toward working alone over joining a group?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, working alone usually wins out for you — for instance, given a free evening, you'd probably choose to stay in over going out, though you'll happily join if someone specifically invites you."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like joining in when invited, but rarely being the one who starts the conversation."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward solo.",
+                "“You're fine in a group, but left alone you'll usually choose to work solo.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Comfortable flexibility",
+                "measured social energy",
+                "reliable presence"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Start the conversation once this week instead of waiting to be asked.",
+                "Volunteer one comment in your next group session, unprompted.",
+                "Notice which groups actually energize you, not just tire you less."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Left to choose, do you usually lean toward working alone over joining a group?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 10,
+            "max": 14
+          },
+          "archetype": "Selective Listener",
+          "meaning": "Your default is toward quieter settings and smaller groups, though you'll engage fully when something matters to you — for example, you might let a class group chat go unread for days, but call a close friend for a long one-on-one conversation without hesitation.",
+          "how_it_shows": "This tends to look like staying quiet in a large group, then speaking up clearly in a smaller or more personal setting.",
+          "learning_preference": {
+            "style": "Mostly solo, with occasional group input.",
+            "quote": "“You get more done alone, but you'll join a discussion when it's genuinely useful.”",
+            "raw": [
+              "Mostly solo, with occasional group input.",
+              "“You get more done alone, but you'll join a discussion when it's genuinely useful.”"
+            ]
+          },
+          "strengths": [
+            "Thoughtful listening",
+            "comfort with solitude",
+            "selective but genuine engagement"
+          ],
+          "growth_suggestions": [
+            "Speak up once in a class or club discussion this month.",
+            "Attend one event and set a single-conversation goal.",
+            "Notice which settings actually feel comfortable versus just tolerable."
+          ],
+          "reflection_prompt": "Do you lean toward quieter settings, while still engaging fully when something matters to you?",
+          "content": {
+            "meaning": {
+              "en": "Your default is toward quieter settings and smaller groups, though you'll engage fully when something matters to you — for example, you might let a class group chat go unread for days, but call a close friend for a long one-on-one conversation without hesitation."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like staying quiet in a large group, then speaking up clearly in a smaller or more personal setting."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly solo, with occasional group input.",
+                "“You get more done alone, but you'll join a discussion when it's genuinely useful.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Thoughtful listening",
+                "comfort with solitude",
+                "selective but genuine engagement"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Speak up once in a class or club discussion this month.",
+                "Attend one event and set a single-conversation goal.",
+                "Notice which settings actually feel comfortable versus just tolerable."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you lean toward quieter settings, while still engaging fully when something matters to you?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 9
+          },
+          "archetype": "Reflective Thinker",
+          "meaning": "You tend to gain energy from quiet environments and thoughtful reflection, and independent work may feel more comfortable than constant interaction.",
+          "how_it_shows": "Typically, this shows up as a preference for small groups, thoughtful one-on-one conversations, and focused independent study.",
+          "learning_preference": {
+            "style": "Independent, reflective learning.",
+            "quote": "“You'd rather sit with a problem quietly than talk it out loud in a group.”",
+            "raw": [
+              "Independent, reflective learning.",
+              "“You'd rather sit with a problem quietly than talk it out loud in a group.”"
+            ]
+          },
+          "strengths": [
+            "Concentration",
+            "thoughtful analysis",
+            "careful decision-making"
+          ],
+          "growth_suggestions": [
+            "Prepare one talking point before a networking event.",
+            "Set a small participation target, not a vague one.",
+            "Rehearse with a friend before the real thing."
+          ],
+          "reflection_prompt": "Do you prefer thinking quietly before sharing your ideas?",
+          "content": {
+            "meaning": {
+              "en": "You tend to gain energy from quiet environments and thoughtful reflection, and independent work may feel more comfortable than constant interaction."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as a preference for small groups, thoughtful one-on-one conversations, and focused independent study."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Independent, reflective learning.",
+                "“You'd rather sit with a problem quietly than talk it out loud in a group.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Concentration",
+                "thoughtful analysis",
+                "careful decision-making"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Prepare one talking point before a networking event.",
+                "Set a small participation target, not a vague one.",
+                "Rehearse with a friend before the real thing."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you prefer thinking quietly before sharing your ideas?"
+              ]
+            }
+          }
+        }
+      ]
+    },
     "Extroversion": {
       "categories": [
         {
-          "range": "27-40",
-          "icon": "bi-people",
-          "label": {
-            "en": "Extrovert",
-            "mr": "बहिर्मुख"
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 30,
+            "max": 40
           },
-          "summary": {
-            "en": "You’re an energetic and outgoing person who loves connecting with others, thrives in social settings, and enjoys trying new experiences.",
-            "mr": "तुम्ही उत्साही आणि मनमिळावू व्यक्ती आहात. तुम्हाला लोकांशी बोलायला आवडतं. तुम्ही नवनवीन अनुभव घेण्यात आनंद मानता."
+          "archetype": "Connector",
+          "meaning": "You tend to gain energy from interacting with people and sharing ideas, and social environments may feel motivating rather than draining.",
+          "how_it_shows": "This often looks like enjoying conversations, group discussions, teamwork, and presenting ideas to others.",
+          "learning_preference": {
+            "style": "Group, discussion-based learning.",
+            "quote": "“You understand something better once you've talked it through with someone, not just read about it silently.”",
+            "raw": [
+              "Group, discussion-based learning.",
+              "“You understand something better once you've talked it through with someone, not just read about it silently.”"
+            ]
+          },
+          "strengths": [
+            "Communication skills",
+            "social confidence",
+            "leadership potential"
+          ],
+          "growth_suggestions": [
+            "Schedule solo prep time like a real appointment.",
+            "Ask a question before sharing your opinion.",
+            "Protect quiet time before a big interview."
+          ],
+          "reflection_prompt": "Do you feel energized after discussions or teamwork activities?",
+          "content": {
+            "meaning": {
+              "en": "You tend to gain energy from interacting with people and sharing ideas, and social environments may feel motivating rather than draining."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like enjoying conversations, group discussions, teamwork, and presenting ideas to others."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Group, discussion-based learning.",
+                "“You understand something better once you've talked it through with someone, not just read about it silently.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Communication skills",
+                "social confidence",
+                "leadership potential"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Schedule solo prep time like a real appointment.",
+                "Ask a question before sharing your opinion.",
+                "Protect quiet time before a big interview."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you feel energized after discussions or teamwork activities?"
+              ]
+            }
           }
         },
         {
-          "range": "14-26",
-          "icon": "bi-person-arms-up",
-          "label": {
-            "en": "Ambivert",
-            "mr": "मिश्र प्रवृत्तीचा"
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 24,
+            "max": 29
           },
-          "summary": {
-            "en": "You’re socially adaptable and balanced who is comfortable in groups yet equally at ease on your own, with the flexibility to adjust your energy and communication to the situation.",
-            "mr": "तुम्ही सामाजिकदृष्ट्या जुळवून घेणारे आणि संतुलित आहात, गटात असताना तुम्हाला छान वाटतं आणि एकटे असतानाही तुम्ही आरामात असता. परिस्थितीनुसार तुम्ही तुमचं बोलणं आणि वागणं बदलू शकता."
+          "archetype": "Confident Connector",
+          "meaning": "You lean toward social settings and engage easily, but you're not nonstop about it — for instance, you'll happily take the lead organizing a class trip, then skip the after-party to unwind alone.",
+          "how_it_shows": "This tends to look like being one of the more active voices in a group, then genuinely stepping back afterward rather than seeking out the next interaction.",
+          "learning_preference": {
+            "style": "Mostly group, with real solo recovery time.",
+            "quote": "“You like talking things through with others, but you need quiet time after to make it stick.”",
+            "raw": [
+              "Mostly group, with real solo recovery time.",
+              "“You like talking things through with others, but you need quiet time after to make it stick.”"
+            ]
+          },
+          "strengths": [
+            "Social confidence",
+            "initiative",
+            "self-aware energy management"
+          ],
+          "growth_suggestions": [
+            "Protect one solo block after a socially heavy day.",
+            "Volunteer to lead the next group project you're part of.",
+            "Notice when quiet time feels earned rather than avoided."
+          ],
+          "reflection_prompt": "Are you often one of the more active voices in a group, even though you still need real time alone?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward social settings and engage easily, but you're not nonstop about it — for instance, you'll happily take the lead organizing a class trip, then skip the after-party to unwind alone."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like being one of the more active voices in a group, then genuinely stepping back afterward rather than seeking out the next interaction."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly group, with real solo recovery time.",
+                "“You like talking things through with others, but you need quiet time after to make it stick.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Social confidence",
+                "initiative",
+                "self-aware energy management"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Protect one solo block after a socially heavy day.",
+                "Volunteer to lead the next group project you're part of.",
+                "Notice when quiet time feels earned rather than avoided."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Are you often one of the more active voices in a group, even though you still need real time alone?"
+              ]
+            }
           }
         },
         {
-          "range": "0-13",
-          "icon": "bi-person",
-          "label": {
-            "en": "Introvert",
-            "mr": "अंतर्मुख"
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 20,
+            "max": 23
           },
-          "summary": {
-            "en": "You’re a thoughtful and independent person who enjoys quiet settings, prefers meaningful one-on-one interactions, and feels most comfortable reflecting and working on your own.",
-            "mr": "तुम्ही एक विचारशील आणि स्वतंत्र व्यक्ती आहात ज्याला शांत वातावरण आवडते, अर्थपूर्ण वैयक्तिक संवाद पसंत करतात आणि स्वतः विचार करण्यात आणि स्वतः काम करण्यात सर्वात आरामदायक वाटते."
+          "archetype": "Engaged Contributor",
+          "meaning": "You tip slightly toward group time over solo time — for example, given a free evening, you're a little more likely to text a friend to hang out than to stay in, though staying in doesn't bother you either.",
+          "how_it_shows": "This tends to look like joining in readily and sometimes starting the conversation, while still being fine working alone when needed.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward group.",
+            "quote": "“You'll default to joining the discussion, but solo work doesn't bother you either.”",
+            "raw": [
+              "Balanced, tipped toward group.",
+              "“You'll default to joining the discussion, but solo work doesn't bother you either.”"
+            ]
+          },
+          "strengths": [
+            "Approachable engagement",
+            "flexible energy",
+            "easy collaboration"
+          ],
+          "growth_suggestions": [
+            "Block solo time once this week instead of defaulting to company.",
+            "Take the lead on one small part of a group project.",
+            "Notice when you're socializing from habit rather than real interest."
+          ],
+          "reflection_prompt": "Left to choose, do you usually lean toward joining a group over working alone?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward group time over solo time — for example, given a free evening, you're a little more likely to text a friend to hang out than to stay in, though staying in doesn't bother you either."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like joining in readily and sometimes starting the conversation, while still being fine working alone when needed."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward group.",
+                "“You'll default to joining the discussion, but solo work doesn't bother you either.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Approachable engagement",
+                "flexible energy",
+                "easy collaboration"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Block solo time once this week instead of defaulting to company.",
+                "Take the lead on one small part of a group project.",
+                "Notice when you're socializing from habit rather than real interest."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Left to choose, do you usually lean toward joining a group over working alone?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 15,
+            "max": 19
+          },
+          "archetype": "Measured Participant",
+          "meaning": "Given equal footing, working alone usually wins out for you — for instance, given a free evening, you'd probably choose to stay in over going out, though you'll happily join if someone specifically invites you.",
+          "how_it_shows": "This tends to look like joining in when invited, but rarely being the one who starts the conversation.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward solo.",
+            "quote": "“You're fine in a group, but left alone you'll usually choose to work solo.”",
+            "raw": [
+              "Balanced, tipped toward solo.",
+              "“You're fine in a group, but left alone you'll usually choose to work solo.”"
+            ]
+          },
+          "strengths": [
+            "Comfortable flexibility",
+            "measured social energy",
+            "reliable presence"
+          ],
+          "growth_suggestions": [
+            "Start the conversation once this week instead of waiting to be asked.",
+            "Volunteer one comment in your next group session, unprompted.",
+            "Notice which groups actually energize you, not just tire you less."
+          ],
+          "reflection_prompt": "Left to choose, do you usually lean toward working alone over joining a group?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, working alone usually wins out for you — for instance, given a free evening, you'd probably choose to stay in over going out, though you'll happily join if someone specifically invites you."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like joining in when invited, but rarely being the one who starts the conversation."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward solo.",
+                "“You're fine in a group, but left alone you'll usually choose to work solo.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Comfortable flexibility",
+                "measured social energy",
+                "reliable presence"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Start the conversation once this week instead of waiting to be asked.",
+                "Volunteer one comment in your next group session, unprompted.",
+                "Notice which groups actually energize you, not just tire you less."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Left to choose, do you usually lean toward working alone over joining a group?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 10,
+            "max": 14
+          },
+          "archetype": "Selective Listener",
+          "meaning": "Your default is toward quieter settings and smaller groups, though you'll engage fully when something matters to you — for example, you might let a class group chat go unread for days, but call a close friend for a long one-on-one conversation without hesitation.",
+          "how_it_shows": "This tends to look like staying quiet in a large group, then speaking up clearly in a smaller or more personal setting.",
+          "learning_preference": {
+            "style": "Mostly solo, with occasional group input.",
+            "quote": "“You get more done alone, but you'll join a discussion when it's genuinely useful.”",
+            "raw": [
+              "Mostly solo, with occasional group input.",
+              "“You get more done alone, but you'll join a discussion when it's genuinely useful.”"
+            ]
+          },
+          "strengths": [
+            "Thoughtful listening",
+            "comfort with solitude",
+            "selective but genuine engagement"
+          ],
+          "growth_suggestions": [
+            "Speak up once in a class or club discussion this month.",
+            "Attend one event and set a single-conversation goal.",
+            "Notice which settings actually feel comfortable versus just tolerable."
+          ],
+          "reflection_prompt": "Do you lean toward quieter settings, while still engaging fully when something matters to you?",
+          "content": {
+            "meaning": {
+              "en": "Your default is toward quieter settings and smaller groups, though you'll engage fully when something matters to you — for example, you might let a class group chat go unread for days, but call a close friend for a long one-on-one conversation without hesitation."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like staying quiet in a large group, then speaking up clearly in a smaller or more personal setting."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly solo, with occasional group input.",
+                "“You get more done alone, but you'll join a discussion when it's genuinely useful.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Thoughtful listening",
+                "comfort with solitude",
+                "selective but genuine engagement"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Speak up once in a class or club discussion this month.",
+                "Attend one event and set a single-conversation goal.",
+                "Notice which settings actually feel comfortable versus just tolerable."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you lean toward quieter settings, while still engaging fully when something matters to you?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 9
+          },
+          "archetype": "Reflective Thinker",
+          "meaning": "You tend to gain energy from quiet environments and thoughtful reflection, and independent work may feel more comfortable than constant interaction.",
+          "how_it_shows": "Typically, this shows up as a preference for small groups, thoughtful one-on-one conversations, and focused independent study.",
+          "learning_preference": {
+            "style": "Independent, reflective learning.",
+            "quote": "“You'd rather sit with a problem quietly than talk it out loud in a group.”",
+            "raw": [
+              "Independent, reflective learning.",
+              "“You'd rather sit with a problem quietly than talk it out loud in a group.”"
+            ]
+          },
+          "strengths": [
+            "Concentration",
+            "thoughtful analysis",
+            "careful decision-making"
+          ],
+          "growth_suggestions": [
+            "Prepare one talking point before a networking event.",
+            "Set a small participation target, not a vague one.",
+            "Rehearse with a friend before the real thing."
+          ],
+          "reflection_prompt": "Do you prefer thinking quietly before sharing your ideas?",
+          "content": {
+            "meaning": {
+              "en": "You tend to gain energy from quiet environments and thoughtful reflection, and independent work may feel more comfortable than constant interaction."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as a preference for small groups, thoughtful one-on-one conversations, and focused independent study."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Independent, reflective learning.",
+                "“You'd rather sit with a problem quietly than talk it out loud in a group.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Concentration",
+                "thoughtful analysis",
+                "careful decision-making"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Prepare one talking point before a networking event.",
+                "Set a small participation target, not a vague one.",
+                "Rehearse with a friend before the real thing."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you prefer thinking quietly before sharing your ideas?"
+              ]
+            }
           }
         }
       ]
     },
-
     "Agreeableness": {
       "categories": [
         {
-          "range": "27-40",
-          "icon": "bi-heart",
-          "label": {
-            "en": "Compassionate",
-            "mr": "दयाळू"
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 36,
+            "max": 40
           },
-          "summary": {
-            "en": "You’re a kind and cooperative person who cares deeply about others, values harmony, and works well in teams with empathy and patience.",
-            "mr": "तुम्ही एक दयाळू आणि सहकार्यशील व्यक्ती आहात जी इतरांची खूप काळजी घेते, सुसंवादाला महत्त्व देते आणि सहानुभूती आणि संयमाने संघात चांगले काम करते."
+          "archetype": "Supporter",
+          "meaning": "You value cooperation and positive relationships, and helping others or maintaining harmony may matter a great deal to you.",
+          "how_it_shows": "This often looks like enjoying teamwork, listening closely to others, and offering support without being asked.",
+          "learning_preference": {
+            "style": "Collaborative, supportive learning.",
+            "quote": "“You often understand a topic best right after explaining it to a friend who was struggling with it.”",
+            "raw": [
+              "Collaborative, supportive learning.",
+              "“You often understand a topic best right after explaining it to a friend who was struggling with it.”"
+            ]
+          },
+          "strengths": [
+            "Empathy",
+            "teamwork",
+            "cooperation"
+          ],
+          "growth_suggestions": [
+            "Check the cost before agreeing to help.",
+            "Voice one honest disagreement a week.",
+            "Hold your ground once when others keep adjusting."
+          ],
+          "reflection_prompt": "Do you often try to help others succeed when working in teams?",
+          "content": {
+            "meaning": {
+              "en": "You value cooperation and positive relationships, and helping others or maintaining harmony may matter a great deal to you."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like enjoying teamwork, listening closely to others, and offering support without being asked."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Collaborative, supportive learning.",
+                "“You often understand a topic best right after explaining it to a friend who was struggling with it.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Empathy",
+                "teamwork",
+                "cooperation"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Check the cost before agreeing to help.",
+                "Voice one honest disagreement a week.",
+                "Hold your ground once when others keep adjusting."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you often try to help others succeed when working in teams?"
+              ]
+            }
           }
         },
         {
-          "range": "14-26",
-          "icon": "bi-chat-dots",
-          "label": {
-            "en": "Balanced Communicator",
-            "mr": "संतुलित संवादक"
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 33,
+            "max": 35
           },
-          "summary": {
-            "en": "You’re a thoughtful and adaptable person who balances cooperation with independence, respects others’ views, and makes fair decisions in social situations.",
-            "mr": "तुम्ही एक विचारशील आणि जुळवून घेणारी व्यक्ती आहात जी सहकार्य आणि स्वातंत्र्य यांचा समतोल साधते, इतरांच्या विचारांचा आदर करते आणि सामाजिक परिस्थितीत योग्य निर्णय घेते."
+          "archetype": "Generous Team Player",
+          "meaning": "You lean toward cooperation and supporting others, but you're not without your own view — for instance, you'll happily rearrange your weekend to help a friend move, but you'll still say no if a group decision crosses a line for you.",
+          "how_it_shows": "This tends to look like actively helping a group move forward, while still speaking up on the specific points you feel strongly about.",
+          "learning_preference": {
+            "style": "Mostly collaborative, with real opinions intact.",
+            "quote": "“You like working through things with others, but you'll still push for what you actually believe in.”",
+            "raw": [
+              "Mostly collaborative, with real opinions intact.",
+              "“You like working through things with others, but you'll still push for what you actually believe in.”"
+            ]
+          },
+          "strengths": [
+            "Cooperation",
+            "tact",
+            "principled flexibility"
+          ],
+          "growth_suggestions": [
+            "Say what you actually think before the group moves on.",
+            "Set one personal red line you won't compromise on this term.",
+            "Practice disagreeing without softening your point immediately."
+          ],
+          "reflection_prompt": "Do you generally cooperate easily, while still holding firm on a few things that matter to you?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward cooperation and supporting others, but you're not without your own view — for instance, you'll happily rearrange your weekend to help a friend move, but you'll still say no if a group decision crosses a line for you."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like actively helping a group move forward, while still speaking up on the specific points you feel strongly about."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly collaborative, with real opinions intact.",
+                "“You like working through things with others, but you'll still push for what you actually believe in.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Cooperation",
+                "tact",
+                "principled flexibility"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Say what you actually think before the group moves on.",
+                "Set one personal red line you won't compromise on this term.",
+                "Practice disagreeing without softening your point immediately."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you generally cooperate easily, while still holding firm on a few things that matter to you?"
+              ]
+            }
           }
         },
         {
-          "range": "0-13",
-          "icon": "bi-megaphone",
-          "label": {
-            "en": "Assertive Individualist",
-            "mr": "ठाम स्वावलंबी"
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 30,
+            "max": 32
           },
-          "summary": {
-            "en": "You’re an independent and straightforward thinker who values honesty, stands by your views, and isn’t afraid to question norms or speak your mind.",
-            "mr": "तुम्ही स्वतंत्र आणि स्पष्टपणे विचार करणारे आहात. तुम्हाला प्रामाणिकपणा आवडतो आणि तुम्ही तुमचं मत ठामपणे मांडता. गरज पडली तर तुम्ही नियमांवर प्रश्न विचारायला घाबरत नाही."
+          "archetype": "Thoughtful Cooperator",
+          "meaning": "You tip slightly toward agreeing over questioning — for example, when a group is picking a restaurant or a movie, you're a little more likely to go along with the first popular suggestion than push your own.",
+          "how_it_shows": "This tends to look like going along with a group decision readily, while still speaking up on points that genuinely matter to you.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward cooperating.",
+            "quote": "“You'll usually go with the group, but you'll speak up when something really matters.”",
+            "raw": [
+              "Balanced, tipped toward cooperating.",
+              "“You'll usually go with the group, but you'll speak up when something really matters.”"
+            ]
+          },
+          "strengths": [
+            "Cooperative instinct",
+            "selective assertiveness",
+            "team-mindedness"
+          ],
+          "growth_suggestions": [
+            "Voice a disagreement once this week instead of letting it pass.",
+            "Notice one group decision you went along with without fully agreeing.",
+            "Ask yourself what you'd change if you had the final say."
+          ],
+          "reflection_prompt": "Do you usually go along with a group, while still speaking up on things that matter to you?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward agreeing over questioning — for example, when a group is picking a restaurant or a movie, you're a little more likely to go along with the first popular suggestion than push your own."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like going along with a group decision readily, while still speaking up on points that genuinely matter to you."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward cooperating.",
+                "“You'll usually go with the group, but you'll speak up when something really matters.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Cooperative instinct",
+                "selective assertiveness",
+                "team-mindedness"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Voice a disagreement once this week instead of letting it pass.",
+                "Notice one group decision you went along with without fully agreeing.",
+                "Ask yourself what you'd change if you had the final say."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you usually go along with a group, while still speaking up on things that matter to you?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 26,
+            "max": 29
+          },
+          "archetype": "Candid Collaborator",
+          "meaning": "Given equal footing, raising a doubt usually wins out over staying quiet for you — for instance, when splitting a shared bill or dividing chores with roommates, you're a little more likely to double-check the details out loud before agreeing than to just accept them.",
+          "how_it_shows": "This tends to look like voicing a doubt before going along with a group decision, even on fairly minor things.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward questioning.",
+            "quote": "“You'll usually say what you actually think before agreeing with the group.”",
+            "raw": [
+              "Balanced, tipped toward questioning.",
+              "“You'll usually say what you actually think before agreeing with the group.”"
+            ]
+          },
+          "strengths": [
+            "Honest input",
+            "balanced judgement",
+            "principled cooperation"
+          ],
+          "growth_suggestions": [
+            "Go along with a low-stakes group decision without voicing a doubt, once.",
+            "Notice which disagreements actually mattered versus were just habit.",
+            "Ask what's driving an objection before you raise it."
+          ],
+          "reflection_prompt": "Do you usually voice a doubt before agreeing with a group, even on smaller things?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, raising a doubt usually wins out over staying quiet for you — for instance, when splitting a shared bill or dividing chores with roommates, you're a little more likely to double-check the details out loud before agreeing than to just accept them."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like voicing a doubt before going along with a group decision, even on fairly minor things."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward questioning.",
+                "“You'll usually say what you actually think before agreeing with the group.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Honest input",
+                "balanced judgement",
+                "principled cooperation"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Go along with a low-stakes group decision without voicing a doubt, once.",
+                "Notice which disagreements actually mattered versus were just habit.",
+                "Ask what's driving an objection before you raise it."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you usually voice a doubt before agreeing with a group, even on smaller things?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 21,
+            "max": 25
+          },
+          "archetype": "Fair Skeptic",
+          "meaning": "Your default is to test an idea before accepting it, though you're not contrarian — for example, you'll ask a few pointed questions before agreeing to a study group's exam-prep plan, but once it holds up, you'll back it fully.",
+          "how_it_shows": "This tends to look like questioning a group's direction first, then supporting it fully once it holds up.",
+          "learning_preference": {
+            "style": "Question-first, then cooperative.",
+            "quote": "“You want to test an idea yourself before you're willing to build on it with others.”",
+            "raw": [
+              "Question-first, then cooperative.",
+              "“You want to test an idea yourself before you're willing to build on it with others.”"
+            ]
+          },
+          "strengths": [
+            "Healthy skepticism",
+            "independent judgement",
+            "honest engagement"
+          ],
+          "growth_suggestions": [
+            "Acknowledge one strong point before raising your objection.",
+            "Offer support without a counterpoint at least once this week.",
+            "Notice when your skepticism is genuinely useful versus just habit."
+          ],
+          "reflection_prompt": "Do you lean toward testing an idea first, while still cooperating once it's earned your agreement?",
+          "content": {
+            "meaning": {
+              "en": "Your default is to test an idea before accepting it, though you're not contrarian — for example, you'll ask a few pointed questions before agreeing to a study group's exam-prep plan, but once it holds up, you'll back it fully."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like questioning a group's direction first, then supporting it fully once it holds up."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Question-first, then cooperative.",
+                "“You want to test an idea yourself before you're willing to build on it with others.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Healthy skepticism",
+                "independent judgement",
+                "honest engagement"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Acknowledge one strong point before raising your objection.",
+                "Offer support without a counterpoint at least once this week.",
+                "Notice when your skepticism is genuinely useful versus just habit."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you lean toward testing an idea first, while still cooperating once it's earned your agreement?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 20
+          },
+          "archetype": "Independent Thinker",
+          "meaning": "You tend to question ideas and test assumptions rather than accept them at face value, and you likely value independent thinking and open debate.",
+          "how_it_shows": "Typically, this shows up as expressing opinions directly and evaluating ideas critically, even when that means disagreeing with the group.",
+          "learning_preference": {
+            "style": "Debate and analysis-based learning.",
+            "quote": "“You learn a topic best by picking apart the argument, not by accepting it as given.”",
+            "raw": [
+              "Debate and analysis-based learning.",
+              "“You learn a topic best by picking apart the argument, not by accepting it as given.”"
+            ]
+          },
+          "strengths": [
+            "Critical thinking",
+            "independence",
+            "analytical reasoning"
+          ],
+          "growth_suggestions": [
+            "Name what's working before listing what isn't.",
+            "Ask a clarifying question before disagreeing.",
+            "Let one minor disagreement go, on purpose."
+          ],
+          "reflection_prompt": "Do you often enjoy questioning ideas to understand them better?",
+          "content": {
+            "meaning": {
+              "en": "You tend to question ideas and test assumptions rather than accept them at face value, and you likely value independent thinking and open debate."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as expressing opinions directly and evaluating ideas critically, even when that means disagreeing with the group."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Debate and analysis-based learning.",
+                "“You learn a topic best by picking apart the argument, not by accepting it as given.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Critical thinking",
+                "independence",
+                "analytical reasoning"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Name what's working before listing what isn't.",
+                "Ask a clarifying question before disagreeing.",
+                "Let one minor disagreement go, on purpose."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you often enjoy questioning ideas to understand them better?"
+              ]
+            }
           }
         }
       ]
     },
-
-    "Neuroticism": {
+    "Emotional Stability": {
       "categories": [
         {
-          "range": "27-40",
-          "icon": "bi-heart-pulse",
-          "label": {
-            "en": "Emotionally Insightful",
-            "mr": "भावनिकदृष्ट्या जाणकार"
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 29,
+            "max": 40
           },
-          "summary": {
-            "en": "You’re emotionally aware and expressive, often turning challenges into motivation for growth, creativity, and personal strength.",
-            "mr": "तुम्ही तुमच्या भावना ओळखता आणि मोकळेपणाने व्यक्त करता. आलेल्या अडचणींमधून तुम्ही शिकता आणि स्वतःला सुधारता. या गोष्टी तुम्हाला नवीन कल्पना आणि ताकद देतात."
+          "archetype": "Calm Navigator",
+          "meaning": "You tend to remain calm and emotionally steady during challenges, and stress may be easier for you to manage than it is for others.",
+          "how_it_shows": "Typically, this shows up as staying composed under pressure and approaching problems with stability.",
+          "learning_preference": {
+            "style": "Stable, focus-driven learning.",
+            "quote": "“Exam pressure barely changes how you study — you can just sit down and get through the material.”",
+            "raw": [
+              "Stable, focus-driven learning.",
+              "“Exam pressure barely changes how you study — you can just sit down and get through the material.”"
+            ]
+          },
+          "strengths": [
+            "Emotional resilience",
+            "stress tolerance",
+            "composure"
+          ],
+          "growth_suggestions": [
+            "Name what you're feeling before assuming you're fine.",
+            "Check in with someone stressed before reassuring them.",
+            "Choose a mildly stressful challenge on purpose."
+          ],
+          "reflection_prompt": "When facing pressure, do you usually stay calm and think through the situation?",
+          "content": {
+            "meaning": {
+              "en": "You tend to remain calm and emotionally steady during challenges, and stress may be easier for you to manage than it is for others."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as staying composed under pressure and approaching problems with stability."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Stable, focus-driven learning.",
+                "“Exam pressure barely changes how you study — you can just sit down and get through the material.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional resilience",
+                "stress tolerance",
+                "composure"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Name what you're feeling before assuming you're fine.",
+                "Check in with someone stressed before reassuring them.",
+                "Choose a mildly stressful challenge on purpose."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "When facing pressure, do you usually stay calm and think through the situation?"
+              ]
+            }
           }
         },
         {
-          "range": "14-26",
-          "icon": "bi-emoji-smile",
-          "label": {
-            "en": "Emotionally Balanced",
-            "mr": "भावनिक संतुलित"
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 24,
+            "max": 28
           },
-          "summary": {
-            "en": "You’re emotionally balanced and thoughtful, with the sensitivity to connect with others and the self-awareness to grow through life’s challenges.",
-            "mr": "तुमचं भावनिक संतुलन चांगलं आहे आणि तुम्ही विचारपूर्वक वागता. तुम्ही इतरांशी जोडले जाणे आणि अडचणींतून शिकण्याची तुमच्यात समज आहे."
+          "archetype": "Composed Observer",
+          "meaning": "You lean toward staying composed under pressure, but you're not unaffected — for instance, you can usually walk into a tough exam looking calm, even when a genuinely bad result would hit you harder than you let on.",
+          "how_it_shows": "This tends to look like handling most stress calmly, with occasional moments where the composure takes real, conscious effort.",
+          "learning_preference": {
+            "style": "Mostly steady, occasionally needs a breather.",
+            "quote": "“You can push through most pressure, but you know when you need five minutes before continuing.”",
+            "raw": [
+              "Mostly steady, occasionally needs a breather.",
+              "“You can push through most pressure, but you know when you need five minutes before continuing.”"
+            ]
+          },
+          "strengths": [
+            "Composure",
+            "self-awareness under pressure",
+            "realistic self-assessment"
+          ],
+          "growth_suggestions": [
+            "Catch stress signs early, before staying calm takes real effort.",
+            "Check in on a quietly struggling classmate, not just the visibly upset one.",
+            "Mentor someone through a stressful moment you've already been through."
+          ],
+          "reflection_prompt": "Do you usually stay composed under pressure, even if it occasionally takes real effort?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward staying composed under pressure, but you're not unaffected — for instance, you can usually walk into a tough exam looking calm, even when a genuinely bad result would hit you harder than you let on."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like handling most stress calmly, with occasional moments where the composure takes real, conscious effort."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly steady, occasionally needs a breather.",
+                "“You can push through most pressure, but you know when you need five minutes before continuing.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Composure",
+                "self-awareness under pressure",
+                "realistic self-assessment"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Catch stress signs early, before staying calm takes real effort.",
+                "Check in on a quietly struggling classmate, not just the visibly upset one.",
+                "Mentor someone through a stressful moment you've already been through."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you usually stay composed under pressure, even if it occasionally takes real effort?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 20,
+            "max": 23
+          },
+          "archetype": "Grounded Responder",
+          "meaning": "You tip slightly toward staying steady over reacting — for example, faced with a canceled internship interview, you're a little more likely to shake it off within the hour than to dwell on it.",
+          "how_it_shows": "This tends to look like staying fairly calm under most pressure, with an occasional moment that takes real effort to work through.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward steady.",
+            "quote": "“You handle most pressure fine, though a genuinely hard moment still takes some effort.”",
+            "raw": [
+              "Balanced, tipped toward steady.",
+              "“You handle most pressure fine, though a genuinely hard moment still takes some effort.”"
+            ]
+          },
+          "strengths": [
+            "Composure",
+            "self-awareness",
+            "realistic confidence under pressure"
+          ],
+          "growth_suggestions": [
+            "Notice the early signs of stress before they build up.",
+            "Volunteer for a task that's a little outside your comfort zone.",
+            "Offer to help a stressed teammate with a concrete task, not just words."
+          ],
+          "reflection_prompt": "Do you generally stay steady under pressure, with only occasional real effort needed?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward staying steady over reacting — for example, faced with a canceled internship interview, you're a little more likely to shake it off within the hour than to dwell on it."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like staying fairly calm under most pressure, with an occasional moment that takes real effort to work through."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward steady.",
+                "“You handle most pressure fine, though a genuinely hard moment still takes some effort.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Composure",
+                "self-awareness",
+                "realistic confidence under pressure"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Notice the early signs of stress before they build up.",
+                "Volunteer for a task that's a little outside your comfort zone.",
+                "Offer to help a stressed teammate with a concrete task, not just words."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you generally stay steady under pressure, with only occasional real effort needed?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 16,
+            "max": 19
+          },
+          "archetype": "Steadying Feeler",
+          "meaning": "Given equal footing, an initial reaction usually shows before your composure does — for instance, a lower-than-expected quiz score would likely throw you off for the rest of the class, but you'd be back to normal well before the day is out.",
+          "how_it_shows": "This tends to look like a noticeable reaction to a setback, followed by a fairly quick return to focus.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward needing a moment.",
+            "quote": "“Something stressful throws you off briefly, but you find your footing again quickly.”",
+            "raw": [
+              "Balanced, tipped toward needing a moment.",
+              "“Something stressful throws you off briefly, but you find your footing again quickly.”"
+            ]
+          },
+          "strengths": [
+            "Emotional honesty",
+            "quick recovery",
+            "realistic self-awareness"
+          ],
+          "growth_suggestions": [
+            "Note what triggered the reaction, not just the reaction itself.",
+            "Track what actually helps you recover fastest after a setback.",
+            "Keep a two-line note on what helped you bounce back last time."
+          ],
+          "reflection_prompt": "Do you notice a setback affecting you briefly before you find your footing again?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, an initial reaction usually shows before your composure does — for instance, a lower-than-expected quiz score would likely throw you off for the rest of the class, but you'd be back to normal well before the day is out."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like a noticeable reaction to a setback, followed by a fairly quick return to focus."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward needing a moment.",
+                "“Something stressful throws you off briefly, but you find your footing again quickly.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional honesty",
+                "quick recovery",
+                "realistic self-awareness"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Note what triggered the reaction, not just the reaction itself.",
+                "Track what actually helps you recover fastest after a setback.",
+                "Keep a two-line note on what helped you bounce back last time."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you notice a setback affecting you briefly before you find your footing again?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 11,
+            "max": 15
+          },
+          "archetype": "Responsive Feeler",
+          "meaning": "Your default is to feel things strongly, though you're not overwhelmed by them — for example, a disappointing exam result might derail your evening, but you'll usually have worked through it by the next morning.",
+          "how_it_shows": "This tends to look like a visible reaction to stress, followed by a real recovery once you've had some time to process it.",
+          "learning_preference": {
+            "style": "Needs some space before focus returns.",
+            "quote": "“A stressful day makes it hard to concentrate right away, but you're usually back on track soon.”",
+            "raw": [
+              "Needs some space before focus returns.",
+              "“A stressful day makes it hard to concentrate right away, but you're usually back on track soon.”"
+            ]
+          },
+          "strengths": [
+            "Emotional depth",
+            "honest reactions",
+            "resilience after setbacks"
+          ],
+          "growth_suggestions": [
+            "Give yourself a short, deliberate reset after a stressful moment.",
+            "Ask a specific friend to check in on you after a hard day.",
+            "Notice roughly how long it actually takes you to feel steady again."
+          ],
+          "reflection_prompt": "Do strong feelings pass fairly quickly for you once you've had time to process them?",
+          "content": {
+            "meaning": {
+              "en": "Your default is to feel things strongly, though you're not overwhelmed by them — for example, a disappointing exam result might derail your evening, but you'll usually have worked through it by the next morning."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like a visible reaction to stress, followed by a real recovery once you've had some time to process it."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Needs some space before focus returns.",
+                "“A stressful day makes it hard to concentrate right away, but you're usually back on track soon.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional depth",
+                "honest reactions",
+                "resilience after setbacks"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Give yourself a short, deliberate reset after a stressful moment.",
+                "Ask a specific friend to check in on you after a hard day.",
+                "Notice roughly how long it actually takes you to feel steady again."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do strong feelings pass fairly quickly for you once you've had time to process them?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 10
+          },
+          "archetype": "Intense Feeler",
+          "meaning": "You may experience emotions strongly and respond deeply to stressful situations — this reflects depth of feeling, not a weakness to be corrected.",
+          "how_it_shows": "This often looks like feeling pressure more intensely than others might, or reflecting deeply on experiences long after they happen.",
+          "learning_preference": {
+            "style": "Structured learning with clear guidance.",
+            "quote": "“An open-ended assignment with no clear expectations stresses you out more than a hard one with clear instructions.”",
+            "raw": [
+              "Structured learning with clear guidance.",
+              "“An open-ended assignment with no clear expectations stresses you out more than a hard one with clear instructions.”"
+            ]
+          },
+          "strengths": [
+            "Deep empathy",
+            "emotional insight",
+            "sensitivity to others' experiences"
+          ],
+          "growth_suggestions": [
+            "Build a fixed pre-deadline routine and repeat it.",
+            "Name the emotion and its size before acting.",
+            "Tell someone in advance what support actually helps."
+          ],
+          "reflection_prompt": "Do strong emotions sometimes influence how you approach challenges?",
+          "content": {
+            "meaning": {
+              "en": "You may experience emotions strongly and respond deeply to stressful situations — this reflects depth of feeling, not a weakness to be corrected."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like feeling pressure more intensely than others might, or reflecting deeply on experiences long after they happen."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Structured learning with clear guidance.",
+                "“An open-ended assignment with no clear expectations stresses you out more than a hard one with clear instructions.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Deep empathy",
+                "emotional insight",
+                "sensitivity to others' experiences"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Build a fixed pre-deadline routine and repeat it.",
+                "Name the emotion and its size before acting.",
+                "Tell someone in advance what support actually helps."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do strong emotions sometimes influence how you approach challenges?"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Neuroticism": {
+      "categories": [
+        {
+          "range": "High",
+          "level": "High",
+          "level_score": {
+            "min": 29,
+            "max": 40
+          },
+          "archetype": "Calm Navigator",
+          "meaning": "You tend to remain calm and emotionally steady during challenges, and stress may be easier for you to manage than it is for others.",
+          "how_it_shows": "Typically, this shows up as staying composed under pressure and approaching problems with stability.",
+          "learning_preference": {
+            "style": "Stable, focus-driven learning.",
+            "quote": "“Exam pressure barely changes how you study — you can just sit down and get through the material.”",
+            "raw": [
+              "Stable, focus-driven learning.",
+              "“Exam pressure barely changes how you study — you can just sit down and get through the material.”"
+            ]
+          },
+          "strengths": [
+            "Emotional resilience",
+            "stress tolerance",
+            "composure"
+          ],
+          "growth_suggestions": [
+            "Name what you're feeling before assuming you're fine.",
+            "Check in with someone stressed before reassuring them.",
+            "Choose a mildly stressful challenge on purpose."
+          ],
+          "reflection_prompt": "When facing pressure, do you usually stay calm and think through the situation?",
+          "content": {
+            "meaning": {
+              "en": "You tend to remain calm and emotionally steady during challenges, and stress may be easier for you to manage than it is for others."
+            },
+            "how_it_shows": {
+              "en": [
+                "Typically, this shows up as staying composed under pressure and approaching problems with stability."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Stable, focus-driven learning.",
+                "“Exam pressure barely changes how you study — you can just sit down and get through the material.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional resilience",
+                "stress tolerance",
+                "composure"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Name what you're feeling before assuming you're fine.",
+                "Check in with someone stressed before reassuring them.",
+                "Choose a mildly stressful challenge on purpose."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "When facing pressure, do you usually stay calm and think through the situation?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans High)",
+          "level": "Medium (Leans High)",
+          "level_score": {
+            "min": 24,
+            "max": 28
+          },
+          "archetype": "Composed Observer",
+          "meaning": "You lean toward staying composed under pressure, but you're not unaffected — for instance, you can usually walk into a tough exam looking calm, even when a genuinely bad result would hit you harder than you let on.",
+          "how_it_shows": "This tends to look like handling most stress calmly, with occasional moments where the composure takes real, conscious effort.",
+          "learning_preference": {
+            "style": "Mostly steady, occasionally needs a breather.",
+            "quote": "“You can push through most pressure, but you know when you need five minutes before continuing.”",
+            "raw": [
+              "Mostly steady, occasionally needs a breather.",
+              "“You can push through most pressure, but you know when you need five minutes before continuing.”"
+            ]
+          },
+          "strengths": [
+            "Composure",
+            "self-awareness under pressure",
+            "realistic self-assessment"
+          ],
+          "growth_suggestions": [
+            "Catch stress signs early, before staying calm takes real effort.",
+            "Check in on a quietly struggling classmate, not just the visibly upset one.",
+            "Mentor someone through a stressful moment you've already been through."
+          ],
+          "reflection_prompt": "Do you usually stay composed under pressure, even if it occasionally takes real effort?",
+          "content": {
+            "meaning": {
+              "en": "You lean toward staying composed under pressure, but you're not unaffected — for instance, you can usually walk into a tough exam looking calm, even when a genuinely bad result would hit you harder than you let on."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like handling most stress calmly, with occasional moments where the composure takes real, conscious effort."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Mostly steady, occasionally needs a breather.",
+                "“You can push through most pressure, but you know when you need five minutes before continuing.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Composure",
+                "self-awareness under pressure",
+                "realistic self-assessment"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Catch stress signs early, before staying calm takes real effort.",
+                "Check in on a quietly struggling classmate, not just the visibly upset one.",
+                "Mentor someone through a stressful moment you've already been through."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you usually stay composed under pressure, even if it occasionally takes real effort?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly High)",
+          "level": "Medium (Mildly High)",
+          "level_score": {
+            "min": 20,
+            "max": 23
+          },
+          "archetype": "Grounded Responder",
+          "meaning": "You tip slightly toward staying steady over reacting — for example, faced with a canceled internship interview, you're a little more likely to shake it off within the hour than to dwell on it.",
+          "how_it_shows": "This tends to look like staying fairly calm under most pressure, with an occasional moment that takes real effort to work through.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward steady.",
+            "quote": "“You handle most pressure fine, though a genuinely hard moment still takes some effort.”",
+            "raw": [
+              "Balanced, tipped toward steady.",
+              "“You handle most pressure fine, though a genuinely hard moment still takes some effort.”"
+            ]
+          },
+          "strengths": [
+            "Composure",
+            "self-awareness",
+            "realistic confidence under pressure"
+          ],
+          "growth_suggestions": [
+            "Notice the early signs of stress before they build up.",
+            "Volunteer for a task that's a little outside your comfort zone.",
+            "Offer to help a stressed teammate with a concrete task, not just words."
+          ],
+          "reflection_prompt": "Do you generally stay steady under pressure, with only occasional real effort needed?",
+          "content": {
+            "meaning": {
+              "en": "You tip slightly toward staying steady over reacting — for example, faced with a canceled internship interview, you're a little more likely to shake it off within the hour than to dwell on it."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like staying fairly calm under most pressure, with an occasional moment that takes real effort to work through."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward steady.",
+                "“You handle most pressure fine, though a genuinely hard moment still takes some effort.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Composure",
+                "self-awareness",
+                "realistic confidence under pressure"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Notice the early signs of stress before they build up.",
+                "Volunteer for a task that's a little outside your comfort zone.",
+                "Offer to help a stressed teammate with a concrete task, not just words."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you generally stay steady under pressure, with only occasional real effort needed?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Mildly Low)",
+          "level": "Medium (Mildly Low)",
+          "level_score": {
+            "min": 16,
+            "max": 19
+          },
+          "archetype": "Steadying Feeler",
+          "meaning": "Given equal footing, an initial reaction usually shows before your composure does — for instance, a lower-than-expected quiz score would likely throw you off for the rest of the class, but you'd be back to normal well before the day is out.",
+          "how_it_shows": "This tends to look like a noticeable reaction to a setback, followed by a fairly quick return to focus.",
+          "learning_preference": {
+            "style": "Balanced, tipped toward needing a moment.",
+            "quote": "“Something stressful throws you off briefly, but you find your footing again quickly.”",
+            "raw": [
+              "Balanced, tipped toward needing a moment.",
+              "“Something stressful throws you off briefly, but you find your footing again quickly.”"
+            ]
+          },
+          "strengths": [
+            "Emotional honesty",
+            "quick recovery",
+            "realistic self-awareness"
+          ],
+          "growth_suggestions": [
+            "Note what triggered the reaction, not just the reaction itself.",
+            "Track what actually helps you recover fastest after a setback.",
+            "Keep a two-line note on what helped you bounce back last time."
+          ],
+          "reflection_prompt": "Do you notice a setback affecting you briefly before you find your footing again?",
+          "content": {
+            "meaning": {
+              "en": "Given equal footing, an initial reaction usually shows before your composure does — for instance, a lower-than-expected quiz score would likely throw you off for the rest of the class, but you'd be back to normal well before the day is out."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like a noticeable reaction to a setback, followed by a fairly quick return to focus."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Balanced, tipped toward needing a moment.",
+                "“Something stressful throws you off briefly, but you find your footing again quickly.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional honesty",
+                "quick recovery",
+                "realistic self-awareness"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Note what triggered the reaction, not just the reaction itself.",
+                "Track what actually helps you recover fastest after a setback.",
+                "Keep a two-line note on what helped you bounce back last time."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do you notice a setback affecting you briefly before you find your footing again?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Medium (Leans Low)",
+          "level": "Medium (Leans Low)",
+          "level_score": {
+            "min": 11,
+            "max": 15
+          },
+          "archetype": "Responsive Feeler",
+          "meaning": "Your default is to feel things strongly, though you're not overwhelmed by them — for example, a disappointing exam result might derail your evening, but you'll usually have worked through it by the next morning.",
+          "how_it_shows": "This tends to look like a visible reaction to stress, followed by a real recovery once you've had some time to process it.",
+          "learning_preference": {
+            "style": "Needs some space before focus returns.",
+            "quote": "“A stressful day makes it hard to concentrate right away, but you're usually back on track soon.”",
+            "raw": [
+              "Needs some space before focus returns.",
+              "“A stressful day makes it hard to concentrate right away, but you're usually back on track soon.”"
+            ]
+          },
+          "strengths": [
+            "Emotional depth",
+            "honest reactions",
+            "resilience after setbacks"
+          ],
+          "growth_suggestions": [
+            "Give yourself a short, deliberate reset after a stressful moment.",
+            "Ask a specific friend to check in on you after a hard day.",
+            "Notice roughly how long it actually takes you to feel steady again."
+          ],
+          "reflection_prompt": "Do strong feelings pass fairly quickly for you once you've had time to process them?",
+          "content": {
+            "meaning": {
+              "en": "Your default is to feel things strongly, though you're not overwhelmed by them — for example, a disappointing exam result might derail your evening, but you'll usually have worked through it by the next morning."
+            },
+            "how_it_shows": {
+              "en": [
+                "This tends to look like a visible reaction to stress, followed by a real recovery once you've had some time to process it."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Needs some space before focus returns.",
+                "“A stressful day makes it hard to concentrate right away, but you're usually back on track soon.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Emotional depth",
+                "honest reactions",
+                "resilience after setbacks"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Give yourself a short, deliberate reset after a stressful moment.",
+                "Ask a specific friend to check in on you after a hard day.",
+                "Notice roughly how long it actually takes you to feel steady again."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do strong feelings pass fairly quickly for you once you've had time to process them?"
+              ]
+            }
+          }
+        },
+        {
+          "range": "Low",
+          "level": "Low",
+          "level_score": {
+            "min": 0,
+            "max": 10
+          },
+          "archetype": "Intense Feeler",
+          "meaning": "You may experience emotions strongly and respond deeply to stressful situations — this reflects depth of feeling, not a weakness to be corrected.",
+          "how_it_shows": "This often looks like feeling pressure more intensely than others might, or reflecting deeply on experiences long after they happen.",
+          "learning_preference": {
+            "style": "Structured learning with clear guidance.",
+            "quote": "“An open-ended assignment with no clear expectations stresses you out more than a hard one with clear instructions.”",
+            "raw": [
+              "Structured learning with clear guidance.",
+              "“An open-ended assignment with no clear expectations stresses you out more than a hard one with clear instructions.”"
+            ]
+          },
+          "strengths": [
+            "Deep empathy",
+            "emotional insight",
+            "sensitivity to others' experiences"
+          ],
+          "growth_suggestions": [
+            "Build a fixed pre-deadline routine and repeat it.",
+            "Name the emotion and its size before acting.",
+            "Tell someone in advance what support actually helps."
+          ],
+          "reflection_prompt": "Do strong emotions sometimes influence how you approach challenges?",
+          "content": {
+            "meaning": {
+              "en": "You may experience emotions strongly and respond deeply to stressful situations — this reflects depth of feeling, not a weakness to be corrected."
+            },
+            "how_it_shows": {
+              "en": [
+                "This often looks like feeling pressure more intensely than others might, or reflecting deeply on experiences long after they happen."
+              ]
+            },
+            "learning_preference": {
+              "en": [
+                "Structured learning with clear guidance.",
+                "“An open-ended assignment with no clear expectations stresses you out more than a hard one with clear instructions.”"
+              ]
+            },
+            "strengths": {
+              "en": [
+                "Deep empathy",
+                "emotional insight",
+                "sensitivity to others' experiences"
+              ]
+            },
+            "growth_suggestions": {
+              "en": [
+                "Build a fixed pre-deadline routine and repeat it.",
+                "Name the emotion and its size before acting.",
+                "Tell someone in advance what support actually helps."
+              ]
+            },
+            "reflection_prompts": {
+              "en": [
+                "Do strong emotions sometimes influence how you approach challenges?"
+              ]
+            }
           }
         }
       ]

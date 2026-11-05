@@ -5,31 +5,15 @@ import PrintableCareerInterests from "./PrintableCareerInterests";
 import PrintableAptitudeStrengths from "./PrintableAptitudeStrengths";
 import PrintableEqProfile from "./PrintableEqProfile";
 import PrintableLearningPreferences from "./PrintableLearningPreferences";
-import PrintableCareerOptions from "./PrintableCareerOptions";
-import PrintableCareerDetail from "./PrintableCareerDetail";
+import PrintableCareerMatchChart from "./PrintableCareerMatchChart";
+import PrintableCareerClusterDetail from "./PrintableCareerClusterDetail";
 
-import careerFields from "../../data/career_fields.json";
+// --- OLD CAREER COMPONENTS (PRESERVED / COMMENTED OUT) ---
+// import PrintableCareerOptions from "./PrintableCareerOptions";
+// import PrintableCareerDetail from "./PrintableCareerDetail";
+// import careerFields from "../../data/career_fields.json";
 
-function cosineSimilarity(user, ideal) {
-  let dot = 0;
-  let userMag = 0;
-  let idealMag = 0;
-
-  for (const key of ["R", "I", "A", "S", "E", "C"]) {
-    const u = Number(user[key]) || 0;
-    const i = Number(ideal[key]) || 0;
-
-    dot += u * i;
-    userMag += u * u;
-    idealMag += i * i;
-  }
-
-  if (userMag === 0 || idealMag === 0) {
-    return 0;
-  }
-
-  return dot / (Math.sqrt(userMag) * Math.sqrt(idealMag));
-}
+import { getRankedClusters } from "../../utils/clusterMatching.util";
 
 export default function PrintDocument({
   scores = [],
@@ -39,73 +23,13 @@ export default function PrintDocument({
   selectedCareerIds = [],
   selectedCareersHtml = "",
 }) {
-  const orderedCareers = useMemo(() => {
-    if (!recommendedCareers.length) return [];
+  // -------- RANKED CLUSTERS WITH HOLLAND MATCHING & FIT TIERS --------
+  const rankedClusters = useMemo(() => {
+    return getRankedClusters(scores);
+  }, [scores]);
 
-    // -------- Build RIASEC Map --------
-    const riasecScores = {
-      R: 0,
-      I: 0,
-      A: 0,
-      S: 0,
-      E: 0,
-      C: 0,
-    };
-
-    scores
-      .filter((s) => s.assessmentType === "RIASEC")
-      .forEach((s) => {
-        if (riasecScores.hasOwnProperty(s.traitOrCategoryCode)) {
-          riasecScores[s.traitOrCategoryCode] = Number(s.score) || 0;
-        }
-      });
-
-    // -------- Build Chart Data --------
-    const categoryIds = [
-      ...new Set(
-        recommendedCareers
-          .map((c) => c.category_id)
-          .filter((id) => id !== null && id !== undefined)
-      ),
-    ];
-
-    const chartData = categoryIds
-      .map((id) => {
-        const field = careerFields.find((f) => f.category_id === id);
-        if (!field || !field.scores) return null;
-
-        const similarity = cosineSimilarity(riasecScores, field.scores);
-        return {
-          category_id: id,
-          value: Math.round(similarity * 100),
-        };
-      })
-      .filter(Boolean)
-      .sort((a, b) => b.value - a.value);
-
-    // -------- Priority Map --------
-    const categoryPriority = new Map();
-    chartData.forEach((item, index) => {
-      categoryPriority.set(item.category_id, index);
-    });
-
-    // -------- Final Career Sort --------
-    return [...recommendedCareers].sort((a, b) => {
-      const priorityA = categoryPriority.get(a.category_id);
-      const priorityB = categoryPriority.get(b.category_id);
-
-      if (priorityA !== undefined && priorityB !== undefined) {
-        if (priorityA !== priorityB) {
-          return priorityA - priorityB;
-        }
-        return (b.similarity || 0) - (a.similarity || 0);
-      }
-
-      if (priorityA === undefined) return 1;
-      if (priorityB === undefined) return -1;
-      return 0;
-    });
-  }, [recommendedCareers, scores]);
+  // Career Cluster deep-dive pages (All 16 ranked clusters)
+  const allClusters = rankedClusters;
 
   return (
     <div id="print-root">
@@ -118,20 +42,38 @@ export default function PrintDocument({
       {/* 3. Aptitude & Skills (2 strict A4 pages) */}
       <PrintableAptitudeStrengths scores={scores} language={language} />
 
-      {/* 4. Emotional Intelligence (2 strict A4 pages) */}
-      <PrintableEqProfile scores={scores} language={language} />
+      {/* 4. Emotional Intelligence (Commented out as per preference) */}
+      {/* <PrintableEqProfile scores={scores} language={language} /> */}
 
-      {/* 5. Learning Preferences (2 strict A4 pages) */}
-      <PrintableLearningPreferences scores={scores} language={language} />
+      {/* 5. Learning Preferences (Commented out as per preference) */}
+      {/* <PrintableLearningPreferences scores={scores} language={language} /> */}
 
-      {/* 6. Career Clusters & Options */}
+      {/* 6. Career Clusters Summary Scorecard (All 16 Ranked Clusters) */}
+      <PrintableCareerMatchChart
+        chartData={rankedClusters}
+        language={language}
+      />
+
+      {/* 7. Career Cluster Deep-Dive A4 Pages (All 16 Ranked Clusters) */}
+      {allClusters.map((cluster) => (
+        <PrintableCareerClusterDetail
+          key={cluster.clusterId}
+          cluster={cluster}
+          userAptitudes={cluster.userAptitudes}
+          language={language}
+        />
+      ))}
+
+      {/* ========================================================================= */}
+      {/* --- OLD CAREER CLUSTER OPTIONS & CAREER DETAILS (PRESERVED AS COMMENT) --- */}
+      {/* ========================================================================= */}
+      {/*
       <PrintableCareerOptions
         scores={scores}
         careers={orderedCareers}
         language={language}
       />
 
-      {/* 7. Selected Career Detailed Roadmaps */}
       {orderedCareers
         .filter((c) => selectedCareerIds.includes(c.id))
         .map((career) => (
@@ -154,6 +96,7 @@ export default function PrintDocument({
             />
           </div>
         ))}
+      */}
     </div>
   );
 }
